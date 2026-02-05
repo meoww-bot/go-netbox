@@ -19,6 +19,8 @@
 
 * `JA` (value: `"ja"`)
 
+* `LV` (value: `"lv"`)
+
 * `NL` (value: `"nl"`)
 
 * `PL` (value: `"pl"`)

@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **Clusters** | Pointer to **[]int32** |  | [optional] 
 **TenantGroups** | Pointer to **[]int32** |  | [optional] 
 **Tenants** | Pointer to **[]int32** |  | [optional] 
+**Owner** | Pointer to [**NullableASNRangeRequestOwner**](ASNRangeRequestOwner.md) |  | [optional] 
 **Tags** | Pointer to **[]string** |  | [optional] 
 **DataSource** | Pointer to [**ConfigContextProfileRequestDataSource**](ConfigContextProfileRequestDataSource.md) |  | [optional] 
 **Data** | Pointer to **interface{}** |  | [optional] 
@@ -479,6 +480,41 @@ SetTenants sets Tenants field to given value.
 
 HasTenants returns a boolean if a field has been set.
 
+### GetOwner
+
+`func (o *PatchedConfigContextRequest) GetOwner() ASNRangeRequestOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *PatchedConfigContextRequest) GetOwnerOk() (*ASNRangeRequestOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *PatchedConfigContextRequest) SetOwner(v ASNRangeRequestOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *PatchedConfigContextRequest) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *PatchedConfigContextRequest) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *PatchedConfigContextRequest) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetTags
 
 `func (o *PatchedConfigContextRequest) GetTags() []string`

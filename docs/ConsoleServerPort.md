@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **ConnectedEndpoints** | Pointer to **[]interface{}** |  | [optional] [readonly] 
 **ConnectedEndpointsType** | Pointer to **NullableString** |  | [optional] [readonly] 
 **ConnectedEndpointsReachable** | **bool** |  | [readonly] 
+**Owner** | Pointer to [**NullableBriefOwner**](BriefOwner.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
@@ -548,6 +549,41 @@ and a boolean to check if the value has been set.
 SetConnectedEndpointsReachable sets ConnectedEndpointsReachable field to given value.
 
 
+### GetOwner
+
+`func (o *ConsoleServerPort) GetOwner() BriefOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *ConsoleServerPort) GetOwnerOk() (*BriefOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *ConsoleServerPort) SetOwner(v BriefOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *ConsoleServerPort) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *ConsoleServerPort) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *ConsoleServerPort) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetTags
 
 `func (o *ConsoleServerPort) GetTags() []NestedTag`

@@ -8,12 +8,14 @@ Name | Type | Description | Notes
 **ATerminations** | Pointer to [**[]GenericObjectRequest**](GenericObjectRequest.md) |  | [optional] 
 **BTerminations** | Pointer to [**[]GenericObjectRequest**](GenericObjectRequest.md) |  | [optional] 
 **Status** | Pointer to [**CableStatusValue**](CableStatusValue.md) |  | [optional] 
+**Profile** | Pointer to [**CableProfileValue**](CableProfileValue.md) |  | [optional] 
 **Tenant** | Pointer to [**NullableASNRangeRequestTenant**](ASNRangeRequestTenant.md) |  | [optional] 
 **Label** | Pointer to **string** |  | [optional] 
 **Color** | Pointer to **string** |  | [optional] 
 **Length** | Pointer to **NullableFloat64** |  | [optional] 
 **LengthUnit** | Pointer to [**NullableCableRequestLengthUnit**](CableRequestLengthUnit.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
+**Owner** | Pointer to [**NullableASNRangeRequestOwner**](ASNRangeRequestOwner.md) |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -146,6 +148,31 @@ SetStatus sets Status field to given value.
 `func (o *CableRequest) HasStatus() bool`
 
 HasStatus returns a boolean if a field has been set.
+
+### GetProfile
+
+`func (o *CableRequest) GetProfile() CableProfileValue`
+
+GetProfile returns the Profile field if non-nil, zero value otherwise.
+
+### GetProfileOk
+
+`func (o *CableRequest) GetProfileOk() (*CableProfileValue, bool)`
+
+GetProfileOk returns a tuple with the Profile field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProfile
+
+`func (o *CableRequest) SetProfile(v CableProfileValue)`
+
+SetProfile sets Profile field to given value.
+
+### HasProfile
+
+`func (o *CableRequest) HasProfile() bool`
+
+HasProfile returns a boolean if a field has been set.
 
 ### GetTenant
 
@@ -327,6 +354,41 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### GetOwner
+
+`func (o *CableRequest) GetOwner() ASNRangeRequestOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *CableRequest) GetOwnerOk() (*ASNRangeRequestOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *CableRequest) SetOwner(v ASNRangeRequestOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *CableRequest) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *CableRequest) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *CableRequest) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetComments
 
 `func (o *CableRequest) GetComments() string`

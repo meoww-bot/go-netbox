@@ -7,7 +7,8 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Schema** | Pointer to **interface{}** | A JSON schema specifying the structure of the context data for this profile | [optional] 
-**Tags** | Pointer to **[]string** |  | [optional] 
+**Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
+**Owner** | Pointer to [**NullableASNRangeRequestOwner**](ASNRangeRequestOwner.md) |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **DataSource** | Pointer to [**ConfigContextProfileRequestDataSource**](ConfigContextProfileRequestDataSource.md) |  | [optional] 
 
@@ -117,20 +118,20 @@ HasSchema returns a boolean if a field has been set.
 UnsetSchema ensures that no value is present for Schema, not even an explicit nil
 ### GetTags
 
-`func (o *PatchedConfigContextProfileRequest) GetTags() []string`
+`func (o *PatchedConfigContextProfileRequest) GetTags() []NestedTagRequest`
 
 GetTags returns the Tags field if non-nil, zero value otherwise.
 
 ### GetTagsOk
 
-`func (o *PatchedConfigContextProfileRequest) GetTagsOk() (*[]string, bool)`
+`func (o *PatchedConfigContextProfileRequest) GetTagsOk() (*[]NestedTagRequest, bool)`
 
 GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTags
 
-`func (o *PatchedConfigContextProfileRequest) SetTags(v []string)`
+`func (o *PatchedConfigContextProfileRequest) SetTags(v []NestedTagRequest)`
 
 SetTags sets Tags field to given value.
 
@@ -140,6 +141,41 @@ SetTags sets Tags field to given value.
 
 HasTags returns a boolean if a field has been set.
 
+### GetOwner
+
+`func (o *PatchedConfigContextProfileRequest) GetOwner() ASNRangeRequestOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *PatchedConfigContextProfileRequest) GetOwnerOk() (*ASNRangeRequestOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *PatchedConfigContextProfileRequest) SetOwner(v ASNRangeRequestOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *PatchedConfigContextProfileRequest) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *PatchedConfigContextProfileRequest) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *PatchedConfigContextProfileRequest) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetComments
 
 `func (o *PatchedConfigContextProfileRequest) GetComments() string`

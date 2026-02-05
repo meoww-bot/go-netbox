@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **GroupName** | Pointer to **string** | Links with the same group will appear as a dropdown menu | [optional] 
 **ButtonClass** | Pointer to [**CustomLinkButtonClass**](CustomLinkButtonClass.md) |  | [optional] 
 **NewWindow** | Pointer to **bool** | Force link to open in a new window | [optional] 
+**Owner** | Pointer to [**NullableBriefOwner**](BriefOwner.md) |  | [optional] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
 
@@ -329,6 +330,41 @@ SetNewWindow sets NewWindow field to given value.
 
 HasNewWindow returns a boolean if a field has been set.
 
+### GetOwner
+
+`func (o *CustomLink) GetOwner() BriefOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *CustomLink) GetOwnerOk() (*BriefOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *CustomLink) SetOwner(v BriefOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *CustomLink) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *CustomLink) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *CustomLink) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetCreated
 
 `func (o *CustomLink) GetCreated() time.Time`

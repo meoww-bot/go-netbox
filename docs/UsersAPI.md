@@ -14,6 +14,24 @@ Method | HTTP request | Description
 [**UsersGroupsPartialUpdate**](UsersAPI.md#UsersGroupsPartialUpdate) | **Patch** /api/users/groups/{id}/ | 
 [**UsersGroupsRetrieve**](UsersAPI.md#UsersGroupsRetrieve) | **Get** /api/users/groups/{id}/ | 
 [**UsersGroupsUpdate**](UsersAPI.md#UsersGroupsUpdate) | **Put** /api/users/groups/{id}/ | 
+[**UsersOwnerGroupsBulkDestroy**](UsersAPI.md#UsersOwnerGroupsBulkDestroy) | **Delete** /api/users/owner-groups/ | 
+[**UsersOwnerGroupsBulkPartialUpdate**](UsersAPI.md#UsersOwnerGroupsBulkPartialUpdate) | **Patch** /api/users/owner-groups/ | 
+[**UsersOwnerGroupsBulkUpdate**](UsersAPI.md#UsersOwnerGroupsBulkUpdate) | **Put** /api/users/owner-groups/ | 
+[**UsersOwnerGroupsCreate**](UsersAPI.md#UsersOwnerGroupsCreate) | **Post** /api/users/owner-groups/ | 
+[**UsersOwnerGroupsDestroy**](UsersAPI.md#UsersOwnerGroupsDestroy) | **Delete** /api/users/owner-groups/{id}/ | 
+[**UsersOwnerGroupsList**](UsersAPI.md#UsersOwnerGroupsList) | **Get** /api/users/owner-groups/ | 
+[**UsersOwnerGroupsPartialUpdate**](UsersAPI.md#UsersOwnerGroupsPartialUpdate) | **Patch** /api/users/owner-groups/{id}/ | 
+[**UsersOwnerGroupsRetrieve**](UsersAPI.md#UsersOwnerGroupsRetrieve) | **Get** /api/users/owner-groups/{id}/ | 
+[**UsersOwnerGroupsUpdate**](UsersAPI.md#UsersOwnerGroupsUpdate) | **Put** /api/users/owner-groups/{id}/ | 
+[**UsersOwnersBulkDestroy**](UsersAPI.md#UsersOwnersBulkDestroy) | **Delete** /api/users/owners/ | 
+[**UsersOwnersBulkPartialUpdate**](UsersAPI.md#UsersOwnersBulkPartialUpdate) | **Patch** /api/users/owners/ | 
+[**UsersOwnersBulkUpdate**](UsersAPI.md#UsersOwnersBulkUpdate) | **Put** /api/users/owners/ | 
+[**UsersOwnersCreate**](UsersAPI.md#UsersOwnersCreate) | **Post** /api/users/owners/ | 
+[**UsersOwnersDestroy**](UsersAPI.md#UsersOwnersDestroy) | **Delete** /api/users/owners/{id}/ | 
+[**UsersOwnersList**](UsersAPI.md#UsersOwnersList) | **Get** /api/users/owners/ | 
+[**UsersOwnersPartialUpdate**](UsersAPI.md#UsersOwnersPartialUpdate) | **Patch** /api/users/owners/{id}/ | 
+[**UsersOwnersRetrieve**](UsersAPI.md#UsersOwnersRetrieve) | **Get** /api/users/owners/{id}/ | 
+[**UsersOwnersUpdate**](UsersAPI.md#UsersOwnersUpdate) | **Put** /api/users/owners/{id}/ | 
 [**UsersPermissionsBulkDestroy**](UsersAPI.md#UsersPermissionsBulkDestroy) | **Delete** /api/users/permissions/ | 
 [**UsersPermissionsBulkPartialUpdate**](UsersAPI.md#UsersPermissionsBulkPartialUpdate) | **Patch** /api/users/permissions/ | 
 [**UsersPermissionsBulkUpdate**](UsersAPI.md#UsersPermissionsBulkUpdate) | **Put** /api/users/permissions/ | 
@@ -304,7 +322,7 @@ Name | Type | Description  | Notes
 
 ## UsersGroupsCreate
 
-> Group UsersGroupsCreate(ctx).GroupRequest(groupRequest).Execute()
+> Group UsersGroupsCreate(ctx).UsersGroupsCreateRequest(usersGroupsCreateRequest).Execute()
 
 
 
@@ -323,11 +341,11 @@ import (
 )
 
 func main() {
-	groupRequest := *openapiclient.NewGroupRequest("Name_example") // GroupRequest | 
+	usersGroupsCreateRequest := openapiclient.users_groups_create_request{GroupRequest: openapiclient.NewGroupRequest("Name_example")} // UsersGroupsCreateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UsersAPI.UsersGroupsCreate(context.Background()).GroupRequest(groupRequest).Execute()
+	resp, r, err := apiClient.UsersAPI.UsersGroupsCreate(context.Background()).UsersGroupsCreateRequest(usersGroupsCreateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersGroupsCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -348,7 +366,7 @@ Other parameters are passed through a pointer to a apiUsersGroupsCreateRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupRequest** | [**GroupRequest**](GroupRequest.md) |  | 
+ **usersGroupsCreateRequest** | [**UsersGroupsCreateRequest**](UsersGroupsCreateRequest.md) |  | 
 
 ### Return type
 
@@ -438,7 +456,7 @@ Name | Type | Description  | Notes
 
 ## UsersGroupsList
 
-> PaginatedGroupList UsersGroupsList(ctx).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).NotificationGroupId(notificationGroupId).NotificationGroupIdN(notificationGroupIdN).Offset(offset).Ordering(ordering).PermissionId(permissionId).PermissionIdN(permissionIdN).Q(q).UserId(userId).UserIdN(userIdN).Execute()
+> PaginatedGroupList UsersGroupsList(ctx).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).NotificationGroupId(notificationGroupId).NotificationGroupIdN(notificationGroupIdN).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerId(ownerId).OwnerIdN(ownerIdN).PermissionId(permissionId).PermissionIdN(permissionIdN).Q(q).UserId(userId).UserIdN(userIdN).Execute()
 
 
 
@@ -495,6 +513,10 @@ func main() {
 	notificationGroupIdN := []int32{int32(123)} // []int32 | Notification group (ID) (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	owner := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerN := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerId := []int32{int32(123)} // []int32 | Owner (ID) (optional)
+	ownerIdN := []int32{int32(123)} // []int32 | Owner (ID) (optional)
 	permissionId := []int32{int32(123)} // []int32 | Permission (ID) (optional)
 	permissionIdN := []int32{int32(123)} // []int32 | Permission (ID) (optional)
 	q := "q_example" // string | Search (optional)
@@ -503,7 +525,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UsersAPI.UsersGroupsList(context.Background()).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).NotificationGroupId(notificationGroupId).NotificationGroupIdN(notificationGroupIdN).Offset(offset).Ordering(ordering).PermissionId(permissionId).PermissionIdN(permissionIdN).Q(q).UserId(userId).UserIdN(userIdN).Execute()
+	resp, r, err := apiClient.UsersAPI.UsersGroupsList(context.Background()).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).NotificationGroupId(notificationGroupId).NotificationGroupIdN(notificationGroupIdN).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerId(ownerId).OwnerIdN(ownerIdN).PermissionId(permissionId).PermissionIdN(permissionIdN).Q(q).UserId(userId).UserIdN(userIdN).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersGroupsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -562,6 +584,10 @@ Name | Type | Description  | Notes
  **notificationGroupIdN** | **[]int32** | Notification group (ID) | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
+ **owner** | **[]string** | Owner (name) | 
+ **ownerN** | **[]string** | Owner (name) | 
+ **ownerId** | **[]int32** | Owner (ID) | 
+ **ownerIdN** | **[]int32** | Owner (ID) | 
  **permissionId** | **[]int32** | Permission (ID) | 
  **permissionIdN** | **[]int32** | Permission (ID) | 
  **q** | **string** | Search | 
@@ -800,6 +826,1394 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## UsersOwnerGroupsBulkDestroy
+
+> UsersOwnerGroupsBulkDestroy(ctx).OwnerGroupRequest(ownerGroupRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
+)
+
+func main() {
+	ownerGroupRequest := []openapiclient.OwnerGroupRequest{*openapiclient.NewOwnerGroupRequest("Name_example")} // []OwnerGroupRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.UsersAPI.UsersOwnerGroupsBulkDestroy(context.Background()).OwnerGroupRequest(ownerGroupRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersOwnerGroupsBulkDestroy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUsersOwnerGroupsBulkDestroyRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ownerGroupRequest** | [**[]OwnerGroupRequest**](OwnerGroupRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UsersOwnerGroupsBulkPartialUpdate
+
+> []OwnerGroup UsersOwnerGroupsBulkPartialUpdate(ctx).OwnerGroupRequest(ownerGroupRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
+)
+
+func main() {
+	ownerGroupRequest := []openapiclient.OwnerGroupRequest{*openapiclient.NewOwnerGroupRequest("Name_example")} // []OwnerGroupRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UsersAPI.UsersOwnerGroupsBulkPartialUpdate(context.Background()).OwnerGroupRequest(ownerGroupRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersOwnerGroupsBulkPartialUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UsersOwnerGroupsBulkPartialUpdate`: []OwnerGroup
+	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersOwnerGroupsBulkPartialUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUsersOwnerGroupsBulkPartialUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ownerGroupRequest** | [**[]OwnerGroupRequest**](OwnerGroupRequest.md) |  | 
+
+### Return type
+
+[**[]OwnerGroup**](OwnerGroup.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UsersOwnerGroupsBulkUpdate
+
+> []OwnerGroup UsersOwnerGroupsBulkUpdate(ctx).OwnerGroupRequest(ownerGroupRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
+)
+
+func main() {
+	ownerGroupRequest := []openapiclient.OwnerGroupRequest{*openapiclient.NewOwnerGroupRequest("Name_example")} // []OwnerGroupRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UsersAPI.UsersOwnerGroupsBulkUpdate(context.Background()).OwnerGroupRequest(ownerGroupRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersOwnerGroupsBulkUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UsersOwnerGroupsBulkUpdate`: []OwnerGroup
+	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersOwnerGroupsBulkUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUsersOwnerGroupsBulkUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ownerGroupRequest** | [**[]OwnerGroupRequest**](OwnerGroupRequest.md) |  | 
+
+### Return type
+
+[**[]OwnerGroup**](OwnerGroup.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UsersOwnerGroupsCreate
+
+> OwnerGroup UsersOwnerGroupsCreate(ctx).UsersOwnerGroupsCreateRequest(usersOwnerGroupsCreateRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
+)
+
+func main() {
+	usersOwnerGroupsCreateRequest := openapiclient.users_owner_groups_create_request{OwnerGroupRequest: openapiclient.NewOwnerGroupRequest("Name_example")} // UsersOwnerGroupsCreateRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UsersAPI.UsersOwnerGroupsCreate(context.Background()).UsersOwnerGroupsCreateRequest(usersOwnerGroupsCreateRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersOwnerGroupsCreate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UsersOwnerGroupsCreate`: OwnerGroup
+	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersOwnerGroupsCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUsersOwnerGroupsCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **usersOwnerGroupsCreateRequest** | [**UsersOwnerGroupsCreateRequest**](UsersOwnerGroupsCreateRequest.md) |  | 
+
+### Return type
+
+[**OwnerGroup**](OwnerGroup.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UsersOwnerGroupsDestroy
+
+> UsersOwnerGroupsDestroy(ctx, id).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this owner group.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.UsersAPI.UsersOwnerGroupsDestroy(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersOwnerGroupsDestroy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this owner group. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUsersOwnerGroupsDestroyRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UsersOwnerGroupsList
+
+> PaginatedOwnerGroupList UsersOwnerGroupsList(ctx).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
+)
+
+func main() {
+	description := []string{"Inner_example"} // []string |  (optional)
+	descriptionEmpty := true // bool |  (optional)
+	descriptionIc := []string{"Inner_example"} // []string |  (optional)
+	descriptionIe := []string{"Inner_example"} // []string |  (optional)
+	descriptionIew := []string{"Inner_example"} // []string |  (optional)
+	descriptionIregex := []string{"Inner_example"} // []string |  (optional)
+	descriptionIsw := []string{"Inner_example"} // []string |  (optional)
+	descriptionN := []string{"Inner_example"} // []string |  (optional)
+	descriptionNic := []string{"Inner_example"} // []string |  (optional)
+	descriptionNie := []string{"Inner_example"} // []string |  (optional)
+	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
+	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
+	descriptionRegex := []string{"Inner_example"} // []string |  (optional)
+	id := []int32{int32(123)} // []int32 |  (optional)
+	idEmpty := true // bool |  (optional)
+	idGt := []int32{int32(123)} // []int32 |  (optional)
+	idGte := []int32{int32(123)} // []int32 |  (optional)
+	idLt := []int32{int32(123)} // []int32 |  (optional)
+	idLte := []int32{int32(123)} // []int32 |  (optional)
+	idN := []int32{int32(123)} // []int32 |  (optional)
+	limit := int32(56) // int32 | Number of results to return per page. (optional)
+	name := []string{"Inner_example"} // []string |  (optional)
+	nameEmpty := true // bool |  (optional)
+	nameIc := []string{"Inner_example"} // []string |  (optional)
+	nameIe := []string{"Inner_example"} // []string |  (optional)
+	nameIew := []string{"Inner_example"} // []string |  (optional)
+	nameIregex := []string{"Inner_example"} // []string |  (optional)
+	nameIsw := []string{"Inner_example"} // []string |  (optional)
+	nameN := []string{"Inner_example"} // []string |  (optional)
+	nameNic := []string{"Inner_example"} // []string |  (optional)
+	nameNie := []string{"Inner_example"} // []string |  (optional)
+	nameNiew := []string{"Inner_example"} // []string |  (optional)
+	nameNisw := []string{"Inner_example"} // []string |  (optional)
+	nameRegex := []string{"Inner_example"} // []string |  (optional)
+	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
+	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	q := "q_example" // string | Search (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UsersAPI.UsersOwnerGroupsList(context.Background()).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersOwnerGroupsList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UsersOwnerGroupsList`: PaginatedOwnerGroupList
+	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersOwnerGroupsList`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUsersOwnerGroupsListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **description** | **[]string** |  | 
+ **descriptionEmpty** | **bool** |  | 
+ **descriptionIc** | **[]string** |  | 
+ **descriptionIe** | **[]string** |  | 
+ **descriptionIew** | **[]string** |  | 
+ **descriptionIregex** | **[]string** |  | 
+ **descriptionIsw** | **[]string** |  | 
+ **descriptionN** | **[]string** |  | 
+ **descriptionNic** | **[]string** |  | 
+ **descriptionNie** | **[]string** |  | 
+ **descriptionNiew** | **[]string** |  | 
+ **descriptionNisw** | **[]string** |  | 
+ **descriptionRegex** | **[]string** |  | 
+ **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
+ **idGt** | **[]int32** |  | 
+ **idGte** | **[]int32** |  | 
+ **idLt** | **[]int32** |  | 
+ **idLte** | **[]int32** |  | 
+ **idN** | **[]int32** |  | 
+ **limit** | **int32** | Number of results to return per page. | 
+ **name** | **[]string** |  | 
+ **nameEmpty** | **bool** |  | 
+ **nameIc** | **[]string** |  | 
+ **nameIe** | **[]string** |  | 
+ **nameIew** | **[]string** |  | 
+ **nameIregex** | **[]string** |  | 
+ **nameIsw** | **[]string** |  | 
+ **nameN** | **[]string** |  | 
+ **nameNic** | **[]string** |  | 
+ **nameNie** | **[]string** |  | 
+ **nameNiew** | **[]string** |  | 
+ **nameNisw** | **[]string** |  | 
+ **nameRegex** | **[]string** |  | 
+ **offset** | **int32** | The initial index from which to return the results. | 
+ **ordering** | **string** | Which field to use when ordering the results. | 
+ **q** | **string** | Search | 
+
+### Return type
+
+[**PaginatedOwnerGroupList**](PaginatedOwnerGroupList.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UsersOwnerGroupsPartialUpdate
+
+> OwnerGroup UsersOwnerGroupsPartialUpdate(ctx, id).PatchedOwnerGroupRequest(patchedOwnerGroupRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this owner group.
+	patchedOwnerGroupRequest := *openapiclient.NewPatchedOwnerGroupRequest() // PatchedOwnerGroupRequest |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UsersAPI.UsersOwnerGroupsPartialUpdate(context.Background(), id).PatchedOwnerGroupRequest(patchedOwnerGroupRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersOwnerGroupsPartialUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UsersOwnerGroupsPartialUpdate`: OwnerGroup
+	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersOwnerGroupsPartialUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this owner group. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUsersOwnerGroupsPartialUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **patchedOwnerGroupRequest** | [**PatchedOwnerGroupRequest**](PatchedOwnerGroupRequest.md) |  | 
+
+### Return type
+
+[**OwnerGroup**](OwnerGroup.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UsersOwnerGroupsRetrieve
+
+> OwnerGroup UsersOwnerGroupsRetrieve(ctx, id).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this owner group.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UsersAPI.UsersOwnerGroupsRetrieve(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersOwnerGroupsRetrieve``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UsersOwnerGroupsRetrieve`: OwnerGroup
+	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersOwnerGroupsRetrieve`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this owner group. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUsersOwnerGroupsRetrieveRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**OwnerGroup**](OwnerGroup.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UsersOwnerGroupsUpdate
+
+> OwnerGroup UsersOwnerGroupsUpdate(ctx, id).OwnerGroupRequest(ownerGroupRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this owner group.
+	ownerGroupRequest := *openapiclient.NewOwnerGroupRequest("Name_example") // OwnerGroupRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UsersAPI.UsersOwnerGroupsUpdate(context.Background(), id).OwnerGroupRequest(ownerGroupRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersOwnerGroupsUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UsersOwnerGroupsUpdate`: OwnerGroup
+	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersOwnerGroupsUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this owner group. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUsersOwnerGroupsUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **ownerGroupRequest** | [**OwnerGroupRequest**](OwnerGroupRequest.md) |  | 
+
+### Return type
+
+[**OwnerGroup**](OwnerGroup.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UsersOwnersBulkDestroy
+
+> UsersOwnersBulkDestroy(ctx).OwnerRequest(ownerRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
+)
+
+func main() {
+	ownerRequest := []openapiclient.OwnerRequest{*openapiclient.NewOwnerRequest("Name_example")} // []OwnerRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.UsersAPI.UsersOwnersBulkDestroy(context.Background()).OwnerRequest(ownerRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersOwnersBulkDestroy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUsersOwnersBulkDestroyRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ownerRequest** | [**[]OwnerRequest**](OwnerRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UsersOwnersBulkPartialUpdate
+
+> []Owner UsersOwnersBulkPartialUpdate(ctx).OwnerRequest(ownerRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
+)
+
+func main() {
+	ownerRequest := []openapiclient.OwnerRequest{*openapiclient.NewOwnerRequest("Name_example")} // []OwnerRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UsersAPI.UsersOwnersBulkPartialUpdate(context.Background()).OwnerRequest(ownerRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersOwnersBulkPartialUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UsersOwnersBulkPartialUpdate`: []Owner
+	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersOwnersBulkPartialUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUsersOwnersBulkPartialUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ownerRequest** | [**[]OwnerRequest**](OwnerRequest.md) |  | 
+
+### Return type
+
+[**[]Owner**](Owner.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UsersOwnersBulkUpdate
+
+> []Owner UsersOwnersBulkUpdate(ctx).OwnerRequest(ownerRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
+)
+
+func main() {
+	ownerRequest := []openapiclient.OwnerRequest{*openapiclient.NewOwnerRequest("Name_example")} // []OwnerRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UsersAPI.UsersOwnersBulkUpdate(context.Background()).OwnerRequest(ownerRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersOwnersBulkUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UsersOwnersBulkUpdate`: []Owner
+	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersOwnersBulkUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUsersOwnersBulkUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ownerRequest** | [**[]OwnerRequest**](OwnerRequest.md) |  | 
+
+### Return type
+
+[**[]Owner**](Owner.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UsersOwnersCreate
+
+> Owner UsersOwnersCreate(ctx).UsersOwnersCreateRequest(usersOwnersCreateRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
+)
+
+func main() {
+	usersOwnersCreateRequest := openapiclient.users_owners_create_request{OwnerRequest: openapiclient.NewOwnerRequest("Name_example")} // UsersOwnersCreateRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UsersAPI.UsersOwnersCreate(context.Background()).UsersOwnersCreateRequest(usersOwnersCreateRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersOwnersCreate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UsersOwnersCreate`: Owner
+	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersOwnersCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUsersOwnersCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **usersOwnersCreateRequest** | [**UsersOwnersCreateRequest**](UsersOwnersCreateRequest.md) |  | 
+
+### Return type
+
+[**Owner**](Owner.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UsersOwnersDestroy
+
+> UsersOwnersDestroy(ctx, id).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this owner.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.UsersAPI.UsersOwnersDestroy(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersOwnersDestroy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this owner. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUsersOwnersDestroyRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UsersOwnersList
+
+> PaginatedOwnerList UsersOwnersList(ctx).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).User(user).UserN(userN).UserGroup(userGroup).UserGroupN(userGroupN).UserGroupId(userGroupId).UserGroupIdN(userGroupIdN).UserId(userId).UserIdN(userIdN).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
+)
+
+func main() {
+	description := []string{"Inner_example"} // []string |  (optional)
+	descriptionEmpty := true // bool |  (optional)
+	descriptionIc := []string{"Inner_example"} // []string |  (optional)
+	descriptionIe := []string{"Inner_example"} // []string |  (optional)
+	descriptionIew := []string{"Inner_example"} // []string |  (optional)
+	descriptionIregex := []string{"Inner_example"} // []string |  (optional)
+	descriptionIsw := []string{"Inner_example"} // []string |  (optional)
+	descriptionN := []string{"Inner_example"} // []string |  (optional)
+	descriptionNic := []string{"Inner_example"} // []string |  (optional)
+	descriptionNie := []string{"Inner_example"} // []string |  (optional)
+	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
+	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
+	descriptionRegex := []string{"Inner_example"} // []string |  (optional)
+	group := []string{"Inner_example"} // []string | Group (name) (optional)
+	groupN := []string{"Inner_example"} // []string | Group (name) (optional)
+	groupId := []*int32{int32(123)} // []*int32 | Group (ID) (optional)
+	groupIdN := []*int32{int32(123)} // []*int32 | Group (ID) (optional)
+	id := []int32{int32(123)} // []int32 |  (optional)
+	idEmpty := true // bool |  (optional)
+	idGt := []int32{int32(123)} // []int32 |  (optional)
+	idGte := []int32{int32(123)} // []int32 |  (optional)
+	idLt := []int32{int32(123)} // []int32 |  (optional)
+	idLte := []int32{int32(123)} // []int32 |  (optional)
+	idN := []int32{int32(123)} // []int32 |  (optional)
+	limit := int32(56) // int32 | Number of results to return per page. (optional)
+	name := []string{"Inner_example"} // []string |  (optional)
+	nameEmpty := true // bool |  (optional)
+	nameIc := []string{"Inner_example"} // []string |  (optional)
+	nameIe := []string{"Inner_example"} // []string |  (optional)
+	nameIew := []string{"Inner_example"} // []string |  (optional)
+	nameIregex := []string{"Inner_example"} // []string |  (optional)
+	nameIsw := []string{"Inner_example"} // []string |  (optional)
+	nameN := []string{"Inner_example"} // []string |  (optional)
+	nameNic := []string{"Inner_example"} // []string |  (optional)
+	nameNie := []string{"Inner_example"} // []string |  (optional)
+	nameNiew := []string{"Inner_example"} // []string |  (optional)
+	nameNisw := []string{"Inner_example"} // []string |  (optional)
+	nameRegex := []string{"Inner_example"} // []string |  (optional)
+	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
+	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	q := "q_example" // string | Search (optional)
+	user := []string{"Inner_example"} // []string | User (username) (optional)
+	userN := []string{"Inner_example"} // []string | User (username) (optional)
+	userGroup := []string{"Inner_example"} // []string | User group (name) (optional)
+	userGroupN := []string{"Inner_example"} // []string | User group (name) (optional)
+	userGroupId := []int32{int32(123)} // []int32 | User group (ID) (optional)
+	userGroupIdN := []int32{int32(123)} // []int32 | User group (ID) (optional)
+	userId := []int32{int32(123)} // []int32 | User (ID) (optional)
+	userIdN := []int32{int32(123)} // []int32 | User (ID) (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UsersAPI.UsersOwnersList(context.Background()).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).User(user).UserN(userN).UserGroup(userGroup).UserGroupN(userGroupN).UserGroupId(userGroupId).UserGroupIdN(userGroupIdN).UserId(userId).UserIdN(userIdN).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersOwnersList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UsersOwnersList`: PaginatedOwnerList
+	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersOwnersList`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUsersOwnersListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **description** | **[]string** |  | 
+ **descriptionEmpty** | **bool** |  | 
+ **descriptionIc** | **[]string** |  | 
+ **descriptionIe** | **[]string** |  | 
+ **descriptionIew** | **[]string** |  | 
+ **descriptionIregex** | **[]string** |  | 
+ **descriptionIsw** | **[]string** |  | 
+ **descriptionN** | **[]string** |  | 
+ **descriptionNic** | **[]string** |  | 
+ **descriptionNie** | **[]string** |  | 
+ **descriptionNiew** | **[]string** |  | 
+ **descriptionNisw** | **[]string** |  | 
+ **descriptionRegex** | **[]string** |  | 
+ **group** | **[]string** | Group (name) | 
+ **groupN** | **[]string** | Group (name) | 
+ **groupId** | **[]int32** | Group (ID) | 
+ **groupIdN** | **[]int32** | Group (ID) | 
+ **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
+ **idGt** | **[]int32** |  | 
+ **idGte** | **[]int32** |  | 
+ **idLt** | **[]int32** |  | 
+ **idLte** | **[]int32** |  | 
+ **idN** | **[]int32** |  | 
+ **limit** | **int32** | Number of results to return per page. | 
+ **name** | **[]string** |  | 
+ **nameEmpty** | **bool** |  | 
+ **nameIc** | **[]string** |  | 
+ **nameIe** | **[]string** |  | 
+ **nameIew** | **[]string** |  | 
+ **nameIregex** | **[]string** |  | 
+ **nameIsw** | **[]string** |  | 
+ **nameN** | **[]string** |  | 
+ **nameNic** | **[]string** |  | 
+ **nameNie** | **[]string** |  | 
+ **nameNiew** | **[]string** |  | 
+ **nameNisw** | **[]string** |  | 
+ **nameRegex** | **[]string** |  | 
+ **offset** | **int32** | The initial index from which to return the results. | 
+ **ordering** | **string** | Which field to use when ordering the results. | 
+ **q** | **string** | Search | 
+ **user** | **[]string** | User (username) | 
+ **userN** | **[]string** | User (username) | 
+ **userGroup** | **[]string** | User group (name) | 
+ **userGroupN** | **[]string** | User group (name) | 
+ **userGroupId** | **[]int32** | User group (ID) | 
+ **userGroupIdN** | **[]int32** | User group (ID) | 
+ **userId** | **[]int32** | User (ID) | 
+ **userIdN** | **[]int32** | User (ID) | 
+
+### Return type
+
+[**PaginatedOwnerList**](PaginatedOwnerList.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UsersOwnersPartialUpdate
+
+> Owner UsersOwnersPartialUpdate(ctx, id).PatchedOwnerRequest(patchedOwnerRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this owner.
+	patchedOwnerRequest := *openapiclient.NewPatchedOwnerRequest() // PatchedOwnerRequest |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UsersAPI.UsersOwnersPartialUpdate(context.Background(), id).PatchedOwnerRequest(patchedOwnerRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersOwnersPartialUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UsersOwnersPartialUpdate`: Owner
+	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersOwnersPartialUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this owner. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUsersOwnersPartialUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **patchedOwnerRequest** | [**PatchedOwnerRequest**](PatchedOwnerRequest.md) |  | 
+
+### Return type
+
+[**Owner**](Owner.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UsersOwnersRetrieve
+
+> Owner UsersOwnersRetrieve(ctx, id).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this owner.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UsersAPI.UsersOwnersRetrieve(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersOwnersRetrieve``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UsersOwnersRetrieve`: Owner
+	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersOwnersRetrieve`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this owner. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUsersOwnersRetrieveRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**Owner**](Owner.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UsersOwnersUpdate
+
+> Owner UsersOwnersUpdate(ctx, id).OwnerRequest(ownerRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this owner.
+	ownerRequest := *openapiclient.NewOwnerRequest("Name_example") // OwnerRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UsersAPI.UsersOwnersUpdate(context.Background(), id).OwnerRequest(ownerRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersOwnersUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UsersOwnersUpdate`: Owner
+	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersOwnersUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this owner. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUsersOwnersUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **ownerRequest** | [**OwnerRequest**](OwnerRequest.md) |  | 
+
+### Return type
+
+[**Owner**](Owner.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## UsersPermissionsBulkDestroy
 
 > UsersPermissionsBulkDestroy(ctx).ObjectPermissionRequest(objectPermissionRequest).Execute()
@@ -998,7 +2412,7 @@ Name | Type | Description  | Notes
 
 ## UsersPermissionsCreate
 
-> ObjectPermission UsersPermissionsCreate(ctx).ObjectPermissionRequest(objectPermissionRequest).Execute()
+> ObjectPermission UsersPermissionsCreate(ctx).UsersPermissionsCreateRequest(usersPermissionsCreateRequest).Execute()
 
 
 
@@ -1017,11 +2431,11 @@ import (
 )
 
 func main() {
-	objectPermissionRequest := *openapiclient.NewObjectPermissionRequest("Name_example", []string{"ObjectTypes_example"}, []string{"Actions_example"}) // ObjectPermissionRequest | 
+	usersPermissionsCreateRequest := openapiclient.users_permissions_create_request{ObjectPermissionRequest: openapiclient.NewObjectPermissionRequest("Name_example", []string{"ObjectTypes_example"}, []string{"Actions_example"})} // UsersPermissionsCreateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UsersAPI.UsersPermissionsCreate(context.Background()).ObjectPermissionRequest(objectPermissionRequest).Execute()
+	resp, r, err := apiClient.UsersAPI.UsersPermissionsCreate(context.Background()).UsersPermissionsCreateRequest(usersPermissionsCreateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersPermissionsCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1042,7 +2456,7 @@ Other parameters are passed through a pointer to a apiUsersPermissionsCreateRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **objectPermissionRequest** | [**ObjectPermissionRequest**](ObjectPermissionRequest.md) |  | 
+ **usersPermissionsCreateRequest** | [**UsersPermissionsCreateRequest**](UsersPermissionsCreateRequest.md) |  | 
 
 ### Return type
 
@@ -1738,7 +3152,7 @@ Name | Type | Description  | Notes
 
 ## UsersTokensCreate
 
-> Token UsersTokensCreate(ctx).TokenRequest(tokenRequest).Execute()
+> Token UsersTokensCreate(ctx).UsersTokensCreateRequest(usersTokensCreateRequest).Execute()
 
 
 
@@ -1757,11 +3171,11 @@ import (
 )
 
 func main() {
-	tokenRequest := *openapiclient.NewTokenRequest(openapiclient.BookmarkRequest_user{BriefUserRequest: openapiclient.NewBriefUserRequest("Username_example")}) // TokenRequest | 
+	usersTokensCreateRequest := openapiclient.users_tokens_create_request{TokenRequest: openapiclient.NewTokenRequest(openapiclient.BookmarkRequest_user{BriefUserRequest: openapiclient.NewBriefUserRequest("Username_example")})} // UsersTokensCreateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UsersAPI.UsersTokensCreate(context.Background()).TokenRequest(tokenRequest).Execute()
+	resp, r, err := apiClient.UsersAPI.UsersTokensCreate(context.Background()).UsersTokensCreateRequest(usersTokensCreateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersTokensCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1782,7 +3196,7 @@ Other parameters are passed through a pointer to a apiUsersTokensCreateRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tokenRequest** | [**TokenRequest**](TokenRequest.md) |  | 
+ **usersTokensCreateRequest** | [**UsersTokensCreateRequest**](UsersTokensCreateRequest.md) |  | 
 
 ### Return type
 
@@ -1872,7 +3286,7 @@ Name | Type | Description  | Notes
 
 ## UsersTokensList
 
-> PaginatedTokenList UsersTokensList(ctx).Created(created).CreatedGte(createdGte).CreatedLte(createdLte).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Expires(expires).ExpiresGte(expiresGte).ExpiresLte(expiresLte).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Key(key).KeyEmpty(keyEmpty).KeyIc(keyIc).KeyIe(keyIe).KeyIew(keyIew).KeyIregex(keyIregex).KeyIsw(keyIsw).KeyN(keyN).KeyNic(keyNic).KeyNie(keyNie).KeyNiew(keyNiew).KeyNisw(keyNisw).KeyRegex(keyRegex).LastUsed(lastUsed).LastUsedEmpty(lastUsedEmpty).LastUsedGt(lastUsedGt).LastUsedGte(lastUsedGte).LastUsedLt(lastUsedLt).LastUsedLte(lastUsedLte).LastUsedN(lastUsedN).Limit(limit).Offset(offset).Ordering(ordering).Q(q).User(user).UserN(userN).UserId(userId).UserIdN(userIdN).WriteEnabled(writeEnabled).Execute()
+> PaginatedTokenList UsersTokensList(ctx).Created(created).CreatedGte(createdGte).CreatedLte(createdLte).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Enabled(enabled).Expires(expires).ExpiresGte(expiresGte).ExpiresLte(expiresLte).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Key(key).KeyEmpty(keyEmpty).KeyIc(keyIc).KeyIe(keyIe).KeyIew(keyIew).KeyIregex(keyIregex).KeyIsw(keyIsw).KeyN(keyN).KeyNic(keyNic).KeyNie(keyNie).KeyNiew(keyNiew).KeyNisw(keyNisw).KeyRegex(keyRegex).LastUsed(lastUsed).LastUsedGte(lastUsedGte).LastUsedLte(lastUsedLte).Limit(limit).Offset(offset).Ordering(ordering).PepperId(pepperId).PepperIdEmpty(pepperIdEmpty).PepperIdGt(pepperIdGt).PepperIdGte(pepperIdGte).PepperIdLt(pepperIdLt).PepperIdLte(pepperIdLte).PepperIdN(pepperIdN).Q(q).User(user).UserN(userN).UserId(userId).UserIdN(userIdN).Version(version).VersionIc(versionIc).VersionIe(versionIe).VersionIew(versionIew).VersionIregex(versionIregex).VersionIsw(versionIsw).VersionN(versionN).VersionNic(versionNic).VersionNie(versionNie).VersionNiew(versionNiew).VersionNisw(versionNisw).VersionRegex(versionRegex).WriteEnabled(writeEnabled).Execute()
 
 
 
@@ -1908,6 +3322,7 @@ func main() {
 	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
 	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
 	descriptionRegex := []string{"Inner_example"} // []string |  (optional)
+	enabled := true // bool |  (optional)
 	expires := time.Now() // time.Time |  (optional)
 	expiresGte := time.Now() // time.Time |  (optional)
 	expiresLte := time.Now() // time.Time |  (optional)
@@ -1931,26 +3346,41 @@ func main() {
 	keyNiew := []string{"Inner_example"} // []string |  (optional)
 	keyNisw := []string{"Inner_example"} // []string |  (optional)
 	keyRegex := []string{"Inner_example"} // []string |  (optional)
-	lastUsed := []time.Time{time.Now()} // []time.Time |  (optional)
-	lastUsedEmpty := true // bool |  (optional)
-	lastUsedGt := []time.Time{time.Now()} // []time.Time |  (optional)
-	lastUsedGte := []time.Time{time.Now()} // []time.Time |  (optional)
-	lastUsedLt := []time.Time{time.Now()} // []time.Time |  (optional)
-	lastUsedLte := []time.Time{time.Now()} // []time.Time |  (optional)
-	lastUsedN := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUsed := time.Now() // time.Time |  (optional)
+	lastUsedGte := time.Now() // time.Time |  (optional)
+	lastUsedLte := time.Now() // time.Time |  (optional)
 	limit := int32(56) // int32 | Number of results to return per page. (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	pepperId := []int32{int32(123)} // []int32 |  (optional)
+	pepperIdEmpty := true // bool |  (optional)
+	pepperIdGt := []int32{int32(123)} // []int32 |  (optional)
+	pepperIdGte := []int32{int32(123)} // []int32 |  (optional)
+	pepperIdLt := []int32{int32(123)} // []int32 |  (optional)
+	pepperIdLte := []int32{int32(123)} // []int32 |  (optional)
+	pepperIdN := []int32{int32(123)} // []int32 |  (optional)
 	q := "q_example" // string | Search (optional)
 	user := []string{"Inner_example"} // []string | User (name) (optional)
 	userN := []string{"Inner_example"} // []string | User (name) (optional)
 	userId := []int32{int32(123)} // []int32 | User (optional)
 	userIdN := []int32{int32(123)} // []int32 | User (optional)
+	version := openapiclient.users_tokens_list_version_parameter(1) // UsersTokensListVersionParameter | * `1` - v1 * `2` - v2 (optional)
+	versionIc := []int32{int32(123)} // []int32 |  (optional)
+	versionIe := []int32{int32(123)} // []int32 |  (optional)
+	versionIew := []int32{int32(123)} // []int32 |  (optional)
+	versionIregex := []int32{int32(123)} // []int32 |  (optional)
+	versionIsw := []int32{int32(123)} // []int32 |  (optional)
+	versionN := openapiclient.users_tokens_list_version_parameter(1) // UsersTokensListVersionParameter | * `1` - v1 * `2` - v2 (optional)
+	versionNic := []int32{int32(123)} // []int32 |  (optional)
+	versionNie := []int32{int32(123)} // []int32 |  (optional)
+	versionNiew := []int32{int32(123)} // []int32 |  (optional)
+	versionNisw := []int32{int32(123)} // []int32 |  (optional)
+	versionRegex := []int32{int32(123)} // []int32 |  (optional)
 	writeEnabled := true // bool |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UsersAPI.UsersTokensList(context.Background()).Created(created).CreatedGte(createdGte).CreatedLte(createdLte).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Expires(expires).ExpiresGte(expiresGte).ExpiresLte(expiresLte).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Key(key).KeyEmpty(keyEmpty).KeyIc(keyIc).KeyIe(keyIe).KeyIew(keyIew).KeyIregex(keyIregex).KeyIsw(keyIsw).KeyN(keyN).KeyNic(keyNic).KeyNie(keyNie).KeyNiew(keyNiew).KeyNisw(keyNisw).KeyRegex(keyRegex).LastUsed(lastUsed).LastUsedEmpty(lastUsedEmpty).LastUsedGt(lastUsedGt).LastUsedGte(lastUsedGte).LastUsedLt(lastUsedLt).LastUsedLte(lastUsedLte).LastUsedN(lastUsedN).Limit(limit).Offset(offset).Ordering(ordering).Q(q).User(user).UserN(userN).UserId(userId).UserIdN(userIdN).WriteEnabled(writeEnabled).Execute()
+	resp, r, err := apiClient.UsersAPI.UsersTokensList(context.Background()).Created(created).CreatedGte(createdGte).CreatedLte(createdLte).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Enabled(enabled).Expires(expires).ExpiresGte(expiresGte).ExpiresLte(expiresLte).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Key(key).KeyEmpty(keyEmpty).KeyIc(keyIc).KeyIe(keyIe).KeyIew(keyIew).KeyIregex(keyIregex).KeyIsw(keyIsw).KeyN(keyN).KeyNic(keyNic).KeyNie(keyNie).KeyNiew(keyNiew).KeyNisw(keyNisw).KeyRegex(keyRegex).LastUsed(lastUsed).LastUsedGte(lastUsedGte).LastUsedLte(lastUsedLte).Limit(limit).Offset(offset).Ordering(ordering).PepperId(pepperId).PepperIdEmpty(pepperIdEmpty).PepperIdGt(pepperIdGt).PepperIdGte(pepperIdGte).PepperIdLt(pepperIdLt).PepperIdLte(pepperIdLte).PepperIdN(pepperIdN).Q(q).User(user).UserN(userN).UserId(userId).UserIdN(userIdN).Version(version).VersionIc(versionIc).VersionIe(versionIe).VersionIew(versionIew).VersionIregex(versionIregex).VersionIsw(versionIsw).VersionN(versionN).VersionNic(versionNic).VersionNie(versionNie).VersionNiew(versionNiew).VersionNisw(versionNisw).VersionRegex(versionRegex).WriteEnabled(writeEnabled).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersTokensList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1987,6 +3417,7 @@ Name | Type | Description  | Notes
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
  **descriptionRegex** | **[]string** |  | 
+ **enabled** | **bool** |  | 
  **expires** | **time.Time** |  | 
  **expiresGte** | **time.Time** |  | 
  **expiresLte** | **time.Time** |  | 
@@ -2010,21 +3441,36 @@ Name | Type | Description  | Notes
  **keyNiew** | **[]string** |  | 
  **keyNisw** | **[]string** |  | 
  **keyRegex** | **[]string** |  | 
- **lastUsed** | [**[]time.Time**](time.Time.md) |  | 
- **lastUsedEmpty** | **bool** |  | 
- **lastUsedGt** | [**[]time.Time**](time.Time.md) |  | 
- **lastUsedGte** | [**[]time.Time**](time.Time.md) |  | 
- **lastUsedLt** | [**[]time.Time**](time.Time.md) |  | 
- **lastUsedLte** | [**[]time.Time**](time.Time.md) |  | 
- **lastUsedN** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUsed** | **time.Time** |  | 
+ **lastUsedGte** | **time.Time** |  | 
+ **lastUsedLte** | **time.Time** |  | 
  **limit** | **int32** | Number of results to return per page. | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
+ **pepperId** | **[]int32** |  | 
+ **pepperIdEmpty** | **bool** |  | 
+ **pepperIdGt** | **[]int32** |  | 
+ **pepperIdGte** | **[]int32** |  | 
+ **pepperIdLt** | **[]int32** |  | 
+ **pepperIdLte** | **[]int32** |  | 
+ **pepperIdN** | **[]int32** |  | 
  **q** | **string** | Search | 
  **user** | **[]string** | User (name) | 
  **userN** | **[]string** | User (name) | 
  **userId** | **[]int32** | User | 
  **userIdN** | **[]int32** | User | 
+ **version** | [**UsersTokensListVersionParameter**](UsersTokensListVersionParameter.md) | * &#x60;1&#x60; - v1 * &#x60;2&#x60; - v2 | 
+ **versionIc** | **[]int32** |  | 
+ **versionIe** | **[]int32** |  | 
+ **versionIew** | **[]int32** |  | 
+ **versionIregex** | **[]int32** |  | 
+ **versionIsw** | **[]int32** |  | 
+ **versionN** | [**UsersTokensListVersionParameter**](UsersTokensListVersionParameter.md) | * &#x60;1&#x60; - v1 * &#x60;2&#x60; - v2 | 
+ **versionNic** | **[]int32** |  | 
+ **versionNie** | **[]int32** |  | 
+ **versionNiew** | **[]int32** |  | 
+ **versionNisw** | **[]int32** |  | 
+ **versionRegex** | **[]int32** |  | 
  **writeEnabled** | **bool** |  | 
 
 ### Return type
@@ -2523,7 +3969,7 @@ Name | Type | Description  | Notes
 
 ## UsersUsersCreate
 
-> User UsersUsersCreate(ctx).UserRequest(userRequest).Execute()
+> User UsersUsersCreate(ctx).UsersUsersCreateRequest(usersUsersCreateRequest).Execute()
 
 
 
@@ -2542,11 +3988,11 @@ import (
 )
 
 func main() {
-	userRequest := *openapiclient.NewUserRequest("Username_example", "Password_example") // UserRequest | 
+	usersUsersCreateRequest := openapiclient.users_users_create_request{UserRequest: openapiclient.NewUserRequest("Username_example", "Password_example")} // UsersUsersCreateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UsersAPI.UsersUsersCreate(context.Background()).UserRequest(userRequest).Execute()
+	resp, r, err := apiClient.UsersAPI.UsersUsersCreate(context.Background()).UsersUsersCreateRequest(usersUsersCreateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersUsersCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2567,7 +4013,7 @@ Other parameters are passed through a pointer to a apiUsersUsersCreateRequest st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userRequest** | [**UserRequest**](UserRequest.md) |  | 
+ **usersUsersCreateRequest** | [**UsersUsersCreateRequest**](UsersUsersCreateRequest.md) |  | 
 
 ### Return type
 
@@ -2657,7 +4103,7 @@ Name | Type | Description  | Notes
 
 ## UsersUsersList
 
-> PaginatedUserList UsersUsersList(ctx).DateJoined(dateJoined).DateJoinedEmpty(dateJoinedEmpty).DateJoinedGt(dateJoinedGt).DateJoinedGte(dateJoinedGte).DateJoinedLt(dateJoinedLt).DateJoinedLte(dateJoinedLte).DateJoinedN(dateJoinedN).Email(email).EmailEmpty(emailEmpty).EmailIc(emailIc).EmailIe(emailIe).EmailIew(emailIew).EmailIregex(emailIregex).EmailIsw(emailIsw).EmailN(emailN).EmailNic(emailNic).EmailNie(emailNie).EmailNiew(emailNiew).EmailNisw(emailNisw).EmailRegex(emailRegex).FirstName(firstName).FirstNameEmpty(firstNameEmpty).FirstNameIc(firstNameIc).FirstNameIe(firstNameIe).FirstNameIew(firstNameIew).FirstNameIregex(firstNameIregex).FirstNameIsw(firstNameIsw).FirstNameN(firstNameN).FirstNameNic(firstNameNic).FirstNameNie(firstNameNie).FirstNameNiew(firstNameNiew).FirstNameNisw(firstNameNisw).FirstNameRegex(firstNameRegex).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsActive(isActive).IsStaff(isStaff).IsSuperuser(isSuperuser).LastLogin(lastLogin).LastLoginEmpty(lastLoginEmpty).LastLoginGt(lastLoginGt).LastLoginGte(lastLoginGte).LastLoginLt(lastLoginLt).LastLoginLte(lastLoginLte).LastLoginN(lastLoginN).LastName(lastName).LastNameEmpty(lastNameEmpty).LastNameIc(lastNameIc).LastNameIe(lastNameIe).LastNameIew(lastNameIew).LastNameIregex(lastNameIregex).LastNameIsw(lastNameIsw).LastNameN(lastNameN).LastNameNic(lastNameNic).LastNameNie(lastNameNie).LastNameNiew(lastNameNiew).LastNameNisw(lastNameNisw).LastNameRegex(lastNameRegex).Limit(limit).NotificationGroupId(notificationGroupId).NotificationGroupIdN(notificationGroupIdN).Offset(offset).Ordering(ordering).PermissionId(permissionId).PermissionIdN(permissionIdN).Q(q).Username(username).UsernameEmpty(usernameEmpty).UsernameIc(usernameIc).UsernameIe(usernameIe).UsernameIew(usernameIew).UsernameIregex(usernameIregex).UsernameIsw(usernameIsw).UsernameN(usernameN).UsernameNic(usernameNic).UsernameNie(usernameNie).UsernameNiew(usernameNiew).UsernameNisw(usernameNisw).UsernameRegex(usernameRegex).Execute()
+> PaginatedUserList UsersUsersList(ctx).DateJoined(dateJoined).DateJoinedEmpty(dateJoinedEmpty).DateJoinedGt(dateJoinedGt).DateJoinedGte(dateJoinedGte).DateJoinedLt(dateJoinedLt).DateJoinedLte(dateJoinedLte).DateJoinedN(dateJoinedN).Email(email).EmailEmpty(emailEmpty).EmailIc(emailIc).EmailIe(emailIe).EmailIew(emailIew).EmailIregex(emailIregex).EmailIsw(emailIsw).EmailN(emailN).EmailNic(emailNic).EmailNie(emailNie).EmailNiew(emailNiew).EmailNisw(emailNisw).EmailRegex(emailRegex).FirstName(firstName).FirstNameEmpty(firstNameEmpty).FirstNameIc(firstNameIc).FirstNameIe(firstNameIe).FirstNameIew(firstNameIew).FirstNameIregex(firstNameIregex).FirstNameIsw(firstNameIsw).FirstNameN(firstNameN).FirstNameNic(firstNameNic).FirstNameNie(firstNameNie).FirstNameNiew(firstNameNiew).FirstNameNisw(firstNameNisw).FirstNameRegex(firstNameRegex).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsActive(isActive).IsSuperuser(isSuperuser).LastLogin(lastLogin).LastLoginEmpty(lastLoginEmpty).LastLoginGt(lastLoginGt).LastLoginGte(lastLoginGte).LastLoginLt(lastLoginLt).LastLoginLte(lastLoginLte).LastLoginN(lastLoginN).LastName(lastName).LastNameEmpty(lastNameEmpty).LastNameIc(lastNameIc).LastNameIe(lastNameIe).LastNameIew(lastNameIew).LastNameIregex(lastNameIregex).LastNameIsw(lastNameIsw).LastNameN(lastNameN).LastNameNic(lastNameNic).LastNameNie(lastNameNie).LastNameNiew(lastNameNiew).LastNameNisw(lastNameNisw).LastNameRegex(lastNameRegex).Limit(limit).NotificationGroupId(notificationGroupId).NotificationGroupIdN(notificationGroupIdN).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerId(ownerId).OwnerIdN(ownerIdN).PermissionId(permissionId).PermissionIdN(permissionIdN).Q(q).Username(username).UsernameEmpty(usernameEmpty).UsernameIc(usernameIc).UsernameIe(usernameIe).UsernameIew(usernameIew).UsernameIregex(usernameIregex).UsernameIsw(usernameIsw).UsernameN(usernameN).UsernameNic(usernameNic).UsernameNie(usernameNie).UsernameNiew(usernameNiew).UsernameNisw(usernameNisw).UsernameRegex(usernameRegex).Execute()
 
 
 
@@ -2722,7 +4168,6 @@ func main() {
 	idLte := []int32{int32(123)} // []int32 |  (optional)
 	idN := []int32{int32(123)} // []int32 |  (optional)
 	isActive := true // bool |  (optional)
-	isStaff := true // bool |  (optional)
 	isSuperuser := true // bool |  (optional)
 	lastLogin := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastLoginEmpty := true // bool |  (optional)
@@ -2749,6 +4194,10 @@ func main() {
 	notificationGroupIdN := []int32{int32(123)} // []int32 | Notification group (ID) (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	owner := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerN := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerId := []int32{int32(123)} // []int32 | Owner (ID) (optional)
+	ownerIdN := []int32{int32(123)} // []int32 | Owner (ID) (optional)
 	permissionId := []int32{int32(123)} // []int32 | Permission (ID) (optional)
 	permissionIdN := []int32{int32(123)} // []int32 | Permission (ID) (optional)
 	q := "q_example" // string | Search (optional)
@@ -2768,7 +4217,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UsersAPI.UsersUsersList(context.Background()).DateJoined(dateJoined).DateJoinedEmpty(dateJoinedEmpty).DateJoinedGt(dateJoinedGt).DateJoinedGte(dateJoinedGte).DateJoinedLt(dateJoinedLt).DateJoinedLte(dateJoinedLte).DateJoinedN(dateJoinedN).Email(email).EmailEmpty(emailEmpty).EmailIc(emailIc).EmailIe(emailIe).EmailIew(emailIew).EmailIregex(emailIregex).EmailIsw(emailIsw).EmailN(emailN).EmailNic(emailNic).EmailNie(emailNie).EmailNiew(emailNiew).EmailNisw(emailNisw).EmailRegex(emailRegex).FirstName(firstName).FirstNameEmpty(firstNameEmpty).FirstNameIc(firstNameIc).FirstNameIe(firstNameIe).FirstNameIew(firstNameIew).FirstNameIregex(firstNameIregex).FirstNameIsw(firstNameIsw).FirstNameN(firstNameN).FirstNameNic(firstNameNic).FirstNameNie(firstNameNie).FirstNameNiew(firstNameNiew).FirstNameNisw(firstNameNisw).FirstNameRegex(firstNameRegex).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsActive(isActive).IsStaff(isStaff).IsSuperuser(isSuperuser).LastLogin(lastLogin).LastLoginEmpty(lastLoginEmpty).LastLoginGt(lastLoginGt).LastLoginGte(lastLoginGte).LastLoginLt(lastLoginLt).LastLoginLte(lastLoginLte).LastLoginN(lastLoginN).LastName(lastName).LastNameEmpty(lastNameEmpty).LastNameIc(lastNameIc).LastNameIe(lastNameIe).LastNameIew(lastNameIew).LastNameIregex(lastNameIregex).LastNameIsw(lastNameIsw).LastNameN(lastNameN).LastNameNic(lastNameNic).LastNameNie(lastNameNie).LastNameNiew(lastNameNiew).LastNameNisw(lastNameNisw).LastNameRegex(lastNameRegex).Limit(limit).NotificationGroupId(notificationGroupId).NotificationGroupIdN(notificationGroupIdN).Offset(offset).Ordering(ordering).PermissionId(permissionId).PermissionIdN(permissionIdN).Q(q).Username(username).UsernameEmpty(usernameEmpty).UsernameIc(usernameIc).UsernameIe(usernameIe).UsernameIew(usernameIew).UsernameIregex(usernameIregex).UsernameIsw(usernameIsw).UsernameN(usernameN).UsernameNic(usernameNic).UsernameNie(usernameNie).UsernameNiew(usernameNiew).UsernameNisw(usernameNisw).UsernameRegex(usernameRegex).Execute()
+	resp, r, err := apiClient.UsersAPI.UsersUsersList(context.Background()).DateJoined(dateJoined).DateJoinedEmpty(dateJoinedEmpty).DateJoinedGt(dateJoinedGt).DateJoinedGte(dateJoinedGte).DateJoinedLt(dateJoinedLt).DateJoinedLte(dateJoinedLte).DateJoinedN(dateJoinedN).Email(email).EmailEmpty(emailEmpty).EmailIc(emailIc).EmailIe(emailIe).EmailIew(emailIew).EmailIregex(emailIregex).EmailIsw(emailIsw).EmailN(emailN).EmailNic(emailNic).EmailNie(emailNie).EmailNiew(emailNiew).EmailNisw(emailNisw).EmailRegex(emailRegex).FirstName(firstName).FirstNameEmpty(firstNameEmpty).FirstNameIc(firstNameIc).FirstNameIe(firstNameIe).FirstNameIew(firstNameIew).FirstNameIregex(firstNameIregex).FirstNameIsw(firstNameIsw).FirstNameN(firstNameN).FirstNameNic(firstNameNic).FirstNameNie(firstNameNie).FirstNameNiew(firstNameNiew).FirstNameNisw(firstNameNisw).FirstNameRegex(firstNameRegex).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsActive(isActive).IsSuperuser(isSuperuser).LastLogin(lastLogin).LastLoginEmpty(lastLoginEmpty).LastLoginGt(lastLoginGt).LastLoginGte(lastLoginGte).LastLoginLt(lastLoginLt).LastLoginLte(lastLoginLte).LastLoginN(lastLoginN).LastName(lastName).LastNameEmpty(lastNameEmpty).LastNameIc(lastNameIc).LastNameIe(lastNameIe).LastNameIew(lastNameIew).LastNameIregex(lastNameIregex).LastNameIsw(lastNameIsw).LastNameN(lastNameN).LastNameNic(lastNameNic).LastNameNie(lastNameNie).LastNameNiew(lastNameNiew).LastNameNisw(lastNameNisw).LastNameRegex(lastNameRegex).Limit(limit).NotificationGroupId(notificationGroupId).NotificationGroupIdN(notificationGroupIdN).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerId(ownerId).OwnerIdN(ownerIdN).PermissionId(permissionId).PermissionIdN(permissionIdN).Q(q).Username(username).UsernameEmpty(usernameEmpty).UsernameIc(usernameIc).UsernameIe(usernameIe).UsernameIew(usernameIew).UsernameIregex(usernameIregex).UsernameIsw(usernameIsw).UsernameN(usernameN).UsernameNic(usernameNic).UsernameNie(usernameNie).UsernameNiew(usernameNiew).UsernameNisw(usernameNisw).UsernameRegex(usernameRegex).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersUsersList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2834,7 +4283,6 @@ Name | Type | Description  | Notes
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **isActive** | **bool** |  | 
- **isStaff** | **bool** |  | 
  **isSuperuser** | **bool** |  | 
  **lastLogin** | [**[]time.Time**](time.Time.md) |  | 
  **lastLoginEmpty** | **bool** |  | 
@@ -2861,6 +4309,10 @@ Name | Type | Description  | Notes
  **notificationGroupIdN** | **[]int32** | Notification group (ID) | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
+ **owner** | **[]string** | Owner (name) | 
+ **ownerN** | **[]string** | Owner (name) | 
+ **ownerId** | **[]int32** | Owner (ID) | 
+ **ownerIdN** | **[]int32** | Owner (ID) | 
  **permissionId** | **[]int32** | Permission (ID) | 
  **permissionIdN** | **[]int32** | Permission (ID) | 
  **q** | **string** | Search | 

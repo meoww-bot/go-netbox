@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **Tenant** | Pointer to [**NullableBriefTenant**](BriefTenant.md) |  | [optional] 
 **EnforceUnique** | Pointer to **bool** | Prevent duplicate prefixes/IP addresses within this VRF | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
+**Owner** | Pointer to [**NullableBriefOwner**](BriefOwner.md) |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **ImportTargets** | Pointer to [**[]RouteTarget**](RouteTarget.md) |  | [optional] 
 **ExportTargets** | Pointer to [**[]RouteTarget**](RouteTarget.md) |  | [optional] 
@@ -267,6 +268,41 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### GetOwner
+
+`func (o *VRF) GetOwner() BriefOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *VRF) GetOwnerOk() (*BriefOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *VRF) SetOwner(v BriefOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *VRF) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *VRF) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *VRF) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetComments
 
 `func (o *VRF) GetComments() string`

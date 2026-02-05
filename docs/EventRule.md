@@ -16,9 +16,10 @@ Name | Type | Description | Notes
 **ActionType** | [**EventRuleActionType**](EventRuleActionType.md) |  | 
 **ActionObjectType** | **string** |  | 
 **ActionObjectId** | Pointer to **NullableInt64** |  | [optional] 
-**ActionObject** | **map[string]interface{}** |  | [readonly] 
+**ActionObject** | Pointer to **interface{}** |  | [optional] [readonly] 
 **Description** | Pointer to **string** |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
+**Owner** | Pointer to [**NullableBriefOwner**](BriefOwner.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
@@ -27,7 +28,7 @@ Name | Type | Description | Notes
 
 ### NewEventRule
 
-`func NewEventRule(id int32, url string, display string, objectTypes []string, name string, eventTypes []EventRuleEventTypesInner, actionType EventRuleActionType, actionObjectType string, actionObject map[string]interface{}, ) *EventRule`
+`func NewEventRule(id int32, url string, display string, objectTypes []string, name string, eventTypes []EventRuleEventTypesInner, actionType EventRuleActionType, actionObjectType string, ) *EventRule`
 
 NewEventRule instantiates a new EventRule object
 This constructor will assign default values to properties that have it defined,
@@ -324,24 +325,39 @@ HasActionObjectId returns a boolean if a field has been set.
 UnsetActionObjectId ensures that no value is present for ActionObjectId, not even an explicit nil
 ### GetActionObject
 
-`func (o *EventRule) GetActionObject() map[string]interface{}`
+`func (o *EventRule) GetActionObject() interface{}`
 
 GetActionObject returns the ActionObject field if non-nil, zero value otherwise.
 
 ### GetActionObjectOk
 
-`func (o *EventRule) GetActionObjectOk() (*map[string]interface{}, bool)`
+`func (o *EventRule) GetActionObjectOk() (*interface{}, bool)`
 
 GetActionObjectOk returns a tuple with the ActionObject field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetActionObject
 
-`func (o *EventRule) SetActionObject(v map[string]interface{})`
+`func (o *EventRule) SetActionObject(v interface{})`
 
 SetActionObject sets ActionObject field to given value.
 
+### HasActionObject
 
+`func (o *EventRule) HasActionObject() bool`
+
+HasActionObject returns a boolean if a field has been set.
+
+### SetActionObjectNil
+
+`func (o *EventRule) SetActionObjectNil(b bool)`
+
+ SetActionObjectNil sets the value for ActionObject to be an explicit nil
+
+### UnsetActionObject
+`func (o *EventRule) UnsetActionObject()`
+
+UnsetActionObject ensures that no value is present for ActionObject, not even an explicit nil
 ### GetDescription
 
 `func (o *EventRule) GetDescription() string`
@@ -392,6 +408,41 @@ SetCustomFields sets CustomFields field to given value.
 
 HasCustomFields returns a boolean if a field has been set.
 
+### GetOwner
+
+`func (o *EventRule) GetOwner() BriefOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *EventRule) GetOwnerOk() (*BriefOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *EventRule) SetOwner(v BriefOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *EventRule) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *EventRule) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *EventRule) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetTags
 
 `func (o *EventRule) GetTags() []NestedTag`

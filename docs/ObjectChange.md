@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **ChangedObjectType** | **string** |  | [readonly] 
 **ChangedObjectId** | **int64** |  | 
 **ChangedObject** | Pointer to **interface{}** |  | [optional] [readonly] 
+**ObjectRepr** | **string** |  | [readonly] 
 **Message** | **string** |  | [readonly] 
 **PrechangeData** | Pointer to **interface{}** |  | [optional] [readonly] 
 **PostchangeData** | Pointer to **interface{}** |  | [optional] [readonly] 
@@ -24,7 +25,7 @@ Name | Type | Description | Notes
 
 ### NewObjectChange
 
-`func NewObjectChange(id int32, url string, display string, time time.Time, user BriefUser, userName string, requestId string, action ObjectChangeAction, changedObjectType string, changedObjectId int64, message string, ) *ObjectChange`
+`func NewObjectChange(id int32, url string, display string, time time.Time, user BriefUser, userName string, requestId string, action ObjectChangeAction, changedObjectType string, changedObjectId int64, objectRepr string, message string, ) *ObjectChange`
 
 NewObjectChange instantiates a new ObjectChange object
 This constructor will assign default values to properties that have it defined,
@@ -299,6 +300,26 @@ HasChangedObject returns a boolean if a field has been set.
 `func (o *ObjectChange) UnsetChangedObject()`
 
 UnsetChangedObject ensures that no value is present for ChangedObject, not even an explicit nil
+### GetObjectRepr
+
+`func (o *ObjectChange) GetObjectRepr() string`
+
+GetObjectRepr returns the ObjectRepr field if non-nil, zero value otherwise.
+
+### GetObjectReprOk
+
+`func (o *ObjectChange) GetObjectReprOk() (*string, bool)`
+
+GetObjectReprOk returns a tuple with the ObjectRepr field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetObjectRepr
+
+`func (o *ObjectChange) SetObjectRepr(v string)`
+
+SetObjectRepr sets ObjectRepr field to given value.
+
+
 ### GetMessage
 
 `func (o *ObjectChange) GetMessage() string`

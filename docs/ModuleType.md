@@ -17,17 +17,19 @@ Name | Type | Description | Notes
 **WeightUnit** | Pointer to [**NullableDeviceTypeWeightUnit**](DeviceTypeWeightUnit.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Attributes** | Pointer to **interface{}** |  | [optional] 
+**Owner** | Pointer to [**NullableBriefOwner**](BriefOwner.md) |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
+**ModuleCount** | **int32** |  | [readonly] 
 
 ## Methods
 
 ### NewModuleType
 
-`func NewModuleType(id int32, url string, display string, manufacturer BriefManufacturer, model string, ) *ModuleType`
+`func NewModuleType(id int32, url string, display string, manufacturer BriefManufacturer, model string, moduleCount int32, ) *ModuleType`
 
 NewModuleType instantiates a new ModuleType object
 This constructor will assign default values to properties that have it defined,
@@ -392,6 +394,41 @@ HasAttributes returns a boolean if a field has been set.
 `func (o *ModuleType) UnsetAttributes()`
 
 UnsetAttributes ensures that no value is present for Attributes, not even an explicit nil
+### GetOwner
+
+`func (o *ModuleType) GetOwner() BriefOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *ModuleType) GetOwnerOk() (*BriefOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *ModuleType) SetOwner(v BriefOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *ModuleType) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *ModuleType) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *ModuleType) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetComments
 
 `func (o *ModuleType) GetComments() string`
@@ -537,6 +574,26 @@ HasLastUpdated returns a boolean if a field has been set.
 `func (o *ModuleType) UnsetLastUpdated()`
 
 UnsetLastUpdated ensures that no value is present for LastUpdated, not even an explicit nil
+### GetModuleCount
+
+`func (o *ModuleType) GetModuleCount() int32`
+
+GetModuleCount returns the ModuleCount field if non-nil, zero value otherwise.
+
+### GetModuleCountOk
+
+`func (o *ModuleType) GetModuleCountOk() (*int32, bool)`
+
+GetModuleCountOk returns a tuple with the ModuleCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetModuleCount
+
+`func (o *ModuleType) SetModuleCount(v int32)`
+
+SetModuleCount sets ModuleCount field to given value.
+
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

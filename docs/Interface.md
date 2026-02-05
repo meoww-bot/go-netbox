@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Parent** | Pointer to [**NullableNestedInterface**](NestedInterface.md) |  | [optional] 
 **Bridge** | Pointer to [**NullableNestedInterface**](NestedInterface.md) |  | [optional] 
+**BridgeInterfaces** | [**[]NestedInterface**](NestedInterface.md) |  | [readonly] 
 **Lag** | Pointer to [**NullableNestedInterface**](NestedInterface.md) |  | [optional] 
 **Mtu** | Pointer to **NullableInt32** |  | [optional] 
 **MacAddress** | Pointer to **NullableString** |  | [optional] [readonly] 
@@ -51,6 +52,7 @@ Name | Type | Description | Notes
 **ConnectedEndpoints** | Pointer to **[]interface{}** |  | [optional] [readonly] 
 **ConnectedEndpointsType** | Pointer to **NullableString** |  | [optional] [readonly] 
 **ConnectedEndpointsReachable** | **bool** |  | [readonly] 
+**Owner** | Pointer to [**NullableBriefOwner**](BriefOwner.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
@@ -63,7 +65,7 @@ Name | Type | Description | Notes
 
 ### NewInterface
 
-`func NewInterface(id int32, url string, display string, device BriefDevice, name string, type_ InterfaceType, linkPeers []interface{}, connectedEndpointsReachable bool, countIpaddresses int32, countFhrpGroups int32, occupied bool, ) *Interface`
+`func NewInterface(id int32, url string, display string, device BriefDevice, name string, type_ InterfaceType, bridgeInterfaces []NestedInterface, linkPeers []interface{}, connectedEndpointsReachable bool, countIpaddresses int32, countFhrpGroups int32, occupied bool, ) *Interface`
 
 NewInterface instantiates a new Interface object
 This constructor will assign default values to properties that have it defined,
@@ -403,6 +405,26 @@ HasBridge returns a boolean if a field has been set.
 `func (o *Interface) UnsetBridge()`
 
 UnsetBridge ensures that no value is present for Bridge, not even an explicit nil
+### GetBridgeInterfaces
+
+`func (o *Interface) GetBridgeInterfaces() []NestedInterface`
+
+GetBridgeInterfaces returns the BridgeInterfaces field if non-nil, zero value otherwise.
+
+### GetBridgeInterfacesOk
+
+`func (o *Interface) GetBridgeInterfacesOk() (*[]NestedInterface, bool)`
+
+GetBridgeInterfacesOk returns a tuple with the BridgeInterfaces field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBridgeInterfaces
+
+`func (o *Interface) SetBridgeInterfaces(v []NestedInterface)`
+
+SetBridgeInterfaces sets BridgeInterfaces field to given value.
+
+
 ### GetLag
 
 `func (o *Interface) GetLag() NestedInterface`
@@ -1453,6 +1475,41 @@ and a boolean to check if the value has been set.
 SetConnectedEndpointsReachable sets ConnectedEndpointsReachable field to given value.
 
 
+### GetOwner
+
+`func (o *Interface) GetOwner() BriefOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *Interface) GetOwnerOk() (*BriefOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *Interface) SetOwner(v BriefOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *Interface) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *Interface) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *Interface) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetTags
 
 `func (o *Interface) GetTags() []NestedTag`

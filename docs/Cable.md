@@ -12,12 +12,14 @@ Name | Type | Description | Notes
 **ATerminations** | Pointer to [**[]GenericObject**](GenericObject.md) |  | [optional] 
 **BTerminations** | Pointer to [**[]GenericObject**](GenericObject.md) |  | [optional] 
 **Status** | Pointer to [**CableStatus**](CableStatus.md) |  | [optional] 
+**Profile** | Pointer to [**CableProfile**](CableProfile.md) |  | [optional] 
 **Tenant** | Pointer to [**NullableBriefTenant**](BriefTenant.md) |  | [optional] 
 **Label** | Pointer to **string** |  | [optional] 
 **Color** | Pointer to **string** |  | [optional] 
 **Length** | Pointer to **NullableFloat64** |  | [optional] 
 **LengthUnit** | Pointer to [**NullableCableLengthUnit**](CableLengthUnit.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
+**Owner** | Pointer to [**NullableBriefOwner**](BriefOwner.md) |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -238,6 +240,31 @@ SetStatus sets Status field to given value.
 
 HasStatus returns a boolean if a field has been set.
 
+### GetProfile
+
+`func (o *Cable) GetProfile() CableProfile`
+
+GetProfile returns the Profile field if non-nil, zero value otherwise.
+
+### GetProfileOk
+
+`func (o *Cable) GetProfileOk() (*CableProfile, bool)`
+
+GetProfileOk returns a tuple with the Profile field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProfile
+
+`func (o *Cable) SetProfile(v CableProfile)`
+
+SetProfile sets Profile field to given value.
+
+### HasProfile
+
+`func (o *Cable) HasProfile() bool`
+
+HasProfile returns a boolean if a field has been set.
+
 ### GetTenant
 
 `func (o *Cable) GetTenant() BriefTenant`
@@ -418,6 +445,41 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### GetOwner
+
+`func (o *Cable) GetOwner() BriefOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *Cable) GetOwnerOk() (*BriefOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *Cable) SetOwner(v BriefOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *Cable) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *Cable) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *Cable) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetComments
 
 `func (o *Cable) GetComments() string`

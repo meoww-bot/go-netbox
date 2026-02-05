@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **InstalledDevice** | Pointer to [**NullableBriefDevice**](BriefDevice.md) |  | [optional] 
+**Owner** | Pointer to [**NullableBriefOwner**](BriefOwner.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
@@ -247,6 +248,41 @@ HasInstalledDevice returns a boolean if a field has been set.
 `func (o *DeviceBay) UnsetInstalledDevice()`
 
 UnsetInstalledDevice ensures that no value is present for InstalledDevice, not even an explicit nil
+### GetOwner
+
+`func (o *DeviceBay) GetOwner() BriefOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *DeviceBay) GetOwnerOk() (*BriefOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *DeviceBay) SetOwner(v BriefOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *DeviceBay) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *DeviceBay) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *DeviceBay) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetTags
 
 `func (o *DeviceBay) GetTags() []NestedTag`

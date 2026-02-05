@@ -5,6 +5,8 @@
 
 * `INACTIVE` (value: `"inactive"`)
 
+* `NULL` (value: `"null"`)
+
 * `PRIMARY` (value: `"primary"`)
 
 * `SECONDARY` (value: `"secondary"`)

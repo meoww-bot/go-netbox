@@ -11,6 +11,8 @@
 
 * `MIXED` (value: `"mixed"`)
 
+* `NULL` (value: `"null"`)
+
 * `PASSIVE` (value: `"passive"`)
 
 * `REAR_TO_FRONT` (value: `"rear-to-front"`)

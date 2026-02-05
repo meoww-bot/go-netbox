@@ -27,6 +27,24 @@
 
 * `COAXIAL` (value: `"coaxial"`)
 
+* `RG_6` (value: `"rg-6"`)
+
+* `RG_8` (value: `"rg-8"`)
+
+* `RG_11` (value: `"rg-11"`)
+
+* `RG_59` (value: `"rg-59"`)
+
+* `RG_62` (value: `"rg-62"`)
+
+* `RG_213` (value: `"rg-213"`)
+
+* `LMR_100` (value: `"lmr-100"`)
+
+* `LMR_200` (value: `"lmr-200"`)
+
+* `LMR_400` (value: `"lmr-400"`)
+
 * `MMF` (value: `"mmf"`)
 
 * `MMF_OM1` (value: `"mmf-om1"`)

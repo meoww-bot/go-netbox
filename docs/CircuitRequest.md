@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **Distance** | Pointer to **NullableFloat64** |  | [optional] 
 **DistanceUnit** | Pointer to [**NullableCircuitRequestDistanceUnit**](CircuitRequestDistanceUnit.md) |  | [optional] 
+**Owner** | Pointer to [**NullableASNRangeRequestOwner**](ASNRangeRequestOwner.md) |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -395,6 +396,41 @@ HasDistanceUnit returns a boolean if a field has been set.
 `func (o *CircuitRequest) UnsetDistanceUnit()`
 
 UnsetDistanceUnit ensures that no value is present for DistanceUnit, not even an explicit nil
+### GetOwner
+
+`func (o *CircuitRequest) GetOwner() ASNRangeRequestOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *CircuitRequest) GetOwnerOk() (*ASNRangeRequestOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *CircuitRequest) SetOwner(v ASNRangeRequestOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *CircuitRequest) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *CircuitRequest) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *CircuitRequest) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetComments
 
 `func (o *CircuitRequest) GetComments() string`

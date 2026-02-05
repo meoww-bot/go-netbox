@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **FeedLeg** | Pointer to [**NullablePowerOutletRequestFeedLeg**](PowerOutletRequestFeedLeg.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **MarkConnected** | Pointer to **bool** | Treat as if a cable is connected | [optional] 
+**Owner** | Pointer to [**NullableASNRangeRequestOwner**](ASNRangeRequestOwner.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 
@@ -342,6 +343,41 @@ SetMarkConnected sets MarkConnected field to given value.
 
 HasMarkConnected returns a boolean if a field has been set.
 
+### GetOwner
+
+`func (o *PowerOutletRequest) GetOwner() ASNRangeRequestOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *PowerOutletRequest) GetOwnerOk() (*ASNRangeRequestOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *PowerOutletRequest) SetOwner(v ASNRangeRequestOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *PowerOutletRequest) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *PowerOutletRequest) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *PowerOutletRequest) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetTags
 
 `func (o *PowerOutletRequest) GetTags() []NestedTagRequest`

@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **MarkConnected** | Pointer to **bool** | Treat as if a cable is connected | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Tenant** | Pointer to [**NullableASNRangeRequestTenant**](ASNRangeRequestTenant.md) |  | [optional] 
+**Owner** | Pointer to [**NullableASNRangeRequestOwner**](ASNRangeRequestOwner.md) |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -375,6 +376,41 @@ HasTenant returns a boolean if a field has been set.
 `func (o *WritablePowerFeedRequest) UnsetTenant()`
 
 UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
+### GetOwner
+
+`func (o *WritablePowerFeedRequest) GetOwner() ASNRangeRequestOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *WritablePowerFeedRequest) GetOwnerOk() (*ASNRangeRequestOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *WritablePowerFeedRequest) SetOwner(v ASNRangeRequestOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *WritablePowerFeedRequest) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *WritablePowerFeedRequest) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *WritablePowerFeedRequest) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetComments
 
 `func (o *WritablePowerFeedRequest) GetComments() string`

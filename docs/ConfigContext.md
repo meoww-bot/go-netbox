@@ -25,10 +25,11 @@ Name | Type | Description | Notes
 **Clusters** | Pointer to [**[]Cluster**](Cluster.md) |  | [optional] 
 **TenantGroups** | Pointer to [**[]TenantGroup**](TenantGroup.md) |  | [optional] 
 **Tenants** | Pointer to [**[]Tenant**](Tenant.md) |  | [optional] 
+**Owner** | Pointer to [**NullableBriefOwner**](BriefOwner.md) |  | [optional] 
 **Tags** | Pointer to **[]string** |  | [optional] 
 **DataSource** | Pointer to [**BriefDataSource**](BriefDataSource.md) |  | [optional] 
 **DataPath** | **string** | Path to remote file (relative to data source root) | [readonly] 
-**DataFile** | [**BriefDataFile**](BriefDataFile.md) |  | [readonly] 
+**DataFile** | Pointer to [**BriefDataFile**](BriefDataFile.md) |  | [optional] 
 **DataSynced** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **Data** | **interface{}** |  | 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
@@ -38,7 +39,7 @@ Name | Type | Description | Notes
 
 ### NewConfigContext
 
-`func NewConfigContext(id int32, url string, display string, name string, dataPath string, dataFile BriefDataFile, data interface{}, ) *ConfigContext`
+`func NewConfigContext(id int32, url string, display string, name string, dataPath string, data interface{}, ) *ConfigContext`
 
 NewConfigContext instantiates a new ConfigContext object
 This constructor will assign default values to properties that have it defined,
@@ -568,6 +569,41 @@ SetTenants sets Tenants field to given value.
 
 HasTenants returns a boolean if a field has been set.
 
+### GetOwner
+
+`func (o *ConfigContext) GetOwner() BriefOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *ConfigContext) GetOwnerOk() (*BriefOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *ConfigContext) SetOwner(v BriefOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *ConfigContext) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *ConfigContext) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *ConfigContext) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetTags
 
 `func (o *ConfigContext) GetTags() []string`
@@ -657,6 +693,11 @@ and a boolean to check if the value has been set.
 
 SetDataFile sets DataFile field to given value.
 
+### HasDataFile
+
+`func (o *ConfigContext) HasDataFile() bool`
+
+HasDataFile returns a boolean if a field has been set.
 
 ### GetDataSynced
 

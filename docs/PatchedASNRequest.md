@@ -8,9 +8,11 @@ Name | Type | Description | Notes
 **Rir** | Pointer to [**NullableASNRequestRir**](ASNRequestRir.md) |  | [optional] 
 **Tenant** | Pointer to [**NullableASNRangeRequestTenant**](ASNRangeRequestTenant.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
+**Owner** | Pointer to [**NullableASNRangeRequestOwner**](ASNRangeRequestOwner.md) |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
+**Sites** | Pointer to **[]int32** |  | [optional] 
 
 ## Methods
 
@@ -151,6 +153,41 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### GetOwner
+
+`func (o *PatchedASNRequest) GetOwner() ASNRangeRequestOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *PatchedASNRequest) GetOwnerOk() (*ASNRangeRequestOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *PatchedASNRequest) SetOwner(v ASNRangeRequestOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *PatchedASNRequest) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *PatchedASNRequest) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *PatchedASNRequest) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetComments
 
 `func (o *PatchedASNRequest) GetComments() string`
@@ -225,6 +262,31 @@ SetCustomFields sets CustomFields field to given value.
 `func (o *PatchedASNRequest) HasCustomFields() bool`
 
 HasCustomFields returns a boolean if a field has been set.
+
+### GetSites
+
+`func (o *PatchedASNRequest) GetSites() []int32`
+
+GetSites returns the Sites field if non-nil, zero value otherwise.
+
+### GetSitesOk
+
+`func (o *PatchedASNRequest) GetSitesOk() (*[]int32, bool)`
+
+GetSitesOk returns a tuple with the Sites field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSites
+
+`func (o *PatchedASNRequest) SetSites(v []int32)`
+
+SetSites sets Sites field to given value.
+
+### HasSites
+
+`func (o *PatchedASNRequest) HasSites() bool`
+
+HasSites returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

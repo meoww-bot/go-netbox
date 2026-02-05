@@ -28,6 +28,7 @@ Name | Type | Description | Notes
 **ConnectedEndpointsReachable** | **bool** |  | [readonly] 
 **Description** | Pointer to **string** |  | [optional] 
 **Tenant** | Pointer to [**NullableBriefTenant**](BriefTenant.md) |  | [optional] 
+**Owner** | Pointer to [**NullableBriefOwner**](BriefOwner.md) |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -679,6 +680,41 @@ HasTenant returns a boolean if a field has been set.
 `func (o *PowerFeed) UnsetTenant()`
 
 UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
+### GetOwner
+
+`func (o *PowerFeed) GetOwner() BriefOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *PowerFeed) GetOwnerOk() (*BriefOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *PowerFeed) SetOwner(v BriefOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *PowerFeed) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *PowerFeed) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *PowerFeed) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetComments
 
 `func (o *PowerFeed) GetComments() string`

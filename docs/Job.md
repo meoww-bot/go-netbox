@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Display** | **string** |  | [readonly] 
 **ObjectType** | **string** |  | [readonly] 
 **ObjectId** | Pointer to **NullableInt64** |  | [optional] 
+**Object** | Pointer to **interface{}** |  | [optional] [readonly] 
 **Name** | **string** |  | 
 **Status** | [**BriefJobStatus**](BriefJobStatus.md) |  | 
 **Created** | Pointer to **time.Time** |  | [optional] [readonly] 
@@ -21,6 +22,7 @@ Name | Type | Description | Notes
 **Data** | Pointer to **interface{}** |  | [optional] 
 **Error** | **string** |  | [readonly] 
 **JobId** | **string** |  | 
+**QueueName** | Pointer to **string** | Name of the queue in which this job was enqueued | [optional] 
 **LogEntries** | Pointer to **[]interface{}** |  | [optional] 
 
 ## Methods
@@ -182,6 +184,41 @@ HasObjectId returns a boolean if a field has been set.
 `func (o *Job) UnsetObjectId()`
 
 UnsetObjectId ensures that no value is present for ObjectId, not even an explicit nil
+### GetObject
+
+`func (o *Job) GetObject() interface{}`
+
+GetObject returns the Object field if non-nil, zero value otherwise.
+
+### GetObjectOk
+
+`func (o *Job) GetObjectOk() (*interface{}, bool)`
+
+GetObjectOk returns a tuple with the Object field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetObject
+
+`func (o *Job) SetObject(v interface{})`
+
+SetObject sets Object field to given value.
+
+### HasObject
+
+`func (o *Job) HasObject() bool`
+
+HasObject returns a boolean if a field has been set.
+
+### SetObjectNil
+
+`func (o *Job) SetObjectNil(b bool)`
+
+ SetObjectNil sets the value for Object to be an explicit nil
+
+### UnsetObject
+`func (o *Job) UnsetObject()`
+
+UnsetObject ensures that no value is present for Object, not even an explicit nil
 ### GetName
 
 `func (o *Job) GetName() string`
@@ -481,6 +518,31 @@ and a boolean to check if the value has been set.
 
 SetJobId sets JobId field to given value.
 
+
+### GetQueueName
+
+`func (o *Job) GetQueueName() string`
+
+GetQueueName returns the QueueName field if non-nil, zero value otherwise.
+
+### GetQueueNameOk
+
+`func (o *Job) GetQueueNameOk() (*string, bool)`
+
+GetQueueNameOk returns a tuple with the QueueName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetQueueName
+
+`func (o *Job) SetQueueName(v string)`
+
+SetQueueName sets QueueName field to given value.
+
+### HasQueueName
+
+`func (o *Job) HasQueueName() bool`
+
+HasQueueName returns a boolean if a field has been set.
 
 ### GetLogEntries
 

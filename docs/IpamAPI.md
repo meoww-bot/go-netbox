@@ -377,7 +377,7 @@ Name | Type | Description  | Notes
 
 ## IpamAggregatesCreate
 
-> Aggregate IpamAggregatesCreate(ctx).WritableAggregateRequest(writableAggregateRequest).Execute()
+> Aggregate IpamAggregatesCreate(ctx).IpamAggregatesCreateRequest(ipamAggregatesCreateRequest).Execute()
 
 
 
@@ -396,11 +396,11 @@ import (
 )
 
 func main() {
-	writableAggregateRequest := *openapiclient.NewWritableAggregateRequest("Prefix_example", openapiclient.ASNRangeRequest_rir{BriefRIRRequest: openapiclient.NewBriefRIRRequest("Name_example", "Slug_example")}) // WritableAggregateRequest | 
+	ipamAggregatesCreateRequest := openapiclient.ipam_aggregates_create_request{WritableAggregateRequest: openapiclient.NewWritableAggregateRequest("Prefix_example", openapiclient.ASNRangeRequest_rir{BriefRIRRequest: openapiclient.NewBriefRIRRequest("Name_example", "Slug_example")})} // IpamAggregatesCreateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamAggregatesCreate(context.Background()).WritableAggregateRequest(writableAggregateRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamAggregatesCreate(context.Background()).IpamAggregatesCreateRequest(ipamAggregatesCreateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamAggregatesCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -421,7 +421,7 @@ Other parameters are passed through a pointer to a apiIpamAggregatesCreateReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **writableAggregateRequest** | [**WritableAggregateRequest**](WritableAggregateRequest.md) |  | 
+ **ipamAggregatesCreateRequest** | [**IpamAggregatesCreateRequest**](IpamAggregatesCreateRequest.md) |  | 
 
 ### Return type
 
@@ -511,7 +511,7 @@ Name | Type | Description  | Notes
 
 ## IpamAggregatesList
 
-> PaginatedAggregateList IpamAggregatesList(ctx).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DateAdded(dateAdded).DateAddedEmpty(dateAddedEmpty).DateAddedGt(dateAddedGt).DateAddedGte(dateAddedGte).DateAddedLt(dateAddedLt).DateAddedLte(dateAddedLte).DateAddedN(dateAddedN).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Family(family).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Prefix(prefix).Q(q).Rir(rir).RirN(rirN).RirId(rirId).RirIdN(rirIdN).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedAggregateList IpamAggregatesList(ctx).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DateAdded(dateAdded).DateAddedEmpty(dateAddedEmpty).DateAddedGt(dateAddedGt).DateAddedGte(dateAddedGte).DateAddedLt(dateAddedLt).DateAddedLte(dateAddedLte).DateAddedN(dateAddedN).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Family(family).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Prefix(prefix).Q(q).Rir(rir).RirN(rirN).RirId(rirId).RirIdN(rirIdN).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -584,6 +584,14 @@ func main() {
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	owner := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerN := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerGroup := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupN := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupId := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerGroupIdN := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerId := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
+	ownerIdN := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
 	prefix := "prefix_example" // string | Prefix (optional)
 	q := "q_example" // string | Search (optional)
 	rir := []string{"Inner_example"} // []string | RIR (slug) (optional)
@@ -592,8 +600,8 @@ func main() {
 	rirIdN := []int32{int32(123)} // []int32 | RIR (ID) (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
-	tagId := []int32{int32(123)} // []int32 |  (optional)
-	tagIdN := []int32{int32(123)} // []int32 |  (optional)
+	tagId := []string{"Inner_example"} // []string |  (optional)
+	tagIdN := []string{"Inner_example"} // []string |  (optional)
 	tenant := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantN := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantGroup := []string{"Inner_example"} // []string |  (optional)
@@ -606,7 +614,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamAggregatesList(context.Background()).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DateAdded(dateAdded).DateAddedEmpty(dateAddedEmpty).DateAddedGt(dateAddedGt).DateAddedGte(dateAddedGte).DateAddedLt(dateAddedLt).DateAddedLte(dateAddedLte).DateAddedN(dateAddedN).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Family(family).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Prefix(prefix).Q(q).Rir(rir).RirN(rirN).RirId(rirId).RirIdN(rirIdN).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamAggregatesList(context.Background()).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DateAdded(dateAdded).DateAddedEmpty(dateAddedEmpty).DateAddedGt(dateAddedGt).DateAddedGte(dateAddedGte).DateAddedLt(dateAddedLt).DateAddedLte(dateAddedLte).DateAddedN(dateAddedN).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Family(family).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Prefix(prefix).Q(q).Rir(rir).RirN(rirN).RirId(rirId).RirIdN(rirIdN).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamAggregatesList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -680,6 +688,14 @@ Name | Type | Description  | Notes
  **modifiedByRequest** | **string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
+ **owner** | **[]string** | Owner (name) | 
+ **ownerN** | **[]string** | Owner (name) | 
+ **ownerGroup** | **[]string** | Owner Group (name) | 
+ **ownerGroupN** | **[]string** | Owner Group (name) | 
+ **ownerGroupId** | **[]int32** | Owner Group (ID) | 
+ **ownerGroupIdN** | **[]int32** | Owner Group (ID) | 
+ **ownerId** | **[]int32** | Owner (ID) | 
+ **ownerIdN** | **[]int32** | Owner (ID) | 
  **prefix** | **string** | Prefix | 
  **q** | **string** | Search | 
  **rir** | **[]string** | RIR (slug) | 
@@ -688,8 +704,8 @@ Name | Type | Description  | Notes
  **rirIdN** | **[]int32** | RIR (ID) | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
- **tagId** | **[]int32** |  | 
- **tagIdN** | **[]int32** |  | 
+ **tagId** | **[]string** |  | 
+ **tagIdN** | **[]string** |  | 
  **tenant** | **[]string** | Tenant (slug) | 
  **tenantN** | **[]string** | Tenant (slug) | 
  **tenantGroup** | **[]string** |  | 
@@ -1272,7 +1288,7 @@ Name | Type | Description  | Notes
 
 ## IpamAsnRangesCreate
 
-> ASNRange IpamAsnRangesCreate(ctx).ASNRangeRequest(aSNRangeRequest).Execute()
+> ASNRange IpamAsnRangesCreate(ctx).IpamAsnRangesCreateRequest(ipamAsnRangesCreateRequest).Execute()
 
 
 
@@ -1291,11 +1307,11 @@ import (
 )
 
 func main() {
-	aSNRangeRequest := *openapiclient.NewASNRangeRequest("Name_example", "Slug_example", openapiclient.ASNRangeRequest_rir{BriefRIRRequest: openapiclient.NewBriefRIRRequest("Name_example", "Slug_example")}, int64(123), int64(123)) // ASNRangeRequest | 
+	ipamAsnRangesCreateRequest := openapiclient.ipam_asn_ranges_create_request{ASNRangeRequest: openapiclient.NewASNRangeRequest("Name_example", "Slug_example", openapiclient.ASNRangeRequest_rir{BriefRIRRequest: openapiclient.NewBriefRIRRequest("Name_example", "Slug_example")}, int64(123), int64(123))} // IpamAsnRangesCreateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamAsnRangesCreate(context.Background()).ASNRangeRequest(aSNRangeRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamAsnRangesCreate(context.Background()).IpamAsnRangesCreateRequest(ipamAsnRangesCreateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamAsnRangesCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1316,7 +1332,7 @@ Other parameters are passed through a pointer to a apiIpamAsnRangesCreateRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aSNRangeRequest** | [**ASNRangeRequest**](ASNRangeRequest.md) |  | 
+ **ipamAsnRangesCreateRequest** | [**IpamAsnRangesCreateRequest**](IpamAsnRangesCreateRequest.md) |  | 
 
 ### Return type
 
@@ -1406,7 +1422,7 @@ Name | Type | Description  | Notes
 
 ## IpamAsnRangesList
 
-> PaginatedASNRangeList IpamAsnRangesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).End(end).EndEmpty(endEmpty).EndGt(endGt).EndGte(endGte).EndLt(endLt).EndLte(endLte).EndN(endN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).Rir(rir).RirN(rirN).RirId(rirId).RirIdN(rirIdN).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIregex(slugIregex).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SlugRegex(slugRegex).Start(start).StartEmpty(startEmpty).StartGt(startGt).StartGte(startGte).StartLt(startLt).StartLte(startLte).StartN(startN).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedASNRangeList IpamAsnRangesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).End(end).EndEmpty(endEmpty).EndGt(endGt).EndGte(endGte).EndLt(endLt).EndLte(endLte).EndN(endN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).Rir(rir).RirN(rirN).RirId(rirId).RirIdN(rirIdN).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIregex(slugIregex).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SlugRegex(slugRegex).Start(start).StartEmpty(startEmpty).StartGt(startGt).StartGte(startGte).StartLt(startLt).StartLte(startLte).StartN(startN).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -1485,6 +1501,14 @@ func main() {
 	nameRegex := []string{"Inner_example"} // []string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	owner := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerN := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerGroup := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupN := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupId := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerGroupIdN := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerId := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
+	ownerIdN := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
 	q := "q_example" // string | Search (optional)
 	rir := []string{"Inner_example"} // []string | RIR (slug) (optional)
 	rirN := []string{"Inner_example"} // []string | RIR (slug) (optional)
@@ -1512,8 +1536,8 @@ func main() {
 	startN := []int32{int32(123)} // []int32 |  (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
-	tagId := []int32{int32(123)} // []int32 |  (optional)
-	tagIdN := []int32{int32(123)} // []int32 |  (optional)
+	tagId := []string{"Inner_example"} // []string |  (optional)
+	tagIdN := []string{"Inner_example"} // []string |  (optional)
 	tenant := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantN := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantGroup := []string{"Inner_example"} // []string |  (optional)
@@ -1526,7 +1550,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamAsnRangesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).End(end).EndEmpty(endEmpty).EndGt(endGt).EndGte(endGte).EndLt(endLt).EndLte(endLte).EndN(endN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).Rir(rir).RirN(rirN).RirId(rirId).RirIdN(rirIdN).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIregex(slugIregex).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SlugRegex(slugRegex).Start(start).StartEmpty(startEmpty).StartGt(startGt).StartGte(startGte).StartLt(startLt).StartLte(startLte).StartN(startN).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamAsnRangesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).End(end).EndEmpty(endEmpty).EndGt(endGt).EndGte(endGte).EndLt(endLt).EndLte(endLte).EndN(endN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).Rir(rir).RirN(rirN).RirId(rirId).RirIdN(rirIdN).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIregex(slugIregex).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SlugRegex(slugRegex).Start(start).StartEmpty(startEmpty).StartGt(startGt).StartGte(startGte).StartLt(startLt).StartLte(startLte).StartN(startN).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamAsnRangesList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1606,6 +1630,14 @@ Name | Type | Description  | Notes
  **nameRegex** | **[]string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
+ **owner** | **[]string** | Owner (name) | 
+ **ownerN** | **[]string** | Owner (name) | 
+ **ownerGroup** | **[]string** | Owner Group (name) | 
+ **ownerGroupN** | **[]string** | Owner Group (name) | 
+ **ownerGroupId** | **[]int32** | Owner Group (ID) | 
+ **ownerGroupIdN** | **[]int32** | Owner Group (ID) | 
+ **ownerId** | **[]int32** | Owner (ID) | 
+ **ownerIdN** | **[]int32** | Owner (ID) | 
  **q** | **string** | Search | 
  **rir** | **[]string** | RIR (slug) | 
  **rirN** | **[]string** | RIR (slug) | 
@@ -1633,8 +1665,8 @@ Name | Type | Description  | Notes
  **startN** | **[]int32** |  | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
- **tagId** | **[]int32** |  | 
- **tagIdN** | **[]int32** |  | 
+ **tagId** | **[]string** |  | 
+ **tagIdN** | **[]string** |  | 
  **tenant** | **[]string** | Tenant (slug) | 
  **tenantN** | **[]string** | Tenant (slug) | 
  **tenantGroup** | **[]string** |  | 
@@ -2075,7 +2107,7 @@ Name | Type | Description  | Notes
 
 ## IpamAsnsCreate
 
-> ASN IpamAsnsCreate(ctx).ASNRequest(aSNRequest).Execute()
+> ASN IpamAsnsCreate(ctx).IpamAsnsCreateRequest(ipamAsnsCreateRequest).Execute()
 
 
 
@@ -2094,11 +2126,11 @@ import (
 )
 
 func main() {
-	aSNRequest := *openapiclient.NewASNRequest(int64(123)) // ASNRequest | 
+	ipamAsnsCreateRequest := openapiclient.ipam_asns_create_request{ASNRequest: openapiclient.NewASNRequest(int64(123))} // IpamAsnsCreateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamAsnsCreate(context.Background()).ASNRequest(aSNRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamAsnsCreate(context.Background()).IpamAsnsCreateRequest(ipamAsnsCreateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamAsnsCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2119,7 +2151,7 @@ Other parameters are passed through a pointer to a apiIpamAsnsCreateRequest stru
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aSNRequest** | [**ASNRequest**](ASNRequest.md) |  | 
+ **ipamAsnsCreateRequest** | [**IpamAsnsCreateRequest**](IpamAsnsCreateRequest.md) |  | 
 
 ### Return type
 
@@ -2209,7 +2241,7 @@ Name | Type | Description  | Notes
 
 ## IpamAsnsList
 
-> PaginatedASNList IpamAsnsList(ctx).Asn(asn).AsnEmpty(asnEmpty).AsnGt(asnGt).AsnGte(asnGte).AsnLt(asnLt).AsnLte(asnLte).AsnN(asnN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Provider(provider).ProviderN(providerN).ProviderId(providerId).ProviderIdN(providerIdN).Q(q).Rir(rir).RirN(rirN).RirId(rirId).RirIdN(rirIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedASNList IpamAsnsList(ctx).Asn(asn).AsnEmpty(asnEmpty).AsnGt(asnGt).AsnGte(asnGte).AsnLt(asnLt).AsnLte(asnLte).AsnN(asnN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Provider(provider).ProviderN(providerN).ProviderId(providerId).ProviderIdN(providerIdN).Q(q).Rir(rir).RirN(rirN).RirId(rirId).RirIdN(rirIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -2275,6 +2307,14 @@ func main() {
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	owner := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerN := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerGroup := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupN := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupId := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerGroupIdN := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerId := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
+	ownerIdN := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
 	provider := []string{"Inner_example"} // []string | Provider (slug) (optional)
 	providerN := []string{"Inner_example"} // []string | Provider (slug) (optional)
 	providerId := []int32{int32(123)} // []int32 | Provider (ID) (optional)
@@ -2294,8 +2334,8 @@ func main() {
 	siteIdN := []int32{int32(123)} // []int32 | Site (ID) (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
-	tagId := []int32{int32(123)} // []int32 |  (optional)
-	tagIdN := []int32{int32(123)} // []int32 |  (optional)
+	tagId := []string{"Inner_example"} // []string |  (optional)
+	tagIdN := []string{"Inner_example"} // []string |  (optional)
 	tenant := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantN := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantGroup := []string{"Inner_example"} // []string |  (optional)
@@ -2308,7 +2348,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamAsnsList(context.Background()).Asn(asn).AsnEmpty(asnEmpty).AsnGt(asnGt).AsnGte(asnGte).AsnLt(asnLt).AsnLte(asnLte).AsnN(asnN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Provider(provider).ProviderN(providerN).ProviderId(providerId).ProviderIdN(providerIdN).Q(q).Rir(rir).RirN(rirN).RirId(rirId).RirIdN(rirIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamAsnsList(context.Background()).Asn(asn).AsnEmpty(asnEmpty).AsnGt(asnGt).AsnGte(asnGte).AsnLt(asnLt).AsnLte(asnLte).AsnN(asnN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Provider(provider).ProviderN(providerN).ProviderId(providerId).ProviderIdN(providerIdN).Q(q).Rir(rir).RirN(rirN).RirId(rirId).RirIdN(rirIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamAsnsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2375,6 +2415,14 @@ Name | Type | Description  | Notes
  **modifiedByRequest** | **string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
+ **owner** | **[]string** | Owner (name) | 
+ **ownerN** | **[]string** | Owner (name) | 
+ **ownerGroup** | **[]string** | Owner Group (name) | 
+ **ownerGroupN** | **[]string** | Owner Group (name) | 
+ **ownerGroupId** | **[]int32** | Owner Group (ID) | 
+ **ownerGroupIdN** | **[]int32** | Owner Group (ID) | 
+ **ownerId** | **[]int32** | Owner (ID) | 
+ **ownerIdN** | **[]int32** | Owner (ID) | 
  **provider** | **[]string** | Provider (slug) | 
  **providerN** | **[]string** | Provider (slug) | 
  **providerId** | **[]int32** | Provider (ID) | 
@@ -2394,8 +2442,8 @@ Name | Type | Description  | Notes
  **siteIdN** | **[]int32** | Site (ID) | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
- **tagId** | **[]int32** |  | 
- **tagIdN** | **[]int32** |  | 
+ **tagId** | **[]string** |  | 
+ **tagIdN** | **[]string** |  | 
  **tenant** | **[]string** | Tenant (slug) | 
  **tenantN** | **[]string** | Tenant (slug) | 
  **tenantGroup** | **[]string** |  | 
@@ -2836,7 +2884,7 @@ Name | Type | Description  | Notes
 
 ## IpamFhrpGroupAssignmentsCreate
 
-> FHRPGroupAssignment IpamFhrpGroupAssignmentsCreate(ctx).FHRPGroupAssignmentRequest(fHRPGroupAssignmentRequest).Execute()
+> FHRPGroupAssignment IpamFhrpGroupAssignmentsCreate(ctx).IpamFhrpGroupAssignmentsCreateRequest(ipamFhrpGroupAssignmentsCreateRequest).Execute()
 
 
 
@@ -2855,11 +2903,11 @@ import (
 )
 
 func main() {
-	fHRPGroupAssignmentRequest := *openapiclient.NewFHRPGroupAssignmentRequest(openapiclient.FHRPGroupAssignmentRequest_group{BriefFHRPGroupRequest: openapiclient.NewBriefFHRPGroupRequest(openapiclient.BriefFHRPGroup_protocol("vrrp2"), int32(123))}, "InterfaceType_example", int64(123), int32(123)) // FHRPGroupAssignmentRequest | 
+	ipamFhrpGroupAssignmentsCreateRequest := openapiclient.ipam_fhrp_group_assignments_create_request{FHRPGroupAssignmentRequest: openapiclient.NewFHRPGroupAssignmentRequest(openapiclient.FHRPGroupAssignmentRequest_group{BriefFHRPGroupRequest: openapiclient.NewBriefFHRPGroupRequest(openapiclient.BriefFHRPGroup_protocol("vrrp2"), int32(123))}, "InterfaceType_example", int64(123), int32(123))} // IpamFhrpGroupAssignmentsCreateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamFhrpGroupAssignmentsCreate(context.Background()).FHRPGroupAssignmentRequest(fHRPGroupAssignmentRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamFhrpGroupAssignmentsCreate(context.Background()).IpamFhrpGroupAssignmentsCreateRequest(ipamFhrpGroupAssignmentsCreateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamFhrpGroupAssignmentsCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2880,7 +2928,7 @@ Other parameters are passed through a pointer to a apiIpamFhrpGroupAssignmentsCr
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fHRPGroupAssignmentRequest** | [**FHRPGroupAssignmentRequest**](FHRPGroupAssignmentRequest.md) |  | 
+ **ipamFhrpGroupAssignmentsCreateRequest** | [**IpamFhrpGroupAssignmentsCreateRequest**](IpamFhrpGroupAssignmentsCreateRequest.md) |  | 
 
 ### Return type
 
@@ -3543,7 +3591,7 @@ Name | Type | Description  | Notes
 
 ## IpamFhrpGroupsCreate
 
-> FHRPGroup IpamFhrpGroupsCreate(ctx).FHRPGroupRequest(fHRPGroupRequest).Execute()
+> FHRPGroup IpamFhrpGroupsCreate(ctx).IpamFhrpGroupsCreateRequest(ipamFhrpGroupsCreateRequest).Execute()
 
 
 
@@ -3562,11 +3610,11 @@ import (
 )
 
 func main() {
-	fHRPGroupRequest := *openapiclient.NewFHRPGroupRequest(openapiclient.BriefFHRPGroup_protocol("vrrp2"), int32(123)) // FHRPGroupRequest | 
+	ipamFhrpGroupsCreateRequest := openapiclient.ipam_fhrp_groups_create_request{FHRPGroupRequest: openapiclient.NewFHRPGroupRequest(openapiclient.BriefFHRPGroup_protocol("vrrp2"), int32(123))} // IpamFhrpGroupsCreateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamFhrpGroupsCreate(context.Background()).FHRPGroupRequest(fHRPGroupRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamFhrpGroupsCreate(context.Background()).IpamFhrpGroupsCreateRequest(ipamFhrpGroupsCreateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamFhrpGroupsCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3587,7 +3635,7 @@ Other parameters are passed through a pointer to a apiIpamFhrpGroupsCreateReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fHRPGroupRequest** | [**FHRPGroupRequest**](FHRPGroupRequest.md) |  | 
+ **ipamFhrpGroupsCreateRequest** | [**IpamFhrpGroupsCreateRequest**](IpamFhrpGroupsCreateRequest.md) |  | 
 
 ### Return type
 
@@ -3677,7 +3725,7 @@ Name | Type | Description  | Notes
 
 ## IpamFhrpGroupsList
 
-> PaginatedFHRPGroupList IpamFhrpGroupsList(ctx).AuthKey(authKey).AuthKeyEmpty(authKeyEmpty).AuthKeyIc(authKeyIc).AuthKeyIe(authKeyIe).AuthKeyIew(authKeyIew).AuthKeyIregex(authKeyIregex).AuthKeyIsw(authKeyIsw).AuthKeyN(authKeyN).AuthKeyNic(authKeyNic).AuthKeyNie(authKeyNie).AuthKeyNiew(authKeyNiew).AuthKeyNisw(authKeyNisw).AuthKeyRegex(authKeyRegex).AuthType(authType).AuthTypeEmpty(authTypeEmpty).AuthTypeIc(authTypeIc).AuthTypeIe(authTypeIe).AuthTypeIew(authTypeIew).AuthTypeIregex(authTypeIregex).AuthTypeIsw(authTypeIsw).AuthTypeN(authTypeN).AuthTypeNic(authTypeNic).AuthTypeNie(authTypeNie).AuthTypeNiew(authTypeNiew).AuthTypeNisw(authTypeNisw).AuthTypeRegex(authTypeRegex).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).GroupId(groupId).GroupIdEmpty(groupIdEmpty).GroupIdGt(groupIdGt).GroupIdGte(groupIdGte).GroupIdLt(groupIdLt).GroupIdLte(groupIdLte).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Protocol(protocol).ProtocolEmpty(protocolEmpty).ProtocolIc(protocolIc).ProtocolIe(protocolIe).ProtocolIew(protocolIew).ProtocolIregex(protocolIregex).ProtocolIsw(protocolIsw).ProtocolN(protocolN).ProtocolNic(protocolNic).ProtocolNie(protocolNie).ProtocolNiew(protocolNiew).ProtocolNisw(protocolNisw).ProtocolRegex(protocolRegex).Q(q).RelatedIp(relatedIp).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedFHRPGroupList IpamFhrpGroupsList(ctx).AuthKey(authKey).AuthKeyEmpty(authKeyEmpty).AuthKeyIc(authKeyIc).AuthKeyIe(authKeyIe).AuthKeyIew(authKeyIew).AuthKeyIregex(authKeyIregex).AuthKeyIsw(authKeyIsw).AuthKeyN(authKeyN).AuthKeyNic(authKeyNic).AuthKeyNie(authKeyNie).AuthKeyNiew(authKeyNiew).AuthKeyNisw(authKeyNisw).AuthKeyRegex(authKeyRegex).AuthType(authType).AuthTypeEmpty(authTypeEmpty).AuthTypeIc(authTypeIc).AuthTypeIe(authTypeIe).AuthTypeIew(authTypeIew).AuthTypeIregex(authTypeIregex).AuthTypeIsw(authTypeIsw).AuthTypeN(authTypeN).AuthTypeNic(authTypeNic).AuthTypeNie(authTypeNie).AuthTypeNiew(authTypeNiew).AuthTypeNisw(authTypeNisw).AuthTypeRegex(authTypeRegex).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).GroupId(groupId).GroupIdEmpty(groupIdEmpty).GroupIdGt(groupIdGt).GroupIdGte(groupIdGte).GroupIdLt(groupIdLt).GroupIdLte(groupIdLte).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Protocol(protocol).ProtocolEmpty(protocolEmpty).ProtocolIc(protocolIc).ProtocolIe(protocolIe).ProtocolIew(protocolIew).ProtocolIregex(protocolIregex).ProtocolIsw(protocolIsw).ProtocolN(protocolN).ProtocolNic(protocolNic).ProtocolNie(protocolNie).ProtocolNiew(protocolNiew).ProtocolNisw(protocolNisw).ProtocolRegex(protocolRegex).Q(q).RelatedIp(relatedIp).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -3782,6 +3830,14 @@ func main() {
 	nameRegex := []string{"Inner_example"} // []string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	owner := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerN := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerGroup := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupN := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupId := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerGroupIdN := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerId := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
+	ownerIdN := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
 	protocol := []string{"Inner_example"} // []string |  (optional)
 	protocolEmpty := true // bool |  (optional)
 	protocolIc := []string{"Inner_example"} // []string |  (optional)
@@ -3799,13 +3855,13 @@ func main() {
 	relatedIp := []string{"Inner_example"} // []string |  (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
-	tagId := []int32{int32(123)} // []int32 |  (optional)
-	tagIdN := []int32{int32(123)} // []int32 |  (optional)
+	tagId := []string{"Inner_example"} // []string |  (optional)
+	tagIdN := []string{"Inner_example"} // []string |  (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamFhrpGroupsList(context.Background()).AuthKey(authKey).AuthKeyEmpty(authKeyEmpty).AuthKeyIc(authKeyIc).AuthKeyIe(authKeyIe).AuthKeyIew(authKeyIew).AuthKeyIregex(authKeyIregex).AuthKeyIsw(authKeyIsw).AuthKeyN(authKeyN).AuthKeyNic(authKeyNic).AuthKeyNie(authKeyNie).AuthKeyNiew(authKeyNiew).AuthKeyNisw(authKeyNisw).AuthKeyRegex(authKeyRegex).AuthType(authType).AuthTypeEmpty(authTypeEmpty).AuthTypeIc(authTypeIc).AuthTypeIe(authTypeIe).AuthTypeIew(authTypeIew).AuthTypeIregex(authTypeIregex).AuthTypeIsw(authTypeIsw).AuthTypeN(authTypeN).AuthTypeNic(authTypeNic).AuthTypeNie(authTypeNie).AuthTypeNiew(authTypeNiew).AuthTypeNisw(authTypeNisw).AuthTypeRegex(authTypeRegex).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).GroupId(groupId).GroupIdEmpty(groupIdEmpty).GroupIdGt(groupIdGt).GroupIdGte(groupIdGte).GroupIdLt(groupIdLt).GroupIdLte(groupIdLte).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Protocol(protocol).ProtocolEmpty(protocolEmpty).ProtocolIc(protocolIc).ProtocolIe(protocolIe).ProtocolIew(protocolIew).ProtocolIregex(protocolIregex).ProtocolIsw(protocolIsw).ProtocolN(protocolN).ProtocolNic(protocolNic).ProtocolNie(protocolNie).ProtocolNiew(protocolNiew).ProtocolNisw(protocolNisw).ProtocolRegex(protocolRegex).Q(q).RelatedIp(relatedIp).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamFhrpGroupsList(context.Background()).AuthKey(authKey).AuthKeyEmpty(authKeyEmpty).AuthKeyIc(authKeyIc).AuthKeyIe(authKeyIe).AuthKeyIew(authKeyIew).AuthKeyIregex(authKeyIregex).AuthKeyIsw(authKeyIsw).AuthKeyN(authKeyN).AuthKeyNic(authKeyNic).AuthKeyNie(authKeyNie).AuthKeyNiew(authKeyNiew).AuthKeyNisw(authKeyNisw).AuthKeyRegex(authKeyRegex).AuthType(authType).AuthTypeEmpty(authTypeEmpty).AuthTypeIc(authTypeIc).AuthTypeIe(authTypeIe).AuthTypeIew(authTypeIew).AuthTypeIregex(authTypeIregex).AuthTypeIsw(authTypeIsw).AuthTypeN(authTypeN).AuthTypeNic(authTypeNic).AuthTypeNie(authTypeNie).AuthTypeNiew(authTypeNiew).AuthTypeNisw(authTypeNisw).AuthTypeRegex(authTypeRegex).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).GroupId(groupId).GroupIdEmpty(groupIdEmpty).GroupIdGt(groupIdGt).GroupIdGte(groupIdGte).GroupIdLt(groupIdLt).GroupIdLte(groupIdLte).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Protocol(protocol).ProtocolEmpty(protocolEmpty).ProtocolIc(protocolIc).ProtocolIe(protocolIe).ProtocolIew(protocolIew).ProtocolIregex(protocolIregex).ProtocolIsw(protocolIsw).ProtocolN(protocolN).ProtocolNic(protocolNic).ProtocolNie(protocolNie).ProtocolNiew(protocolNiew).ProtocolNisw(protocolNisw).ProtocolRegex(protocolRegex).Q(q).RelatedIp(relatedIp).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamFhrpGroupsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3911,6 +3967,14 @@ Name | Type | Description  | Notes
  **nameRegex** | **[]string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
+ **owner** | **[]string** | Owner (name) | 
+ **ownerN** | **[]string** | Owner (name) | 
+ **ownerGroup** | **[]string** | Owner Group (name) | 
+ **ownerGroupN** | **[]string** | Owner Group (name) | 
+ **ownerGroupId** | **[]int32** | Owner Group (ID) | 
+ **ownerGroupIdN** | **[]int32** | Owner Group (ID) | 
+ **ownerId** | **[]int32** | Owner (ID) | 
+ **ownerIdN** | **[]int32** | Owner (ID) | 
  **protocol** | **[]string** |  | 
  **protocolEmpty** | **bool** |  | 
  **protocolIc** | **[]string** |  | 
@@ -3928,8 +3992,8 @@ Name | Type | Description  | Notes
  **relatedIp** | **[]string** |  | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
- **tagId** | **[]int32** |  | 
- **tagIdN** | **[]int32** |  | 
+ **tagId** | **[]string** |  | 
+ **tagIdN** | **[]string** |  | 
  **updatedByRequest** | **string** |  | 
 
 ### Return type
@@ -4362,7 +4426,7 @@ Name | Type | Description  | Notes
 
 ## IpamIpAddressesCreate
 
-> IPAddress IpamIpAddressesCreate(ctx).WritableIPAddressRequest(writableIPAddressRequest).Execute()
+> IPAddress IpamIpAddressesCreate(ctx).IpamIpAddressesCreateRequest(ipamIpAddressesCreateRequest).Execute()
 
 
 
@@ -4381,11 +4445,11 @@ import (
 )
 
 func main() {
-	writableIPAddressRequest := *openapiclient.NewWritableIPAddressRequest("Address_example") // WritableIPAddressRequest | 
+	ipamIpAddressesCreateRequest := openapiclient.ipam_ip_addresses_create_request{WritableIPAddressRequest: openapiclient.NewWritableIPAddressRequest("Address_example")} // IpamIpAddressesCreateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamIpAddressesCreate(context.Background()).WritableIPAddressRequest(writableIPAddressRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamIpAddressesCreate(context.Background()).IpamIpAddressesCreateRequest(ipamIpAddressesCreateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamIpAddressesCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4406,7 +4470,7 @@ Other parameters are passed through a pointer to a apiIpamIpAddressesCreateReque
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **writableIPAddressRequest** | [**WritableIPAddressRequest**](WritableIPAddressRequest.md) |  | 
+ **ipamIpAddressesCreateRequest** | [**IpamIpAddressesCreateRequest**](IpamIpAddressesCreateRequest.md) |  | 
 
 ### Return type
 
@@ -4496,7 +4560,7 @@ Name | Type | Description  | Notes
 
 ## IpamIpAddressesList
 
-> PaginatedIPAddressList IpamIpAddressesList(ctx).Address(address).Assigned(assigned).AssignedObjectId(assignedObjectId).AssignedObjectIdEmpty(assignedObjectIdEmpty).AssignedObjectIdGt(assignedObjectIdGt).AssignedObjectIdGte(assignedObjectIdGte).AssignedObjectIdLt(assignedObjectIdLt).AssignedObjectIdLte(assignedObjectIdLte).AssignedObjectIdN(assignedObjectIdN).AssignedObjectType(assignedObjectType).AssignedObjectTypeN(assignedObjectTypeN).AssignedToInterface(assignedToInterface).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Device(device).DeviceId(deviceId).DnsName(dnsName).DnsNameEmpty(dnsNameEmpty).DnsNameIc(dnsNameIc).DnsNameIe(dnsNameIe).DnsNameIew(dnsNameIew).DnsNameIregex(dnsNameIregex).DnsNameIsw(dnsNameIsw).DnsNameN(dnsNameN).DnsNameNic(dnsNameNic).DnsNameNie(dnsNameNie).DnsNameNiew(dnsNameNiew).DnsNameNisw(dnsNameNisw).DnsNameRegex(dnsNameRegex).Family(family).FhrpgroupId(fhrpgroupId).FhrpgroupIdN(fhrpgroupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interface_(interface_).InterfaceN(interfaceN).InterfaceId(interfaceId).InterfaceIdN(interfaceIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MaskLength(maskLength).MaskLengthGte(maskLengthGte).MaskLengthLte(maskLengthLte).ModifiedByRequest(modifiedByRequest).NatInsideId(natInsideId).NatInsideIdN(natInsideIdN).Offset(offset).Ordering(ordering).Parent(parent).PresentInVrf(presentInVrf).PresentInVrfId(presentInVrfId).Q(q).Role(role).RoleEmpty(roleEmpty).RoleIc(roleIc).RoleIe(roleIe).RoleIew(roleIew).RoleIregex(roleIregex).RoleIsw(roleIsw).RoleN(roleN).RoleNic(roleNic).RoleNie(roleNie).RoleNiew(roleNiew).RoleNisw(roleNisw).RoleRegex(roleRegex).ServiceId(serviceId).ServiceIdN(serviceIdN).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineId(virtualMachineId).Vminterface(vminterface).VminterfaceN(vminterfaceN).VminterfaceId(vminterfaceId).VminterfaceIdN(vminterfaceIdN).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Execute()
+> PaginatedIPAddressList IpamIpAddressesList(ctx).Address(address).Assigned(assigned).AssignedObjectId(assignedObjectId).AssignedObjectIdEmpty(assignedObjectIdEmpty).AssignedObjectIdGt(assignedObjectIdGt).AssignedObjectIdGte(assignedObjectIdGte).AssignedObjectIdLt(assignedObjectIdLt).AssignedObjectIdLte(assignedObjectIdLte).AssignedObjectIdN(assignedObjectIdN).AssignedObjectType(assignedObjectType).AssignedObjectTypeN(assignedObjectTypeN).AssignedToInterface(assignedToInterface).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Device(device).DeviceId(deviceId).DnsName(dnsName).DnsNameEmpty(dnsNameEmpty).DnsNameIc(dnsNameIc).DnsNameIe(dnsNameIe).DnsNameIew(dnsNameIew).DnsNameIregex(dnsNameIregex).DnsNameIsw(dnsNameIsw).DnsNameN(dnsNameN).DnsNameNic(dnsNameNic).DnsNameNie(dnsNameNie).DnsNameNiew(dnsNameNiew).DnsNameNisw(dnsNameNisw).DnsNameRegex(dnsNameRegex).Family(family).FhrpgroupId(fhrpgroupId).FhrpgroupIdN(fhrpgroupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interface_(interface_).InterfaceN(interfaceN).InterfaceId(interfaceId).InterfaceIdN(interfaceIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MaskLength(maskLength).MaskLengthGte(maskLengthGte).MaskLengthLte(maskLengthLte).ModifiedByRequest(modifiedByRequest).NatInsideId(natInsideId).NatInsideIdN(natInsideIdN).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Parent(parent).PresentInVrf(presentInVrf).PresentInVrfId(presentInVrfId).Q(q).Role(role).RoleEmpty(roleEmpty).RoleIc(roleIc).RoleIe(roleIe).RoleIew(roleIew).RoleIregex(roleIregex).RoleIsw(roleIsw).RoleN(roleN).RoleNic(roleNic).RoleNie(roleNie).RoleNiew(roleNiew).RoleNisw(roleNisw).RoleRegex(roleRegex).ServiceId(serviceId).ServiceIdN(serviceIdN).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineId(virtualMachineId).Vminterface(vminterface).VminterfaceN(vminterfaceN).VminterfaceId(vminterfaceId).VminterfaceIdN(vminterfaceIdN).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Execute()
 
 
 
@@ -4600,6 +4664,14 @@ func main() {
 	natInsideIdN := []int32{int32(123)} // []int32 | NAT inside IP address (ID) (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	owner := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerN := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerGroup := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupN := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupId := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerGroupIdN := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerId := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
+	ownerIdN := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
 	parent := []string{"Inner_example"} // []string |  (optional)
 	presentInVrf := "presentInVrf_example" // string |  (optional)
 	presentInVrfId := "presentInVrfId_example" // string |  (optional)
@@ -4634,8 +4706,8 @@ func main() {
 	statusRegex := []string{"Inner_example"} // []string | The operational status of this IP (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
-	tagId := []int32{int32(123)} // []int32 |  (optional)
-	tagIdN := []int32{int32(123)} // []int32 |  (optional)
+	tagId := []string{"Inner_example"} // []string |  (optional)
+	tagIdN := []string{"Inner_example"} // []string |  (optional)
 	tenant := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantN := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantGroup := []string{"Inner_example"} // []string |  (optional)
@@ -4651,14 +4723,14 @@ func main() {
 	vminterfaceN := []string{"Inner_example"} // []string | VM interface (name) (optional)
 	vminterfaceId := []int32{int32(123)} // []int32 | VM interface (ID) (optional)
 	vminterfaceIdN := []int32{int32(123)} // []int32 | VM interface (ID) (optional)
-	vrf := []*string{"Inner_example"} // []*string | VRF (RD) (optional)
-	vrfN := []*string{"Inner_example"} // []*string | VRF (RD) (optional)
+	vrf := []string{"Inner_example"} // []string | VRF (RD) (optional)
+	vrfN := []string{"Inner_example"} // []string | VRF (RD) (optional)
 	vrfId := []*int32{int32(123)} // []*int32 | VRF (optional)
 	vrfIdN := []*int32{int32(123)} // []*int32 | VRF (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamIpAddressesList(context.Background()).Address(address).Assigned(assigned).AssignedObjectId(assignedObjectId).AssignedObjectIdEmpty(assignedObjectIdEmpty).AssignedObjectIdGt(assignedObjectIdGt).AssignedObjectIdGte(assignedObjectIdGte).AssignedObjectIdLt(assignedObjectIdLt).AssignedObjectIdLte(assignedObjectIdLte).AssignedObjectIdN(assignedObjectIdN).AssignedObjectType(assignedObjectType).AssignedObjectTypeN(assignedObjectTypeN).AssignedToInterface(assignedToInterface).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Device(device).DeviceId(deviceId).DnsName(dnsName).DnsNameEmpty(dnsNameEmpty).DnsNameIc(dnsNameIc).DnsNameIe(dnsNameIe).DnsNameIew(dnsNameIew).DnsNameIregex(dnsNameIregex).DnsNameIsw(dnsNameIsw).DnsNameN(dnsNameN).DnsNameNic(dnsNameNic).DnsNameNie(dnsNameNie).DnsNameNiew(dnsNameNiew).DnsNameNisw(dnsNameNisw).DnsNameRegex(dnsNameRegex).Family(family).FhrpgroupId(fhrpgroupId).FhrpgroupIdN(fhrpgroupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interface_(interface_).InterfaceN(interfaceN).InterfaceId(interfaceId).InterfaceIdN(interfaceIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MaskLength(maskLength).MaskLengthGte(maskLengthGte).MaskLengthLte(maskLengthLte).ModifiedByRequest(modifiedByRequest).NatInsideId(natInsideId).NatInsideIdN(natInsideIdN).Offset(offset).Ordering(ordering).Parent(parent).PresentInVrf(presentInVrf).PresentInVrfId(presentInVrfId).Q(q).Role(role).RoleEmpty(roleEmpty).RoleIc(roleIc).RoleIe(roleIe).RoleIew(roleIew).RoleIregex(roleIregex).RoleIsw(roleIsw).RoleN(roleN).RoleNic(roleNic).RoleNie(roleNie).RoleNiew(roleNiew).RoleNisw(roleNisw).RoleRegex(roleRegex).ServiceId(serviceId).ServiceIdN(serviceIdN).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineId(virtualMachineId).Vminterface(vminterface).VminterfaceN(vminterfaceN).VminterfaceId(vminterfaceId).VminterfaceIdN(vminterfaceIdN).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamIpAddressesList(context.Background()).Address(address).Assigned(assigned).AssignedObjectId(assignedObjectId).AssignedObjectIdEmpty(assignedObjectIdEmpty).AssignedObjectIdGt(assignedObjectIdGt).AssignedObjectIdGte(assignedObjectIdGte).AssignedObjectIdLt(assignedObjectIdLt).AssignedObjectIdLte(assignedObjectIdLte).AssignedObjectIdN(assignedObjectIdN).AssignedObjectType(assignedObjectType).AssignedObjectTypeN(assignedObjectTypeN).AssignedToInterface(assignedToInterface).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Device(device).DeviceId(deviceId).DnsName(dnsName).DnsNameEmpty(dnsNameEmpty).DnsNameIc(dnsNameIc).DnsNameIe(dnsNameIe).DnsNameIew(dnsNameIew).DnsNameIregex(dnsNameIregex).DnsNameIsw(dnsNameIsw).DnsNameN(dnsNameN).DnsNameNic(dnsNameNic).DnsNameNie(dnsNameNie).DnsNameNiew(dnsNameNiew).DnsNameNisw(dnsNameNisw).DnsNameRegex(dnsNameRegex).Family(family).FhrpgroupId(fhrpgroupId).FhrpgroupIdN(fhrpgroupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interface_(interface_).InterfaceN(interfaceN).InterfaceId(interfaceId).InterfaceIdN(interfaceIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MaskLength(maskLength).MaskLengthGte(maskLengthGte).MaskLengthLte(maskLengthLte).ModifiedByRequest(modifiedByRequest).NatInsideId(natInsideId).NatInsideIdN(natInsideIdN).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Parent(parent).PresentInVrf(presentInVrf).PresentInVrfId(presentInVrfId).Q(q).Role(role).RoleEmpty(roleEmpty).RoleIc(roleIc).RoleIe(roleIe).RoleIew(roleIew).RoleIregex(roleIregex).RoleIsw(roleIsw).RoleN(roleN).RoleNic(roleNic).RoleNie(roleNie).RoleNiew(roleNiew).RoleNisw(roleNisw).RoleRegex(roleRegex).ServiceId(serviceId).ServiceIdN(serviceIdN).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineId(virtualMachineId).Vminterface(vminterface).VminterfaceN(vminterfaceN).VminterfaceId(vminterfaceId).VminterfaceIdN(vminterfaceIdN).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamIpAddressesList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4763,6 +4835,14 @@ Name | Type | Description  | Notes
  **natInsideIdN** | **[]int32** | NAT inside IP address (ID) | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
+ **owner** | **[]string** | Owner (name) | 
+ **ownerN** | **[]string** | Owner (name) | 
+ **ownerGroup** | **[]string** | Owner Group (name) | 
+ **ownerGroupN** | **[]string** | Owner Group (name) | 
+ **ownerGroupId** | **[]int32** | Owner Group (ID) | 
+ **ownerGroupIdN** | **[]int32** | Owner Group (ID) | 
+ **ownerId** | **[]int32** | Owner (ID) | 
+ **ownerIdN** | **[]int32** | Owner (ID) | 
  **parent** | **[]string** |  | 
  **presentInVrf** | **string** |  | 
  **presentInVrfId** | **string** |  | 
@@ -4797,8 +4877,8 @@ Name | Type | Description  | Notes
  **statusRegex** | **[]string** | The operational status of this IP | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
- **tagId** | **[]int32** |  | 
- **tagIdN** | **[]int32** |  | 
+ **tagId** | **[]string** |  | 
+ **tagIdN** | **[]string** |  | 
  **tenant** | **[]string** | Tenant (slug) | 
  **tenantN** | **[]string** | Tenant (slug) | 
  **tenantGroup** | **[]string** |  | 
@@ -5053,7 +5133,7 @@ Name | Type | Description  | Notes
 
 ## IpamIpRangesAvailableIpsCreate
 
-> []IPAddress IpamIpRangesAvailableIpsCreate(ctx, id).IPAddressRequest(iPAddressRequest).Execute()
+> []IPAddress IpamIpRangesAvailableIpsCreate(ctx, id).AvailableIPRequestRequest(availableIPRequestRequest).Execute()
 
 
 
@@ -5073,11 +5153,11 @@ import (
 
 func main() {
 	id := int32(56) // int32 | 
-	iPAddressRequest := []openapiclient.IPAddressRequest{*openapiclient.NewIPAddressRequest("Address_example")} // []IPAddressRequest | 
+	availableIPRequestRequest := []openapiclient.AvailableIPRequestRequest{*openapiclient.NewAvailableIPRequestRequest()} // []AvailableIPRequestRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamIpRangesAvailableIpsCreate(context.Background(), id).IPAddressRequest(iPAddressRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamIpRangesAvailableIpsCreate(context.Background(), id).AvailableIPRequestRequest(availableIPRequestRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamIpRangesAvailableIpsCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5103,7 +5183,7 @@ Other parameters are passed through a pointer to a apiIpamIpRangesAvailableIpsCr
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **iPAddressRequest** | [**[]IPAddressRequest**](IPAddressRequest.md) |  | 
+ **availableIPRequestRequest** | [**[]AvailableIPRequestRequest**](AvailableIPRequestRequest.md) |  | 
 
 ### Return type
 
@@ -5391,7 +5471,7 @@ Name | Type | Description  | Notes
 
 ## IpamIpRangesCreate
 
-> IPRange IpamIpRangesCreate(ctx).WritableIPRangeRequest(writableIPRangeRequest).Execute()
+> IPRange IpamIpRangesCreate(ctx).IpamIpRangesCreateRequest(ipamIpRangesCreateRequest).Execute()
 
 
 
@@ -5410,11 +5490,11 @@ import (
 )
 
 func main() {
-	writableIPRangeRequest := *openapiclient.NewWritableIPRangeRequest("StartAddress_example", "EndAddress_example") // WritableIPRangeRequest | 
+	ipamIpRangesCreateRequest := openapiclient.ipam_ip_ranges_create_request{WritableIPRangeRequest: openapiclient.NewWritableIPRangeRequest("StartAddress_example", "EndAddress_example")} // IpamIpRangesCreateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamIpRangesCreate(context.Background()).WritableIPRangeRequest(writableIPRangeRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamIpRangesCreate(context.Background()).IpamIpRangesCreateRequest(ipamIpRangesCreateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamIpRangesCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5435,7 +5515,7 @@ Other parameters are passed through a pointer to a apiIpamIpRangesCreateRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **writableIPRangeRequest** | [**WritableIPRangeRequest**](WritableIPRangeRequest.md) |  | 
+ **ipamIpRangesCreateRequest** | [**IpamIpRangesCreateRequest**](IpamIpRangesCreateRequest.md) |  | 
 
 ### Return type
 
@@ -5525,7 +5605,7 @@ Name | Type | Description  | Notes
 
 ## IpamIpRangesList
 
-> PaginatedIPRangeList IpamIpRangesList(ctx).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Contains(contains).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).EndAddress(endAddress).Family(family).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MarkPopulated(markPopulated).MarkUtilized(markUtilized).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Parent(parent).Q(q).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Size(size).SizeEmpty(sizeEmpty).SizeGt(sizeGt).SizeGte(sizeGte).SizeLt(sizeLt).SizeLte(sizeLte).SizeN(sizeN).StartAddress(startAddress).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Execute()
+> PaginatedIPRangeList IpamIpRangesList(ctx).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Contains(contains).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).EndAddress(endAddress).Family(family).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MarkPopulated(markPopulated).MarkUtilized(markUtilized).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Parent(parent).Q(q).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Size(size).SizeEmpty(sizeEmpty).SizeGt(sizeGt).SizeGte(sizeGte).SizeLt(sizeLt).SizeLte(sizeLte).SizeN(sizeN).StartAddress(startAddress).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Execute()
 
 
 
@@ -5595,6 +5675,14 @@ func main() {
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	owner := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerN := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerGroup := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupN := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupId := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerGroupIdN := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerId := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
+	ownerIdN := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
 	parent := []string{"Inner_example"} // []string |  (optional)
 	q := "q_example" // string | Search (optional)
 	role := []string{"Inner_example"} // []string | Role (slug) (optional)
@@ -5624,8 +5712,8 @@ func main() {
 	statusRegex := []string{"Inner_example"} // []string | Operational status of this range (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
-	tagId := []int32{int32(123)} // []int32 |  (optional)
-	tagIdN := []int32{int32(123)} // []int32 |  (optional)
+	tagId := []string{"Inner_example"} // []string |  (optional)
+	tagIdN := []string{"Inner_example"} // []string |  (optional)
 	tenant := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantN := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantGroup := []string{"Inner_example"} // []string |  (optional)
@@ -5635,14 +5723,14 @@ func main() {
 	tenantId := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
 	tenantIdN := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
-	vrf := []*string{"Inner_example"} // []*string | VRF (RD) (optional)
-	vrfN := []*string{"Inner_example"} // []*string | VRF (RD) (optional)
+	vrf := []string{"Inner_example"} // []string | VRF (RD) (optional)
+	vrfN := []string{"Inner_example"} // []string | VRF (RD) (optional)
 	vrfId := []*int32{int32(123)} // []*int32 | VRF (optional)
 	vrfIdN := []*int32{int32(123)} // []*int32 | VRF (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamIpRangesList(context.Background()).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Contains(contains).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).EndAddress(endAddress).Family(family).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MarkPopulated(markPopulated).MarkUtilized(markUtilized).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Parent(parent).Q(q).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Size(size).SizeEmpty(sizeEmpty).SizeGt(sizeGt).SizeGte(sizeGte).SizeLt(sizeLt).SizeLte(sizeLte).SizeN(sizeN).StartAddress(startAddress).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamIpRangesList(context.Background()).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Contains(contains).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).EndAddress(endAddress).Family(family).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MarkPopulated(markPopulated).MarkUtilized(markUtilized).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Parent(parent).Q(q).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Size(size).SizeEmpty(sizeEmpty).SizeGt(sizeGt).SizeGte(sizeGte).SizeLt(sizeLt).SizeLte(sizeLte).SizeN(sizeN).StartAddress(startAddress).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamIpRangesList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5713,6 +5801,14 @@ Name | Type | Description  | Notes
  **modifiedByRequest** | **string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
+ **owner** | **[]string** | Owner (name) | 
+ **ownerN** | **[]string** | Owner (name) | 
+ **ownerGroup** | **[]string** | Owner Group (name) | 
+ **ownerGroupN** | **[]string** | Owner Group (name) | 
+ **ownerGroupId** | **[]int32** | Owner Group (ID) | 
+ **ownerGroupIdN** | **[]int32** | Owner Group (ID) | 
+ **ownerId** | **[]int32** | Owner (ID) | 
+ **ownerIdN** | **[]int32** | Owner (ID) | 
  **parent** | **[]string** |  | 
  **q** | **string** | Search | 
  **role** | **[]string** | Role (slug) | 
@@ -5742,8 +5838,8 @@ Name | Type | Description  | Notes
  **statusRegex** | **[]string** | Operational status of this range | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
- **tagId** | **[]int32** |  | 
- **tagIdN** | **[]int32** |  | 
+ **tagId** | **[]string** |  | 
+ **tagIdN** | **[]string** |  | 
  **tenant** | **[]string** | Tenant (slug) | 
  **tenantN** | **[]string** | Tenant (slug) | 
  **tenantGroup** | **[]string** |  | 
@@ -5992,7 +6088,7 @@ Name | Type | Description  | Notes
 
 ## IpamPrefixesAvailableIpsCreate
 
-> []IPAddress IpamPrefixesAvailableIpsCreate(ctx, id).IPAddressRequest(iPAddressRequest).Execute()
+> []IPAddress IpamPrefixesAvailableIpsCreate(ctx, id).AvailableIPRequestRequest(availableIPRequestRequest).Execute()
 
 
 
@@ -6012,11 +6108,11 @@ import (
 
 func main() {
 	id := int32(56) // int32 | 
-	iPAddressRequest := []openapiclient.IPAddressRequest{*openapiclient.NewIPAddressRequest("Address_example")} // []IPAddressRequest | 
+	availableIPRequestRequest := []openapiclient.AvailableIPRequestRequest{*openapiclient.NewAvailableIPRequestRequest()} // []AvailableIPRequestRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamPrefixesAvailableIpsCreate(context.Background(), id).IPAddressRequest(iPAddressRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamPrefixesAvailableIpsCreate(context.Background(), id).AvailableIPRequestRequest(availableIPRequestRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamPrefixesAvailableIpsCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6042,7 +6138,7 @@ Other parameters are passed through a pointer to a apiIpamPrefixesAvailableIpsCr
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **iPAddressRequest** | [**[]IPAddressRequest**](IPAddressRequest.md) |  | 
+ **availableIPRequestRequest** | [**[]AvailableIPRequestRequest**](AvailableIPRequestRequest.md) |  | 
 
 ### Return type
 
@@ -6472,7 +6568,7 @@ Name | Type | Description  | Notes
 
 ## IpamPrefixesCreate
 
-> Prefix IpamPrefixesCreate(ctx).WritablePrefixRequest(writablePrefixRequest).Execute()
+> Prefix IpamPrefixesCreate(ctx).IpamPrefixesCreateRequest(ipamPrefixesCreateRequest).Execute()
 
 
 
@@ -6491,11 +6587,11 @@ import (
 )
 
 func main() {
-	writablePrefixRequest := *openapiclient.NewWritablePrefixRequest("Prefix_example") // WritablePrefixRequest | 
+	ipamPrefixesCreateRequest := openapiclient.ipam_prefixes_create_request{WritablePrefixRequest: openapiclient.NewWritablePrefixRequest("Prefix_example")} // IpamPrefixesCreateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamPrefixesCreate(context.Background()).WritablePrefixRequest(writablePrefixRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamPrefixesCreate(context.Background()).IpamPrefixesCreateRequest(ipamPrefixesCreateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamPrefixesCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6516,7 +6612,7 @@ Other parameters are passed through a pointer to a apiIpamPrefixesCreateRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **writablePrefixRequest** | [**WritablePrefixRequest**](WritablePrefixRequest.md) |  | 
+ **ipamPrefixesCreateRequest** | [**IpamPrefixesCreateRequest**](IpamPrefixesCreateRequest.md) |  | 
 
 ### Return type
 
@@ -6606,7 +6702,7 @@ Name | Type | Description  | Notes
 
 ## IpamPrefixesList
 
-> PaginatedPrefixList IpamPrefixesList(ctx).Children(children).ChildrenEmpty(childrenEmpty).ChildrenGt(childrenGt).ChildrenGte(childrenGte).ChildrenLt(childrenLt).ChildrenLte(childrenLte).ChildrenN(childrenN).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Contains(contains).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Depth(depth).DepthEmpty(depthEmpty).DepthGt(depthGt).DepthGte(depthGte).DepthLt(depthLt).DepthLte(depthLte).DepthN(depthN).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Family(family).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsPool(isPool).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).MarkUtilized(markUtilized).MaskLength(maskLength).MaskLengthGte(maskLengthGte).MaskLengthLte(maskLengthLte).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Prefix(prefix).PresentInVrf(presentInVrf).PresentInVrfId(presentInVrfId).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).ScopeId(scopeId).ScopeIdEmpty(scopeIdEmpty).ScopeIdGt(scopeIdGt).ScopeIdGte(scopeIdGte).ScopeIdLt(scopeIdLt).ScopeIdLte(scopeIdLte).ScopeIdN(scopeIdN).ScopeType(scopeType).ScopeTypeN(scopeTypeN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).VlanGroup(vlanGroup).VlanGroupN(vlanGroupN).VlanGroupId(vlanGroupId).VlanGroupIdN(vlanGroupIdN).VlanId(vlanId).VlanIdN(vlanIdN).VlanVid(vlanVid).VlanVidEmpty(vlanVidEmpty).VlanVidGt(vlanVidGt).VlanVidGte(vlanVidGte).VlanVidLt(vlanVidLt).VlanVidLte(vlanVidLte).VlanVidN(vlanVidN).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Within(within).WithinInclude(withinInclude).Execute()
+> PaginatedPrefixList IpamPrefixesList(ctx).Children(children).ChildrenEmpty(childrenEmpty).ChildrenGt(childrenGt).ChildrenGte(childrenGte).ChildrenLt(childrenLt).ChildrenLte(childrenLte).ChildrenN(childrenN).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Contains(contains).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Depth(depth).DepthEmpty(depthEmpty).DepthGt(depthGt).DepthGte(depthGte).DepthLt(depthLt).DepthLte(depthLte).DepthN(depthN).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Family(family).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsPool(isPool).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).MarkUtilized(markUtilized).MaskLength(maskLength).MaskLengthGte(maskLengthGte).MaskLengthLte(maskLengthLte).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Prefix(prefix).PresentInVrf(presentInVrf).PresentInVrfId(presentInVrfId).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).ScopeId(scopeId).ScopeIdEmpty(scopeIdEmpty).ScopeIdGt(scopeIdGt).ScopeIdGte(scopeIdGte).ScopeIdLt(scopeIdLt).ScopeIdLte(scopeIdLte).ScopeIdN(scopeIdN).ScopeType(scopeType).ScopeTypeN(scopeTypeN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).VlanGroup(vlanGroup).VlanGroupN(vlanGroupN).VlanGroupId(vlanGroupId).VlanGroupIdN(vlanGroupIdN).VlanId(vlanId).VlanIdN(vlanIdN).VlanVid(vlanVid).VlanVidEmpty(vlanVidEmpty).VlanVidGt(vlanVidGt).VlanVidGte(vlanVidGte).VlanVidLt(vlanVidLt).VlanVidLte(vlanVidLte).VlanVidN(vlanVidN).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Within(within).WithinInclude(withinInclude).Execute()
 
 
 
@@ -6696,6 +6792,14 @@ func main() {
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	owner := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerN := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerGroup := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupN := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupId := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerGroupIdN := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerId := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
+	ownerIdN := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
 	prefix := []string{"Inner_example"} // []string |  (optional)
 	presentInVrf := "presentInVrf_example" // string |  (optional)
 	presentInVrfId := "presentInVrfId_example" // string |  (optional)
@@ -6740,8 +6844,8 @@ func main() {
 	statusRegex := []string{"Inner_example"} // []string | Operational status of this prefix (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
-	tagId := []int32{int32(123)} // []int32 |  (optional)
-	tagIdN := []int32{int32(123)} // []int32 |  (optional)
+	tagId := []string{"Inner_example"} // []string |  (optional)
+	tagIdN := []string{"Inner_example"} // []string |  (optional)
 	tenant := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantN := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantGroup := []string{"Inner_example"} // []string |  (optional)
@@ -6764,8 +6868,8 @@ func main() {
 	vlanVidLt := int32(56) // int32 | VLAN number (1-4094) (optional)
 	vlanVidLte := int32(56) // int32 | VLAN number (1-4094) (optional)
 	vlanVidN := int32(56) // int32 | VLAN number (1-4094) (optional)
-	vrf := []*string{"Inner_example"} // []*string | VRF (RD) (optional)
-	vrfN := []*string{"Inner_example"} // []*string | VRF (RD) (optional)
+	vrf := []string{"Inner_example"} // []string | VRF (RD) (optional)
+	vrfN := []string{"Inner_example"} // []string | VRF (RD) (optional)
 	vrfId := []*int32{int32(123)} // []*int32 | VRF (optional)
 	vrfIdN := []*int32{int32(123)} // []*int32 | VRF (optional)
 	within := "within_example" // string | Within prefix (optional)
@@ -6773,7 +6877,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamPrefixesList(context.Background()).Children(children).ChildrenEmpty(childrenEmpty).ChildrenGt(childrenGt).ChildrenGte(childrenGte).ChildrenLt(childrenLt).ChildrenLte(childrenLte).ChildrenN(childrenN).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Contains(contains).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Depth(depth).DepthEmpty(depthEmpty).DepthGt(depthGt).DepthGte(depthGte).DepthLt(depthLt).DepthLte(depthLte).DepthN(depthN).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Family(family).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsPool(isPool).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).MarkUtilized(markUtilized).MaskLength(maskLength).MaskLengthGte(maskLengthGte).MaskLengthLte(maskLengthLte).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Prefix(prefix).PresentInVrf(presentInVrf).PresentInVrfId(presentInVrfId).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).ScopeId(scopeId).ScopeIdEmpty(scopeIdEmpty).ScopeIdGt(scopeIdGt).ScopeIdGte(scopeIdGte).ScopeIdLt(scopeIdLt).ScopeIdLte(scopeIdLte).ScopeIdN(scopeIdN).ScopeType(scopeType).ScopeTypeN(scopeTypeN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).VlanGroup(vlanGroup).VlanGroupN(vlanGroupN).VlanGroupId(vlanGroupId).VlanGroupIdN(vlanGroupIdN).VlanId(vlanId).VlanIdN(vlanIdN).VlanVid(vlanVid).VlanVidEmpty(vlanVidEmpty).VlanVidGt(vlanVidGt).VlanVidGte(vlanVidGte).VlanVidLt(vlanVidLt).VlanVidLte(vlanVidLte).VlanVidN(vlanVidN).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Within(within).WithinInclude(withinInclude).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamPrefixesList(context.Background()).Children(children).ChildrenEmpty(childrenEmpty).ChildrenGt(childrenGt).ChildrenGte(childrenGte).ChildrenLt(childrenLt).ChildrenLte(childrenLte).ChildrenN(childrenN).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Contains(contains).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Depth(depth).DepthEmpty(depthEmpty).DepthGt(depthGt).DepthGte(depthGte).DepthLt(depthLt).DepthLte(depthLte).DepthN(depthN).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Family(family).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsPool(isPool).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).MarkUtilized(markUtilized).MaskLength(maskLength).MaskLengthGte(maskLengthGte).MaskLengthLte(maskLengthLte).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Prefix(prefix).PresentInVrf(presentInVrf).PresentInVrfId(presentInVrfId).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).ScopeId(scopeId).ScopeIdEmpty(scopeIdEmpty).ScopeIdGt(scopeIdGt).ScopeIdGte(scopeIdGte).ScopeIdLt(scopeIdLt).ScopeIdLte(scopeIdLte).ScopeIdN(scopeIdN).ScopeType(scopeType).ScopeTypeN(scopeTypeN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).VlanGroup(vlanGroup).VlanGroupN(vlanGroupN).VlanGroupId(vlanGroupId).VlanGroupIdN(vlanGroupIdN).VlanId(vlanId).VlanIdN(vlanIdN).VlanVid(vlanVid).VlanVidEmpty(vlanVidEmpty).VlanVidGt(vlanVidGt).VlanVidGte(vlanVidGte).VlanVidLt(vlanVidLt).VlanVidLte(vlanVidLte).VlanVidN(vlanVidN).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Within(within).WithinInclude(withinInclude).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamPrefixesList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6864,6 +6968,14 @@ Name | Type | Description  | Notes
  **modifiedByRequest** | **string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
+ **owner** | **[]string** | Owner (name) | 
+ **ownerN** | **[]string** | Owner (name) | 
+ **ownerGroup** | **[]string** | Owner Group (name) | 
+ **ownerGroupN** | **[]string** | Owner Group (name) | 
+ **ownerGroupId** | **[]int32** | Owner Group (ID) | 
+ **ownerGroupIdN** | **[]int32** | Owner Group (ID) | 
+ **ownerId** | **[]int32** | Owner (ID) | 
+ **ownerIdN** | **[]int32** | Owner (ID) | 
  **prefix** | **[]string** |  | 
  **presentInVrf** | **string** |  | 
  **presentInVrfId** | **string** |  | 
@@ -6908,8 +7020,8 @@ Name | Type | Description  | Notes
  **statusRegex** | **[]string** | Operational status of this prefix | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
- **tagId** | **[]int32** |  | 
- **tagIdN** | **[]int32** |  | 
+ **tagId** | **[]string** |  | 
+ **tagIdN** | **[]string** |  | 
  **tenant** | **[]string** | Tenant (slug) | 
  **tenantN** | **[]string** | Tenant (slug) | 
  **tenantGroup** | **[]string** |  | 
@@ -7369,7 +7481,7 @@ Name | Type | Description  | Notes
 
 ## IpamRirsCreate
 
-> RIR IpamRirsCreate(ctx).RIRRequest(rIRRequest).Execute()
+> RIR IpamRirsCreate(ctx).IpamRirsCreateRequest(ipamRirsCreateRequest).Execute()
 
 
 
@@ -7388,11 +7500,11 @@ import (
 )
 
 func main() {
-	rIRRequest := *openapiclient.NewRIRRequest("Name_example", "Slug_example") // RIRRequest | 
+	ipamRirsCreateRequest := openapiclient.ipam_rirs_create_request{RIRRequest: openapiclient.NewRIRRequest("Name_example", "Slug_example")} // IpamRirsCreateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamRirsCreate(context.Background()).RIRRequest(rIRRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamRirsCreate(context.Background()).IpamRirsCreateRequest(ipamRirsCreateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamRirsCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7413,7 +7525,7 @@ Other parameters are passed through a pointer to a apiIpamRirsCreateRequest stru
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **rIRRequest** | [**RIRRequest**](RIRRequest.md) |  | 
+ **ipamRirsCreateRequest** | [**IpamRirsCreateRequest**](IpamRirsCreateRequest.md) |  | 
 
 ### Return type
 
@@ -7503,7 +7615,7 @@ Name | Type | Description  | Notes
 
 ## IpamRirsList
 
-> PaginatedRIRList IpamRirsList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsPrivate(isPrivate).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIregex(slugIregex).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SlugRegex(slugRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedRIRList IpamRirsList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsPrivate(isPrivate).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIregex(slugIregex).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SlugRegex(slugRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -7576,6 +7688,14 @@ func main() {
 	nameRegex := []string{"Inner_example"} // []string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	owner := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerN := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerGroup := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupN := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupId := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerGroupIdN := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerId := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
+	ownerIdN := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
 	q := "q_example" // string | Search (optional)
 	slug := []string{"Inner_example"} // []string |  (optional)
 	slugEmpty := true // bool |  (optional)
@@ -7592,13 +7712,13 @@ func main() {
 	slugRegex := []string{"Inner_example"} // []string |  (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
-	tagId := []int32{int32(123)} // []int32 |  (optional)
-	tagIdN := []int32{int32(123)} // []int32 |  (optional)
+	tagId := []string{"Inner_example"} // []string |  (optional)
+	tagIdN := []string{"Inner_example"} // []string |  (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamRirsList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsPrivate(isPrivate).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIregex(slugIregex).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SlugRegex(slugRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamRirsList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsPrivate(isPrivate).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIregex(slugIregex).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SlugRegex(slugRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamRirsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7672,6 +7792,14 @@ Name | Type | Description  | Notes
  **nameRegex** | **[]string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
+ **owner** | **[]string** | Owner (name) | 
+ **ownerN** | **[]string** | Owner (name) | 
+ **ownerGroup** | **[]string** | Owner Group (name) | 
+ **ownerGroupN** | **[]string** | Owner Group (name) | 
+ **ownerGroupId** | **[]int32** | Owner Group (ID) | 
+ **ownerGroupIdN** | **[]int32** | Owner Group (ID) | 
+ **ownerId** | **[]int32** | Owner (ID) | 
+ **ownerIdN** | **[]int32** | Owner (ID) | 
  **q** | **string** | Search | 
  **slug** | **[]string** |  | 
  **slugEmpty** | **bool** |  | 
@@ -7688,8 +7816,8 @@ Name | Type | Description  | Notes
  **slugRegex** | **[]string** |  | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
- **tagId** | **[]int32** |  | 
- **tagIdN** | **[]int32** |  | 
+ **tagId** | **[]string** |  | 
+ **tagIdN** | **[]string** |  | 
  **updatedByRequest** | **string** |  | 
 
 ### Return type
@@ -8122,7 +8250,7 @@ Name | Type | Description  | Notes
 
 ## IpamRolesCreate
 
-> Role IpamRolesCreate(ctx).RoleRequest(roleRequest).Execute()
+> Role IpamRolesCreate(ctx).IpamRolesCreateRequest(ipamRolesCreateRequest).Execute()
 
 
 
@@ -8141,11 +8269,11 @@ import (
 )
 
 func main() {
-	roleRequest := *openapiclient.NewRoleRequest("Name_example", "Slug_example") // RoleRequest | 
+	ipamRolesCreateRequest := openapiclient.ipam_roles_create_request{RoleRequest: openapiclient.NewRoleRequest("Name_example", "Slug_example")} // IpamRolesCreateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamRolesCreate(context.Background()).RoleRequest(roleRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamRolesCreate(context.Background()).IpamRolesCreateRequest(ipamRolesCreateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamRolesCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8166,7 +8294,7 @@ Other parameters are passed through a pointer to a apiIpamRolesCreateRequest str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **roleRequest** | [**RoleRequest**](RoleRequest.md) |  | 
+ **ipamRolesCreateRequest** | [**IpamRolesCreateRequest**](IpamRolesCreateRequest.md) |  | 
 
 ### Return type
 
@@ -8256,7 +8384,7 @@ Name | Type | Description  | Notes
 
 ## IpamRolesList
 
-> PaginatedRoleList IpamRolesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIregex(slugIregex).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SlugRegex(slugRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Weight(weight).WeightEmpty(weightEmpty).WeightGt(weightGt).WeightGte(weightGte).WeightLt(weightLt).WeightLte(weightLte).WeightN(weightN).Execute()
+> PaginatedRoleList IpamRolesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIregex(slugIregex).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SlugRegex(slugRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Weight(weight).WeightEmpty(weightEmpty).WeightGt(weightGt).WeightGte(weightGte).WeightLt(weightLt).WeightLte(weightLte).WeightN(weightN).Execute()
 
 
 
@@ -8328,6 +8456,14 @@ func main() {
 	nameRegex := []string{"Inner_example"} // []string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	owner := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerN := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerGroup := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupN := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupId := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerGroupIdN := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerId := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
+	ownerIdN := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
 	q := "q_example" // string | Search (optional)
 	slug := []string{"Inner_example"} // []string |  (optional)
 	slugEmpty := true // bool |  (optional)
@@ -8344,8 +8480,8 @@ func main() {
 	slugRegex := []string{"Inner_example"} // []string |  (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
-	tagId := []int32{int32(123)} // []int32 |  (optional)
-	tagIdN := []int32{int32(123)} // []int32 |  (optional)
+	tagId := []string{"Inner_example"} // []string |  (optional)
+	tagIdN := []string{"Inner_example"} // []string |  (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	weight := []int32{int32(123)} // []int32 |  (optional)
 	weightEmpty := true // bool |  (optional)
@@ -8357,7 +8493,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamRolesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIregex(slugIregex).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SlugRegex(slugRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Weight(weight).WeightEmpty(weightEmpty).WeightGt(weightGt).WeightGte(weightGte).WeightLt(weightLt).WeightLte(weightLte).WeightN(weightN).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamRolesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIregex(slugIregex).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SlugRegex(slugRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Weight(weight).WeightEmpty(weightEmpty).WeightGt(weightGt).WeightGte(weightGte).WeightLt(weightLt).WeightLte(weightLte).WeightN(weightN).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamRolesList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8430,6 +8566,14 @@ Name | Type | Description  | Notes
  **nameRegex** | **[]string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
+ **owner** | **[]string** | Owner (name) | 
+ **ownerN** | **[]string** | Owner (name) | 
+ **ownerGroup** | **[]string** | Owner Group (name) | 
+ **ownerGroupN** | **[]string** | Owner Group (name) | 
+ **ownerGroupId** | **[]int32** | Owner Group (ID) | 
+ **ownerGroupIdN** | **[]int32** | Owner Group (ID) | 
+ **ownerId** | **[]int32** | Owner (ID) | 
+ **ownerIdN** | **[]int32** | Owner (ID) | 
  **q** | **string** | Search | 
  **slug** | **[]string** |  | 
  **slugEmpty** | **bool** |  | 
@@ -8446,8 +8590,8 @@ Name | Type | Description  | Notes
  **slugRegex** | **[]string** |  | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
- **tagId** | **[]int32** |  | 
- **tagIdN** | **[]int32** |  | 
+ **tagId** | **[]string** |  | 
+ **tagIdN** | **[]string** |  | 
  **updatedByRequest** | **string** |  | 
  **weight** | **[]int32** |  | 
  **weightEmpty** | **bool** |  | 
@@ -8887,7 +9031,7 @@ Name | Type | Description  | Notes
 
 ## IpamRouteTargetsCreate
 
-> RouteTarget IpamRouteTargetsCreate(ctx).RouteTargetRequest(routeTargetRequest).Execute()
+> RouteTarget IpamRouteTargetsCreate(ctx).IpamRouteTargetsCreateRequest(ipamRouteTargetsCreateRequest).Execute()
 
 
 
@@ -8906,11 +9050,11 @@ import (
 )
 
 func main() {
-	routeTargetRequest := *openapiclient.NewRouteTargetRequest("Name_example") // RouteTargetRequest | 
+	ipamRouteTargetsCreateRequest := openapiclient.ipam_route_targets_create_request{RouteTargetRequest: openapiclient.NewRouteTargetRequest("Name_example")} // IpamRouteTargetsCreateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamRouteTargetsCreate(context.Background()).RouteTargetRequest(routeTargetRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamRouteTargetsCreate(context.Background()).IpamRouteTargetsCreateRequest(ipamRouteTargetsCreateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamRouteTargetsCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8931,7 +9075,7 @@ Other parameters are passed through a pointer to a apiIpamRouteTargetsCreateRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routeTargetRequest** | [**RouteTargetRequest**](RouteTargetRequest.md) |  | 
+ **ipamRouteTargetsCreateRequest** | [**IpamRouteTargetsCreateRequest**](IpamRouteTargetsCreateRequest.md) |  | 
 
 ### Return type
 
@@ -9021,7 +9165,7 @@ Name | Type | Description  | Notes
 
 ## IpamRouteTargetsList
 
-> PaginatedRouteTargetList IpamRouteTargetsList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).ExportingL2vpn(exportingL2vpn).ExportingL2vpnN(exportingL2vpnN).ExportingL2vpnId(exportingL2vpnId).ExportingL2vpnIdN(exportingL2vpnIdN).ExportingVrf(exportingVrf).ExportingVrfN(exportingVrfN).ExportingVrfId(exportingVrfId).ExportingVrfIdN(exportingVrfIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).ImportingL2vpn(importingL2vpn).ImportingL2vpnN(importingL2vpnN).ImportingL2vpnId(importingL2vpnId).ImportingL2vpnIdN(importingL2vpnIdN).ImportingVrf(importingVrf).ImportingVrfN(importingVrfN).ImportingVrfId(importingVrfId).ImportingVrfIdN(importingVrfIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedRouteTargetList IpamRouteTargetsList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).ExportingL2vpn(exportingL2vpn).ExportingL2vpnN(exportingL2vpnN).ExportingL2vpnId(exportingL2vpnId).ExportingL2vpnIdN(exportingL2vpnIdN).ExportingVrf(exportingVrf).ExportingVrfN(exportingVrfN).ExportingVrfId(exportingVrfId).ExportingVrfIdN(exportingVrfIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).ImportingL2vpn(importingL2vpn).ImportingL2vpnN(importingL2vpnN).ImportingL2vpnId(importingL2vpnId).ImportingL2vpnIdN(importingL2vpnIdN).ImportingVrf(importingVrf).ImportingVrfN(importingVrfN).ImportingVrfId(importingVrfId).ImportingVrfIdN(importingVrfIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -9062,12 +9206,12 @@ func main() {
 	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
 	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
 	descriptionRegex := []string{"Inner_example"} // []string |  (optional)
-	exportingL2vpn := []*int64{int64(123)} // []*int64 | Exporting L2VPN (identifier) (optional)
-	exportingL2vpnN := []*int64{int64(123)} // []*int64 | Exporting L2VPN (identifier) (optional)
+	exportingL2vpn := []string{"Inner_example"} // []string | Exporting L2VPN (identifier) (optional)
+	exportingL2vpnN := []string{"Inner_example"} // []string | Exporting L2VPN (identifier) (optional)
 	exportingL2vpnId := []int32{int32(123)} // []int32 | Exporting L2VPN (optional)
 	exportingL2vpnIdN := []int32{int32(123)} // []int32 | Exporting L2VPN (optional)
-	exportingVrf := []*string{"Inner_example"} // []*string | Export VRF (RD) (optional)
-	exportingVrfN := []*string{"Inner_example"} // []*string | Export VRF (RD) (optional)
+	exportingVrf := []string{"Inner_example"} // []string | Export VRF (RD) (optional)
+	exportingVrfN := []string{"Inner_example"} // []string | Export VRF (RD) (optional)
 	exportingVrfId := []int32{int32(123)} // []int32 | Exporting VRF (optional)
 	exportingVrfIdN := []int32{int32(123)} // []int32 | Exporting VRF (optional)
 	id := []int32{int32(123)} // []int32 |  (optional)
@@ -9077,12 +9221,12 @@ func main() {
 	idLt := []int32{int32(123)} // []int32 |  (optional)
 	idLte := []int32{int32(123)} // []int32 |  (optional)
 	idN := []int32{int32(123)} // []int32 |  (optional)
-	importingL2vpn := []*int64{int64(123)} // []*int64 | Importing L2VPN (identifier) (optional)
-	importingL2vpnN := []*int64{int64(123)} // []*int64 | Importing L2VPN (identifier) (optional)
+	importingL2vpn := []string{"Inner_example"} // []string | Importing L2VPN (identifier) (optional)
+	importingL2vpnN := []string{"Inner_example"} // []string | Importing L2VPN (identifier) (optional)
 	importingL2vpnId := []int32{int32(123)} // []int32 | Importing L2VPN (optional)
 	importingL2vpnIdN := []int32{int32(123)} // []int32 | Importing L2VPN (optional)
-	importingVrf := []*string{"Inner_example"} // []*string | Import VRF (RD) (optional)
-	importingVrfN := []*string{"Inner_example"} // []*string | Import VRF (RD) (optional)
+	importingVrf := []string{"Inner_example"} // []string | Import VRF (RD) (optional)
+	importingVrfN := []string{"Inner_example"} // []string | Import VRF (RD) (optional)
 	importingVrfId := []int32{int32(123)} // []int32 | Importing VRF (optional)
 	importingVrfIdN := []int32{int32(123)} // []int32 | Importing VRF (optional)
 	lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -9109,11 +9253,19 @@ func main() {
 	nameRegex := []string{"Inner_example"} // []string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	owner := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerN := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerGroup := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupN := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupId := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerGroupIdN := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerId := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
+	ownerIdN := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
 	q := "q_example" // string | Search (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
-	tagId := []int32{int32(123)} // []int32 |  (optional)
-	tagIdN := []int32{int32(123)} // []int32 |  (optional)
+	tagId := []string{"Inner_example"} // []string |  (optional)
+	tagIdN := []string{"Inner_example"} // []string |  (optional)
 	tenant := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantN := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantGroup := []string{"Inner_example"} // []string |  (optional)
@@ -9126,7 +9278,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamRouteTargetsList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).ExportingL2vpn(exportingL2vpn).ExportingL2vpnN(exportingL2vpnN).ExportingL2vpnId(exportingL2vpnId).ExportingL2vpnIdN(exportingL2vpnIdN).ExportingVrf(exportingVrf).ExportingVrfN(exportingVrfN).ExportingVrfId(exportingVrfId).ExportingVrfIdN(exportingVrfIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).ImportingL2vpn(importingL2vpn).ImportingL2vpnN(importingL2vpnN).ImportingL2vpnId(importingL2vpnId).ImportingL2vpnIdN(importingL2vpnIdN).ImportingVrf(importingVrf).ImportingVrfN(importingVrfN).ImportingVrfId(importingVrfId).ImportingVrfIdN(importingVrfIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamRouteTargetsList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).ExportingL2vpn(exportingL2vpn).ExportingL2vpnN(exportingL2vpnN).ExportingL2vpnId(exportingL2vpnId).ExportingL2vpnIdN(exportingL2vpnIdN).ExportingVrf(exportingVrf).ExportingVrfN(exportingVrfN).ExportingVrfId(exportingVrfId).ExportingVrfIdN(exportingVrfIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).ImportingL2vpn(importingL2vpn).ImportingL2vpnN(importingL2vpnN).ImportingL2vpnId(importingL2vpnId).ImportingL2vpnIdN(importingL2vpnIdN).ImportingVrf(importingVrf).ImportingVrfN(importingVrfN).ImportingVrfId(importingVrfId).ImportingVrfIdN(importingVrfIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamRouteTargetsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9168,8 +9320,8 @@ Name | Type | Description  | Notes
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
  **descriptionRegex** | **[]string** |  | 
- **exportingL2vpn** | **[]int64** | Exporting L2VPN (identifier) | 
- **exportingL2vpnN** | **[]int64** | Exporting L2VPN (identifier) | 
+ **exportingL2vpn** | **[]string** | Exporting L2VPN (identifier) | 
+ **exportingL2vpnN** | **[]string** | Exporting L2VPN (identifier) | 
  **exportingL2vpnId** | **[]int32** | Exporting L2VPN | 
  **exportingL2vpnIdN** | **[]int32** | Exporting L2VPN | 
  **exportingVrf** | **[]string** | Export VRF (RD) | 
@@ -9183,8 +9335,8 @@ Name | Type | Description  | Notes
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
- **importingL2vpn** | **[]int64** | Importing L2VPN (identifier) | 
- **importingL2vpnN** | **[]int64** | Importing L2VPN (identifier) | 
+ **importingL2vpn** | **[]string** | Importing L2VPN (identifier) | 
+ **importingL2vpnN** | **[]string** | Importing L2VPN (identifier) | 
  **importingL2vpnId** | **[]int32** | Importing L2VPN | 
  **importingL2vpnIdN** | **[]int32** | Importing L2VPN | 
  **importingVrf** | **[]string** | Import VRF (RD) | 
@@ -9215,11 +9367,19 @@ Name | Type | Description  | Notes
  **nameRegex** | **[]string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
+ **owner** | **[]string** | Owner (name) | 
+ **ownerN** | **[]string** | Owner (name) | 
+ **ownerGroup** | **[]string** | Owner Group (name) | 
+ **ownerGroupN** | **[]string** | Owner Group (name) | 
+ **ownerGroupId** | **[]int32** | Owner Group (ID) | 
+ **ownerGroupIdN** | **[]int32** | Owner Group (ID) | 
+ **ownerId** | **[]int32** | Owner (ID) | 
+ **ownerIdN** | **[]int32** | Owner (ID) | 
  **q** | **string** | Search | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
- **tagId** | **[]int32** |  | 
- **tagIdN** | **[]int32** |  | 
+ **tagId** | **[]string** |  | 
+ **tagIdN** | **[]string** |  | 
  **tenant** | **[]string** | Tenant (slug) | 
  **tenantN** | **[]string** | Tenant (slug) | 
  **tenantGroup** | **[]string** |  | 
@@ -9660,7 +9820,7 @@ Name | Type | Description  | Notes
 
 ## IpamServiceTemplatesCreate
 
-> ServiceTemplate IpamServiceTemplatesCreate(ctx).WritableServiceTemplateRequest(writableServiceTemplateRequest).Execute()
+> ServiceTemplate IpamServiceTemplatesCreate(ctx).IpamServiceTemplatesCreateRequest(ipamServiceTemplatesCreateRequest).Execute()
 
 
 
@@ -9679,11 +9839,11 @@ import (
 )
 
 func main() {
-	writableServiceTemplateRequest := *openapiclient.NewWritableServiceTemplateRequest("Name_example", openapiclient.PatchedWritableServiceRequest_protocol("tcp"), []int32{int32(123)}) // WritableServiceTemplateRequest | 
+	ipamServiceTemplatesCreateRequest := openapiclient.ipam_service_templates_create_request{WritableServiceTemplateRequest: openapiclient.NewWritableServiceTemplateRequest("Name_example", openapiclient.PatchedWritableServiceRequest_protocol("tcp"), []int32{int32(123)})} // IpamServiceTemplatesCreateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamServiceTemplatesCreate(context.Background()).WritableServiceTemplateRequest(writableServiceTemplateRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamServiceTemplatesCreate(context.Background()).IpamServiceTemplatesCreateRequest(ipamServiceTemplatesCreateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamServiceTemplatesCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9704,7 +9864,7 @@ Other parameters are passed through a pointer to a apiIpamServiceTemplatesCreate
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **writableServiceTemplateRequest** | [**WritableServiceTemplateRequest**](WritableServiceTemplateRequest.md) |  | 
+ **ipamServiceTemplatesCreateRequest** | [**IpamServiceTemplatesCreateRequest**](IpamServiceTemplatesCreateRequest.md) |  | 
 
 ### Return type
 
@@ -9794,7 +9954,7 @@ Name | Type | Description  | Notes
 
 ## IpamServiceTemplatesList
 
-> PaginatedServiceTemplateList IpamServiceTemplatesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Port(port).PortEmpty(portEmpty).PortGt(portGt).PortGte(portGte).PortLt(portLt).PortLte(portLte).PortN(portN).Protocol(protocol).Q(q).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedServiceTemplateList IpamServiceTemplatesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Port(port).PortEmpty(portEmpty).PortGt(portGt).PortGte(portGte).PortLt(portLt).PortLte(portLte).PortN(portN).Protocol(protocol).ProtocolEmpty(protocolEmpty).ProtocolIc(protocolIc).ProtocolIe(protocolIe).ProtocolIew(protocolIew).ProtocolIregex(protocolIregex).ProtocolIsw(protocolIsw).ProtocolN(protocolN).ProtocolNic(protocolNic).ProtocolNie(protocolNie).ProtocolNiew(protocolNiew).ProtocolNisw(protocolNisw).ProtocolRegex(protocolRegex).Q(q).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -9866,6 +10026,14 @@ func main() {
 	nameRegex := []string{"Inner_example"} // []string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	owner := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerN := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerGroup := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupN := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupId := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerGroupIdN := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerId := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
+	ownerIdN := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
 	port := float32(8.14) // float32 |  (optional)
 	portEmpty := float32(8.14) // float32 |  (optional)
 	portGt := float32(8.14) // float32 |  (optional)
@@ -9873,17 +10041,29 @@ func main() {
 	portLt := float32(8.14) // float32 |  (optional)
 	portLte := float32(8.14) // float32 |  (optional)
 	portN := float32(8.14) // float32 |  (optional)
-	protocol := openapiclient.ipam_service_templates_list_protocol_parameter("sctp") // IpamServiceTemplatesListProtocolParameter | * `tcp` - TCP * `udp` - UDP * `sctp` - SCTP (optional)
+	protocol := openapiclient.ipam_service_templates_list_protocol_parameter("null") // IpamServiceTemplatesListProtocolParameter | * `tcp` - TCP * `udp` - UDP * `sctp` - SCTP (optional)
+	protocolEmpty := true // bool |  (optional)
+	protocolIc := []string{"Inner_example"} // []string |  (optional)
+	protocolIe := []string{"Inner_example"} // []string |  (optional)
+	protocolIew := []string{"Inner_example"} // []string |  (optional)
+	protocolIregex := []string{"Inner_example"} // []string |  (optional)
+	protocolIsw := []string{"Inner_example"} // []string |  (optional)
+	protocolN := openapiclient.ipam_service_templates_list_protocol_parameter("null") // IpamServiceTemplatesListProtocolParameter | * `tcp` - TCP * `udp` - UDP * `sctp` - SCTP (optional)
+	protocolNic := []string{"Inner_example"} // []string |  (optional)
+	protocolNie := []string{"Inner_example"} // []string |  (optional)
+	protocolNiew := []string{"Inner_example"} // []string |  (optional)
+	protocolNisw := []string{"Inner_example"} // []string |  (optional)
+	protocolRegex := []string{"Inner_example"} // []string |  (optional)
 	q := "q_example" // string | Search (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
-	tagId := []int32{int32(123)} // []int32 |  (optional)
-	tagIdN := []int32{int32(123)} // []int32 |  (optional)
+	tagId := []string{"Inner_example"} // []string |  (optional)
+	tagIdN := []string{"Inner_example"} // []string |  (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamServiceTemplatesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Port(port).PortEmpty(portEmpty).PortGt(portGt).PortGte(portGte).PortLt(portLt).PortLte(portLte).PortN(portN).Protocol(protocol).Q(q).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamServiceTemplatesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Port(port).PortEmpty(portEmpty).PortGt(portGt).PortGte(portGte).PortLt(portLt).PortLte(portLte).PortN(portN).Protocol(protocol).ProtocolEmpty(protocolEmpty).ProtocolIc(protocolIc).ProtocolIe(protocolIe).ProtocolIew(protocolIew).ProtocolIregex(protocolIregex).ProtocolIsw(protocolIsw).ProtocolN(protocolN).ProtocolNic(protocolNic).ProtocolNie(protocolNie).ProtocolNiew(protocolNiew).ProtocolNisw(protocolNisw).ProtocolRegex(protocolRegex).Q(q).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamServiceTemplatesList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9956,6 +10136,14 @@ Name | Type | Description  | Notes
  **nameRegex** | **[]string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
+ **owner** | **[]string** | Owner (name) | 
+ **ownerN** | **[]string** | Owner (name) | 
+ **ownerGroup** | **[]string** | Owner Group (name) | 
+ **ownerGroupN** | **[]string** | Owner Group (name) | 
+ **ownerGroupId** | **[]int32** | Owner Group (ID) | 
+ **ownerGroupIdN** | **[]int32** | Owner Group (ID) | 
+ **ownerId** | **[]int32** | Owner (ID) | 
+ **ownerIdN** | **[]int32** | Owner (ID) | 
  **port** | **float32** |  | 
  **portEmpty** | **float32** |  | 
  **portGt** | **float32** |  | 
@@ -9964,11 +10152,23 @@ Name | Type | Description  | Notes
  **portLte** | **float32** |  | 
  **portN** | **float32** |  | 
  **protocol** | [**IpamServiceTemplatesListProtocolParameter**](IpamServiceTemplatesListProtocolParameter.md) | * &#x60;tcp&#x60; - TCP * &#x60;udp&#x60; - UDP * &#x60;sctp&#x60; - SCTP | 
+ **protocolEmpty** | **bool** |  | 
+ **protocolIc** | **[]string** |  | 
+ **protocolIe** | **[]string** |  | 
+ **protocolIew** | **[]string** |  | 
+ **protocolIregex** | **[]string** |  | 
+ **protocolIsw** | **[]string** |  | 
+ **protocolN** | [**IpamServiceTemplatesListProtocolParameter**](IpamServiceTemplatesListProtocolParameter.md) | * &#x60;tcp&#x60; - TCP * &#x60;udp&#x60; - UDP * &#x60;sctp&#x60; - SCTP | 
+ **protocolNic** | **[]string** |  | 
+ **protocolNie** | **[]string** |  | 
+ **protocolNiew** | **[]string** |  | 
+ **protocolNisw** | **[]string** |  | 
+ **protocolRegex** | **[]string** |  | 
  **q** | **string** | Search | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
- **tagId** | **[]int32** |  | 
- **tagIdN** | **[]int32** |  | 
+ **tagId** | **[]string** |  | 
+ **tagIdN** | **[]string** |  | 
  **updatedByRequest** | **string** |  | 
 
 ### Return type
@@ -10401,7 +10601,7 @@ Name | Type | Description  | Notes
 
 ## IpamServicesCreate
 
-> Service IpamServicesCreate(ctx).WritableServiceRequest(writableServiceRequest).Execute()
+> Service IpamServicesCreate(ctx).IpamServicesCreateRequest(ipamServicesCreateRequest).Execute()
 
 
 
@@ -10420,11 +10620,11 @@ import (
 )
 
 func main() {
-	writableServiceRequest := *openapiclient.NewWritableServiceRequest("ParentObjectType_example", int64(123), "Name_example", openapiclient.PatchedWritableServiceRequest_protocol("tcp"), []int32{int32(123)}) // WritableServiceRequest | 
+	ipamServicesCreateRequest := openapiclient.ipam_services_create_request{WritableServiceRequest: openapiclient.NewWritableServiceRequest("ParentObjectType_example", int64(123), "Name_example", openapiclient.PatchedWritableServiceRequest_protocol("tcp"), []int32{int32(123)})} // IpamServicesCreateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamServicesCreate(context.Background()).WritableServiceRequest(writableServiceRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamServicesCreate(context.Background()).IpamServicesCreateRequest(ipamServicesCreateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamServicesCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10445,7 +10645,7 @@ Other parameters are passed through a pointer to a apiIpamServicesCreateRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **writableServiceRequest** | [**WritableServiceRequest**](WritableServiceRequest.md) |  | 
+ **ipamServicesCreateRequest** | [**IpamServicesCreateRequest**](IpamServicesCreateRequest.md) |  | 
 
 ### Return type
 
@@ -10535,7 +10735,7 @@ Name | Type | Description  | Notes
 
 ## IpamServicesList
 
-> PaginatedServiceList IpamServicesList(ctx).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Device(device).DeviceId(deviceId).Fhrpgroup(fhrpgroup).FhrpgroupId(fhrpgroupId).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IpAddress(ipAddress).IpAddressN(ipAddressN).IpAddressId(ipAddressId).IpAddressIdN(ipAddressIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).ParentObjectId(parentObjectId).ParentObjectIdEmpty(parentObjectIdEmpty).ParentObjectIdGt(parentObjectIdGt).ParentObjectIdGte(parentObjectIdGte).ParentObjectIdLt(parentObjectIdLt).ParentObjectIdLte(parentObjectIdLte).ParentObjectIdN(parentObjectIdN).ParentObjectType(parentObjectType).ParentObjectTypeN(parentObjectTypeN).Port(port).PortEmpty(portEmpty).PortGt(portGt).PortGte(portGte).PortLt(portLt).PortLte(portLte).PortN(portN).Protocol(protocol).Q(q).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineId(virtualMachineId).Execute()
+> PaginatedServiceList IpamServicesList(ctx).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Device(device).DeviceId(deviceId).Fhrpgroup(fhrpgroup).FhrpgroupId(fhrpgroupId).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IpAddress(ipAddress).IpAddressN(ipAddressN).IpAddressId(ipAddressId).IpAddressIdN(ipAddressIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).ParentObjectId(parentObjectId).ParentObjectIdEmpty(parentObjectIdEmpty).ParentObjectIdGt(parentObjectIdGt).ParentObjectIdGte(parentObjectIdGte).ParentObjectIdLt(parentObjectIdLt).ParentObjectIdLte(parentObjectIdLte).ParentObjectIdN(parentObjectIdN).ParentObjectType(parentObjectType).ParentObjectTypeN(parentObjectTypeN).Port(port).PortEmpty(portEmpty).PortGt(portGt).PortGte(portGte).PortLt(portLt).PortLte(portLte).PortN(portN).Protocol(protocol).ProtocolEmpty(protocolEmpty).ProtocolIc(protocolIc).ProtocolIe(protocolIe).ProtocolIew(protocolIew).ProtocolIregex(protocolIregex).ProtocolIsw(protocolIsw).ProtocolN(protocolN).ProtocolNic(protocolNic).ProtocolNie(protocolNie).ProtocolNiew(protocolNiew).ProtocolNisw(protocolNisw).ProtocolRegex(protocolRegex).Q(q).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineId(virtualMachineId).Execute()
 
 
 
@@ -10621,6 +10821,14 @@ func main() {
 	nameRegex := []string{"Inner_example"} // []string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	owner := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerN := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerGroup := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupN := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupId := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerGroupIdN := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerId := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
+	ownerIdN := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
 	parentObjectId := []int32{int32(123)} // []int32 |  (optional)
 	parentObjectIdEmpty := true // bool |  (optional)
 	parentObjectIdGt := []int32{int32(123)} // []int32 |  (optional)
@@ -10637,19 +10845,31 @@ func main() {
 	portLt := float32(8.14) // float32 |  (optional)
 	portLte := float32(8.14) // float32 |  (optional)
 	portN := float32(8.14) // float32 |  (optional)
-	protocol := openapiclient.ipam_service_templates_list_protocol_parameter("sctp") // IpamServiceTemplatesListProtocolParameter | * `tcp` - TCP * `udp` - UDP * `sctp` - SCTP (optional)
+	protocol := openapiclient.ipam_service_templates_list_protocol_parameter("null") // IpamServiceTemplatesListProtocolParameter | * `tcp` - TCP * `udp` - UDP * `sctp` - SCTP (optional)
+	protocolEmpty := true // bool |  (optional)
+	protocolIc := []string{"Inner_example"} // []string |  (optional)
+	protocolIe := []string{"Inner_example"} // []string |  (optional)
+	protocolIew := []string{"Inner_example"} // []string |  (optional)
+	protocolIregex := []string{"Inner_example"} // []string |  (optional)
+	protocolIsw := []string{"Inner_example"} // []string |  (optional)
+	protocolN := openapiclient.ipam_service_templates_list_protocol_parameter("null") // IpamServiceTemplatesListProtocolParameter | * `tcp` - TCP * `udp` - UDP * `sctp` - SCTP (optional)
+	protocolNic := []string{"Inner_example"} // []string |  (optional)
+	protocolNie := []string{"Inner_example"} // []string |  (optional)
+	protocolNiew := []string{"Inner_example"} // []string |  (optional)
+	protocolNisw := []string{"Inner_example"} // []string |  (optional)
+	protocolRegex := []string{"Inner_example"} // []string |  (optional)
 	q := "q_example" // string | Search (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
-	tagId := []int32{int32(123)} // []int32 |  (optional)
-	tagIdN := []int32{int32(123)} // []int32 |  (optional)
+	tagId := []string{"Inner_example"} // []string |  (optional)
+	tagIdN := []string{"Inner_example"} // []string |  (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	virtualMachine := []string{"Inner_example"} // []string |  (optional)
 	virtualMachineId := []int32{int32(123)} // []int32 |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamServicesList(context.Background()).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Device(device).DeviceId(deviceId).Fhrpgroup(fhrpgroup).FhrpgroupId(fhrpgroupId).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IpAddress(ipAddress).IpAddressN(ipAddressN).IpAddressId(ipAddressId).IpAddressIdN(ipAddressIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).ParentObjectId(parentObjectId).ParentObjectIdEmpty(parentObjectIdEmpty).ParentObjectIdGt(parentObjectIdGt).ParentObjectIdGte(parentObjectIdGte).ParentObjectIdLt(parentObjectIdLt).ParentObjectIdLte(parentObjectIdLte).ParentObjectIdN(parentObjectIdN).ParentObjectType(parentObjectType).ParentObjectTypeN(parentObjectTypeN).Port(port).PortEmpty(portEmpty).PortGt(portGt).PortGte(portGte).PortLt(portLt).PortLte(portLte).PortN(portN).Protocol(protocol).Q(q).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineId(virtualMachineId).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamServicesList(context.Background()).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Device(device).DeviceId(deviceId).Fhrpgroup(fhrpgroup).FhrpgroupId(fhrpgroupId).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IpAddress(ipAddress).IpAddressN(ipAddressN).IpAddressId(ipAddressId).IpAddressIdN(ipAddressIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).ParentObjectId(parentObjectId).ParentObjectIdEmpty(parentObjectIdEmpty).ParentObjectIdGt(parentObjectIdGt).ParentObjectIdGte(parentObjectIdGte).ParentObjectIdLt(parentObjectIdLt).ParentObjectIdLte(parentObjectIdLte).ParentObjectIdN(parentObjectIdN).ParentObjectType(parentObjectType).ParentObjectTypeN(parentObjectTypeN).Port(port).PortEmpty(portEmpty).PortGt(portGt).PortGte(portGte).PortLt(portLt).PortLte(portLte).PortN(portN).Protocol(protocol).ProtocolEmpty(protocolEmpty).ProtocolIc(protocolIc).ProtocolIe(protocolIe).ProtocolIew(protocolIew).ProtocolIregex(protocolIregex).ProtocolIsw(protocolIsw).ProtocolN(protocolN).ProtocolNic(protocolNic).ProtocolNie(protocolNie).ProtocolNiew(protocolNiew).ProtocolNisw(protocolNisw).ProtocolRegex(protocolRegex).Q(q).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineId(virtualMachineId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamServicesList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10736,6 +10956,14 @@ Name | Type | Description  | Notes
  **nameRegex** | **[]string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
+ **owner** | **[]string** | Owner (name) | 
+ **ownerN** | **[]string** | Owner (name) | 
+ **ownerGroup** | **[]string** | Owner Group (name) | 
+ **ownerGroupN** | **[]string** | Owner Group (name) | 
+ **ownerGroupId** | **[]int32** | Owner Group (ID) | 
+ **ownerGroupIdN** | **[]int32** | Owner Group (ID) | 
+ **ownerId** | **[]int32** | Owner (ID) | 
+ **ownerIdN** | **[]int32** | Owner (ID) | 
  **parentObjectId** | **[]int32** |  | 
  **parentObjectIdEmpty** | **bool** |  | 
  **parentObjectIdGt** | **[]int32** |  | 
@@ -10753,11 +10981,23 @@ Name | Type | Description  | Notes
  **portLte** | **float32** |  | 
  **portN** | **float32** |  | 
  **protocol** | [**IpamServiceTemplatesListProtocolParameter**](IpamServiceTemplatesListProtocolParameter.md) | * &#x60;tcp&#x60; - TCP * &#x60;udp&#x60; - UDP * &#x60;sctp&#x60; - SCTP | 
+ **protocolEmpty** | **bool** |  | 
+ **protocolIc** | **[]string** |  | 
+ **protocolIe** | **[]string** |  | 
+ **protocolIew** | **[]string** |  | 
+ **protocolIregex** | **[]string** |  | 
+ **protocolIsw** | **[]string** |  | 
+ **protocolN** | [**IpamServiceTemplatesListProtocolParameter**](IpamServiceTemplatesListProtocolParameter.md) | * &#x60;tcp&#x60; - TCP * &#x60;udp&#x60; - UDP * &#x60;sctp&#x60; - SCTP | 
+ **protocolNic** | **[]string** |  | 
+ **protocolNie** | **[]string** |  | 
+ **protocolNiew** | **[]string** |  | 
+ **protocolNisw** | **[]string** |  | 
+ **protocolRegex** | **[]string** |  | 
  **q** | **string** | Search | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
- **tagId** | **[]int32** |  | 
- **tagIdN** | **[]int32** |  | 
+ **tagId** | **[]string** |  | 
+ **tagIdN** | **[]string** |  | 
  **updatedByRequest** | **string** |  | 
  **virtualMachine** | **[]string** |  | 
  **virtualMachineId** | **[]int32** |  | 
@@ -11334,7 +11574,7 @@ Name | Type | Description  | Notes
 
 ## IpamVlanGroupsCreate
 
-> VLANGroup IpamVlanGroupsCreate(ctx).VLANGroupRequest(vLANGroupRequest).Execute()
+> VLANGroup IpamVlanGroupsCreate(ctx).IpamVlanGroupsCreateRequest(ipamVlanGroupsCreateRequest).Execute()
 
 
 
@@ -11353,11 +11593,11 @@ import (
 )
 
 func main() {
-	vLANGroupRequest := *openapiclient.NewVLANGroupRequest("Name_example", "Slug_example") // VLANGroupRequest | 
+	ipamVlanGroupsCreateRequest := openapiclient.ipam_vlan_groups_create_request{VLANGroupRequest: openapiclient.NewVLANGroupRequest("Name_example", "Slug_example")} // IpamVlanGroupsCreateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamVlanGroupsCreate(context.Background()).VLANGroupRequest(vLANGroupRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamVlanGroupsCreate(context.Background()).IpamVlanGroupsCreateRequest(ipamVlanGroupsCreateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamVlanGroupsCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11378,7 +11618,7 @@ Other parameters are passed through a pointer to a apiIpamVlanGroupsCreateReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vLANGroupRequest** | [**VLANGroupRequest**](VLANGroupRequest.md) |  | 
+ **ipamVlanGroupsCreateRequest** | [**IpamVlanGroupsCreateRequest**](IpamVlanGroupsCreateRequest.md) |  | 
 
 ### Return type
 
@@ -11468,7 +11708,7 @@ Name | Type | Description  | Notes
 
 ## IpamVlanGroupsList
 
-> PaginatedVLANGroupList IpamVlanGroupsList(ctx).Cluster(cluster).ClusterGroup(clusterGroup).ContainsVid(containsVid).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).Rack(rack).Region(region).ScopeId(scopeId).ScopeIdEmpty(scopeIdEmpty).ScopeIdGt(scopeIdGt).ScopeIdGte(scopeIdGte).ScopeIdLt(scopeIdLt).ScopeIdLte(scopeIdLte).ScopeIdN(scopeIdN).ScopeType(scopeType).ScopeTypeN(scopeTypeN).Site(site).SiteGroup(siteGroup).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIregex(slugIregex).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SlugRegex(slugRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedVLANGroupList IpamVlanGroupsList(ctx).Cluster(cluster).ClusterGroup(clusterGroup).ContainsVid(containsVid).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).Rack(rack).Region(region).ScopeId(scopeId).ScopeIdEmpty(scopeIdEmpty).ScopeIdGt(scopeIdGt).ScopeIdGte(scopeIdGte).ScopeIdLt(scopeIdLt).ScopeIdLte(scopeIdLte).ScopeIdN(scopeIdN).ScopeType(scopeType).ScopeTypeN(scopeTypeN).Site(site).SiteGroup(siteGroup).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIregex(slugIregex).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SlugRegex(slugRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -11544,6 +11784,14 @@ func main() {
 	nameRegex := []string{"Inner_example"} // []string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	owner := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerN := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerGroup := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupN := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupId := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerGroupIdN := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerId := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
+	ownerIdN := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
 	q := "q_example" // string | Search (optional)
 	rack := int32(56) // int32 |  (optional)
 	region := int32(56) // int32 |  (optional)
@@ -11573,8 +11821,8 @@ func main() {
 	slugRegex := []string{"Inner_example"} // []string |  (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
-	tagId := []int32{int32(123)} // []int32 |  (optional)
-	tagIdN := []int32{int32(123)} // []int32 |  (optional)
+	tagId := []string{"Inner_example"} // []string |  (optional)
+	tagIdN := []string{"Inner_example"} // []string |  (optional)
 	tenant := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantN := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantGroup := []string{"Inner_example"} // []string |  (optional)
@@ -11587,7 +11835,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamVlanGroupsList(context.Background()).Cluster(cluster).ClusterGroup(clusterGroup).ContainsVid(containsVid).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).Rack(rack).Region(region).ScopeId(scopeId).ScopeIdEmpty(scopeIdEmpty).ScopeIdGt(scopeIdGt).ScopeIdGte(scopeIdGte).ScopeIdLt(scopeIdLt).ScopeIdLte(scopeIdLte).ScopeIdN(scopeIdN).ScopeType(scopeType).ScopeTypeN(scopeTypeN).Site(site).SiteGroup(siteGroup).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIregex(slugIregex).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SlugRegex(slugRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamVlanGroupsList(context.Background()).Cluster(cluster).ClusterGroup(clusterGroup).ContainsVid(containsVid).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).Rack(rack).Region(region).ScopeId(scopeId).ScopeIdEmpty(scopeIdEmpty).ScopeIdGt(scopeIdGt).ScopeIdGte(scopeIdGte).ScopeIdLt(scopeIdLt).ScopeIdLte(scopeIdLte).ScopeIdN(scopeIdN).ScopeType(scopeType).ScopeTypeN(scopeTypeN).Site(site).SiteGroup(siteGroup).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIregex(slugIregex).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SlugRegex(slugRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamVlanGroupsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11664,6 +11912,14 @@ Name | Type | Description  | Notes
  **nameRegex** | **[]string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
+ **owner** | **[]string** | Owner (name) | 
+ **ownerN** | **[]string** | Owner (name) | 
+ **ownerGroup** | **[]string** | Owner Group (name) | 
+ **ownerGroupN** | **[]string** | Owner Group (name) | 
+ **ownerGroupId** | **[]int32** | Owner Group (ID) | 
+ **ownerGroupIdN** | **[]int32** | Owner Group (ID) | 
+ **ownerId** | **[]int32** | Owner (ID) | 
+ **ownerIdN** | **[]int32** | Owner (ID) | 
  **q** | **string** | Search | 
  **rack** | **int32** |  | 
  **region** | **int32** |  | 
@@ -11693,8 +11949,8 @@ Name | Type | Description  | Notes
  **slugRegex** | **[]string** |  | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
- **tagId** | **[]int32** |  | 
- **tagIdN** | **[]int32** |  | 
+ **tagId** | **[]string** |  | 
+ **tagIdN** | **[]string** |  | 
  **tenant** | **[]string** | Tenant (slug) | 
  **tenantN** | **[]string** | Tenant (slug) | 
  **tenantGroup** | **[]string** |  | 
@@ -12135,7 +12391,7 @@ Name | Type | Description  | Notes
 
 ## IpamVlanTranslationPoliciesCreate
 
-> VLANTranslationPolicy IpamVlanTranslationPoliciesCreate(ctx).VLANTranslationPolicyRequest(vLANTranslationPolicyRequest).Execute()
+> VLANTranslationPolicy IpamVlanTranslationPoliciesCreate(ctx).IpamVlanTranslationPoliciesCreateRequest(ipamVlanTranslationPoliciesCreateRequest).Execute()
 
 
 
@@ -12154,11 +12410,11 @@ import (
 )
 
 func main() {
-	vLANTranslationPolicyRequest := *openapiclient.NewVLANTranslationPolicyRequest("Name_example") // VLANTranslationPolicyRequest | 
+	ipamVlanTranslationPoliciesCreateRequest := openapiclient.ipam_vlan_translation_policies_create_request{VLANTranslationPolicyRequest: openapiclient.NewVLANTranslationPolicyRequest("Name_example")} // IpamVlanTranslationPoliciesCreateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamVlanTranslationPoliciesCreate(context.Background()).VLANTranslationPolicyRequest(vLANTranslationPolicyRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamVlanTranslationPoliciesCreate(context.Background()).IpamVlanTranslationPoliciesCreateRequest(ipamVlanTranslationPoliciesCreateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamVlanTranslationPoliciesCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12179,7 +12435,7 @@ Other parameters are passed through a pointer to a apiIpamVlanTranslationPolicie
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vLANTranslationPolicyRequest** | [**VLANTranslationPolicyRequest**](VLANTranslationPolicyRequest.md) |  | 
+ **ipamVlanTranslationPoliciesCreateRequest** | [**IpamVlanTranslationPoliciesCreateRequest**](IpamVlanTranslationPoliciesCreateRequest.md) |  | 
 
 ### Return type
 
@@ -12269,7 +12525,7 @@ Name | Type | Description  | Notes
 
 ## IpamVlanTranslationPoliciesList
 
-> PaginatedVLANTranslationPolicyList IpamVlanTranslationPoliciesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedVLANTranslationPolicyList IpamVlanTranslationPoliciesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -12341,16 +12597,24 @@ func main() {
 	nameRegex := []string{"Inner_example"} // []string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	owner := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerN := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerGroup := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupN := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupId := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerGroupIdN := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerId := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
+	ownerIdN := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
 	q := "q_example" // string | Search (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
-	tagId := []int32{int32(123)} // []int32 |  (optional)
-	tagIdN := []int32{int32(123)} // []int32 |  (optional)
+	tagId := []string{"Inner_example"} // []string |  (optional)
+	tagIdN := []string{"Inner_example"} // []string |  (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamVlanTranslationPoliciesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamVlanTranslationPoliciesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamVlanTranslationPoliciesList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12423,11 +12687,19 @@ Name | Type | Description  | Notes
  **nameRegex** | **[]string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
+ **owner** | **[]string** | Owner (name) | 
+ **ownerN** | **[]string** | Owner (name) | 
+ **ownerGroup** | **[]string** | Owner Group (name) | 
+ **ownerGroupN** | **[]string** | Owner Group (name) | 
+ **ownerGroupId** | **[]int32** | Owner Group (ID) | 
+ **ownerGroupIdN** | **[]int32** | Owner Group (ID) | 
+ **ownerId** | **[]int32** | Owner (ID) | 
+ **ownerIdN** | **[]int32** | Owner (ID) | 
  **q** | **string** | Search | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
- **tagId** | **[]int32** |  | 
- **tagIdN** | **[]int32** |  | 
+ **tagId** | **[]string** |  | 
+ **tagIdN** | **[]string** |  | 
  **updatedByRequest** | **string** |  | 
 
 ### Return type
@@ -12860,7 +13132,7 @@ Name | Type | Description  | Notes
 
 ## IpamVlanTranslationRulesCreate
 
-> VLANTranslationRule IpamVlanTranslationRulesCreate(ctx).VLANTranslationRuleRequest(vLANTranslationRuleRequest).Execute()
+> VLANTranslationRule IpamVlanTranslationRulesCreate(ctx).IpamVlanTranslationRulesCreateRequest(ipamVlanTranslationRulesCreateRequest).Execute()
 
 
 
@@ -12879,11 +13151,11 @@ import (
 )
 
 func main() {
-	vLANTranslationRuleRequest := *openapiclient.NewVLANTranslationRuleRequest(int32(123), int32(123), int32(123)) // VLANTranslationRuleRequest | 
+	ipamVlanTranslationRulesCreateRequest := openapiclient.ipam_vlan_translation_rules_create_request{VLANTranslationRuleRequest: openapiclient.NewVLANTranslationRuleRequest(int32(123), int32(123), int32(123))} // IpamVlanTranslationRulesCreateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamVlanTranslationRulesCreate(context.Background()).VLANTranslationRuleRequest(vLANTranslationRuleRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamVlanTranslationRulesCreate(context.Background()).IpamVlanTranslationRulesCreateRequest(ipamVlanTranslationRulesCreateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamVlanTranslationRulesCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12904,7 +13176,7 @@ Other parameters are passed through a pointer to a apiIpamVlanTranslationRulesCr
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vLANTranslationRuleRequest** | [**VLANTranslationRuleRequest**](VLANTranslationRuleRequest.md) |  | 
+ **ipamVlanTranslationRulesCreateRequest** | [**IpamVlanTranslationRulesCreateRequest**](IpamVlanTranslationRulesCreateRequest.md) |  | 
 
 ### Return type
 
@@ -13074,8 +13346,8 @@ func main() {
 	remoteVidN := []int32{int32(123)} // []int32 |  (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
-	tagId := []int32{int32(123)} // []int32 |  (optional)
-	tagIdN := []int32{int32(123)} // []int32 |  (optional)
+	tagId := []string{"Inner_example"} // []string |  (optional)
+	tagIdN := []string{"Inner_example"} // []string |  (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -13161,8 +13433,8 @@ Name | Type | Description  | Notes
  **remoteVidN** | **[]int32** |  | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
- **tagId** | **[]int32** |  | 
- **tagIdN** | **[]int32** |  | 
+ **tagId** | **[]string** |  | 
+ **tagIdN** | **[]string** |  | 
  **updatedByRequest** | **string** |  | 
 
 ### Return type
@@ -13595,7 +13867,7 @@ Name | Type | Description  | Notes
 
 ## IpamVlansCreate
 
-> VLAN IpamVlansCreate(ctx).WritableVLANRequest(writableVLANRequest).Execute()
+> VLAN IpamVlansCreate(ctx).IpamVlansCreateRequest(ipamVlansCreateRequest).Execute()
 
 
 
@@ -13614,11 +13886,11 @@ import (
 )
 
 func main() {
-	writableVLANRequest := *openapiclient.NewWritableVLANRequest(int32(123), "Name_example") // WritableVLANRequest | 
+	ipamVlansCreateRequest := openapiclient.ipam_vlans_create_request{WritableVLANRequest: openapiclient.NewWritableVLANRequest(int32(123), "Name_example")} // IpamVlansCreateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamVlansCreate(context.Background()).WritableVLANRequest(writableVLANRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamVlansCreate(context.Background()).IpamVlansCreateRequest(ipamVlansCreateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamVlansCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -13639,7 +13911,7 @@ Other parameters are passed through a pointer to a apiIpamVlansCreateRequest str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **writableVLANRequest** | [**WritableVLANRequest**](WritableVLANRequest.md) |  | 
+ **ipamVlansCreateRequest** | [**IpamVlansCreateRequest**](IpamVlansCreateRequest.md) |  | 
 
 ### Return type
 
@@ -13729,7 +14001,7 @@ Name | Type | Description  | Notes
 
 ## IpamVlansList
 
-> PaginatedVLANList IpamVlansList(ctx).AvailableAtSite(availableAtSite).AvailableOnDevice(availableOnDevice).AvailableOnVirtualmachine(availableOnVirtualmachine).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).InterfaceId(interfaceId).L2vpn(l2vpn).L2vpnN(l2vpnN).L2vpnId(l2vpnId).L2vpnIdN(l2vpnIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).QinqRole(qinqRole).QinqRoleEmpty(qinqRoleEmpty).QinqRoleIc(qinqRoleIc).QinqRoleIe(qinqRoleIe).QinqRoleIew(qinqRoleIew).QinqRoleIregex(qinqRoleIregex).QinqRoleIsw(qinqRoleIsw).QinqRoleN(qinqRoleN).QinqRoleNic(qinqRoleNic).QinqRoleNie(qinqRoleNie).QinqRoleNiew(qinqRoleNiew).QinqRoleNisw(qinqRoleNisw).QinqRoleRegex(qinqRoleRegex).QinqSvlanId(qinqSvlanId).QinqSvlanIdN(qinqSvlanIdN).QinqSvlanVid(qinqSvlanVid).QinqSvlanVidEmpty(qinqSvlanVidEmpty).QinqSvlanVidGt(qinqSvlanVidGt).QinqSvlanVidGte(qinqSvlanVidGte).QinqSvlanVidLt(qinqSvlanVidLt).QinqSvlanVidLte(qinqSvlanVidLte).QinqSvlanVidN(qinqSvlanVidN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Vid(vid).VidEmpty(vidEmpty).VidGt(vidGt).VidGte(vidGte).VidLt(vidLt).VidLte(vidLte).VidN(vidN).VminterfaceId(vminterfaceId).Execute()
+> PaginatedVLANList IpamVlansList(ctx).AvailableAtSite(availableAtSite).AvailableOnDevice(availableOnDevice).AvailableOnVirtualmachine(availableOnVirtualmachine).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).InterfaceId(interfaceId).L2vpn(l2vpn).L2vpnN(l2vpnN).L2vpnId(l2vpnId).L2vpnIdN(l2vpnIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).QinqRole(qinqRole).QinqRoleEmpty(qinqRoleEmpty).QinqRoleIc(qinqRoleIc).QinqRoleIe(qinqRoleIe).QinqRoleIew(qinqRoleIew).QinqRoleIregex(qinqRoleIregex).QinqRoleIsw(qinqRoleIsw).QinqRoleN(qinqRoleN).QinqRoleNic(qinqRoleNic).QinqRoleNie(qinqRoleNie).QinqRoleNiew(qinqRoleNiew).QinqRoleNisw(qinqRoleNisw).QinqRoleRegex(qinqRoleRegex).QinqSvlanId(qinqSvlanId).QinqSvlanIdN(qinqSvlanIdN).QinqSvlanVid(qinqSvlanVid).QinqSvlanVidEmpty(qinqSvlanVidEmpty).QinqSvlanVidGt(qinqSvlanVidGt).QinqSvlanVidGte(qinqSvlanVidGte).QinqSvlanVidLt(qinqSvlanVidLt).QinqSvlanVidLte(qinqSvlanVidLte).QinqSvlanVidN(qinqSvlanVidN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Vid(vid).VidEmpty(vidEmpty).VidGt(vidGt).VidGte(vidGte).VidLt(vidLt).VidLte(vidLte).VidN(vidN).VminterfaceId(vminterfaceId).Execute()
 
 
 
@@ -13785,8 +14057,8 @@ func main() {
 	idLte := []int32{int32(123)} // []int32 |  (optional)
 	idN := []int32{int32(123)} // []int32 |  (optional)
 	interfaceId := int32(56) // int32 |  (optional)
-	l2vpn := []*int64{int64(123)} // []*int64 | L2VPN (optional)
-	l2vpnN := []*int64{int64(123)} // []*int64 | L2VPN (optional)
+	l2vpn := []string{"Inner_example"} // []string | L2VPN (optional)
+	l2vpnN := []string{"Inner_example"} // []string | L2VPN (optional)
 	l2vpnId := []int32{int32(123)} // []int32 | L2VPN (ID) (optional)
 	l2vpnIdN := []int32{int32(123)} // []int32 | L2VPN (ID) (optional)
 	lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -13813,6 +14085,14 @@ func main() {
 	nameRegex := []string{"Inner_example"} // []string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	owner := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerN := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerGroup := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupN := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupId := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerGroupIdN := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerId := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
+	ownerIdN := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
 	q := "q_example" // string | Search (optional)
 	qinqRole := []*string{"Inner_example"} // []*string | Customer/service VLAN designation (for Q-in-Q/IEEE 802.1ad) (optional)
 	qinqRoleEmpty := true // bool |  (optional)
@@ -13867,8 +14147,8 @@ func main() {
 	statusRegex := []string{"Inner_example"} // []string | Operational status of this VLAN (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
-	tagId := []int32{int32(123)} // []int32 |  (optional)
-	tagIdN := []int32{int32(123)} // []int32 |  (optional)
+	tagId := []string{"Inner_example"} // []string |  (optional)
+	tagIdN := []string{"Inner_example"} // []string |  (optional)
 	tenant := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantN := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantGroup := []string{"Inner_example"} // []string |  (optional)
@@ -13889,7 +14169,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamVlansList(context.Background()).AvailableAtSite(availableAtSite).AvailableOnDevice(availableOnDevice).AvailableOnVirtualmachine(availableOnVirtualmachine).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).InterfaceId(interfaceId).L2vpn(l2vpn).L2vpnN(l2vpnN).L2vpnId(l2vpnId).L2vpnIdN(l2vpnIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).QinqRole(qinqRole).QinqRoleEmpty(qinqRoleEmpty).QinqRoleIc(qinqRoleIc).QinqRoleIe(qinqRoleIe).QinqRoleIew(qinqRoleIew).QinqRoleIregex(qinqRoleIregex).QinqRoleIsw(qinqRoleIsw).QinqRoleN(qinqRoleN).QinqRoleNic(qinqRoleNic).QinqRoleNie(qinqRoleNie).QinqRoleNiew(qinqRoleNiew).QinqRoleNisw(qinqRoleNisw).QinqRoleRegex(qinqRoleRegex).QinqSvlanId(qinqSvlanId).QinqSvlanIdN(qinqSvlanIdN).QinqSvlanVid(qinqSvlanVid).QinqSvlanVidEmpty(qinqSvlanVidEmpty).QinqSvlanVidGt(qinqSvlanVidGt).QinqSvlanVidGte(qinqSvlanVidGte).QinqSvlanVidLt(qinqSvlanVidLt).QinqSvlanVidLte(qinqSvlanVidLte).QinqSvlanVidN(qinqSvlanVidN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Vid(vid).VidEmpty(vidEmpty).VidGt(vidGt).VidGte(vidGte).VidLt(vidLt).VidLte(vidLte).VidN(vidN).VminterfaceId(vminterfaceId).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamVlansList(context.Background()).AvailableAtSite(availableAtSite).AvailableOnDevice(availableOnDevice).AvailableOnVirtualmachine(availableOnVirtualmachine).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).InterfaceId(interfaceId).L2vpn(l2vpn).L2vpnN(l2vpnN).L2vpnId(l2vpnId).L2vpnIdN(l2vpnIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).QinqRole(qinqRole).QinqRoleEmpty(qinqRoleEmpty).QinqRoleIc(qinqRoleIc).QinqRoleIe(qinqRoleIe).QinqRoleIew(qinqRoleIew).QinqRoleIregex(qinqRoleIregex).QinqRoleIsw(qinqRoleIsw).QinqRoleN(qinqRoleN).QinqRoleNic(qinqRoleNic).QinqRoleNie(qinqRoleNie).QinqRoleNiew(qinqRoleNiew).QinqRoleNisw(qinqRoleNisw).QinqRoleRegex(qinqRoleRegex).QinqSvlanId(qinqSvlanId).QinqSvlanIdN(qinqSvlanIdN).QinqSvlanVid(qinqSvlanVid).QinqSvlanVidEmpty(qinqSvlanVidEmpty).QinqSvlanVidGt(qinqSvlanVidGt).QinqSvlanVidGte(qinqSvlanVidGte).QinqSvlanVidLt(qinqSvlanVidLt).QinqSvlanVidLte(qinqSvlanVidLte).QinqSvlanVidN(qinqSvlanVidN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Vid(vid).VidEmpty(vidEmpty).VidGt(vidGt).VidGte(vidGte).VidLt(vidLt).VidLte(vidLte).VidN(vidN).VminterfaceId(vminterfaceId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamVlansList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -13946,8 +14226,8 @@ Name | Type | Description  | Notes
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **interfaceId** | **int32** |  | 
- **l2vpn** | **[]int64** | L2VPN | 
- **l2vpnN** | **[]int64** | L2VPN | 
+ **l2vpn** | **[]string** | L2VPN | 
+ **l2vpnN** | **[]string** | L2VPN | 
  **l2vpnId** | **[]int32** | L2VPN (ID) | 
  **l2vpnIdN** | **[]int32** | L2VPN (ID) | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
@@ -13974,6 +14254,14 @@ Name | Type | Description  | Notes
  **nameRegex** | **[]string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
+ **owner** | **[]string** | Owner (name) | 
+ **ownerN** | **[]string** | Owner (name) | 
+ **ownerGroup** | **[]string** | Owner Group (name) | 
+ **ownerGroupN** | **[]string** | Owner Group (name) | 
+ **ownerGroupId** | **[]int32** | Owner Group (ID) | 
+ **ownerGroupIdN** | **[]int32** | Owner Group (ID) | 
+ **ownerId** | **[]int32** | Owner (ID) | 
+ **ownerIdN** | **[]int32** | Owner (ID) | 
  **q** | **string** | Search | 
  **qinqRole** | **[]string** | Customer/service VLAN designation (for Q-in-Q/IEEE 802.1ad) | 
  **qinqRoleEmpty** | **bool** |  | 
@@ -14028,8 +14316,8 @@ Name | Type | Description  | Notes
  **statusRegex** | **[]string** | Operational status of this VLAN | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
- **tagId** | **[]int32** |  | 
- **tagIdN** | **[]int32** |  | 
+ **tagId** | **[]string** |  | 
+ **tagIdN** | **[]string** |  | 
  **tenant** | **[]string** | Tenant (slug) | 
  **tenantN** | **[]string** | Tenant (slug) | 
  **tenantGroup** | **[]string** |  | 
@@ -14478,7 +14766,7 @@ Name | Type | Description  | Notes
 
 ## IpamVrfsCreate
 
-> VRF IpamVrfsCreate(ctx).VRFRequest(vRFRequest).Execute()
+> VRF IpamVrfsCreate(ctx).IpamVrfsCreateRequest(ipamVrfsCreateRequest).Execute()
 
 
 
@@ -14497,11 +14785,11 @@ import (
 )
 
 func main() {
-	vRFRequest := *openapiclient.NewVRFRequest("Name_example") // VRFRequest | 
+	ipamVrfsCreateRequest := openapiclient.ipam_vrfs_create_request{VRFRequest: openapiclient.NewVRFRequest("Name_example")} // IpamVrfsCreateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamVrfsCreate(context.Background()).VRFRequest(vRFRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamVrfsCreate(context.Background()).IpamVrfsCreateRequest(ipamVrfsCreateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamVrfsCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -14522,7 +14810,7 @@ Other parameters are passed through a pointer to a apiIpamVrfsCreateRequest stru
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vRFRequest** | [**VRFRequest**](VRFRequest.md) |  | 
+ **ipamVrfsCreateRequest** | [**IpamVrfsCreateRequest**](IpamVrfsCreateRequest.md) |  | 
 
 ### Return type
 
@@ -14612,7 +14900,7 @@ Name | Type | Description  | Notes
 
 ## IpamVrfsList
 
-> PaginatedVRFList IpamVrfsList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).EnforceUnique(enforceUnique).ExportTarget(exportTarget).ExportTargetN(exportTargetN).ExportTargetId(exportTargetId).ExportTargetIdN(exportTargetIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).ImportTarget(importTarget).ImportTargetN(importTargetN).ImportTargetId(importTargetId).ImportTargetIdN(importTargetIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).Rd(rd).RdEmpty(rdEmpty).RdIc(rdIc).RdIe(rdIe).RdIew(rdIew).RdIregex(rdIregex).RdIsw(rdIsw).RdN(rdN).RdNic(rdNic).RdNie(rdNie).RdNiew(rdNiew).RdNisw(rdNisw).RdRegex(rdRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedVRFList IpamVrfsList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).EnforceUnique(enforceUnique).ExportTarget(exportTarget).ExportTargetN(exportTargetN).ExportTargetId(exportTargetId).ExportTargetIdN(exportTargetIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).ImportTarget(importTarget).ImportTargetN(importTargetN).ImportTargetId(importTargetId).ImportTargetIdN(importTargetIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).Rd(rd).RdEmpty(rdEmpty).RdIc(rdIc).RdIe(rdIe).RdIew(rdIew).RdIregex(rdIregex).RdIsw(rdIsw).RdN(rdN).RdNic(rdNic).RdNie(rdNie).RdNiew(rdNiew).RdNisw(rdNisw).RdRegex(rdRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -14693,6 +14981,14 @@ func main() {
 	nameRegex := []string{"Inner_example"} // []string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	owner := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerN := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerGroup := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupN := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupId := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerGroupIdN := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerId := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
+	ownerIdN := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
 	q := "q_example" // string | Search (optional)
 	rd := []string{"Inner_example"} // []string |  (optional)
 	rdEmpty := true // bool |  (optional)
@@ -14709,8 +15005,8 @@ func main() {
 	rdRegex := []string{"Inner_example"} // []string |  (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
-	tagId := []int32{int32(123)} // []int32 |  (optional)
-	tagIdN := []int32{int32(123)} // []int32 |  (optional)
+	tagId := []string{"Inner_example"} // []string |  (optional)
+	tagIdN := []string{"Inner_example"} // []string |  (optional)
 	tenant := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantN := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantGroup := []string{"Inner_example"} // []string |  (optional)
@@ -14723,7 +15019,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamVrfsList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).EnforceUnique(enforceUnique).ExportTarget(exportTarget).ExportTargetN(exportTargetN).ExportTargetId(exportTargetId).ExportTargetIdN(exportTargetIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).ImportTarget(importTarget).ImportTargetN(importTargetN).ImportTargetId(importTargetId).ImportTargetIdN(importTargetIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).Rd(rd).RdEmpty(rdEmpty).RdIc(rdIc).RdIe(rdIe).RdIew(rdIew).RdIregex(rdIregex).RdIsw(rdIsw).RdN(rdN).RdNic(rdNic).RdNie(rdNie).RdNiew(rdNiew).RdNisw(rdNisw).RdRegex(rdRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamVrfsList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).EnforceUnique(enforceUnique).ExportTarget(exportTarget).ExportTargetN(exportTargetN).ExportTargetId(exportTargetId).ExportTargetIdN(exportTargetIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).ImportTarget(importTarget).ImportTargetN(importTargetN).ImportTargetId(importTargetId).ImportTargetIdN(importTargetIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).Rd(rd).RdEmpty(rdEmpty).RdIc(rdIc).RdIe(rdIe).RdIew(rdIew).RdIregex(rdIregex).RdIsw(rdIsw).RdN(rdN).RdNic(rdNic).RdNie(rdNie).RdNiew(rdNiew).RdNisw(rdNisw).RdRegex(rdRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamVrfsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -14805,6 +15101,14 @@ Name | Type | Description  | Notes
  **nameRegex** | **[]string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
+ **owner** | **[]string** | Owner (name) | 
+ **ownerN** | **[]string** | Owner (name) | 
+ **ownerGroup** | **[]string** | Owner Group (name) | 
+ **ownerGroupN** | **[]string** | Owner Group (name) | 
+ **ownerGroupId** | **[]int32** | Owner Group (ID) | 
+ **ownerGroupIdN** | **[]int32** | Owner Group (ID) | 
+ **ownerId** | **[]int32** | Owner (ID) | 
+ **ownerIdN** | **[]int32** | Owner (ID) | 
  **q** | **string** | Search | 
  **rd** | **[]string** |  | 
  **rdEmpty** | **bool** |  | 
@@ -14821,8 +15125,8 @@ Name | Type | Description  | Notes
  **rdRegex** | **[]string** |  | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
- **tagId** | **[]int32** |  | 
- **tagIdN** | **[]int32** |  | 
+ **tagId** | **[]string** |  | 
+ **tagIdN** | **[]string** |  | 
  **tenant** | **[]string** | Tenant (slug) | 
  **tenantN** | **[]string** | Tenant (slug) | 
  **tenantGroup** | **[]string** |  | 

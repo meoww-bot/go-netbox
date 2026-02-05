@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **VlanTranslationPolicy** | Pointer to [**NullableBriefVLANTranslationPolicy**](BriefVLANTranslationPolicy.md) |  | [optional] 
 **Vrf** | Pointer to [**NullableBriefVRF**](BriefVRF.md) |  | [optional] 
 **L2vpnTermination** | Pointer to [**NullableBriefL2VPNTermination**](BriefL2VPNTermination.md) |  | [optional] [readonly] 
+**Owner** | Pointer to [**NullableBriefOwner**](BriefOwner.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
@@ -661,6 +662,41 @@ HasL2vpnTermination returns a boolean if a field has been set.
 `func (o *VMInterface) UnsetL2vpnTermination()`
 
 UnsetL2vpnTermination ensures that no value is present for L2vpnTermination, not even an explicit nil
+### GetOwner
+
+`func (o *VMInterface) GetOwner() BriefOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *VMInterface) GetOwnerOk() (*BriefOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *VMInterface) SetOwner(v BriefOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *VMInterface) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *VMInterface) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *VMInterface) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetTags
 
 `func (o *VMInterface) GetTags() []NestedTag`

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Display** | **string** |  | [readonly] 
 **Name** | **string** |  | 
 **Status** | Pointer to [**VirtualMachineWithConfigContextStatus**](VirtualMachineWithConfigContextStatus.md) |  | [optional] 
+**StartOnBoot** | Pointer to [**VirtualMachineWithConfigContextStartOnBoot**](VirtualMachineWithConfigContextStartOnBoot.md) |  | [optional] 
 **Site** | Pointer to [**NullableBriefSite**](BriefSite.md) |  | [optional] 
 **Cluster** | Pointer to [**NullableBriefCluster**](BriefCluster.md) |  | [optional] 
 **Device** | Pointer to [**NullableBriefDevice**](BriefDevice.md) |  | [optional] 
@@ -24,6 +25,7 @@ Name | Type | Description | Notes
 **Memory** | Pointer to **NullableInt32** |  | [optional] 
 **Disk** | Pointer to **NullableInt32** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
+**Owner** | Pointer to [**NullableBriefOwner**](BriefOwner.md) |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **ConfigTemplate** | Pointer to [**NullableBriefConfigTemplate**](BriefConfigTemplate.md) |  | [optional] 
 **LocalContextData** | Pointer to **interface{}** | Local config context data takes precedence over source contexts in the final rendered config context | [optional] 
@@ -183,6 +185,31 @@ SetStatus sets Status field to given value.
 `func (o *VirtualMachineWithConfigContext) HasStatus() bool`
 
 HasStatus returns a boolean if a field has been set.
+
+### GetStartOnBoot
+
+`func (o *VirtualMachineWithConfigContext) GetStartOnBoot() VirtualMachineWithConfigContextStartOnBoot`
+
+GetStartOnBoot returns the StartOnBoot field if non-nil, zero value otherwise.
+
+### GetStartOnBootOk
+
+`func (o *VirtualMachineWithConfigContext) GetStartOnBootOk() (*VirtualMachineWithConfigContextStartOnBoot, bool)`
+
+GetStartOnBootOk returns a tuple with the StartOnBoot field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStartOnBoot
+
+`func (o *VirtualMachineWithConfigContext) SetStartOnBoot(v VirtualMachineWithConfigContextStartOnBoot)`
+
+SetStartOnBoot sets StartOnBoot field to given value.
+
+### HasStartOnBoot
+
+`func (o *VirtualMachineWithConfigContext) HasStartOnBoot() bool`
+
+HasStartOnBoot returns a boolean if a field has been set.
 
 ### GetSite
 
@@ -654,6 +681,41 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### GetOwner
+
+`func (o *VirtualMachineWithConfigContext) GetOwner() BriefOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *VirtualMachineWithConfigContext) GetOwnerOk() (*BriefOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *VirtualMachineWithConfigContext) SetOwner(v BriefOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *VirtualMachineWithConfigContext) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *VirtualMachineWithConfigContext) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *VirtualMachineWithConfigContext) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetComments
 
 `func (o *VirtualMachineWithConfigContext) GetComments() string`

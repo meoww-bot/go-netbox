@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **AuthenticationAlgorithm** | Pointer to [**NullablePatchedWritableIKEProposalRequestAuthenticationAlgorithm**](PatchedWritableIKEProposalRequestAuthenticationAlgorithm.md) |  | [optional] 
 **Group** | [**PatchedWritableIKEProposalRequestGroup**](PatchedWritableIKEProposalRequestGroup.md) |  | 
 **SaLifetime** | Pointer to **NullableInt32** | Security association lifetime (in seconds) | [optional] 
+**Owner** | Pointer to [**NullableASNRangeRequestOwner**](ASNRangeRequestOwner.md) |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -209,6 +210,41 @@ HasSaLifetime returns a boolean if a field has been set.
 `func (o *WritableIKEProposalRequest) UnsetSaLifetime()`
 
 UnsetSaLifetime ensures that no value is present for SaLifetime, not even an explicit nil
+### GetOwner
+
+`func (o *WritableIKEProposalRequest) GetOwner() ASNRangeRequestOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *WritableIKEProposalRequest) GetOwnerOk() (*ASNRangeRequestOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *WritableIKEProposalRequest) SetOwner(v ASNRangeRequestOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *WritableIKEProposalRequest) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *WritableIKEProposalRequest) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *WritableIKEProposalRequest) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetComments
 
 `func (o *WritableIKEProposalRequest) GetComments() string`

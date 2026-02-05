@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **SslVerification** | Pointer to **bool** | Enable SSL certificate verification. Disable with caution! | [optional] 
 **CaFilePath** | Pointer to **NullableString** | The specific CA certificate file to use for SSL verification. Leave blank to use the system defaults. | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
+**Owner** | Pointer to [**NullableASNRangeRequestOwner**](ASNRangeRequestOwner.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 
 ## Methods
@@ -321,6 +322,41 @@ SetCustomFields sets CustomFields field to given value.
 
 HasCustomFields returns a boolean if a field has been set.
 
+### GetOwner
+
+`func (o *PatchedWebhookRequest) GetOwner() ASNRangeRequestOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *PatchedWebhookRequest) GetOwnerOk() (*ASNRangeRequestOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *PatchedWebhookRequest) SetOwner(v ASNRangeRequestOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *PatchedWebhookRequest) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *PatchedWebhookRequest) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *PatchedWebhookRequest) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetTags
 
 `func (o *PatchedWebhookRequest) GetTags() []NestedTagRequest`

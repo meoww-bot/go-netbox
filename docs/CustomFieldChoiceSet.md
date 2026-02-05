@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **ExtraChoices** | **[][]interface{}** |  | 
 **OrderAlphabetically** | Pointer to **bool** | Choices are automatically ordered alphabetically | [optional] 
 **ChoicesCount** | Pointer to **int32** |  | [optional] [readonly] 
+**Owner** | Pointer to [**NullableBriefOwner**](BriefOwner.md) |  | [optional] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
 
@@ -261,6 +262,41 @@ SetChoicesCount sets ChoicesCount field to given value.
 
 HasChoicesCount returns a boolean if a field has been set.
 
+### GetOwner
+
+`func (o *CustomFieldChoiceSet) GetOwner() BriefOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *CustomFieldChoiceSet) GetOwnerOk() (*BriefOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *CustomFieldChoiceSet) SetOwner(v BriefOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *CustomFieldChoiceSet) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *CustomFieldChoiceSet) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *CustomFieldChoiceSet) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetCreated
 
 `func (o *CustomFieldChoiceSet) GetCreated() time.Time`

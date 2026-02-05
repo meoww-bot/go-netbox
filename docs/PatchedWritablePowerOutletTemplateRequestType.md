@@ -177,6 +177,8 @@
 
 * `MOLEX_MICRO_FIT_2X2` (value: `"molex-micro-fit-2x2"`)
 
+* `MOLEX_MICRO_FIT_2X3` (value: `"molex-micro-fit-2x3"`)
+
 * `MOLEX_MICRO_FIT_2X4` (value: `"molex-micro-fit-2x4"`)
 
 * `DC_TERMINAL` (value: `"dc-terminal"`)

@@ -260,7 +260,7 @@ Name | Type | Description  | Notes
 
 ## VirtualizationClusterGroupsCreate
 
-> ClusterGroup VirtualizationClusterGroupsCreate(ctx).ClusterGroupRequest(clusterGroupRequest).Execute()
+> ClusterGroup VirtualizationClusterGroupsCreate(ctx).VirtualizationClusterGroupsCreateRequest(virtualizationClusterGroupsCreateRequest).Execute()
 
 
 
@@ -279,11 +279,11 @@ import (
 )
 
 func main() {
-	clusterGroupRequest := *openapiclient.NewClusterGroupRequest("Name_example", "Slug_example") // ClusterGroupRequest | 
+	virtualizationClusterGroupsCreateRequest := openapiclient.virtualization_cluster_groups_create_request{ClusterGroupRequest: openapiclient.NewClusterGroupRequest("Name_example", "Slug_example")} // VirtualizationClusterGroupsCreateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VirtualizationAPI.VirtualizationClusterGroupsCreate(context.Background()).ClusterGroupRequest(clusterGroupRequest).Execute()
+	resp, r, err := apiClient.VirtualizationAPI.VirtualizationClusterGroupsCreate(context.Background()).VirtualizationClusterGroupsCreateRequest(virtualizationClusterGroupsCreateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationClusterGroupsCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -304,7 +304,7 @@ Other parameters are passed through a pointer to a apiVirtualizationClusterGroup
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **clusterGroupRequest** | [**ClusterGroupRequest**](ClusterGroupRequest.md) |  | 
+ **virtualizationClusterGroupsCreateRequest** | [**VirtualizationClusterGroupsCreateRequest**](VirtualizationClusterGroupsCreateRequest.md) |  | 
 
 ### Return type
 
@@ -394,7 +394,7 @@ Name | Type | Description  | Notes
 
 ## VirtualizationClusterGroupsList
 
-> PaginatedClusterGroupList VirtualizationClusterGroupsList(ctx).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIregex(slugIregex).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SlugRegex(slugRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedClusterGroupList VirtualizationClusterGroupsList(ctx).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIregex(slugIregex).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SlugRegex(slugRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -472,6 +472,14 @@ func main() {
 	nameRegex := []string{"Inner_example"} // []string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	owner := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerN := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerGroup := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupN := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupId := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerGroupIdN := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerId := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
+	ownerIdN := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
 	q := "q_example" // string | Search (optional)
 	slug := []string{"Inner_example"} // []string |  (optional)
 	slugEmpty := true // bool |  (optional)
@@ -488,13 +496,13 @@ func main() {
 	slugRegex := []string{"Inner_example"} // []string |  (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
-	tagId := []int32{int32(123)} // []int32 |  (optional)
-	tagIdN := []int32{int32(123)} // []int32 |  (optional)
+	tagId := []string{"Inner_example"} // []string |  (optional)
+	tagIdN := []string{"Inner_example"} // []string |  (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VirtualizationAPI.VirtualizationClusterGroupsList(context.Background()).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIregex(slugIregex).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SlugRegex(slugRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.VirtualizationAPI.VirtualizationClusterGroupsList(context.Background()).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIregex(slugIregex).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SlugRegex(slugRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationClusterGroupsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -573,6 +581,14 @@ Name | Type | Description  | Notes
  **nameRegex** | **[]string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
+ **owner** | **[]string** | Owner (name) | 
+ **ownerN** | **[]string** | Owner (name) | 
+ **ownerGroup** | **[]string** | Owner Group (name) | 
+ **ownerGroupN** | **[]string** | Owner Group (name) | 
+ **ownerGroupId** | **[]int32** | Owner Group (ID) | 
+ **ownerGroupIdN** | **[]int32** | Owner Group (ID) | 
+ **ownerId** | **[]int32** | Owner (ID) | 
+ **ownerIdN** | **[]int32** | Owner (ID) | 
  **q** | **string** | Search | 
  **slug** | **[]string** |  | 
  **slugEmpty** | **bool** |  | 
@@ -589,8 +605,8 @@ Name | Type | Description  | Notes
  **slugRegex** | **[]string** |  | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
- **tagId** | **[]int32** |  | 
- **tagIdN** | **[]int32** |  | 
+ **tagId** | **[]string** |  | 
+ **tagIdN** | **[]string** |  | 
  **updatedByRequest** | **string** |  | 
 
 ### Return type
@@ -1023,7 +1039,7 @@ Name | Type | Description  | Notes
 
 ## VirtualizationClusterTypesCreate
 
-> ClusterType VirtualizationClusterTypesCreate(ctx).ClusterTypeRequest(clusterTypeRequest).Execute()
+> ClusterType VirtualizationClusterTypesCreate(ctx).VirtualizationClusterTypesCreateRequest(virtualizationClusterTypesCreateRequest).Execute()
 
 
 
@@ -1042,11 +1058,11 @@ import (
 )
 
 func main() {
-	clusterTypeRequest := *openapiclient.NewClusterTypeRequest("Name_example", "Slug_example") // ClusterTypeRequest | 
+	virtualizationClusterTypesCreateRequest := openapiclient.virtualization_cluster_types_create_request{ClusterTypeRequest: openapiclient.NewClusterTypeRequest("Name_example", "Slug_example")} // VirtualizationClusterTypesCreateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VirtualizationAPI.VirtualizationClusterTypesCreate(context.Background()).ClusterTypeRequest(clusterTypeRequest).Execute()
+	resp, r, err := apiClient.VirtualizationAPI.VirtualizationClusterTypesCreate(context.Background()).VirtualizationClusterTypesCreateRequest(virtualizationClusterTypesCreateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationClusterTypesCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1067,7 +1083,7 @@ Other parameters are passed through a pointer to a apiVirtualizationClusterTypes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **clusterTypeRequest** | [**ClusterTypeRequest**](ClusterTypeRequest.md) |  | 
+ **virtualizationClusterTypesCreateRequest** | [**VirtualizationClusterTypesCreateRequest**](VirtualizationClusterTypesCreateRequest.md) |  | 
 
 ### Return type
 
@@ -1157,7 +1173,7 @@ Name | Type | Description  | Notes
 
 ## VirtualizationClusterTypesList
 
-> PaginatedClusterTypeList VirtualizationClusterTypesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIregex(slugIregex).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SlugRegex(slugRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedClusterTypeList VirtualizationClusterTypesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIregex(slugIregex).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SlugRegex(slugRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -1229,6 +1245,14 @@ func main() {
 	nameRegex := []string{"Inner_example"} // []string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	owner := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerN := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerGroup := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupN := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupId := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerGroupIdN := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerId := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
+	ownerIdN := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
 	q := "q_example" // string | Search (optional)
 	slug := []string{"Inner_example"} // []string |  (optional)
 	slugEmpty := true // bool |  (optional)
@@ -1245,13 +1269,13 @@ func main() {
 	slugRegex := []string{"Inner_example"} // []string |  (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
-	tagId := []int32{int32(123)} // []int32 |  (optional)
-	tagIdN := []int32{int32(123)} // []int32 |  (optional)
+	tagId := []string{"Inner_example"} // []string |  (optional)
+	tagIdN := []string{"Inner_example"} // []string |  (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VirtualizationAPI.VirtualizationClusterTypesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIregex(slugIregex).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SlugRegex(slugRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.VirtualizationAPI.VirtualizationClusterTypesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIregex(slugIregex).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SlugRegex(slugRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationClusterTypesList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1324,6 +1348,14 @@ Name | Type | Description  | Notes
  **nameRegex** | **[]string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
+ **owner** | **[]string** | Owner (name) | 
+ **ownerN** | **[]string** | Owner (name) | 
+ **ownerGroup** | **[]string** | Owner Group (name) | 
+ **ownerGroupN** | **[]string** | Owner Group (name) | 
+ **ownerGroupId** | **[]int32** | Owner Group (ID) | 
+ **ownerGroupIdN** | **[]int32** | Owner Group (ID) | 
+ **ownerId** | **[]int32** | Owner (ID) | 
+ **ownerIdN** | **[]int32** | Owner (ID) | 
  **q** | **string** | Search | 
  **slug** | **[]string** |  | 
  **slugEmpty** | **bool** |  | 
@@ -1340,8 +1372,8 @@ Name | Type | Description  | Notes
  **slugRegex** | **[]string** |  | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
- **tagId** | **[]int32** |  | 
- **tagIdN** | **[]int32** |  | 
+ **tagId** | **[]string** |  | 
+ **tagIdN** | **[]string** |  | 
  **updatedByRequest** | **string** |  | 
 
 ### Return type
@@ -1774,7 +1806,7 @@ Name | Type | Description  | Notes
 
 ## VirtualizationClustersCreate
 
-> Cluster VirtualizationClustersCreate(ctx).WritableClusterRequest(writableClusterRequest).Execute()
+> Cluster VirtualizationClustersCreate(ctx).VirtualizationClustersCreateRequest(virtualizationClustersCreateRequest).Execute()
 
 
 
@@ -1793,11 +1825,11 @@ import (
 )
 
 func main() {
-	writableClusterRequest := *openapiclient.NewWritableClusterRequest("Name_example", openapiclient.ClusterRequest_type{BriefClusterTypeRequest: openapiclient.NewBriefClusterTypeRequest("Name_example", "Slug_example")}) // WritableClusterRequest | 
+	virtualizationClustersCreateRequest := openapiclient.virtualization_clusters_create_request{WritableClusterRequest: openapiclient.NewWritableClusterRequest("Name_example", openapiclient.ClusterRequest_type{BriefClusterTypeRequest: openapiclient.NewBriefClusterTypeRequest("Name_example", "Slug_example")})} // VirtualizationClustersCreateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VirtualizationAPI.VirtualizationClustersCreate(context.Background()).WritableClusterRequest(writableClusterRequest).Execute()
+	resp, r, err := apiClient.VirtualizationAPI.VirtualizationClustersCreate(context.Background()).VirtualizationClustersCreateRequest(virtualizationClustersCreateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationClustersCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1818,7 +1850,7 @@ Other parameters are passed through a pointer to a apiVirtualizationClustersCrea
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **writableClusterRequest** | [**WritableClusterRequest**](WritableClusterRequest.md) |  | 
+ **virtualizationClustersCreateRequest** | [**VirtualizationClustersCreateRequest**](VirtualizationClustersCreateRequest.md) |  | 
 
 ### Return type
 
@@ -1908,7 +1940,7 @@ Name | Type | Description  | Notes
 
 ## VirtualizationClustersList
 
-> PaginatedClusterList VirtualizationClustersList(ctx).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).ScopeId(scopeId).ScopeIdEmpty(scopeIdEmpty).ScopeIdGt(scopeIdGt).ScopeIdGte(scopeIdGte).ScopeIdLt(scopeIdLt).ScopeIdLte(scopeIdLte).ScopeIdN(scopeIdN).ScopeType(scopeType).ScopeTypeN(scopeTypeN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).Type_(type_).TypeN(typeN).TypeId(typeId).TypeIdN(typeIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedClusterList VirtualizationClustersList(ctx).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).ScopeId(scopeId).ScopeIdEmpty(scopeIdEmpty).ScopeIdGt(scopeIdGt).ScopeIdGte(scopeIdGte).ScopeIdLt(scopeIdLt).ScopeIdLte(scopeIdLte).ScopeIdN(scopeIdN).ScopeType(scopeType).ScopeTypeN(scopeTypeN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).Type_(type_).TypeN(typeN).TypeId(typeId).TypeIdN(typeIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -1994,6 +2026,14 @@ func main() {
 	nameRegex := []string{"Inner_example"} // []string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	owner := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerN := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerGroup := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupN := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupId := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerGroupIdN := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerId := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
+	ownerIdN := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
 	q := "q_example" // string | Search (optional)
 	region := []string{"Inner_example"} // []string |  (optional)
 	regionN := []string{"Inner_example"} // []string |  (optional)
@@ -2031,8 +2071,8 @@ func main() {
 	statusRegex := []string{"Inner_example"} // []string |  (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
-	tagId := []int32{int32(123)} // []int32 |  (optional)
-	tagIdN := []int32{int32(123)} // []int32 |  (optional)
+	tagId := []string{"Inner_example"} // []string |  (optional)
+	tagIdN := []string{"Inner_example"} // []string |  (optional)
 	tenant := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantN := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantGroup := []string{"Inner_example"} // []string |  (optional)
@@ -2049,7 +2089,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VirtualizationAPI.VirtualizationClustersList(context.Background()).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).ScopeId(scopeId).ScopeIdEmpty(scopeIdEmpty).ScopeIdGt(scopeIdGt).ScopeIdGte(scopeIdGte).ScopeIdLt(scopeIdLt).ScopeIdLte(scopeIdLte).ScopeIdN(scopeIdN).ScopeType(scopeType).ScopeTypeN(scopeTypeN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).Type_(type_).TypeN(typeN).TypeId(typeId).TypeIdN(typeIdN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.VirtualizationAPI.VirtualizationClustersList(context.Background()).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).ScopeId(scopeId).ScopeIdEmpty(scopeIdEmpty).ScopeIdGt(scopeIdGt).ScopeIdGte(scopeIdGte).ScopeIdLt(scopeIdLt).ScopeIdLte(scopeIdLte).ScopeIdN(scopeIdN).ScopeType(scopeType).ScopeTypeN(scopeTypeN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).Type_(type_).TypeN(typeN).TypeId(typeId).TypeIdN(typeIdN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationClustersList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2136,6 +2176,14 @@ Name | Type | Description  | Notes
  **nameRegex** | **[]string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
+ **owner** | **[]string** | Owner (name) | 
+ **ownerN** | **[]string** | Owner (name) | 
+ **ownerGroup** | **[]string** | Owner Group (name) | 
+ **ownerGroupN** | **[]string** | Owner Group (name) | 
+ **ownerGroupId** | **[]int32** | Owner Group (ID) | 
+ **ownerGroupIdN** | **[]int32** | Owner Group (ID) | 
+ **ownerId** | **[]int32** | Owner (ID) | 
+ **ownerIdN** | **[]int32** | Owner (ID) | 
  **q** | **string** | Search | 
  **region** | **[]string** |  | 
  **regionN** | **[]string** |  | 
@@ -2173,8 +2221,8 @@ Name | Type | Description  | Notes
  **statusRegex** | **[]string** |  | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
- **tagId** | **[]int32** |  | 
- **tagIdN** | **[]int32** |  | 
+ **tagId** | **[]string** |  | 
+ **tagIdN** | **[]string** |  | 
  **tenant** | **[]string** | Tenant (slug) | 
  **tenantN** | **[]string** | Tenant (slug) | 
  **tenantGroup** | **[]string** |  | 
@@ -2619,7 +2667,7 @@ Name | Type | Description  | Notes
 
 ## VirtualizationInterfacesCreate
 
-> VMInterface VirtualizationInterfacesCreate(ctx).WritableVMInterfaceRequest(writableVMInterfaceRequest).Execute()
+> VMInterface VirtualizationInterfacesCreate(ctx).VirtualizationInterfacesCreateRequest(virtualizationInterfacesCreateRequest).Execute()
 
 
 
@@ -2638,11 +2686,11 @@ import (
 )
 
 func main() {
-	writableVMInterfaceRequest := *openapiclient.NewWritableVMInterfaceRequest(openapiclient.PatchedVirtualDiskRequest_virtual_machine{BriefVirtualMachineRequest: openapiclient.NewBriefVirtualMachineRequest("Name_example")}, "Name_example") // WritableVMInterfaceRequest | 
+	virtualizationInterfacesCreateRequest := openapiclient.virtualization_interfaces_create_request{WritableVMInterfaceRequest: openapiclient.NewWritableVMInterfaceRequest(openapiclient.PatchedVirtualDiskRequest_virtual_machine{BriefVirtualMachineRequest: openapiclient.NewBriefVirtualMachineRequest("Name_example")}, "Name_example")} // VirtualizationInterfacesCreateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VirtualizationAPI.VirtualizationInterfacesCreate(context.Background()).WritableVMInterfaceRequest(writableVMInterfaceRequest).Execute()
+	resp, r, err := apiClient.VirtualizationAPI.VirtualizationInterfacesCreate(context.Background()).VirtualizationInterfacesCreateRequest(virtualizationInterfacesCreateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationInterfacesCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2663,7 +2711,7 @@ Other parameters are passed through a pointer to a apiVirtualizationInterfacesCr
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **writableVMInterfaceRequest** | [**WritableVMInterfaceRequest**](WritableVMInterfaceRequest.md) |  | 
+ **virtualizationInterfacesCreateRequest** | [**VirtualizationInterfacesCreateRequest**](VirtualizationInterfacesCreateRequest.md) |  | 
 
 ### Return type
 
@@ -2753,7 +2801,7 @@ Name | Type | Description  | Notes
 
 ## VirtualizationInterfacesList
 
-> PaginatedVMInterfaceList VirtualizationInterfacesList(ctx).BridgeId(bridgeId).BridgeIdN(bridgeIdN).Cluster(cluster).ClusterN(clusterN).ClusterId(clusterId).ClusterIdN(clusterIdN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Enabled(enabled).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).L2vpn(l2vpn).L2vpnN(l2vpnN).L2vpnId(l2vpnId).L2vpnIdN(l2vpnIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MacAddress(macAddress).MacAddressIc(macAddressIc).MacAddressIe(macAddressIe).MacAddressIew(macAddressIew).MacAddressIregex(macAddressIregex).MacAddressIsw(macAddressIsw).MacAddressN(macAddressN).MacAddressNic(macAddressNic).MacAddressNie(macAddressNie).MacAddressNiew(macAddressNiew).MacAddressNisw(macAddressNisw).MacAddressRegex(macAddressRegex).Mode(mode).ModeEmpty(modeEmpty).ModeIc(modeIc).ModeIe(modeIe).ModeIew(modeIew).ModeIregex(modeIregex).ModeIsw(modeIsw).ModeN(modeN).ModeNic(modeNic).ModeNie(modeNie).ModeNiew(modeNiew).ModeNisw(modeNisw).ModeRegex(modeRegex).ModifiedByRequest(modifiedByRequest).Mtu(mtu).MtuEmpty(mtuEmpty).MtuGt(mtuGt).MtuGte(mtuGte).MtuLt(mtuLt).MtuLte(mtuLte).MtuN(mtuN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).ParentId(parentId).ParentIdN(parentIdN).PrimaryMacAddress(primaryMacAddress).PrimaryMacAddressN(primaryMacAddressN).PrimaryMacAddressId(primaryMacAddressId).PrimaryMacAddressIdN(primaryMacAddressIdN).Q(q).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineN(virtualMachineN).VirtualMachineId(virtualMachineId).VirtualMachineIdN(virtualMachineIdN).Vlan(vlan).VlanId(vlanId).VlanTranslationPolicy(vlanTranslationPolicy).VlanTranslationPolicyN(vlanTranslationPolicyN).VlanTranslationPolicyId(vlanTranslationPolicyId).VlanTranslationPolicyIdN(vlanTranslationPolicyIdN).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Execute()
+> PaginatedVMInterfaceList VirtualizationInterfacesList(ctx).BridgeId(bridgeId).BridgeIdN(bridgeIdN).Cluster(cluster).ClusterN(clusterN).ClusterId(clusterId).ClusterIdN(clusterIdN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Enabled(enabled).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).L2vpn(l2vpn).L2vpnN(l2vpnN).L2vpnId(l2vpnId).L2vpnIdN(l2vpnIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MacAddress(macAddress).MacAddressIc(macAddressIc).MacAddressIe(macAddressIe).MacAddressIew(macAddressIew).MacAddressIregex(macAddressIregex).MacAddressIsw(macAddressIsw).MacAddressN(macAddressN).MacAddressNic(macAddressNic).MacAddressNie(macAddressNie).MacAddressNiew(macAddressNiew).MacAddressNisw(macAddressNisw).MacAddressRegex(macAddressRegex).Mode(mode).ModeEmpty(modeEmpty).ModeIc(modeIc).ModeIe(modeIe).ModeIew(modeIew).ModeIregex(modeIregex).ModeIsw(modeIsw).ModeN(modeN).ModeNic(modeNic).ModeNie(modeNie).ModeNiew(modeNiew).ModeNisw(modeNisw).ModeRegex(modeRegex).ModifiedByRequest(modifiedByRequest).Mtu(mtu).MtuEmpty(mtuEmpty).MtuGt(mtuGt).MtuGte(mtuGte).MtuLt(mtuLt).MtuLte(mtuLte).MtuN(mtuN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).ParentId(parentId).ParentIdN(parentIdN).PrimaryMacAddress(primaryMacAddress).PrimaryMacAddressN(primaryMacAddressN).PrimaryMacAddressId(primaryMacAddressId).PrimaryMacAddressIdN(primaryMacAddressIdN).Q(q).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineN(virtualMachineN).VirtualMachineId(virtualMachineId).VirtualMachineIdN(virtualMachineIdN).Vlan(vlan).VlanId(vlanId).VlanTranslationPolicy(vlanTranslationPolicy).VlanTranslationPolicyN(vlanTranslationPolicyN).VlanTranslationPolicyId(vlanTranslationPolicyId).VlanTranslationPolicyIdN(vlanTranslationPolicyIdN).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Execute()
 
 
 
@@ -2808,8 +2856,8 @@ func main() {
 	idLt := []int32{int32(123)} // []int32 |  (optional)
 	idLte := []int32{int32(123)} // []int32 |  (optional)
 	idN := []int32{int32(123)} // []int32 |  (optional)
-	l2vpn := []*int64{int64(123)} // []*int64 | L2VPN (optional)
-	l2vpnN := []*int64{int64(123)} // []*int64 | L2VPN (optional)
+	l2vpn := []string{"Inner_example"} // []string | L2VPN (optional)
+	l2vpnN := []string{"Inner_example"} // []string | L2VPN (optional)
 	l2vpnId := []int32{int32(123)} // []int32 | L2VPN (ID) (optional)
 	l2vpnIdN := []int32{int32(123)} // []int32 | L2VPN (ID) (optional)
 	lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -2868,6 +2916,14 @@ func main() {
 	nameRegex := []string{"Inner_example"} // []string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	owner := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerN := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerGroup := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupN := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupId := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerGroupIdN := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerId := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
+	ownerIdN := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
 	parentId := []int32{int32(123)} // []int32 | Parent interface (ID) (optional)
 	parentIdN := []int32{int32(123)} // []int32 | Parent interface (ID) (optional)
 	primaryMacAddress := []string{"Inner_example"} // []string | Primary MAC address (optional)
@@ -2877,8 +2933,8 @@ func main() {
 	q := "q_example" // string | Search (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
-	tagId := []int32{int32(123)} // []int32 |  (optional)
-	tagIdN := []int32{int32(123)} // []int32 |  (optional)
+	tagId := []string{"Inner_example"} // []string |  (optional)
+	tagIdN := []string{"Inner_example"} // []string |  (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	virtualMachine := []string{"Inner_example"} // []string | Virtual machine (optional)
 	virtualMachineN := []string{"Inner_example"} // []string | Virtual machine (optional)
@@ -2890,14 +2946,14 @@ func main() {
 	vlanTranslationPolicyN := []string{"Inner_example"} // []string | VLAN Translation Policy (optional)
 	vlanTranslationPolicyId := []int32{int32(123)} // []int32 | VLAN Translation Policy (ID) (optional)
 	vlanTranslationPolicyIdN := []int32{int32(123)} // []int32 | VLAN Translation Policy (ID) (optional)
-	vrf := []*string{"Inner_example"} // []*string | VRF (RD) (optional)
-	vrfN := []*string{"Inner_example"} // []*string | VRF (RD) (optional)
+	vrf := []string{"Inner_example"} // []string | VRF (RD) (optional)
+	vrfN := []string{"Inner_example"} // []string | VRF (RD) (optional)
 	vrfId := []int32{int32(123)} // []int32 | VRF (optional)
 	vrfIdN := []int32{int32(123)} // []int32 | VRF (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VirtualizationAPI.VirtualizationInterfacesList(context.Background()).BridgeId(bridgeId).BridgeIdN(bridgeIdN).Cluster(cluster).ClusterN(clusterN).ClusterId(clusterId).ClusterIdN(clusterIdN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Enabled(enabled).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).L2vpn(l2vpn).L2vpnN(l2vpnN).L2vpnId(l2vpnId).L2vpnIdN(l2vpnIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MacAddress(macAddress).MacAddressIc(macAddressIc).MacAddressIe(macAddressIe).MacAddressIew(macAddressIew).MacAddressIregex(macAddressIregex).MacAddressIsw(macAddressIsw).MacAddressN(macAddressN).MacAddressNic(macAddressNic).MacAddressNie(macAddressNie).MacAddressNiew(macAddressNiew).MacAddressNisw(macAddressNisw).MacAddressRegex(macAddressRegex).Mode(mode).ModeEmpty(modeEmpty).ModeIc(modeIc).ModeIe(modeIe).ModeIew(modeIew).ModeIregex(modeIregex).ModeIsw(modeIsw).ModeN(modeN).ModeNic(modeNic).ModeNie(modeNie).ModeNiew(modeNiew).ModeNisw(modeNisw).ModeRegex(modeRegex).ModifiedByRequest(modifiedByRequest).Mtu(mtu).MtuEmpty(mtuEmpty).MtuGt(mtuGt).MtuGte(mtuGte).MtuLt(mtuLt).MtuLte(mtuLte).MtuN(mtuN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).ParentId(parentId).ParentIdN(parentIdN).PrimaryMacAddress(primaryMacAddress).PrimaryMacAddressN(primaryMacAddressN).PrimaryMacAddressId(primaryMacAddressId).PrimaryMacAddressIdN(primaryMacAddressIdN).Q(q).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineN(virtualMachineN).VirtualMachineId(virtualMachineId).VirtualMachineIdN(virtualMachineIdN).Vlan(vlan).VlanId(vlanId).VlanTranslationPolicy(vlanTranslationPolicy).VlanTranslationPolicyN(vlanTranslationPolicyN).VlanTranslationPolicyId(vlanTranslationPolicyId).VlanTranslationPolicyIdN(vlanTranslationPolicyIdN).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Execute()
+	resp, r, err := apiClient.VirtualizationAPI.VirtualizationInterfacesList(context.Background()).BridgeId(bridgeId).BridgeIdN(bridgeIdN).Cluster(cluster).ClusterN(clusterN).ClusterId(clusterId).ClusterIdN(clusterIdN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Enabled(enabled).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).L2vpn(l2vpn).L2vpnN(l2vpnN).L2vpnId(l2vpnId).L2vpnIdN(l2vpnIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MacAddress(macAddress).MacAddressIc(macAddressIc).MacAddressIe(macAddressIe).MacAddressIew(macAddressIew).MacAddressIregex(macAddressIregex).MacAddressIsw(macAddressIsw).MacAddressN(macAddressN).MacAddressNic(macAddressNic).MacAddressNie(macAddressNie).MacAddressNiew(macAddressNiew).MacAddressNisw(macAddressNisw).MacAddressRegex(macAddressRegex).Mode(mode).ModeEmpty(modeEmpty).ModeIc(modeIc).ModeIe(modeIe).ModeIew(modeIew).ModeIregex(modeIregex).ModeIsw(modeIsw).ModeN(modeN).ModeNic(modeNic).ModeNie(modeNie).ModeNiew(modeNiew).ModeNisw(modeNisw).ModeRegex(modeRegex).ModifiedByRequest(modifiedByRequest).Mtu(mtu).MtuEmpty(mtuEmpty).MtuGt(mtuGt).MtuGte(mtuGte).MtuLt(mtuLt).MtuLte(mtuLte).MtuN(mtuN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).ParentId(parentId).ParentIdN(parentIdN).PrimaryMacAddress(primaryMacAddress).PrimaryMacAddressN(primaryMacAddressN).PrimaryMacAddressId(primaryMacAddressId).PrimaryMacAddressIdN(primaryMacAddressIdN).Q(q).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineN(virtualMachineN).VirtualMachineId(virtualMachineId).VirtualMachineIdN(virtualMachineIdN).Vlan(vlan).VlanId(vlanId).VlanTranslationPolicy(vlanTranslationPolicy).VlanTranslationPolicyN(vlanTranslationPolicyN).VlanTranslationPolicyId(vlanTranslationPolicyId).VlanTranslationPolicyIdN(vlanTranslationPolicyIdN).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationInterfacesList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2953,8 +3009,8 @@ Name | Type | Description  | Notes
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
- **l2vpn** | **[]int64** | L2VPN | 
- **l2vpnN** | **[]int64** | L2VPN | 
+ **l2vpn** | **[]string** | L2VPN | 
+ **l2vpnN** | **[]string** | L2VPN | 
  **l2vpnId** | **[]int32** | L2VPN (ID) | 
  **l2vpnIdN** | **[]int32** | L2VPN (ID) | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
@@ -3013,6 +3069,14 @@ Name | Type | Description  | Notes
  **nameRegex** | **[]string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
+ **owner** | **[]string** | Owner (name) | 
+ **ownerN** | **[]string** | Owner (name) | 
+ **ownerGroup** | **[]string** | Owner Group (name) | 
+ **ownerGroupN** | **[]string** | Owner Group (name) | 
+ **ownerGroupId** | **[]int32** | Owner Group (ID) | 
+ **ownerGroupIdN** | **[]int32** | Owner Group (ID) | 
+ **ownerId** | **[]int32** | Owner (ID) | 
+ **ownerIdN** | **[]int32** | Owner (ID) | 
  **parentId** | **[]int32** | Parent interface (ID) | 
  **parentIdN** | **[]int32** | Parent interface (ID) | 
  **primaryMacAddress** | **[]string** | Primary MAC address | 
@@ -3022,8 +3086,8 @@ Name | Type | Description  | Notes
  **q** | **string** | Search | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
- **tagId** | **[]int32** |  | 
- **tagIdN** | **[]int32** |  | 
+ **tagId** | **[]string** |  | 
+ **tagIdN** | **[]string** |  | 
  **updatedByRequest** | **string** |  | 
  **virtualMachine** | **[]string** | Virtual machine | 
  **virtualMachineN** | **[]string** | Virtual machine | 
@@ -3470,7 +3534,7 @@ Name | Type | Description  | Notes
 
 ## VirtualizationVirtualDisksCreate
 
-> VirtualDisk VirtualizationVirtualDisksCreate(ctx).VirtualDiskRequest(virtualDiskRequest).Execute()
+> VirtualDisk VirtualizationVirtualDisksCreate(ctx).VirtualizationVirtualDisksCreateRequest(virtualizationVirtualDisksCreateRequest).Execute()
 
 
 
@@ -3489,11 +3553,11 @@ import (
 )
 
 func main() {
-	virtualDiskRequest := *openapiclient.NewVirtualDiskRequest(openapiclient.PatchedVirtualDiskRequest_virtual_machine{BriefVirtualMachineRequest: openapiclient.NewBriefVirtualMachineRequest("Name_example")}, "Name_example", int32(123)) // VirtualDiskRequest | 
+	virtualizationVirtualDisksCreateRequest := openapiclient.virtualization_virtual_disks_create_request{VirtualDiskRequest: openapiclient.NewVirtualDiskRequest(openapiclient.PatchedVirtualDiskRequest_virtual_machine{BriefVirtualMachineRequest: openapiclient.NewBriefVirtualMachineRequest("Name_example")}, "Name_example", int32(123))} // VirtualizationVirtualDisksCreateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VirtualizationAPI.VirtualizationVirtualDisksCreate(context.Background()).VirtualDiskRequest(virtualDiskRequest).Execute()
+	resp, r, err := apiClient.VirtualizationAPI.VirtualizationVirtualDisksCreate(context.Background()).VirtualizationVirtualDisksCreateRequest(virtualizationVirtualDisksCreateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationVirtualDisksCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3514,7 +3578,7 @@ Other parameters are passed through a pointer to a apiVirtualizationVirtualDisks
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **virtualDiskRequest** | [**VirtualDiskRequest**](VirtualDiskRequest.md) |  | 
+ **virtualizationVirtualDisksCreateRequest** | [**VirtualizationVirtualDisksCreateRequest**](VirtualizationVirtualDisksCreateRequest.md) |  | 
 
 ### Return type
 
@@ -3604,7 +3668,7 @@ Name | Type | Description  | Notes
 
 ## VirtualizationVirtualDisksList
 
-> PaginatedVirtualDiskList VirtualizationVirtualDisksList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).Size(size).SizeEmpty(sizeEmpty).SizeGt(sizeGt).SizeGte(sizeGte).SizeLt(sizeLt).SizeLte(sizeLte).SizeN(sizeN).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineN(virtualMachineN).VirtualMachineId(virtualMachineId).VirtualMachineIdN(virtualMachineIdN).Execute()
+> PaginatedVirtualDiskList VirtualizationVirtualDisksList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).Size(size).SizeEmpty(sizeEmpty).SizeGt(sizeGt).SizeGte(sizeGte).SizeLt(sizeLt).SizeLte(sizeLte).SizeN(sizeN).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineN(virtualMachineN).VirtualMachineId(virtualMachineId).VirtualMachineIdN(virtualMachineIdN).Execute()
 
 
 
@@ -3676,6 +3740,14 @@ func main() {
 	nameRegex := []string{"Inner_example"} // []string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	owner := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerN := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerGroup := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupN := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupId := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerGroupIdN := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerId := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
+	ownerIdN := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
 	q := "q_example" // string | Search (optional)
 	size := []int32{int32(123)} // []int32 |  (optional)
 	sizeEmpty := true // bool |  (optional)
@@ -3686,8 +3758,8 @@ func main() {
 	sizeN := []int32{int32(123)} // []int32 |  (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
-	tagId := []int32{int32(123)} // []int32 |  (optional)
-	tagIdN := []int32{int32(123)} // []int32 |  (optional)
+	tagId := []string{"Inner_example"} // []string |  (optional)
+	tagIdN := []string{"Inner_example"} // []string |  (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	virtualMachine := []string{"Inner_example"} // []string | Virtual machine (optional)
 	virtualMachineN := []string{"Inner_example"} // []string | Virtual machine (optional)
@@ -3696,7 +3768,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VirtualizationAPI.VirtualizationVirtualDisksList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).Size(size).SizeEmpty(sizeEmpty).SizeGt(sizeGt).SizeGte(sizeGte).SizeLt(sizeLt).SizeLte(sizeLte).SizeN(sizeN).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineN(virtualMachineN).VirtualMachineId(virtualMachineId).VirtualMachineIdN(virtualMachineIdN).Execute()
+	resp, r, err := apiClient.VirtualizationAPI.VirtualizationVirtualDisksList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).Size(size).SizeEmpty(sizeEmpty).SizeGt(sizeGt).SizeGte(sizeGte).SizeLt(sizeLt).SizeLte(sizeLte).SizeN(sizeN).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineN(virtualMachineN).VirtualMachineId(virtualMachineId).VirtualMachineIdN(virtualMachineIdN).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationVirtualDisksList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3769,6 +3841,14 @@ Name | Type | Description  | Notes
  **nameRegex** | **[]string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
+ **owner** | **[]string** | Owner (name) | 
+ **ownerN** | **[]string** | Owner (name) | 
+ **ownerGroup** | **[]string** | Owner Group (name) | 
+ **ownerGroupN** | **[]string** | Owner Group (name) | 
+ **ownerGroupId** | **[]int32** | Owner Group (ID) | 
+ **ownerGroupIdN** | **[]int32** | Owner Group (ID) | 
+ **ownerId** | **[]int32** | Owner (ID) | 
+ **ownerIdN** | **[]int32** | Owner (ID) | 
  **q** | **string** | Search | 
  **size** | **[]int32** |  | 
  **sizeEmpty** | **bool** |  | 
@@ -3779,8 +3859,8 @@ Name | Type | Description  | Notes
  **sizeN** | **[]int32** |  | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
- **tagId** | **[]int32** |  | 
- **tagIdN** | **[]int32** |  | 
+ **tagId** | **[]string** |  | 
+ **tagIdN** | **[]string** |  | 
  **updatedByRequest** | **string** |  | 
  **virtualMachine** | **[]string** | Virtual machine | 
  **virtualMachineN** | **[]string** | Virtual machine | 
@@ -4217,7 +4297,7 @@ Name | Type | Description  | Notes
 
 ## VirtualizationVirtualMachinesCreate
 
-> VirtualMachineWithConfigContext VirtualizationVirtualMachinesCreate(ctx).WritableVirtualMachineWithConfigContextRequest(writableVirtualMachineWithConfigContextRequest).Execute()
+> VirtualMachineWithConfigContext VirtualizationVirtualMachinesCreate(ctx).VirtualizationVirtualMachinesCreateRequest(virtualizationVirtualMachinesCreateRequest).Execute()
 
 
 
@@ -4236,11 +4316,11 @@ import (
 )
 
 func main() {
-	writableVirtualMachineWithConfigContextRequest := *openapiclient.NewWritableVirtualMachineWithConfigContextRequest("Name_example") // WritableVirtualMachineWithConfigContextRequest | 
+	virtualizationVirtualMachinesCreateRequest := openapiclient.virtualization_virtual_machines_create_request{WritableVirtualMachineWithConfigContextRequest: openapiclient.NewWritableVirtualMachineWithConfigContextRequest("Name_example")} // VirtualizationVirtualMachinesCreateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VirtualizationAPI.VirtualizationVirtualMachinesCreate(context.Background()).WritableVirtualMachineWithConfigContextRequest(writableVirtualMachineWithConfigContextRequest).Execute()
+	resp, r, err := apiClient.VirtualizationAPI.VirtualizationVirtualMachinesCreate(context.Background()).VirtualizationVirtualMachinesCreateRequest(virtualizationVirtualMachinesCreateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationVirtualMachinesCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4261,7 +4341,7 @@ Other parameters are passed through a pointer to a apiVirtualizationVirtualMachi
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **writableVirtualMachineWithConfigContextRequest** | [**WritableVirtualMachineWithConfigContextRequest**](WritableVirtualMachineWithConfigContextRequest.md) |  | 
+ **virtualizationVirtualMachinesCreateRequest** | [**VirtualizationVirtualMachinesCreateRequest**](VirtualizationVirtualMachinesCreateRequest.md) |  | 
 
 ### Return type
 
@@ -4351,7 +4431,7 @@ Name | Type | Description  | Notes
 
 ## VirtualizationVirtualMachinesList
 
-> PaginatedVirtualMachineWithConfigContextList VirtualizationVirtualMachinesList(ctx).Cluster(cluster).ClusterN(clusterN).ClusterGroup(clusterGroup).ClusterGroupN(clusterGroupN).ClusterGroupId(clusterGroupId).ClusterGroupIdN(clusterGroupIdN).ClusterId(clusterId).ClusterIdN(clusterIdN).ClusterType(clusterType).ClusterTypeN(clusterTypeN).ClusterTypeId(clusterTypeId).ClusterTypeIdN(clusterTypeIdN).ConfigTemplateId(configTemplateId).ConfigTemplateIdN(configTemplateIdN).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).Disk(disk).DiskEmpty(diskEmpty).DiskGt(diskGt).DiskGte(diskGte).DiskLt(diskLt).DiskLte(diskLte).DiskN(diskN).HasPrimaryIp(hasPrimaryIp).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).InterfaceCount(interfaceCount).InterfaceCountEmpty(interfaceCountEmpty).InterfaceCountGt(interfaceCountGt).InterfaceCountGte(interfaceCountGte).InterfaceCountLt(interfaceCountLt).InterfaceCountLte(interfaceCountLte).InterfaceCountN(interfaceCountN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).LocalContextData(localContextData).MacAddress(macAddress).MacAddressIc(macAddressIc).MacAddressIe(macAddressIe).MacAddressIew(macAddressIew).MacAddressIregex(macAddressIregex).MacAddressIsw(macAddressIsw).MacAddressN(macAddressN).MacAddressNic(macAddressNic).MacAddressNie(macAddressNie).MacAddressNiew(macAddressNiew).MacAddressNisw(macAddressNisw).MacAddressRegex(macAddressRegex).Memory(memory).MemoryEmpty(memoryEmpty).MemoryGt(memoryGt).MemoryGte(memoryGte).MemoryLt(memoryLt).MemoryLte(memoryLte).MemoryN(memoryN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Platform(platform).PlatformN(platformN).PlatformId(platformId).PlatformIdN(platformIdN).PrimaryIp4(primaryIp4).PrimaryIp4N(primaryIp4N).PrimaryIp4Id(primaryIp4Id).PrimaryIp4IdN(primaryIp4IdN).PrimaryIp6(primaryIp6).PrimaryIp6N(primaryIp6N).PrimaryIp6Id(primaryIp6Id).PrimaryIp6IdN(primaryIp6IdN).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Serial(serial).SerialEmpty(serialEmpty).SerialIc(serialIc).SerialIe(serialIe).SerialIew(serialIew).SerialIregex(serialIregex).SerialIsw(serialIsw).SerialN(serialN).SerialNic(serialNic).SerialNie(serialNie).SerialNiew(serialNiew).SerialNisw(serialNisw).SerialRegex(serialRegex).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Vcpus(vcpus).VcpusEmpty(vcpusEmpty).VcpusGt(vcpusGt).VcpusGte(vcpusGte).VcpusLt(vcpusLt).VcpusLte(vcpusLte).VcpusN(vcpusN).VirtualDiskCount(virtualDiskCount).VirtualDiskCountEmpty(virtualDiskCountEmpty).VirtualDiskCountGt(virtualDiskCountGt).VirtualDiskCountGte(virtualDiskCountGte).VirtualDiskCountLt(virtualDiskCountLt).VirtualDiskCountLte(virtualDiskCountLte).VirtualDiskCountN(virtualDiskCountN).Execute()
+> PaginatedVirtualMachineWithConfigContextList VirtualizationVirtualMachinesList(ctx).Cluster(cluster).ClusterN(clusterN).ClusterGroup(clusterGroup).ClusterGroupN(clusterGroupN).ClusterGroupId(clusterGroupId).ClusterGroupIdN(clusterGroupIdN).ClusterId(clusterId).ClusterIdN(clusterIdN).ClusterType(clusterType).ClusterTypeN(clusterTypeN).ClusterTypeId(clusterTypeId).ClusterTypeIdN(clusterTypeIdN).ConfigTemplateId(configTemplateId).ConfigTemplateIdN(configTemplateIdN).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).Disk(disk).DiskEmpty(diskEmpty).DiskGt(diskGt).DiskGte(diskGte).DiskLt(diskLt).DiskLte(diskLte).DiskN(diskN).HasPrimaryIp(hasPrimaryIp).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).InterfaceCount(interfaceCount).InterfaceCountEmpty(interfaceCountEmpty).InterfaceCountGt(interfaceCountGt).InterfaceCountGte(interfaceCountGte).InterfaceCountLt(interfaceCountLt).InterfaceCountLte(interfaceCountLte).InterfaceCountN(interfaceCountN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).LocalContextData(localContextData).MacAddress(macAddress).MacAddressIc(macAddressIc).MacAddressIe(macAddressIe).MacAddressIew(macAddressIew).MacAddressIregex(macAddressIregex).MacAddressIsw(macAddressIsw).MacAddressN(macAddressN).MacAddressNic(macAddressNic).MacAddressNie(macAddressNie).MacAddressNiew(macAddressNiew).MacAddressNisw(macAddressNisw).MacAddressRegex(macAddressRegex).Memory(memory).MemoryEmpty(memoryEmpty).MemoryGt(memoryGt).MemoryGte(memoryGte).MemoryLt(memoryLt).MemoryLte(memoryLte).MemoryN(memoryN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Platform(platform).PlatformN(platformN).PlatformId(platformId).PlatformIdN(platformIdN).PrimaryIp4(primaryIp4).PrimaryIp4N(primaryIp4N).PrimaryIp4Id(primaryIp4Id).PrimaryIp4IdN(primaryIp4IdN).PrimaryIp6(primaryIp6).PrimaryIp6N(primaryIp6N).PrimaryIp6Id(primaryIp6Id).PrimaryIp6IdN(primaryIp6IdN).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Serial(serial).SerialEmpty(serialEmpty).SerialIc(serialIc).SerialIe(serialIe).SerialIew(serialIew).SerialIregex(serialIregex).SerialIsw(serialIsw).SerialN(serialN).SerialNic(serialNic).SerialNie(serialNie).SerialNiew(serialNiew).SerialNisw(serialNisw).SerialRegex(serialRegex).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).StartOnBoot(startOnBoot).StartOnBootEmpty(startOnBootEmpty).StartOnBootIc(startOnBootIc).StartOnBootIe(startOnBootIe).StartOnBootIew(startOnBootIew).StartOnBootIregex(startOnBootIregex).StartOnBootIsw(startOnBootIsw).StartOnBootN(startOnBootN).StartOnBootNic(startOnBootNic).StartOnBootNie(startOnBootNie).StartOnBootNiew(startOnBootNiew).StartOnBootNisw(startOnBootNisw).StartOnBootRegex(startOnBootRegex).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Vcpus(vcpus).VcpusEmpty(vcpusEmpty).VcpusGt(vcpusGt).VcpusGte(vcpusGte).VcpusLt(vcpusLt).VcpusLte(vcpusLte).VcpusN(vcpusN).VirtualDiskCount(virtualDiskCount).VirtualDiskCountEmpty(virtualDiskCountEmpty).VirtualDiskCountGt(virtualDiskCountGt).VirtualDiskCountGte(virtualDiskCountGte).VirtualDiskCountLt(virtualDiskCountLt).VirtualDiskCountLte(virtualDiskCountLte).VirtualDiskCountN(virtualDiskCountN).Execute()
 
 
 
@@ -4412,8 +4492,8 @@ func main() {
 	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
 	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
 	descriptionRegex := []string{"Inner_example"} // []string |  (optional)
-	device := []*string{"Inner_example"} // []*string | Device (optional)
-	deviceN := []*string{"Inner_example"} // []*string | Device (optional)
+	device := []string{"Inner_example"} // []string | Device (optional)
+	deviceN := []string{"Inner_example"} // []string | Device (optional)
 	deviceId := []*int32{int32(123)} // []*int32 | Device (ID) (optional)
 	deviceIdN := []*int32{int32(123)} // []*int32 | Device (ID) (optional)
 	disk := []int32{int32(123)} // []int32 |  (optional)
@@ -4482,6 +4562,14 @@ func main() {
 	nameRegex := []string{"Inner_example"} // []string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	owner := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerN := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerGroup := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupN := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupId := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerGroupIdN := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerId := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
+	ownerIdN := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
 	platform := []string{"Inner_example"} // []string |  (optional)
 	platformN := []string{"Inner_example"} // []string |  (optional)
 	platformId := []string{"Inner_example"} // []string |  (optional)
@@ -4524,6 +4612,19 @@ func main() {
 	siteGroupIdN := []string{"Inner_example"} // []string |  (optional)
 	siteId := []*int32{int32(123)} // []*int32 | Site (ID) (optional)
 	siteIdN := []*int32{int32(123)} // []*int32 | Site (ID) (optional)
+	startOnBoot := []string{"Inner_example"} // []string |  (optional)
+	startOnBootEmpty := true // bool |  (optional)
+	startOnBootIc := []string{"Inner_example"} // []string |  (optional)
+	startOnBootIe := []string{"Inner_example"} // []string |  (optional)
+	startOnBootIew := []string{"Inner_example"} // []string |  (optional)
+	startOnBootIregex := []string{"Inner_example"} // []string |  (optional)
+	startOnBootIsw := []string{"Inner_example"} // []string |  (optional)
+	startOnBootN := []string{"Inner_example"} // []string |  (optional)
+	startOnBootNic := []string{"Inner_example"} // []string |  (optional)
+	startOnBootNie := []string{"Inner_example"} // []string |  (optional)
+	startOnBootNiew := []string{"Inner_example"} // []string |  (optional)
+	startOnBootNisw := []string{"Inner_example"} // []string |  (optional)
+	startOnBootRegex := []string{"Inner_example"} // []string |  (optional)
 	status := []string{"Inner_example"} // []string |  (optional)
 	statusEmpty := true // bool |  (optional)
 	statusIc := []string{"Inner_example"} // []string |  (optional)
@@ -4539,8 +4640,8 @@ func main() {
 	statusRegex := []string{"Inner_example"} // []string |  (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
-	tagId := []int32{int32(123)} // []int32 |  (optional)
-	tagIdN := []int32{int32(123)} // []int32 |  (optional)
+	tagId := []string{"Inner_example"} // []string |  (optional)
+	tagIdN := []string{"Inner_example"} // []string |  (optional)
 	tenant := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantN := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantGroup := []string{"Inner_example"} // []string |  (optional)
@@ -4567,7 +4668,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VirtualizationAPI.VirtualizationVirtualMachinesList(context.Background()).Cluster(cluster).ClusterN(clusterN).ClusterGroup(clusterGroup).ClusterGroupN(clusterGroupN).ClusterGroupId(clusterGroupId).ClusterGroupIdN(clusterGroupIdN).ClusterId(clusterId).ClusterIdN(clusterIdN).ClusterType(clusterType).ClusterTypeN(clusterTypeN).ClusterTypeId(clusterTypeId).ClusterTypeIdN(clusterTypeIdN).ConfigTemplateId(configTemplateId).ConfigTemplateIdN(configTemplateIdN).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).Disk(disk).DiskEmpty(diskEmpty).DiskGt(diskGt).DiskGte(diskGte).DiskLt(diskLt).DiskLte(diskLte).DiskN(diskN).HasPrimaryIp(hasPrimaryIp).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).InterfaceCount(interfaceCount).InterfaceCountEmpty(interfaceCountEmpty).InterfaceCountGt(interfaceCountGt).InterfaceCountGte(interfaceCountGte).InterfaceCountLt(interfaceCountLt).InterfaceCountLte(interfaceCountLte).InterfaceCountN(interfaceCountN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).LocalContextData(localContextData).MacAddress(macAddress).MacAddressIc(macAddressIc).MacAddressIe(macAddressIe).MacAddressIew(macAddressIew).MacAddressIregex(macAddressIregex).MacAddressIsw(macAddressIsw).MacAddressN(macAddressN).MacAddressNic(macAddressNic).MacAddressNie(macAddressNie).MacAddressNiew(macAddressNiew).MacAddressNisw(macAddressNisw).MacAddressRegex(macAddressRegex).Memory(memory).MemoryEmpty(memoryEmpty).MemoryGt(memoryGt).MemoryGte(memoryGte).MemoryLt(memoryLt).MemoryLte(memoryLte).MemoryN(memoryN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Platform(platform).PlatformN(platformN).PlatformId(platformId).PlatformIdN(platformIdN).PrimaryIp4(primaryIp4).PrimaryIp4N(primaryIp4N).PrimaryIp4Id(primaryIp4Id).PrimaryIp4IdN(primaryIp4IdN).PrimaryIp6(primaryIp6).PrimaryIp6N(primaryIp6N).PrimaryIp6Id(primaryIp6Id).PrimaryIp6IdN(primaryIp6IdN).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Serial(serial).SerialEmpty(serialEmpty).SerialIc(serialIc).SerialIe(serialIe).SerialIew(serialIew).SerialIregex(serialIregex).SerialIsw(serialIsw).SerialN(serialN).SerialNic(serialNic).SerialNie(serialNie).SerialNiew(serialNiew).SerialNisw(serialNisw).SerialRegex(serialRegex).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Vcpus(vcpus).VcpusEmpty(vcpusEmpty).VcpusGt(vcpusGt).VcpusGte(vcpusGte).VcpusLt(vcpusLt).VcpusLte(vcpusLte).VcpusN(vcpusN).VirtualDiskCount(virtualDiskCount).VirtualDiskCountEmpty(virtualDiskCountEmpty).VirtualDiskCountGt(virtualDiskCountGt).VirtualDiskCountGte(virtualDiskCountGte).VirtualDiskCountLt(virtualDiskCountLt).VirtualDiskCountLte(virtualDiskCountLte).VirtualDiskCountN(virtualDiskCountN).Execute()
+	resp, r, err := apiClient.VirtualizationAPI.VirtualizationVirtualMachinesList(context.Background()).Cluster(cluster).ClusterN(clusterN).ClusterGroup(clusterGroup).ClusterGroupN(clusterGroupN).ClusterGroupId(clusterGroupId).ClusterGroupIdN(clusterGroupIdN).ClusterId(clusterId).ClusterIdN(clusterIdN).ClusterType(clusterType).ClusterTypeN(clusterTypeN).ClusterTypeId(clusterTypeId).ClusterTypeIdN(clusterTypeIdN).ConfigTemplateId(configTemplateId).ConfigTemplateIdN(configTemplateIdN).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).Disk(disk).DiskEmpty(diskEmpty).DiskGt(diskGt).DiskGte(diskGte).DiskLt(diskLt).DiskLte(diskLte).DiskN(diskN).HasPrimaryIp(hasPrimaryIp).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).InterfaceCount(interfaceCount).InterfaceCountEmpty(interfaceCountEmpty).InterfaceCountGt(interfaceCountGt).InterfaceCountGte(interfaceCountGte).InterfaceCountLt(interfaceCountLt).InterfaceCountLte(interfaceCountLte).InterfaceCountN(interfaceCountN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).LocalContextData(localContextData).MacAddress(macAddress).MacAddressIc(macAddressIc).MacAddressIe(macAddressIe).MacAddressIew(macAddressIew).MacAddressIregex(macAddressIregex).MacAddressIsw(macAddressIsw).MacAddressN(macAddressN).MacAddressNic(macAddressNic).MacAddressNie(macAddressNie).MacAddressNiew(macAddressNiew).MacAddressNisw(macAddressNisw).MacAddressRegex(macAddressRegex).Memory(memory).MemoryEmpty(memoryEmpty).MemoryGt(memoryGt).MemoryGte(memoryGte).MemoryLt(memoryLt).MemoryLte(memoryLte).MemoryN(memoryN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Platform(platform).PlatformN(platformN).PlatformId(platformId).PlatformIdN(platformIdN).PrimaryIp4(primaryIp4).PrimaryIp4N(primaryIp4N).PrimaryIp4Id(primaryIp4Id).PrimaryIp4IdN(primaryIp4IdN).PrimaryIp6(primaryIp6).PrimaryIp6N(primaryIp6N).PrimaryIp6Id(primaryIp6Id).PrimaryIp6IdN(primaryIp6IdN).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Serial(serial).SerialEmpty(serialEmpty).SerialIc(serialIc).SerialIe(serialIe).SerialIew(serialIew).SerialIregex(serialIregex).SerialIsw(serialIsw).SerialN(serialN).SerialNic(serialNic).SerialNie(serialNie).SerialNiew(serialNiew).SerialNisw(serialNisw).SerialRegex(serialRegex).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).StartOnBoot(startOnBoot).StartOnBootEmpty(startOnBootEmpty).StartOnBootIc(startOnBootIc).StartOnBootIe(startOnBootIe).StartOnBootIew(startOnBootIew).StartOnBootIregex(startOnBootIregex).StartOnBootIsw(startOnBootIsw).StartOnBootN(startOnBootN).StartOnBootNic(startOnBootNic).StartOnBootNie(startOnBootNie).StartOnBootNiew(startOnBootNiew).StartOnBootNisw(startOnBootNisw).StartOnBootRegex(startOnBootRegex).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Vcpus(vcpus).VcpusEmpty(vcpusEmpty).VcpusGt(vcpusGt).VcpusGte(vcpusGte).VcpusLt(vcpusLt).VcpusLte(vcpusLte).VcpusN(vcpusN).VirtualDiskCount(virtualDiskCount).VirtualDiskCountEmpty(virtualDiskCountEmpty).VirtualDiskCountGt(virtualDiskCountGt).VirtualDiskCountGte(virtualDiskCountGte).VirtualDiskCountLt(virtualDiskCountLt).VirtualDiskCountLte(virtualDiskCountLte).VirtualDiskCountN(virtualDiskCountN).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationVirtualMachinesList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4699,6 +4800,14 @@ Name | Type | Description  | Notes
  **nameRegex** | **[]string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
+ **owner** | **[]string** | Owner (name) | 
+ **ownerN** | **[]string** | Owner (name) | 
+ **ownerGroup** | **[]string** | Owner Group (name) | 
+ **ownerGroupN** | **[]string** | Owner Group (name) | 
+ **ownerGroupId** | **[]int32** | Owner Group (ID) | 
+ **ownerGroupIdN** | **[]int32** | Owner Group (ID) | 
+ **ownerId** | **[]int32** | Owner (ID) | 
+ **ownerIdN** | **[]int32** | Owner (ID) | 
  **platform** | **[]string** |  | 
  **platformN** | **[]string** |  | 
  **platformId** | **[]string** |  | 
@@ -4741,6 +4850,19 @@ Name | Type | Description  | Notes
  **siteGroupIdN** | **[]string** |  | 
  **siteId** | **[]int32** | Site (ID) | 
  **siteIdN** | **[]int32** | Site (ID) | 
+ **startOnBoot** | **[]string** |  | 
+ **startOnBootEmpty** | **bool** |  | 
+ **startOnBootIc** | **[]string** |  | 
+ **startOnBootIe** | **[]string** |  | 
+ **startOnBootIew** | **[]string** |  | 
+ **startOnBootIregex** | **[]string** |  | 
+ **startOnBootIsw** | **[]string** |  | 
+ **startOnBootN** | **[]string** |  | 
+ **startOnBootNic** | **[]string** |  | 
+ **startOnBootNie** | **[]string** |  | 
+ **startOnBootNiew** | **[]string** |  | 
+ **startOnBootNisw** | **[]string** |  | 
+ **startOnBootRegex** | **[]string** |  | 
  **status** | **[]string** |  | 
  **statusEmpty** | **bool** |  | 
  **statusIc** | **[]string** |  | 
@@ -4756,8 +4878,8 @@ Name | Type | Description  | Notes
  **statusRegex** | **[]string** |  | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
- **tagId** | **[]int32** |  | 
- **tagIdN** | **[]int32** |  | 
+ **tagId** | **[]string** |  | 
+ **tagIdN** | **[]string** |  | 
  **tenant** | **[]string** | Tenant (slug) | 
  **tenantN** | **[]string** | Tenant (slug) | 
  **tenantGroup** | **[]string** |  | 

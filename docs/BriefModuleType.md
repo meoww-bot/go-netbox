@@ -11,12 +11,13 @@ Name | Type | Description | Notes
 **Manufacturer** | [**BriefManufacturer**](BriefManufacturer.md) |  | 
 **Model** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
+**ModuleCount** | **int32** |  | [readonly] 
 
 ## Methods
 
 ### NewBriefModuleType
 
-`func NewBriefModuleType(id int32, url string, display string, manufacturer BriefManufacturer, model string, ) *BriefModuleType`
+`func NewBriefModuleType(id int32, url string, display string, manufacturer BriefManufacturer, model string, moduleCount int32, ) *BriefModuleType`
 
 NewBriefModuleType instantiates a new BriefModuleType object
 This constructor will assign default values to properties that have it defined,
@@ -190,6 +191,26 @@ SetDescription sets Description field to given value.
 `func (o *BriefModuleType) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetModuleCount
+
+`func (o *BriefModuleType) GetModuleCount() int32`
+
+GetModuleCount returns the ModuleCount field if non-nil, zero value otherwise.
+
+### GetModuleCountOk
+
+`func (o *BriefModuleType) GetModuleCountOk() (*int32, bool)`
+
+GetModuleCountOk returns a tuple with the ModuleCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetModuleCount
+
+`func (o *BriefModuleType) SetModuleCount(v int32)`
+
+SetModuleCount sets ModuleCount field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

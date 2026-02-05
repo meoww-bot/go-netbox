@@ -11,11 +11,14 @@ Name | Type | Description | Notes
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
+**Owner** | Pointer to [**NullableBriefOwner**](BriefOwner.md) |  | [optional] 
+**Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **DevicetypeCount** | Pointer to **int64** |  | [optional] [readonly] 
+**ModuletypeCount** | **int64** |  | [readonly] 
 **InventoryitemCount** | Pointer to **int64** |  | [optional] [readonly] 
 **PlatformCount** | Pointer to **int64** |  | [optional] [readonly] 
 
@@ -23,7 +26,7 @@ Name | Type | Description | Notes
 
 ### NewManufacturer
 
-`func NewManufacturer(id int32, url string, display string, name string, slug string, ) *Manufacturer`
+`func NewManufacturer(id int32, url string, display string, name string, slug string, moduletypeCount int64, ) *Manufacturer`
 
 NewManufacturer instantiates a new Manufacturer object
 This constructor will assign default values to properties that have it defined,
@@ -188,6 +191,66 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### GetOwner
+
+`func (o *Manufacturer) GetOwner() BriefOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *Manufacturer) GetOwnerOk() (*BriefOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *Manufacturer) SetOwner(v BriefOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *Manufacturer) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *Manufacturer) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *Manufacturer) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
+### GetComments
+
+`func (o *Manufacturer) GetComments() string`
+
+GetComments returns the Comments field if non-nil, zero value otherwise.
+
+### GetCommentsOk
+
+`func (o *Manufacturer) GetCommentsOk() (*string, bool)`
+
+GetCommentsOk returns a tuple with the Comments field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComments
+
+`func (o *Manufacturer) SetComments(v string)`
+
+SetComments sets Comments field to given value.
+
+### HasComments
+
+`func (o *Manufacturer) HasComments() bool`
+
+HasComments returns a boolean if a field has been set.
+
 ### GetTags
 
 `func (o *Manufacturer) GetTags() []NestedTag`
@@ -332,6 +395,26 @@ SetDevicetypeCount sets DevicetypeCount field to given value.
 `func (o *Manufacturer) HasDevicetypeCount() bool`
 
 HasDevicetypeCount returns a boolean if a field has been set.
+
+### GetModuletypeCount
+
+`func (o *Manufacturer) GetModuletypeCount() int64`
+
+GetModuletypeCount returns the ModuletypeCount field if non-nil, zero value otherwise.
+
+### GetModuletypeCountOk
+
+`func (o *Manufacturer) GetModuletypeCountOk() (*int64, bool)`
+
+GetModuletypeCountOk returns a tuple with the ModuletypeCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetModuletypeCount
+
+`func (o *Manufacturer) SetModuletypeCount(v int64)`
+
+SetModuletypeCount sets ModuletypeCount field to given value.
+
 
 ### GetInventoryitemCount
 

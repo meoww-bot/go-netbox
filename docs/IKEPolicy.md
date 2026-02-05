@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **Mode** | Pointer to [**IKEPolicyMode**](IKEPolicyMode.md) |  | [optional] 
 **Proposals** | Pointer to [**[]IKEProposal**](IKEProposal.md) |  | [optional] 
 **PresharedKey** | Pointer to **string** |  | [optional] 
+**Owner** | Pointer to [**NullableBriefOwner**](BriefOwner.md) |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -264,6 +265,41 @@ SetPresharedKey sets PresharedKey field to given value.
 
 HasPresharedKey returns a boolean if a field has been set.
 
+### GetOwner
+
+`func (o *IKEPolicy) GetOwner() BriefOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *IKEPolicy) GetOwnerOk() (*BriefOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *IKEPolicy) SetOwner(v BriefOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *IKEPolicy) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *IKEPolicy) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *IKEPolicy) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetComments
 
 `func (o *IKEPolicy) GetComments() string`

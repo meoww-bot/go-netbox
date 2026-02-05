@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **ValidationMaximum** | Pointer to **NullableFloat64** | Maximum allowed value (for numeric fields) | [optional] 
 **ValidationRegex** | Pointer to **string** | Regular expression to enforce on text field values. Use ^ and $ to force matching of entire string. For example, &lt;code&gt;^[A-Z]{3}$&lt;/code&gt; will limit values to exactly three uppercase letters. | [optional] 
 **ChoiceSet** | Pointer to [**NullableCustomFieldRequestChoiceSet**](CustomFieldRequestChoiceSet.md) |  | [optional] 
+**Owner** | Pointer to [**NullableASNRangeRequestOwner**](ASNRangeRequestOwner.md) |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -631,6 +632,41 @@ HasChoiceSet returns a boolean if a field has been set.
 `func (o *PatchedWritableCustomFieldRequest) UnsetChoiceSet()`
 
 UnsetChoiceSet ensures that no value is present for ChoiceSet, not even an explicit nil
+### GetOwner
+
+`func (o *PatchedWritableCustomFieldRequest) GetOwner() ASNRangeRequestOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *PatchedWritableCustomFieldRequest) GetOwnerOk() (*ASNRangeRequestOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *PatchedWritableCustomFieldRequest) SetOwner(v ASNRangeRequestOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *PatchedWritableCustomFieldRequest) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *PatchedWritableCustomFieldRequest) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *PatchedWritableCustomFieldRequest) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetComments
 
 `func (o *PatchedWritableCustomFieldRequest) GetComments() string`

@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **AuthenticationAlgorithm** | Pointer to [**IKEProposalAuthenticationAlgorithm**](IKEProposalAuthenticationAlgorithm.md) |  | [optional] 
 **Group** | [**IKEProposalGroup**](IKEProposalGroup.md) |  | 
 **SaLifetime** | Pointer to **NullableInt32** | Security association lifetime (in seconds) | [optional] 
+**Owner** | Pointer to [**NullableBriefOwner**](BriefOwner.md) |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -290,6 +291,41 @@ HasSaLifetime returns a boolean if a field has been set.
 `func (o *IKEProposal) UnsetSaLifetime()`
 
 UnsetSaLifetime ensures that no value is present for SaLifetime, not even an explicit nil
+### GetOwner
+
+`func (o *IKEProposal) GetOwner() BriefOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *IKEProposal) GetOwnerOk() (*BriefOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *IKEProposal) SetOwner(v BriefOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *IKEProposal) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *IKEProposal) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *IKEProposal) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetComments
 
 `func (o *IKEProposal) GetComments() string`

@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **Slug** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Tenant** | Pointer to [**NullableASNRangeRequestTenant**](ASNRangeRequestTenant.md) |  | [optional] 
+**Owner** | Pointer to [**NullableASNRangeRequestOwner**](ASNRangeRequestOwner.md) |  | [optional] 
+**Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 
@@ -140,6 +142,66 @@ HasTenant returns a boolean if a field has been set.
 `func (o *PatchedCircuitGroupRequest) UnsetTenant()`
 
 UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
+### GetOwner
+
+`func (o *PatchedCircuitGroupRequest) GetOwner() ASNRangeRequestOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *PatchedCircuitGroupRequest) GetOwnerOk() (*ASNRangeRequestOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *PatchedCircuitGroupRequest) SetOwner(v ASNRangeRequestOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *PatchedCircuitGroupRequest) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *PatchedCircuitGroupRequest) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *PatchedCircuitGroupRequest) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
+### GetComments
+
+`func (o *PatchedCircuitGroupRequest) GetComments() string`
+
+GetComments returns the Comments field if non-nil, zero value otherwise.
+
+### GetCommentsOk
+
+`func (o *PatchedCircuitGroupRequest) GetCommentsOk() (*string, bool)`
+
+GetCommentsOk returns a tuple with the Comments field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComments
+
+`func (o *PatchedCircuitGroupRequest) SetComments(v string)`
+
+SetComments sets Comments field to given value.
+
+### HasComments
+
+`func (o *PatchedCircuitGroupRequest) HasComments() bool`
+
+HasComments returns a boolean if a field has been set.
+
 ### GetTags
 
 `func (o *PatchedCircuitGroupRequest) GetTags() []NestedTagRequest`

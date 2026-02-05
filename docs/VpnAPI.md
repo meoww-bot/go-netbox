@@ -295,7 +295,7 @@ Name | Type | Description  | Notes
 
 ## VpnIkePoliciesCreate
 
-> IKEPolicy VpnIkePoliciesCreate(ctx).WritableIKEPolicyRequest(writableIKEPolicyRequest).Execute()
+> IKEPolicy VpnIkePoliciesCreate(ctx).VpnIkePoliciesCreateRequest(vpnIkePoliciesCreateRequest).Execute()
 
 
 
@@ -314,11 +314,11 @@ import (
 )
 
 func main() {
-	writableIKEPolicyRequest := *openapiclient.NewWritableIKEPolicyRequest("Name_example") // WritableIKEPolicyRequest | 
+	vpnIkePoliciesCreateRequest := openapiclient.vpn_ike_policies_create_request{WritableIKEPolicyRequest: openapiclient.NewWritableIKEPolicyRequest("Name_example")} // VpnIkePoliciesCreateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VpnAPI.VpnIkePoliciesCreate(context.Background()).WritableIKEPolicyRequest(writableIKEPolicyRequest).Execute()
+	resp, r, err := apiClient.VpnAPI.VpnIkePoliciesCreate(context.Background()).VpnIkePoliciesCreateRequest(vpnIkePoliciesCreateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIkePoliciesCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -339,7 +339,7 @@ Other parameters are passed through a pointer to a apiVpnIkePoliciesCreateReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **writableIKEPolicyRequest** | [**WritableIKEPolicyRequest**](WritableIKEPolicyRequest.md) |  | 
+ **vpnIkePoliciesCreateRequest** | [**VpnIkePoliciesCreateRequest**](VpnIkePoliciesCreateRequest.md) |  | 
 
 ### Return type
 
@@ -429,7 +429,7 @@ Name | Type | Description  | Notes
 
 ## VpnIkePoliciesList
 
-> PaginatedIKEPolicyList VpnIkePoliciesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IkeProposal(ikeProposal).IkeProposalN(ikeProposalN).IkeProposalId(ikeProposalId).IkeProposalIdN(ikeProposalIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Mode(mode).ModeEmpty(modeEmpty).ModeIc(modeIc).ModeIe(modeIe).ModeIew(modeIew).ModeIregex(modeIregex).ModeIsw(modeIsw).ModeN(modeN).ModeNic(modeNic).ModeNie(modeNie).ModeNiew(modeNiew).ModeNisw(modeNisw).ModeRegex(modeRegex).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).PresharedKey(presharedKey).PresharedKeyIc(presharedKeyIc).PresharedKeyIe(presharedKeyIe).PresharedKeyIew(presharedKeyIew).PresharedKeyIregex(presharedKeyIregex).PresharedKeyIsw(presharedKeyIsw).PresharedKeyN(presharedKeyN).PresharedKeyNic(presharedKeyNic).PresharedKeyNie(presharedKeyNie).PresharedKeyNiew(presharedKeyNiew).PresharedKeyNisw(presharedKeyNisw).PresharedKeyRegex(presharedKeyRegex).Q(q).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Version(version).VersionIc(versionIc).VersionIe(versionIe).VersionIew(versionIew).VersionIregex(versionIregex).VersionIsw(versionIsw).VersionN(versionN).VersionNic(versionNic).VersionNie(versionNie).VersionNiew(versionNiew).VersionNisw(versionNisw).VersionRegex(versionRegex).Execute()
+> PaginatedIKEPolicyList VpnIkePoliciesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IkeProposal(ikeProposal).IkeProposalN(ikeProposalN).IkeProposalId(ikeProposalId).IkeProposalIdN(ikeProposalIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Mode(mode).ModeEmpty(modeEmpty).ModeIc(modeIc).ModeIe(modeIe).ModeIew(modeIew).ModeIregex(modeIregex).ModeIsw(modeIsw).ModeN(modeN).ModeNic(modeNic).ModeNie(modeNie).ModeNiew(modeNiew).ModeNisw(modeNisw).ModeRegex(modeRegex).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).PresharedKey(presharedKey).PresharedKeyIc(presharedKeyIc).PresharedKeyIe(presharedKeyIe).PresharedKeyIew(presharedKeyIew).PresharedKeyIregex(presharedKeyIregex).PresharedKeyIsw(presharedKeyIsw).PresharedKeyN(presharedKeyN).PresharedKeyNic(presharedKeyNic).PresharedKeyNie(presharedKeyNie).PresharedKeyNiew(presharedKeyNiew).PresharedKeyNisw(presharedKeyNisw).PresharedKeyRegex(presharedKeyRegex).Q(q).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Version(version).VersionIc(versionIc).VersionIe(versionIe).VersionIew(versionIew).VersionIregex(versionIregex).VersionIsw(versionIsw).VersionN(versionN).VersionNic(versionNic).VersionNie(versionNie).VersionNiew(versionNiew).VersionNisw(versionNisw).VersionRegex(versionRegex).Execute()
 
 
 
@@ -518,6 +518,14 @@ func main() {
 	nameRegex := []string{"Inner_example"} // []string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	owner := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerN := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerGroup := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupN := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupId := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerGroupIdN := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerId := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
+	ownerIdN := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
 	presharedKey := "presharedKey_example" // string |  (optional)
 	presharedKeyIc := "presharedKeyIc_example" // string |  (optional)
 	presharedKeyIe := "presharedKeyIe_example" // string |  (optional)
@@ -533,8 +541,8 @@ func main() {
 	q := "q_example" // string | Search (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
-	tagId := []int32{int32(123)} // []int32 |  (optional)
-	tagIdN := []int32{int32(123)} // []int32 |  (optional)
+	tagId := []string{"Inner_example"} // []string |  (optional)
+	tagIdN := []string{"Inner_example"} // []string |  (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	version := []int32{int32(123)} // []int32 |  (optional)
 	versionIc := []int32{int32(123)} // []int32 |  (optional)
@@ -551,7 +559,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VpnAPI.VpnIkePoliciesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IkeProposal(ikeProposal).IkeProposalN(ikeProposalN).IkeProposalId(ikeProposalId).IkeProposalIdN(ikeProposalIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Mode(mode).ModeEmpty(modeEmpty).ModeIc(modeIc).ModeIe(modeIe).ModeIew(modeIew).ModeIregex(modeIregex).ModeIsw(modeIsw).ModeN(modeN).ModeNic(modeNic).ModeNie(modeNie).ModeNiew(modeNiew).ModeNisw(modeNisw).ModeRegex(modeRegex).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).PresharedKey(presharedKey).PresharedKeyIc(presharedKeyIc).PresharedKeyIe(presharedKeyIe).PresharedKeyIew(presharedKeyIew).PresharedKeyIregex(presharedKeyIregex).PresharedKeyIsw(presharedKeyIsw).PresharedKeyN(presharedKeyN).PresharedKeyNic(presharedKeyNic).PresharedKeyNie(presharedKeyNie).PresharedKeyNiew(presharedKeyNiew).PresharedKeyNisw(presharedKeyNisw).PresharedKeyRegex(presharedKeyRegex).Q(q).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Version(version).VersionIc(versionIc).VersionIe(versionIe).VersionIew(versionIew).VersionIregex(versionIregex).VersionIsw(versionIsw).VersionN(versionN).VersionNic(versionNic).VersionNie(versionNie).VersionNiew(versionNiew).VersionNisw(versionNisw).VersionRegex(versionRegex).Execute()
+	resp, r, err := apiClient.VpnAPI.VpnIkePoliciesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IkeProposal(ikeProposal).IkeProposalN(ikeProposalN).IkeProposalId(ikeProposalId).IkeProposalIdN(ikeProposalIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Mode(mode).ModeEmpty(modeEmpty).ModeIc(modeIc).ModeIe(modeIe).ModeIew(modeIew).ModeIregex(modeIregex).ModeIsw(modeIsw).ModeN(modeN).ModeNic(modeNic).ModeNie(modeNie).ModeNiew(modeNiew).ModeNisw(modeNisw).ModeRegex(modeRegex).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).PresharedKey(presharedKey).PresharedKeyIc(presharedKeyIc).PresharedKeyIe(presharedKeyIe).PresharedKeyIew(presharedKeyIew).PresharedKeyIregex(presharedKeyIregex).PresharedKeyIsw(presharedKeyIsw).PresharedKeyN(presharedKeyN).PresharedKeyNic(presharedKeyNic).PresharedKeyNie(presharedKeyNie).PresharedKeyNiew(presharedKeyNiew).PresharedKeyNisw(presharedKeyNisw).PresharedKeyRegex(presharedKeyRegex).Q(q).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Version(version).VersionIc(versionIc).VersionIe(versionIe).VersionIew(versionIew).VersionIregex(versionIregex).VersionIsw(versionIsw).VersionN(versionN).VersionNic(versionNic).VersionNie(versionNie).VersionNiew(versionNiew).VersionNisw(versionNisw).VersionRegex(versionRegex).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIkePoliciesList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -641,6 +649,14 @@ Name | Type | Description  | Notes
  **nameRegex** | **[]string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
+ **owner** | **[]string** | Owner (name) | 
+ **ownerN** | **[]string** | Owner (name) | 
+ **ownerGroup** | **[]string** | Owner Group (name) | 
+ **ownerGroupN** | **[]string** | Owner Group (name) | 
+ **ownerGroupId** | **[]int32** | Owner Group (ID) | 
+ **ownerGroupIdN** | **[]int32** | Owner Group (ID) | 
+ **ownerId** | **[]int32** | Owner (ID) | 
+ **ownerIdN** | **[]int32** | Owner (ID) | 
  **presharedKey** | **string** |  | 
  **presharedKeyIc** | **string** |  | 
  **presharedKeyIe** | **string** |  | 
@@ -656,8 +672,8 @@ Name | Type | Description  | Notes
  **q** | **string** | Search | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
- **tagId** | **[]int32** |  | 
- **tagIdN** | **[]int32** |  | 
+ **tagId** | **[]string** |  | 
+ **tagIdN** | **[]string** |  | 
  **updatedByRequest** | **string** |  | 
  **version** | **[]int32** |  | 
  **versionIc** | **[]int32** |  | 
@@ -1102,7 +1118,7 @@ Name | Type | Description  | Notes
 
 ## VpnIkeProposalsCreate
 
-> IKEProposal VpnIkeProposalsCreate(ctx).WritableIKEProposalRequest(writableIKEProposalRequest).Execute()
+> IKEProposal VpnIkeProposalsCreate(ctx).VpnIkeProposalsCreateRequest(vpnIkeProposalsCreateRequest).Execute()
 
 
 
@@ -1121,11 +1137,11 @@ import (
 )
 
 func main() {
-	writableIKEProposalRequest := *openapiclient.NewWritableIKEProposalRequest("Name_example", openapiclient.IKEProposal_authentication_method_value("preshared-keys"), openapiclient.IKEProposal_encryption_algorithm_value("aes-128-cbc"), openapiclient.PatchedWritableIKEProposalRequest_group(1)) // WritableIKEProposalRequest | 
+	vpnIkeProposalsCreateRequest := openapiclient.vpn_ike_proposals_create_request{WritableIKEProposalRequest: openapiclient.NewWritableIKEProposalRequest("Name_example", openapiclient.IKEProposal_authentication_method_value("preshared-keys"), openapiclient.IKEProposal_encryption_algorithm_value("aes-128-cbc"), openapiclient.PatchedWritableIKEProposalRequest_group(1))} // VpnIkeProposalsCreateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VpnAPI.VpnIkeProposalsCreate(context.Background()).WritableIKEProposalRequest(writableIKEProposalRequest).Execute()
+	resp, r, err := apiClient.VpnAPI.VpnIkeProposalsCreate(context.Background()).VpnIkeProposalsCreateRequest(vpnIkeProposalsCreateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIkeProposalsCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1146,7 +1162,7 @@ Other parameters are passed through a pointer to a apiVpnIkeProposalsCreateReque
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **writableIKEProposalRequest** | [**WritableIKEProposalRequest**](WritableIKEProposalRequest.md) |  | 
+ **vpnIkeProposalsCreateRequest** | [**VpnIkeProposalsCreateRequest**](VpnIkeProposalsCreateRequest.md) |  | 
 
 ### Return type
 
@@ -1236,7 +1252,7 @@ Name | Type | Description  | Notes
 
 ## VpnIkeProposalsList
 
-> PaginatedIKEProposalList VpnIkeProposalsList(ctx).AuthenticationAlgorithm(authenticationAlgorithm).AuthenticationAlgorithmEmpty(authenticationAlgorithmEmpty).AuthenticationAlgorithmIc(authenticationAlgorithmIc).AuthenticationAlgorithmIe(authenticationAlgorithmIe).AuthenticationAlgorithmIew(authenticationAlgorithmIew).AuthenticationAlgorithmIregex(authenticationAlgorithmIregex).AuthenticationAlgorithmIsw(authenticationAlgorithmIsw).AuthenticationAlgorithmN(authenticationAlgorithmN).AuthenticationAlgorithmNic(authenticationAlgorithmNic).AuthenticationAlgorithmNie(authenticationAlgorithmNie).AuthenticationAlgorithmNiew(authenticationAlgorithmNiew).AuthenticationAlgorithmNisw(authenticationAlgorithmNisw).AuthenticationAlgorithmRegex(authenticationAlgorithmRegex).AuthenticationMethod(authenticationMethod).AuthenticationMethodEmpty(authenticationMethodEmpty).AuthenticationMethodIc(authenticationMethodIc).AuthenticationMethodIe(authenticationMethodIe).AuthenticationMethodIew(authenticationMethodIew).AuthenticationMethodIregex(authenticationMethodIregex).AuthenticationMethodIsw(authenticationMethodIsw).AuthenticationMethodN(authenticationMethodN).AuthenticationMethodNic(authenticationMethodNic).AuthenticationMethodNie(authenticationMethodNie).AuthenticationMethodNiew(authenticationMethodNiew).AuthenticationMethodNisw(authenticationMethodNisw).AuthenticationMethodRegex(authenticationMethodRegex).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).EncryptionAlgorithm(encryptionAlgorithm).EncryptionAlgorithmEmpty(encryptionAlgorithmEmpty).EncryptionAlgorithmIc(encryptionAlgorithmIc).EncryptionAlgorithmIe(encryptionAlgorithmIe).EncryptionAlgorithmIew(encryptionAlgorithmIew).EncryptionAlgorithmIregex(encryptionAlgorithmIregex).EncryptionAlgorithmIsw(encryptionAlgorithmIsw).EncryptionAlgorithmN(encryptionAlgorithmN).EncryptionAlgorithmNic(encryptionAlgorithmNic).EncryptionAlgorithmNie(encryptionAlgorithmNie).EncryptionAlgorithmNiew(encryptionAlgorithmNiew).EncryptionAlgorithmNisw(encryptionAlgorithmNisw).EncryptionAlgorithmRegex(encryptionAlgorithmRegex).Group(group).GroupIc(groupIc).GroupIe(groupIe).GroupIew(groupIew).GroupIregex(groupIregex).GroupIsw(groupIsw).GroupN(groupN).GroupNic(groupNic).GroupNie(groupNie).GroupNiew(groupNiew).GroupNisw(groupNisw).GroupRegex(groupRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IkePolicy(ikePolicy).IkePolicyN(ikePolicyN).IkePolicyId(ikePolicyId).IkePolicyIdN(ikePolicyIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).SaLifetime(saLifetime).SaLifetimeEmpty(saLifetimeEmpty).SaLifetimeGt(saLifetimeGt).SaLifetimeGte(saLifetimeGte).SaLifetimeLt(saLifetimeLt).SaLifetimeLte(saLifetimeLte).SaLifetimeN(saLifetimeN).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedIKEProposalList VpnIkeProposalsList(ctx).AuthenticationAlgorithm(authenticationAlgorithm).AuthenticationAlgorithmEmpty(authenticationAlgorithmEmpty).AuthenticationAlgorithmIc(authenticationAlgorithmIc).AuthenticationAlgorithmIe(authenticationAlgorithmIe).AuthenticationAlgorithmIew(authenticationAlgorithmIew).AuthenticationAlgorithmIregex(authenticationAlgorithmIregex).AuthenticationAlgorithmIsw(authenticationAlgorithmIsw).AuthenticationAlgorithmN(authenticationAlgorithmN).AuthenticationAlgorithmNic(authenticationAlgorithmNic).AuthenticationAlgorithmNie(authenticationAlgorithmNie).AuthenticationAlgorithmNiew(authenticationAlgorithmNiew).AuthenticationAlgorithmNisw(authenticationAlgorithmNisw).AuthenticationAlgorithmRegex(authenticationAlgorithmRegex).AuthenticationMethod(authenticationMethod).AuthenticationMethodEmpty(authenticationMethodEmpty).AuthenticationMethodIc(authenticationMethodIc).AuthenticationMethodIe(authenticationMethodIe).AuthenticationMethodIew(authenticationMethodIew).AuthenticationMethodIregex(authenticationMethodIregex).AuthenticationMethodIsw(authenticationMethodIsw).AuthenticationMethodN(authenticationMethodN).AuthenticationMethodNic(authenticationMethodNic).AuthenticationMethodNie(authenticationMethodNie).AuthenticationMethodNiew(authenticationMethodNiew).AuthenticationMethodNisw(authenticationMethodNisw).AuthenticationMethodRegex(authenticationMethodRegex).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).EncryptionAlgorithm(encryptionAlgorithm).EncryptionAlgorithmEmpty(encryptionAlgorithmEmpty).EncryptionAlgorithmIc(encryptionAlgorithmIc).EncryptionAlgorithmIe(encryptionAlgorithmIe).EncryptionAlgorithmIew(encryptionAlgorithmIew).EncryptionAlgorithmIregex(encryptionAlgorithmIregex).EncryptionAlgorithmIsw(encryptionAlgorithmIsw).EncryptionAlgorithmN(encryptionAlgorithmN).EncryptionAlgorithmNic(encryptionAlgorithmNic).EncryptionAlgorithmNie(encryptionAlgorithmNie).EncryptionAlgorithmNiew(encryptionAlgorithmNiew).EncryptionAlgorithmNisw(encryptionAlgorithmNisw).EncryptionAlgorithmRegex(encryptionAlgorithmRegex).Group(group).GroupIc(groupIc).GroupIe(groupIe).GroupIew(groupIew).GroupIregex(groupIregex).GroupIsw(groupIsw).GroupN(groupN).GroupNic(groupNic).GroupNie(groupNie).GroupNiew(groupNiew).GroupNisw(groupNisw).GroupRegex(groupRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IkePolicy(ikePolicy).IkePolicyN(ikePolicyN).IkePolicyId(ikePolicyId).IkePolicyIdN(ikePolicyIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).SaLifetime(saLifetime).SaLifetimeEmpty(saLifetimeEmpty).SaLifetimeGt(saLifetimeGt).SaLifetimeGte(saLifetimeGte).SaLifetimeLt(saLifetimeLt).SaLifetimeLte(saLifetimeLte).SaLifetimeN(saLifetimeN).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -1363,6 +1379,14 @@ func main() {
 	nameRegex := []string{"Inner_example"} // []string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	owner := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerN := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerGroup := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupN := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupId := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerGroupIdN := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerId := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
+	ownerIdN := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
 	q := "q_example" // string | Search (optional)
 	saLifetime := []int32{int32(123)} // []int32 |  (optional)
 	saLifetimeEmpty := true // bool |  (optional)
@@ -1373,13 +1397,13 @@ func main() {
 	saLifetimeN := []int32{int32(123)} // []int32 |  (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
-	tagId := []int32{int32(123)} // []int32 |  (optional)
-	tagIdN := []int32{int32(123)} // []int32 |  (optional)
+	tagId := []string{"Inner_example"} // []string |  (optional)
+	tagIdN := []string{"Inner_example"} // []string |  (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VpnAPI.VpnIkeProposalsList(context.Background()).AuthenticationAlgorithm(authenticationAlgorithm).AuthenticationAlgorithmEmpty(authenticationAlgorithmEmpty).AuthenticationAlgorithmIc(authenticationAlgorithmIc).AuthenticationAlgorithmIe(authenticationAlgorithmIe).AuthenticationAlgorithmIew(authenticationAlgorithmIew).AuthenticationAlgorithmIregex(authenticationAlgorithmIregex).AuthenticationAlgorithmIsw(authenticationAlgorithmIsw).AuthenticationAlgorithmN(authenticationAlgorithmN).AuthenticationAlgorithmNic(authenticationAlgorithmNic).AuthenticationAlgorithmNie(authenticationAlgorithmNie).AuthenticationAlgorithmNiew(authenticationAlgorithmNiew).AuthenticationAlgorithmNisw(authenticationAlgorithmNisw).AuthenticationAlgorithmRegex(authenticationAlgorithmRegex).AuthenticationMethod(authenticationMethod).AuthenticationMethodEmpty(authenticationMethodEmpty).AuthenticationMethodIc(authenticationMethodIc).AuthenticationMethodIe(authenticationMethodIe).AuthenticationMethodIew(authenticationMethodIew).AuthenticationMethodIregex(authenticationMethodIregex).AuthenticationMethodIsw(authenticationMethodIsw).AuthenticationMethodN(authenticationMethodN).AuthenticationMethodNic(authenticationMethodNic).AuthenticationMethodNie(authenticationMethodNie).AuthenticationMethodNiew(authenticationMethodNiew).AuthenticationMethodNisw(authenticationMethodNisw).AuthenticationMethodRegex(authenticationMethodRegex).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).EncryptionAlgorithm(encryptionAlgorithm).EncryptionAlgorithmEmpty(encryptionAlgorithmEmpty).EncryptionAlgorithmIc(encryptionAlgorithmIc).EncryptionAlgorithmIe(encryptionAlgorithmIe).EncryptionAlgorithmIew(encryptionAlgorithmIew).EncryptionAlgorithmIregex(encryptionAlgorithmIregex).EncryptionAlgorithmIsw(encryptionAlgorithmIsw).EncryptionAlgorithmN(encryptionAlgorithmN).EncryptionAlgorithmNic(encryptionAlgorithmNic).EncryptionAlgorithmNie(encryptionAlgorithmNie).EncryptionAlgorithmNiew(encryptionAlgorithmNiew).EncryptionAlgorithmNisw(encryptionAlgorithmNisw).EncryptionAlgorithmRegex(encryptionAlgorithmRegex).Group(group).GroupIc(groupIc).GroupIe(groupIe).GroupIew(groupIew).GroupIregex(groupIregex).GroupIsw(groupIsw).GroupN(groupN).GroupNic(groupNic).GroupNie(groupNie).GroupNiew(groupNiew).GroupNisw(groupNisw).GroupRegex(groupRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IkePolicy(ikePolicy).IkePolicyN(ikePolicyN).IkePolicyId(ikePolicyId).IkePolicyIdN(ikePolicyIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).SaLifetime(saLifetime).SaLifetimeEmpty(saLifetimeEmpty).SaLifetimeGt(saLifetimeGt).SaLifetimeGte(saLifetimeGte).SaLifetimeLt(saLifetimeLt).SaLifetimeLte(saLifetimeLte).SaLifetimeN(saLifetimeN).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.VpnAPI.VpnIkeProposalsList(context.Background()).AuthenticationAlgorithm(authenticationAlgorithm).AuthenticationAlgorithmEmpty(authenticationAlgorithmEmpty).AuthenticationAlgorithmIc(authenticationAlgorithmIc).AuthenticationAlgorithmIe(authenticationAlgorithmIe).AuthenticationAlgorithmIew(authenticationAlgorithmIew).AuthenticationAlgorithmIregex(authenticationAlgorithmIregex).AuthenticationAlgorithmIsw(authenticationAlgorithmIsw).AuthenticationAlgorithmN(authenticationAlgorithmN).AuthenticationAlgorithmNic(authenticationAlgorithmNic).AuthenticationAlgorithmNie(authenticationAlgorithmNie).AuthenticationAlgorithmNiew(authenticationAlgorithmNiew).AuthenticationAlgorithmNisw(authenticationAlgorithmNisw).AuthenticationAlgorithmRegex(authenticationAlgorithmRegex).AuthenticationMethod(authenticationMethod).AuthenticationMethodEmpty(authenticationMethodEmpty).AuthenticationMethodIc(authenticationMethodIc).AuthenticationMethodIe(authenticationMethodIe).AuthenticationMethodIew(authenticationMethodIew).AuthenticationMethodIregex(authenticationMethodIregex).AuthenticationMethodIsw(authenticationMethodIsw).AuthenticationMethodN(authenticationMethodN).AuthenticationMethodNic(authenticationMethodNic).AuthenticationMethodNie(authenticationMethodNie).AuthenticationMethodNiew(authenticationMethodNiew).AuthenticationMethodNisw(authenticationMethodNisw).AuthenticationMethodRegex(authenticationMethodRegex).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).EncryptionAlgorithm(encryptionAlgorithm).EncryptionAlgorithmEmpty(encryptionAlgorithmEmpty).EncryptionAlgorithmIc(encryptionAlgorithmIc).EncryptionAlgorithmIe(encryptionAlgorithmIe).EncryptionAlgorithmIew(encryptionAlgorithmIew).EncryptionAlgorithmIregex(encryptionAlgorithmIregex).EncryptionAlgorithmIsw(encryptionAlgorithmIsw).EncryptionAlgorithmN(encryptionAlgorithmN).EncryptionAlgorithmNic(encryptionAlgorithmNic).EncryptionAlgorithmNie(encryptionAlgorithmNie).EncryptionAlgorithmNiew(encryptionAlgorithmNiew).EncryptionAlgorithmNisw(encryptionAlgorithmNisw).EncryptionAlgorithmRegex(encryptionAlgorithmRegex).Group(group).GroupIc(groupIc).GroupIe(groupIe).GroupIew(groupIew).GroupIregex(groupIregex).GroupIsw(groupIsw).GroupN(groupN).GroupNic(groupNic).GroupNie(groupNie).GroupNiew(groupNiew).GroupNisw(groupNisw).GroupRegex(groupRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IkePolicy(ikePolicy).IkePolicyN(ikePolicyN).IkePolicyId(ikePolicyId).IkePolicyIdN(ikePolicyIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).SaLifetime(saLifetime).SaLifetimeEmpty(saLifetimeEmpty).SaLifetimeGt(saLifetimeGt).SaLifetimeGte(saLifetimeGte).SaLifetimeLt(saLifetimeLt).SaLifetimeLte(saLifetimeLte).SaLifetimeN(saLifetimeN).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIkeProposalsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1507,6 +1531,14 @@ Name | Type | Description  | Notes
  **nameRegex** | **[]string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
+ **owner** | **[]string** | Owner (name) | 
+ **ownerN** | **[]string** | Owner (name) | 
+ **ownerGroup** | **[]string** | Owner Group (name) | 
+ **ownerGroupN** | **[]string** | Owner Group (name) | 
+ **ownerGroupId** | **[]int32** | Owner Group (ID) | 
+ **ownerGroupIdN** | **[]int32** | Owner Group (ID) | 
+ **ownerId** | **[]int32** | Owner (ID) | 
+ **ownerIdN** | **[]int32** | Owner (ID) | 
  **q** | **string** | Search | 
  **saLifetime** | **[]int32** |  | 
  **saLifetimeEmpty** | **bool** |  | 
@@ -1517,8 +1549,8 @@ Name | Type | Description  | Notes
  **saLifetimeN** | **[]int32** |  | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
- **tagId** | **[]int32** |  | 
- **tagIdN** | **[]int32** |  | 
+ **tagId** | **[]string** |  | 
+ **tagIdN** | **[]string** |  | 
  **updatedByRequest** | **string** |  | 
 
 ### Return type
@@ -1951,7 +1983,7 @@ Name | Type | Description  | Notes
 
 ## VpnIpsecPoliciesCreate
 
-> IPSecPolicy VpnIpsecPoliciesCreate(ctx).WritableIPSecPolicyRequest(writableIPSecPolicyRequest).Execute()
+> IPSecPolicy VpnIpsecPoliciesCreate(ctx).VpnIpsecPoliciesCreateRequest(vpnIpsecPoliciesCreateRequest).Execute()
 
 
 
@@ -1970,11 +2002,11 @@ import (
 )
 
 func main() {
-	writableIPSecPolicyRequest := *openapiclient.NewWritableIPSecPolicyRequest("Name_example") // WritableIPSecPolicyRequest | 
+	vpnIpsecPoliciesCreateRequest := openapiclient.vpn_ipsec_policies_create_request{WritableIPSecPolicyRequest: openapiclient.NewWritableIPSecPolicyRequest("Name_example")} // VpnIpsecPoliciesCreateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VpnAPI.VpnIpsecPoliciesCreate(context.Background()).WritableIPSecPolicyRequest(writableIPSecPolicyRequest).Execute()
+	resp, r, err := apiClient.VpnAPI.VpnIpsecPoliciesCreate(context.Background()).VpnIpsecPoliciesCreateRequest(vpnIpsecPoliciesCreateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIpsecPoliciesCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1995,7 +2027,7 @@ Other parameters are passed through a pointer to a apiVpnIpsecPoliciesCreateRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **writableIPSecPolicyRequest** | [**WritableIPSecPolicyRequest**](WritableIPSecPolicyRequest.md) |  | 
+ **vpnIpsecPoliciesCreateRequest** | [**VpnIpsecPoliciesCreateRequest**](VpnIpsecPoliciesCreateRequest.md) |  | 
 
 ### Return type
 
@@ -2085,7 +2117,7 @@ Name | Type | Description  | Notes
 
 ## VpnIpsecPoliciesList
 
-> PaginatedIPSecPolicyList VpnIpsecPoliciesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IpsecProposal(ipsecProposal).IpsecProposalN(ipsecProposalN).IpsecProposalId(ipsecProposalId).IpsecProposalIdN(ipsecProposalIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).PfsGroup(pfsGroup).PfsGroupIc(pfsGroupIc).PfsGroupIe(pfsGroupIe).PfsGroupIew(pfsGroupIew).PfsGroupIregex(pfsGroupIregex).PfsGroupIsw(pfsGroupIsw).PfsGroupN(pfsGroupN).PfsGroupNic(pfsGroupNic).PfsGroupNie(pfsGroupNie).PfsGroupNiew(pfsGroupNiew).PfsGroupNisw(pfsGroupNisw).PfsGroupRegex(pfsGroupRegex).Q(q).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedIPSecPolicyList VpnIpsecPoliciesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IpsecProposal(ipsecProposal).IpsecProposalN(ipsecProposalN).IpsecProposalId(ipsecProposalId).IpsecProposalIdN(ipsecProposalIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).PfsGroup(pfsGroup).PfsGroupIc(pfsGroupIc).PfsGroupIe(pfsGroupIe).PfsGroupIew(pfsGroupIew).PfsGroupIregex(pfsGroupIregex).PfsGroupIsw(pfsGroupIsw).PfsGroupN(pfsGroupN).PfsGroupNic(pfsGroupNic).PfsGroupNie(pfsGroupNie).PfsGroupNiew(pfsGroupNiew).PfsGroupNisw(pfsGroupNisw).PfsGroupRegex(pfsGroupRegex).Q(q).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -2161,6 +2193,14 @@ func main() {
 	nameRegex := []string{"Inner_example"} // []string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	owner := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerN := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerGroup := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupN := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupId := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerGroupIdN := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerId := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
+	ownerIdN := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
 	pfsGroup := []*int32{int32(123)} // []*int32 | Diffie-Hellman group for Perfect Forward Secrecy (optional)
 	pfsGroupIc := []*int32{int32(123)} // []*int32 | Diffie-Hellman group for Perfect Forward Secrecy (optional)
 	pfsGroupIe := []*int32{int32(123)} // []*int32 | Diffie-Hellman group for Perfect Forward Secrecy (optional)
@@ -2176,13 +2216,13 @@ func main() {
 	q := "q_example" // string | Search (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
-	tagId := []int32{int32(123)} // []int32 |  (optional)
-	tagIdN := []int32{int32(123)} // []int32 |  (optional)
+	tagId := []string{"Inner_example"} // []string |  (optional)
+	tagIdN := []string{"Inner_example"} // []string |  (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VpnAPI.VpnIpsecPoliciesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IpsecProposal(ipsecProposal).IpsecProposalN(ipsecProposalN).IpsecProposalId(ipsecProposalId).IpsecProposalIdN(ipsecProposalIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).PfsGroup(pfsGroup).PfsGroupIc(pfsGroupIc).PfsGroupIe(pfsGroupIe).PfsGroupIew(pfsGroupIew).PfsGroupIregex(pfsGroupIregex).PfsGroupIsw(pfsGroupIsw).PfsGroupN(pfsGroupN).PfsGroupNic(pfsGroupNic).PfsGroupNie(pfsGroupNie).PfsGroupNiew(pfsGroupNiew).PfsGroupNisw(pfsGroupNisw).PfsGroupRegex(pfsGroupRegex).Q(q).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.VpnAPI.VpnIpsecPoliciesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IpsecProposal(ipsecProposal).IpsecProposalN(ipsecProposalN).IpsecProposalId(ipsecProposalId).IpsecProposalIdN(ipsecProposalIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).PfsGroup(pfsGroup).PfsGroupIc(pfsGroupIc).PfsGroupIe(pfsGroupIe).PfsGroupIew(pfsGroupIew).PfsGroupIregex(pfsGroupIregex).PfsGroupIsw(pfsGroupIsw).PfsGroupN(pfsGroupN).PfsGroupNic(pfsGroupNic).PfsGroupNie(pfsGroupNie).PfsGroupNiew(pfsGroupNiew).PfsGroupNisw(pfsGroupNisw).PfsGroupRegex(pfsGroupRegex).Q(q).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIpsecPoliciesList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2259,6 +2299,14 @@ Name | Type | Description  | Notes
  **nameRegex** | **[]string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
+ **owner** | **[]string** | Owner (name) | 
+ **ownerN** | **[]string** | Owner (name) | 
+ **ownerGroup** | **[]string** | Owner Group (name) | 
+ **ownerGroupN** | **[]string** | Owner Group (name) | 
+ **ownerGroupId** | **[]int32** | Owner Group (ID) | 
+ **ownerGroupIdN** | **[]int32** | Owner Group (ID) | 
+ **ownerId** | **[]int32** | Owner (ID) | 
+ **ownerIdN** | **[]int32** | Owner (ID) | 
  **pfsGroup** | **[]int32** | Diffie-Hellman group for Perfect Forward Secrecy | 
  **pfsGroupIc** | **[]int32** | Diffie-Hellman group for Perfect Forward Secrecy | 
  **pfsGroupIe** | **[]int32** | Diffie-Hellman group for Perfect Forward Secrecy | 
@@ -2274,8 +2322,8 @@ Name | Type | Description  | Notes
  **q** | **string** | Search | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
- **tagId** | **[]int32** |  | 
- **tagIdN** | **[]int32** |  | 
+ **tagId** | **[]string** |  | 
+ **tagIdN** | **[]string** |  | 
  **updatedByRequest** | **string** |  | 
 
 ### Return type
@@ -2708,7 +2756,7 @@ Name | Type | Description  | Notes
 
 ## VpnIpsecProfilesCreate
 
-> IPSecProfile VpnIpsecProfilesCreate(ctx).WritableIPSecProfileRequest(writableIPSecProfileRequest).Execute()
+> IPSecProfile VpnIpsecProfilesCreate(ctx).VpnIpsecProfilesCreateRequest(vpnIpsecProfilesCreateRequest).Execute()
 
 
 
@@ -2727,11 +2775,11 @@ import (
 )
 
 func main() {
-	writableIPSecProfileRequest := *openapiclient.NewWritableIPSecProfileRequest("Name_example", openapiclient.IPSecProfile_mode_value("esp"), openapiclient.IPSecProfileRequest_ike_policy{BriefIKEPolicyRequest: openapiclient.NewBriefIKEPolicyRequest("Name_example")}, openapiclient.IPSecProfileRequest_ipsec_policy{BriefIPSecPolicyRequest: openapiclient.NewBriefIPSecPolicyRequest("Name_example")}) // WritableIPSecProfileRequest | 
+	vpnIpsecProfilesCreateRequest := openapiclient.vpn_ipsec_profiles_create_request{WritableIPSecProfileRequest: openapiclient.NewWritableIPSecProfileRequest("Name_example", openapiclient.IPSecProfile_mode_value("esp"), openapiclient.IPSecProfileRequest_ike_policy{BriefIKEPolicyRequest: openapiclient.NewBriefIKEPolicyRequest("Name_example")}, openapiclient.IPSecProfileRequest_ipsec_policy{BriefIPSecPolicyRequest: openapiclient.NewBriefIPSecPolicyRequest("Name_example")})} // VpnIpsecProfilesCreateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VpnAPI.VpnIpsecProfilesCreate(context.Background()).WritableIPSecProfileRequest(writableIPSecProfileRequest).Execute()
+	resp, r, err := apiClient.VpnAPI.VpnIpsecProfilesCreate(context.Background()).VpnIpsecProfilesCreateRequest(vpnIpsecProfilesCreateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIpsecProfilesCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2752,7 +2800,7 @@ Other parameters are passed through a pointer to a apiVpnIpsecProfilesCreateRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **writableIPSecProfileRequest** | [**WritableIPSecProfileRequest**](WritableIPSecProfileRequest.md) |  | 
+ **vpnIpsecProfilesCreateRequest** | [**VpnIpsecProfilesCreateRequest**](VpnIpsecProfilesCreateRequest.md) |  | 
 
 ### Return type
 
@@ -2842,7 +2890,7 @@ Name | Type | Description  | Notes
 
 ## VpnIpsecProfilesList
 
-> PaginatedIPSecProfileList VpnIpsecProfilesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IkePolicy(ikePolicy).IkePolicyN(ikePolicyN).IkePolicyId(ikePolicyId).IkePolicyIdN(ikePolicyIdN).IpsecPolicy(ipsecPolicy).IpsecPolicyN(ipsecPolicyN).IpsecPolicyId(ipsecPolicyId).IpsecPolicyIdN(ipsecPolicyIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Mode(mode).ModeEmpty(modeEmpty).ModeIc(modeIc).ModeIe(modeIe).ModeIew(modeIew).ModeIregex(modeIregex).ModeIsw(modeIsw).ModeN(modeN).ModeNic(modeNic).ModeNie(modeNie).ModeNiew(modeNiew).ModeNisw(modeNisw).ModeRegex(modeRegex).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedIPSecProfileList VpnIpsecProfilesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IkePolicy(ikePolicy).IkePolicyN(ikePolicyN).IkePolicyId(ikePolicyId).IkePolicyIdN(ikePolicyIdN).IpsecPolicy(ipsecPolicy).IpsecPolicyN(ipsecPolicyN).IpsecPolicyId(ipsecPolicyId).IpsecPolicyIdN(ipsecPolicyIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Mode(mode).ModeEmpty(modeEmpty).ModeIc(modeIc).ModeIe(modeIe).ModeIew(modeIew).ModeIregex(modeIregex).ModeIsw(modeIsw).ModeN(modeN).ModeNic(modeNic).ModeNie(modeNie).ModeNiew(modeNiew).ModeNisw(modeNisw).ModeRegex(modeRegex).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -2935,16 +2983,24 @@ func main() {
 	nameRegex := []string{"Inner_example"} // []string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	owner := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerN := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerGroup := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupN := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupId := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerGroupIdN := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerId := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
+	ownerIdN := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
 	q := "q_example" // string | Search (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
-	tagId := []int32{int32(123)} // []int32 |  (optional)
-	tagIdN := []int32{int32(123)} // []int32 |  (optional)
+	tagId := []string{"Inner_example"} // []string |  (optional)
+	tagIdN := []string{"Inner_example"} // []string |  (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VpnAPI.VpnIpsecProfilesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IkePolicy(ikePolicy).IkePolicyN(ikePolicyN).IkePolicyId(ikePolicyId).IkePolicyIdN(ikePolicyIdN).IpsecPolicy(ipsecPolicy).IpsecPolicyN(ipsecPolicyN).IpsecPolicyId(ipsecPolicyId).IpsecPolicyIdN(ipsecPolicyIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Mode(mode).ModeEmpty(modeEmpty).ModeIc(modeIc).ModeIe(modeIe).ModeIew(modeIew).ModeIregex(modeIregex).ModeIsw(modeIsw).ModeN(modeN).ModeNic(modeNic).ModeNie(modeNie).ModeNiew(modeNiew).ModeNisw(modeNisw).ModeRegex(modeRegex).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.VpnAPI.VpnIpsecProfilesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IkePolicy(ikePolicy).IkePolicyN(ikePolicyN).IkePolicyId(ikePolicyId).IkePolicyIdN(ikePolicyIdN).IpsecPolicy(ipsecPolicy).IpsecPolicyN(ipsecPolicyN).IpsecPolicyId(ipsecPolicyId).IpsecPolicyIdN(ipsecPolicyIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Mode(mode).ModeEmpty(modeEmpty).ModeIc(modeIc).ModeIe(modeIe).ModeIew(modeIew).ModeIregex(modeIregex).ModeIsw(modeIsw).ModeN(modeN).ModeNic(modeNic).ModeNie(modeNie).ModeNiew(modeNiew).ModeNisw(modeNisw).ModeRegex(modeRegex).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIpsecProfilesList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3038,11 +3094,19 @@ Name | Type | Description  | Notes
  **nameRegex** | **[]string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
+ **owner** | **[]string** | Owner (name) | 
+ **ownerN** | **[]string** | Owner (name) | 
+ **ownerGroup** | **[]string** | Owner Group (name) | 
+ **ownerGroupN** | **[]string** | Owner Group (name) | 
+ **ownerGroupId** | **[]int32** | Owner Group (ID) | 
+ **ownerGroupIdN** | **[]int32** | Owner Group (ID) | 
+ **ownerId** | **[]int32** | Owner (ID) | 
+ **ownerIdN** | **[]int32** | Owner (ID) | 
  **q** | **string** | Search | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
- **tagId** | **[]int32** |  | 
- **tagIdN** | **[]int32** |  | 
+ **tagId** | **[]string** |  | 
+ **tagIdN** | **[]string** |  | 
  **updatedByRequest** | **string** |  | 
 
 ### Return type
@@ -3475,7 +3539,7 @@ Name | Type | Description  | Notes
 
 ## VpnIpsecProposalsCreate
 
-> IPSecProposal VpnIpsecProposalsCreate(ctx).WritableIPSecProposalRequest(writableIPSecProposalRequest).Execute()
+> IPSecProposal VpnIpsecProposalsCreate(ctx).VpnIpsecProposalsCreateRequest(vpnIpsecProposalsCreateRequest).Execute()
 
 
 
@@ -3494,11 +3558,11 @@ import (
 )
 
 func main() {
-	writableIPSecProposalRequest := *openapiclient.NewWritableIPSecProposalRequest("Name_example") // WritableIPSecProposalRequest | 
+	vpnIpsecProposalsCreateRequest := openapiclient.vpn_ipsec_proposals_create_request{WritableIPSecProposalRequest: openapiclient.NewWritableIPSecProposalRequest("Name_example")} // VpnIpsecProposalsCreateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VpnAPI.VpnIpsecProposalsCreate(context.Background()).WritableIPSecProposalRequest(writableIPSecProposalRequest).Execute()
+	resp, r, err := apiClient.VpnAPI.VpnIpsecProposalsCreate(context.Background()).VpnIpsecProposalsCreateRequest(vpnIpsecProposalsCreateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIpsecProposalsCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3519,7 +3583,7 @@ Other parameters are passed through a pointer to a apiVpnIpsecProposalsCreateReq
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **writableIPSecProposalRequest** | [**WritableIPSecProposalRequest**](WritableIPSecProposalRequest.md) |  | 
+ **vpnIpsecProposalsCreateRequest** | [**VpnIpsecProposalsCreateRequest**](VpnIpsecProposalsCreateRequest.md) |  | 
 
 ### Return type
 
@@ -3609,7 +3673,7 @@ Name | Type | Description  | Notes
 
 ## VpnIpsecProposalsList
 
-> PaginatedIPSecProposalList VpnIpsecProposalsList(ctx).AuthenticationAlgorithm(authenticationAlgorithm).AuthenticationAlgorithmEmpty(authenticationAlgorithmEmpty).AuthenticationAlgorithmIc(authenticationAlgorithmIc).AuthenticationAlgorithmIe(authenticationAlgorithmIe).AuthenticationAlgorithmIew(authenticationAlgorithmIew).AuthenticationAlgorithmIregex(authenticationAlgorithmIregex).AuthenticationAlgorithmIsw(authenticationAlgorithmIsw).AuthenticationAlgorithmN(authenticationAlgorithmN).AuthenticationAlgorithmNic(authenticationAlgorithmNic).AuthenticationAlgorithmNie(authenticationAlgorithmNie).AuthenticationAlgorithmNiew(authenticationAlgorithmNiew).AuthenticationAlgorithmNisw(authenticationAlgorithmNisw).AuthenticationAlgorithmRegex(authenticationAlgorithmRegex).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).EncryptionAlgorithm(encryptionAlgorithm).EncryptionAlgorithmEmpty(encryptionAlgorithmEmpty).EncryptionAlgorithmIc(encryptionAlgorithmIc).EncryptionAlgorithmIe(encryptionAlgorithmIe).EncryptionAlgorithmIew(encryptionAlgorithmIew).EncryptionAlgorithmIregex(encryptionAlgorithmIregex).EncryptionAlgorithmIsw(encryptionAlgorithmIsw).EncryptionAlgorithmN(encryptionAlgorithmN).EncryptionAlgorithmNic(encryptionAlgorithmNic).EncryptionAlgorithmNie(encryptionAlgorithmNie).EncryptionAlgorithmNiew(encryptionAlgorithmNiew).EncryptionAlgorithmNisw(encryptionAlgorithmNisw).EncryptionAlgorithmRegex(encryptionAlgorithmRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IpsecPolicy(ipsecPolicy).IpsecPolicyN(ipsecPolicyN).IpsecPolicyId(ipsecPolicyId).IpsecPolicyIdN(ipsecPolicyIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).SaLifetimeData(saLifetimeData).SaLifetimeDataEmpty(saLifetimeDataEmpty).SaLifetimeDataGt(saLifetimeDataGt).SaLifetimeDataGte(saLifetimeDataGte).SaLifetimeDataLt(saLifetimeDataLt).SaLifetimeDataLte(saLifetimeDataLte).SaLifetimeDataN(saLifetimeDataN).SaLifetimeSeconds(saLifetimeSeconds).SaLifetimeSecondsEmpty(saLifetimeSecondsEmpty).SaLifetimeSecondsGt(saLifetimeSecondsGt).SaLifetimeSecondsGte(saLifetimeSecondsGte).SaLifetimeSecondsLt(saLifetimeSecondsLt).SaLifetimeSecondsLte(saLifetimeSecondsLte).SaLifetimeSecondsN(saLifetimeSecondsN).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedIPSecProposalList VpnIpsecProposalsList(ctx).AuthenticationAlgorithm(authenticationAlgorithm).AuthenticationAlgorithmEmpty(authenticationAlgorithmEmpty).AuthenticationAlgorithmIc(authenticationAlgorithmIc).AuthenticationAlgorithmIe(authenticationAlgorithmIe).AuthenticationAlgorithmIew(authenticationAlgorithmIew).AuthenticationAlgorithmIregex(authenticationAlgorithmIregex).AuthenticationAlgorithmIsw(authenticationAlgorithmIsw).AuthenticationAlgorithmN(authenticationAlgorithmN).AuthenticationAlgorithmNic(authenticationAlgorithmNic).AuthenticationAlgorithmNie(authenticationAlgorithmNie).AuthenticationAlgorithmNiew(authenticationAlgorithmNiew).AuthenticationAlgorithmNisw(authenticationAlgorithmNisw).AuthenticationAlgorithmRegex(authenticationAlgorithmRegex).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).EncryptionAlgorithm(encryptionAlgorithm).EncryptionAlgorithmEmpty(encryptionAlgorithmEmpty).EncryptionAlgorithmIc(encryptionAlgorithmIc).EncryptionAlgorithmIe(encryptionAlgorithmIe).EncryptionAlgorithmIew(encryptionAlgorithmIew).EncryptionAlgorithmIregex(encryptionAlgorithmIregex).EncryptionAlgorithmIsw(encryptionAlgorithmIsw).EncryptionAlgorithmN(encryptionAlgorithmN).EncryptionAlgorithmNic(encryptionAlgorithmNic).EncryptionAlgorithmNie(encryptionAlgorithmNie).EncryptionAlgorithmNiew(encryptionAlgorithmNiew).EncryptionAlgorithmNisw(encryptionAlgorithmNisw).EncryptionAlgorithmRegex(encryptionAlgorithmRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IpsecPolicy(ipsecPolicy).IpsecPolicyN(ipsecPolicyN).IpsecPolicyId(ipsecPolicyId).IpsecPolicyIdN(ipsecPolicyIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).SaLifetimeData(saLifetimeData).SaLifetimeDataEmpty(saLifetimeDataEmpty).SaLifetimeDataGt(saLifetimeDataGt).SaLifetimeDataGte(saLifetimeDataGte).SaLifetimeDataLt(saLifetimeDataLt).SaLifetimeDataLte(saLifetimeDataLte).SaLifetimeDataN(saLifetimeDataN).SaLifetimeSeconds(saLifetimeSeconds).SaLifetimeSecondsEmpty(saLifetimeSecondsEmpty).SaLifetimeSecondsGt(saLifetimeSecondsGt).SaLifetimeSecondsGte(saLifetimeSecondsGte).SaLifetimeSecondsLt(saLifetimeSecondsLt).SaLifetimeSecondsLte(saLifetimeSecondsLte).SaLifetimeSecondsN(saLifetimeSecondsN).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -3711,6 +3775,14 @@ func main() {
 	nameRegex := []string{"Inner_example"} // []string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	owner := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerN := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerGroup := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupN := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupId := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerGroupIdN := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerId := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
+	ownerIdN := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
 	q := "q_example" // string | Search (optional)
 	saLifetimeData := []int32{int32(123)} // []int32 |  (optional)
 	saLifetimeDataEmpty := true // bool |  (optional)
@@ -3728,13 +3800,13 @@ func main() {
 	saLifetimeSecondsN := []int32{int32(123)} // []int32 |  (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
-	tagId := []int32{int32(123)} // []int32 |  (optional)
-	tagIdN := []int32{int32(123)} // []int32 |  (optional)
+	tagId := []string{"Inner_example"} // []string |  (optional)
+	tagIdN := []string{"Inner_example"} // []string |  (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VpnAPI.VpnIpsecProposalsList(context.Background()).AuthenticationAlgorithm(authenticationAlgorithm).AuthenticationAlgorithmEmpty(authenticationAlgorithmEmpty).AuthenticationAlgorithmIc(authenticationAlgorithmIc).AuthenticationAlgorithmIe(authenticationAlgorithmIe).AuthenticationAlgorithmIew(authenticationAlgorithmIew).AuthenticationAlgorithmIregex(authenticationAlgorithmIregex).AuthenticationAlgorithmIsw(authenticationAlgorithmIsw).AuthenticationAlgorithmN(authenticationAlgorithmN).AuthenticationAlgorithmNic(authenticationAlgorithmNic).AuthenticationAlgorithmNie(authenticationAlgorithmNie).AuthenticationAlgorithmNiew(authenticationAlgorithmNiew).AuthenticationAlgorithmNisw(authenticationAlgorithmNisw).AuthenticationAlgorithmRegex(authenticationAlgorithmRegex).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).EncryptionAlgorithm(encryptionAlgorithm).EncryptionAlgorithmEmpty(encryptionAlgorithmEmpty).EncryptionAlgorithmIc(encryptionAlgorithmIc).EncryptionAlgorithmIe(encryptionAlgorithmIe).EncryptionAlgorithmIew(encryptionAlgorithmIew).EncryptionAlgorithmIregex(encryptionAlgorithmIregex).EncryptionAlgorithmIsw(encryptionAlgorithmIsw).EncryptionAlgorithmN(encryptionAlgorithmN).EncryptionAlgorithmNic(encryptionAlgorithmNic).EncryptionAlgorithmNie(encryptionAlgorithmNie).EncryptionAlgorithmNiew(encryptionAlgorithmNiew).EncryptionAlgorithmNisw(encryptionAlgorithmNisw).EncryptionAlgorithmRegex(encryptionAlgorithmRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IpsecPolicy(ipsecPolicy).IpsecPolicyN(ipsecPolicyN).IpsecPolicyId(ipsecPolicyId).IpsecPolicyIdN(ipsecPolicyIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).SaLifetimeData(saLifetimeData).SaLifetimeDataEmpty(saLifetimeDataEmpty).SaLifetimeDataGt(saLifetimeDataGt).SaLifetimeDataGte(saLifetimeDataGte).SaLifetimeDataLt(saLifetimeDataLt).SaLifetimeDataLte(saLifetimeDataLte).SaLifetimeDataN(saLifetimeDataN).SaLifetimeSeconds(saLifetimeSeconds).SaLifetimeSecondsEmpty(saLifetimeSecondsEmpty).SaLifetimeSecondsGt(saLifetimeSecondsGt).SaLifetimeSecondsGte(saLifetimeSecondsGte).SaLifetimeSecondsLt(saLifetimeSecondsLt).SaLifetimeSecondsLte(saLifetimeSecondsLte).SaLifetimeSecondsN(saLifetimeSecondsN).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.VpnAPI.VpnIpsecProposalsList(context.Background()).AuthenticationAlgorithm(authenticationAlgorithm).AuthenticationAlgorithmEmpty(authenticationAlgorithmEmpty).AuthenticationAlgorithmIc(authenticationAlgorithmIc).AuthenticationAlgorithmIe(authenticationAlgorithmIe).AuthenticationAlgorithmIew(authenticationAlgorithmIew).AuthenticationAlgorithmIregex(authenticationAlgorithmIregex).AuthenticationAlgorithmIsw(authenticationAlgorithmIsw).AuthenticationAlgorithmN(authenticationAlgorithmN).AuthenticationAlgorithmNic(authenticationAlgorithmNic).AuthenticationAlgorithmNie(authenticationAlgorithmNie).AuthenticationAlgorithmNiew(authenticationAlgorithmNiew).AuthenticationAlgorithmNisw(authenticationAlgorithmNisw).AuthenticationAlgorithmRegex(authenticationAlgorithmRegex).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).EncryptionAlgorithm(encryptionAlgorithm).EncryptionAlgorithmEmpty(encryptionAlgorithmEmpty).EncryptionAlgorithmIc(encryptionAlgorithmIc).EncryptionAlgorithmIe(encryptionAlgorithmIe).EncryptionAlgorithmIew(encryptionAlgorithmIew).EncryptionAlgorithmIregex(encryptionAlgorithmIregex).EncryptionAlgorithmIsw(encryptionAlgorithmIsw).EncryptionAlgorithmN(encryptionAlgorithmN).EncryptionAlgorithmNic(encryptionAlgorithmNic).EncryptionAlgorithmNie(encryptionAlgorithmNie).EncryptionAlgorithmNiew(encryptionAlgorithmNiew).EncryptionAlgorithmNisw(encryptionAlgorithmNisw).EncryptionAlgorithmRegex(encryptionAlgorithmRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IpsecPolicy(ipsecPolicy).IpsecPolicyN(ipsecPolicyN).IpsecPolicyId(ipsecPolicyId).IpsecPolicyIdN(ipsecPolicyIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).SaLifetimeData(saLifetimeData).SaLifetimeDataEmpty(saLifetimeDataEmpty).SaLifetimeDataGt(saLifetimeDataGt).SaLifetimeDataGte(saLifetimeDataGte).SaLifetimeDataLt(saLifetimeDataLt).SaLifetimeDataLte(saLifetimeDataLte).SaLifetimeDataN(saLifetimeDataN).SaLifetimeSeconds(saLifetimeSeconds).SaLifetimeSecondsEmpty(saLifetimeSecondsEmpty).SaLifetimeSecondsGt(saLifetimeSecondsGt).SaLifetimeSecondsGte(saLifetimeSecondsGte).SaLifetimeSecondsLt(saLifetimeSecondsLt).SaLifetimeSecondsLte(saLifetimeSecondsLte).SaLifetimeSecondsN(saLifetimeSecondsN).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIpsecProposalsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3837,6 +3909,14 @@ Name | Type | Description  | Notes
  **nameRegex** | **[]string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
+ **owner** | **[]string** | Owner (name) | 
+ **ownerN** | **[]string** | Owner (name) | 
+ **ownerGroup** | **[]string** | Owner Group (name) | 
+ **ownerGroupN** | **[]string** | Owner Group (name) | 
+ **ownerGroupId** | **[]int32** | Owner Group (ID) | 
+ **ownerGroupIdN** | **[]int32** | Owner Group (ID) | 
+ **ownerId** | **[]int32** | Owner (ID) | 
+ **ownerIdN** | **[]int32** | Owner (ID) | 
  **q** | **string** | Search | 
  **saLifetimeData** | **[]int32** |  | 
  **saLifetimeDataEmpty** | **bool** |  | 
@@ -3854,8 +3934,8 @@ Name | Type | Description  | Notes
  **saLifetimeSecondsN** | **[]int32** |  | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
- **tagId** | **[]int32** |  | 
- **tagIdN** | **[]int32** |  | 
+ **tagId** | **[]string** |  | 
+ **tagIdN** | **[]string** |  | 
  **updatedByRequest** | **string** |  | 
 
 ### Return type
@@ -4288,7 +4368,7 @@ Name | Type | Description  | Notes
 
 ## VpnL2vpnTerminationsCreate
 
-> L2VPNTermination VpnL2vpnTerminationsCreate(ctx).L2VPNTerminationRequest(l2VPNTerminationRequest).Execute()
+> L2VPNTermination VpnL2vpnTerminationsCreate(ctx).VpnL2vpnTerminationsCreateRequest(vpnL2vpnTerminationsCreateRequest).Execute()
 
 
 
@@ -4307,11 +4387,11 @@ import (
 )
 
 func main() {
-	l2VPNTerminationRequest := *openapiclient.NewL2VPNTerminationRequest(openapiclient.BriefL2VPNTerminationRequest_l2vpn{BriefL2VPNRequest: openapiclient.NewBriefL2VPNRequest("Name_example", "Slug_example")}, "AssignedObjectType_example", int64(123)) // L2VPNTerminationRequest | 
+	vpnL2vpnTerminationsCreateRequest := openapiclient.vpn_l2vpn_terminations_create_request{L2VPNTerminationRequest: openapiclient.NewL2VPNTerminationRequest(openapiclient.BriefL2VPNTerminationRequest_l2vpn{BriefL2VPNRequest: openapiclient.NewBriefL2VPNRequest("Name_example", "Slug_example")}, "AssignedObjectType_example", int64(123))} // VpnL2vpnTerminationsCreateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VpnAPI.VpnL2vpnTerminationsCreate(context.Background()).L2VPNTerminationRequest(l2VPNTerminationRequest).Execute()
+	resp, r, err := apiClient.VpnAPI.VpnL2vpnTerminationsCreate(context.Background()).VpnL2vpnTerminationsCreateRequest(vpnL2vpnTerminationsCreateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnL2vpnTerminationsCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4332,7 +4412,7 @@ Other parameters are passed through a pointer to a apiVpnL2vpnTerminationsCreate
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **l2VPNTerminationRequest** | [**L2VPNTerminationRequest**](L2VPNTerminationRequest.md) |  | 
+ **vpnL2vpnTerminationsCreateRequest** | [**VpnL2vpnTerminationsCreateRequest**](VpnL2vpnTerminationsCreateRequest.md) |  | 
 
 ### Return type
 
@@ -4422,7 +4502,7 @@ Name | Type | Description  | Notes
 
 ## VpnL2vpnTerminationsList
 
-> PaginatedL2VPNTerminationList VpnL2vpnTerminationsList(ctx).AssignedObjectId(assignedObjectId).AssignedObjectIdEmpty(assignedObjectIdEmpty).AssignedObjectIdGt(assignedObjectIdGt).AssignedObjectIdGte(assignedObjectIdGte).AssignedObjectIdLt(assignedObjectIdLt).AssignedObjectIdLte(assignedObjectIdLte).AssignedObjectIdN(assignedObjectIdN).AssignedObjectType(assignedObjectType).AssignedObjectTypeN(assignedObjectTypeN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interface_(interface_).InterfaceN(interfaceN).InterfaceId(interfaceId).InterfaceIdN(interfaceIdN).L2vpn(l2vpn).L2vpnN(l2vpnN).L2vpnId(l2vpnId).L2vpnIdN(l2vpnIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionId(regionId).Site(site).SiteId(siteId).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineN(virtualMachineN).VirtualMachineId(virtualMachineId).VirtualMachineIdN(virtualMachineIdN).Vlan(vlan).VlanN(vlanN).VlanId(vlanId).VlanIdN(vlanIdN).VlanVid(vlanVid).VlanVidEmpty(vlanVidEmpty).VlanVidGt(vlanVidGt).VlanVidGte(vlanVidGte).VlanVidLt(vlanVidLt).VlanVidLte(vlanVidLte).VlanVidN(vlanVidN).Vminterface(vminterface).VminterfaceN(vminterfaceN).VminterfaceId(vminterfaceId).VminterfaceIdN(vminterfaceIdN).Execute()
+> PaginatedL2VPNTerminationList VpnL2vpnTerminationsList(ctx).AssignedObjectId(assignedObjectId).AssignedObjectIdEmpty(assignedObjectIdEmpty).AssignedObjectIdGt(assignedObjectIdGt).AssignedObjectIdGte(assignedObjectIdGte).AssignedObjectIdLt(assignedObjectIdLt).AssignedObjectIdLte(assignedObjectIdLte).AssignedObjectIdN(assignedObjectIdN).AssignedObjectType(assignedObjectType).AssignedObjectTypeN(assignedObjectTypeN).AssignedObjectTypeId(assignedObjectTypeId).AssignedObjectTypeIdN(assignedObjectTypeIdN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interface_(interface_).InterfaceN(interfaceN).InterfaceId(interfaceId).InterfaceIdN(interfaceIdN).L2vpn(l2vpn).L2vpnN(l2vpnN).L2vpnId(l2vpnId).L2vpnIdN(l2vpnIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionId(regionId).Site(site).SiteId(siteId).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineN(virtualMachineN).VirtualMachineId(virtualMachineId).VirtualMachineIdN(virtualMachineIdN).Vlan(vlan).VlanN(vlanN).VlanId(vlanId).VlanIdN(vlanIdN).VlanVid(vlanVid).VlanVidEmpty(vlanVidEmpty).VlanVidGt(vlanVidGt).VlanVidGte(vlanVidGte).VlanVidLt(vlanVidLt).VlanVidLte(vlanVidLte).VlanVidN(vlanVidN).Vminterface(vminterface).VminterfaceN(vminterfaceN).VminterfaceId(vminterfaceId).VminterfaceIdN(vminterfaceIdN).Execute()
 
 
 
@@ -4451,6 +4531,8 @@ func main() {
 	assignedObjectIdN := []int32{int32(123)} // []int32 |  (optional)
 	assignedObjectType := "assignedObjectType_example" // string |  (optional)
 	assignedObjectTypeN := "assignedObjectTypeN_example" // string |  (optional)
+	assignedObjectTypeId := []int32{int32(123)} // []int32 |  (optional)
+	assignedObjectTypeIdN := []int32{int32(123)} // []int32 |  (optional)
 	created := []time.Time{time.Now()} // []time.Time |  (optional)
 	createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
 	createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -4459,8 +4541,8 @@ func main() {
 	createdLte := []time.Time{time.Now()} // []time.Time |  (optional)
 	createdN := []time.Time{time.Now()} // []time.Time |  (optional)
 	createdByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
-	device := []*string{"Inner_example"} // []*string | Device (name) (optional)
-	deviceN := []*string{"Inner_example"} // []*string | Device (name) (optional)
+	device := []string{"Inner_example"} // []string | Device (name) (optional)
+	deviceN := []string{"Inner_example"} // []string | Device (name) (optional)
 	deviceId := []int32{int32(123)} // []int32 | Device (ID) (optional)
 	deviceIdN := []int32{int32(123)} // []int32 | Device (ID) (optional)
 	id := []int32{int32(123)} // []int32 |  (optional)
@@ -4496,8 +4578,8 @@ func main() {
 	siteId := []int32{int32(123)} // []int32 |  (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
-	tagId := []int32{int32(123)} // []int32 |  (optional)
-	tagIdN := []int32{int32(123)} // []int32 |  (optional)
+	tagId := []string{"Inner_example"} // []string |  (optional)
+	tagIdN := []string{"Inner_example"} // []string |  (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	virtualMachine := []string{"Inner_example"} // []string | Virtual machine (name) (optional)
 	virtualMachineN := []string{"Inner_example"} // []string | Virtual machine (name) (optional)
@@ -4521,7 +4603,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VpnAPI.VpnL2vpnTerminationsList(context.Background()).AssignedObjectId(assignedObjectId).AssignedObjectIdEmpty(assignedObjectIdEmpty).AssignedObjectIdGt(assignedObjectIdGt).AssignedObjectIdGte(assignedObjectIdGte).AssignedObjectIdLt(assignedObjectIdLt).AssignedObjectIdLte(assignedObjectIdLte).AssignedObjectIdN(assignedObjectIdN).AssignedObjectType(assignedObjectType).AssignedObjectTypeN(assignedObjectTypeN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interface_(interface_).InterfaceN(interfaceN).InterfaceId(interfaceId).InterfaceIdN(interfaceIdN).L2vpn(l2vpn).L2vpnN(l2vpnN).L2vpnId(l2vpnId).L2vpnIdN(l2vpnIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionId(regionId).Site(site).SiteId(siteId).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineN(virtualMachineN).VirtualMachineId(virtualMachineId).VirtualMachineIdN(virtualMachineIdN).Vlan(vlan).VlanN(vlanN).VlanId(vlanId).VlanIdN(vlanIdN).VlanVid(vlanVid).VlanVidEmpty(vlanVidEmpty).VlanVidGt(vlanVidGt).VlanVidGte(vlanVidGte).VlanVidLt(vlanVidLt).VlanVidLte(vlanVidLte).VlanVidN(vlanVidN).Vminterface(vminterface).VminterfaceN(vminterfaceN).VminterfaceId(vminterfaceId).VminterfaceIdN(vminterfaceIdN).Execute()
+	resp, r, err := apiClient.VpnAPI.VpnL2vpnTerminationsList(context.Background()).AssignedObjectId(assignedObjectId).AssignedObjectIdEmpty(assignedObjectIdEmpty).AssignedObjectIdGt(assignedObjectIdGt).AssignedObjectIdGte(assignedObjectIdGte).AssignedObjectIdLt(assignedObjectIdLt).AssignedObjectIdLte(assignedObjectIdLte).AssignedObjectIdN(assignedObjectIdN).AssignedObjectType(assignedObjectType).AssignedObjectTypeN(assignedObjectTypeN).AssignedObjectTypeId(assignedObjectTypeId).AssignedObjectTypeIdN(assignedObjectTypeIdN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interface_(interface_).InterfaceN(interfaceN).InterfaceId(interfaceId).InterfaceIdN(interfaceIdN).L2vpn(l2vpn).L2vpnN(l2vpnN).L2vpnId(l2vpnId).L2vpnIdN(l2vpnIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionId(regionId).Site(site).SiteId(siteId).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineN(virtualMachineN).VirtualMachineId(virtualMachineId).VirtualMachineIdN(virtualMachineIdN).Vlan(vlan).VlanN(vlanN).VlanId(vlanId).VlanIdN(vlanIdN).VlanVid(vlanVid).VlanVidEmpty(vlanVidEmpty).VlanVidGt(vlanVidGt).VlanVidGte(vlanVidGte).VlanVidLt(vlanVidLt).VlanVidLte(vlanVidLte).VlanVidN(vlanVidN).Vminterface(vminterface).VminterfaceN(vminterfaceN).VminterfaceId(vminterfaceId).VminterfaceIdN(vminterfaceIdN).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnL2vpnTerminationsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4551,6 +4633,8 @@ Name | Type | Description  | Notes
  **assignedObjectIdN** | **[]int32** |  | 
  **assignedObjectType** | **string** |  | 
  **assignedObjectTypeN** | **string** |  | 
+ **assignedObjectTypeId** | **[]int32** |  | 
+ **assignedObjectTypeIdN** | **[]int32** |  | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
  **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
@@ -4596,8 +4680,8 @@ Name | Type | Description  | Notes
  **siteId** | **[]int32** |  | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
- **tagId** | **[]int32** |  | 
- **tagIdN** | **[]int32** |  | 
+ **tagId** | **[]string** |  | 
+ **tagIdN** | **[]string** |  | 
  **updatedByRequest** | **string** |  | 
  **virtualMachine** | **[]string** | Virtual machine (name) | 
  **virtualMachineN** | **[]string** | Virtual machine (name) | 
@@ -5049,7 +5133,7 @@ Name | Type | Description  | Notes
 
 ## VpnL2vpnsCreate
 
-> L2VPN VpnL2vpnsCreate(ctx).WritableL2VPNRequest(writableL2VPNRequest).Execute()
+> L2VPN VpnL2vpnsCreate(ctx).VpnL2vpnsCreateRequest(vpnL2vpnsCreateRequest).Execute()
 
 
 
@@ -5068,11 +5152,11 @@ import (
 )
 
 func main() {
-	writableL2VPNRequest := *openapiclient.NewWritableL2VPNRequest("Name_example", "Slug_example", openapiclient.BriefL2VPN_type_value("vpws")) // WritableL2VPNRequest | 
+	vpnL2vpnsCreateRequest := openapiclient.vpn_l2vpns_create_request{WritableL2VPNRequest: openapiclient.NewWritableL2VPNRequest("Name_example", "Slug_example", openapiclient.BriefL2VPN_type_value("vpws"))} // VpnL2vpnsCreateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VpnAPI.VpnL2vpnsCreate(context.Background()).WritableL2VPNRequest(writableL2VPNRequest).Execute()
+	resp, r, err := apiClient.VpnAPI.VpnL2vpnsCreate(context.Background()).VpnL2vpnsCreateRequest(vpnL2vpnsCreateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnL2vpnsCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5093,7 +5177,7 @@ Other parameters are passed through a pointer to a apiVpnL2vpnsCreateRequest str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **writableL2VPNRequest** | [**WritableL2VPNRequest**](WritableL2VPNRequest.md) |  | 
+ **vpnL2vpnsCreateRequest** | [**VpnL2vpnsCreateRequest**](VpnL2vpnsCreateRequest.md) |  | 
 
 ### Return type
 
@@ -5183,7 +5267,7 @@ Name | Type | Description  | Notes
 
 ## VpnL2vpnsList
 
-> PaginatedL2VPNList VpnL2vpnsList(ctx).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).ExportTarget(exportTarget).ExportTargetN(exportTargetN).ExportTargetId(exportTargetId).ExportTargetIdN(exportTargetIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Identifier(identifier).IdentifierEmpty(identifierEmpty).IdentifierGt(identifierGt).IdentifierGte(identifierGte).IdentifierLt(identifierLt).IdentifierLte(identifierLte).IdentifierN(identifierN).ImportTarget(importTarget).ImportTargetN(importTargetN).ImportTargetId(importTargetId).ImportTargetIdN(importTargetIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIregex(slugIregex).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SlugRegex(slugRegex).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).Type_(type_).TypeEmpty(typeEmpty).TypeIc(typeIc).TypeIe(typeIe).TypeIew(typeIew).TypeIregex(typeIregex).TypeIsw(typeIsw).TypeN(typeN).TypeNic(typeNic).TypeNie(typeNie).TypeNiew(typeNiew).TypeNisw(typeNisw).TypeRegex(typeRegex).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedL2VPNList VpnL2vpnsList(ctx).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).ExportTarget(exportTarget).ExportTargetN(exportTargetN).ExportTargetId(exportTargetId).ExportTargetIdN(exportTargetIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Identifier(identifier).IdentifierEmpty(identifierEmpty).IdentifierGt(identifierGt).IdentifierGte(identifierGte).IdentifierLt(identifierLt).IdentifierLte(identifierLte).IdentifierN(identifierN).ImportTarget(importTarget).ImportTargetN(importTargetN).ImportTargetId(importTargetId).ImportTargetIdN(importTargetIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIregex(slugIregex).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SlugRegex(slugRegex).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).Type_(type_).TypeEmpty(typeEmpty).TypeIc(typeIc).TypeIe(typeIe).TypeIew(typeIew).TypeIregex(typeIregex).TypeIsw(typeIsw).TypeN(typeN).TypeNic(typeNic).TypeNie(typeNie).TypeNiew(typeNiew).TypeNisw(typeNisw).TypeRegex(typeRegex).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -5276,6 +5360,14 @@ func main() {
 	nameRegex := []string{"Inner_example"} // []string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	owner := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerN := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerGroup := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupN := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupId := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerGroupIdN := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerId := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
+	ownerIdN := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
 	q := "q_example" // string | Search (optional)
 	slug := []string{"Inner_example"} // []string |  (optional)
 	slugEmpty := true // bool |  (optional)
@@ -5305,8 +5397,8 @@ func main() {
 	statusRegex := []string{"Inner_example"} // []string |  (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
-	tagId := []int32{int32(123)} // []int32 |  (optional)
-	tagIdN := []int32{int32(123)} // []int32 |  (optional)
+	tagId := []string{"Inner_example"} // []string |  (optional)
+	tagIdN := []string{"Inner_example"} // []string |  (optional)
 	tenant := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantN := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantGroup := []string{"Inner_example"} // []string |  (optional)
@@ -5332,7 +5424,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VpnAPI.VpnL2vpnsList(context.Background()).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).ExportTarget(exportTarget).ExportTargetN(exportTargetN).ExportTargetId(exportTargetId).ExportTargetIdN(exportTargetIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Identifier(identifier).IdentifierEmpty(identifierEmpty).IdentifierGt(identifierGt).IdentifierGte(identifierGte).IdentifierLt(identifierLt).IdentifierLte(identifierLte).IdentifierN(identifierN).ImportTarget(importTarget).ImportTargetN(importTargetN).ImportTargetId(importTargetId).ImportTargetIdN(importTargetIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIregex(slugIregex).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SlugRegex(slugRegex).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).Type_(type_).TypeEmpty(typeEmpty).TypeIc(typeIc).TypeIe(typeIe).TypeIew(typeIew).TypeIregex(typeIregex).TypeIsw(typeIsw).TypeN(typeN).TypeNic(typeNic).TypeNie(typeNie).TypeNiew(typeNiew).TypeNisw(typeNisw).TypeRegex(typeRegex).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.VpnAPI.VpnL2vpnsList(context.Background()).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).ExportTarget(exportTarget).ExportTargetN(exportTargetN).ExportTargetId(exportTargetId).ExportTargetIdN(exportTargetIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Identifier(identifier).IdentifierEmpty(identifierEmpty).IdentifierGt(identifierGt).IdentifierGte(identifierGte).IdentifierLt(identifierLt).IdentifierLte(identifierLte).IdentifierN(identifierN).ImportTarget(importTarget).ImportTargetN(importTargetN).ImportTargetId(importTargetId).ImportTargetIdN(importTargetIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIregex(slugIregex).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SlugRegex(slugRegex).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).Type_(type_).TypeEmpty(typeEmpty).TypeIc(typeIc).TypeIe(typeIe).TypeIew(typeIew).TypeIregex(typeIregex).TypeIsw(typeIsw).TypeN(typeN).TypeNic(typeNic).TypeNie(typeNie).TypeNiew(typeNiew).TypeNisw(typeNisw).TypeRegex(typeRegex).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnL2vpnsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5426,6 +5518,14 @@ Name | Type | Description  | Notes
  **nameRegex** | **[]string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
+ **owner** | **[]string** | Owner (name) | 
+ **ownerN** | **[]string** | Owner (name) | 
+ **ownerGroup** | **[]string** | Owner Group (name) | 
+ **ownerGroupN** | **[]string** | Owner Group (name) | 
+ **ownerGroupId** | **[]int32** | Owner Group (ID) | 
+ **ownerGroupIdN** | **[]int32** | Owner Group (ID) | 
+ **ownerId** | **[]int32** | Owner (ID) | 
+ **ownerIdN** | **[]int32** | Owner (ID) | 
  **q** | **string** | Search | 
  **slug** | **[]string** |  | 
  **slugEmpty** | **bool** |  | 
@@ -5455,8 +5555,8 @@ Name | Type | Description  | Notes
  **statusRegex** | **[]string** |  | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
- **tagId** | **[]int32** |  | 
- **tagIdN** | **[]int32** |  | 
+ **tagId** | **[]string** |  | 
+ **tagIdN** | **[]string** |  | 
  **tenant** | **[]string** | Tenant (slug) | 
  **tenantN** | **[]string** | Tenant (slug) | 
  **tenantGroup** | **[]string** |  | 
@@ -5910,7 +6010,7 @@ Name | Type | Description  | Notes
 
 ## VpnTunnelGroupsCreate
 
-> TunnelGroup VpnTunnelGroupsCreate(ctx).TunnelGroupRequest(tunnelGroupRequest).Execute()
+> TunnelGroup VpnTunnelGroupsCreate(ctx).VpnTunnelGroupsCreateRequest(vpnTunnelGroupsCreateRequest).Execute()
 
 
 
@@ -5929,11 +6029,11 @@ import (
 )
 
 func main() {
-	tunnelGroupRequest := *openapiclient.NewTunnelGroupRequest("Name_example", "Slug_example") // TunnelGroupRequest | 
+	vpnTunnelGroupsCreateRequest := openapiclient.vpn_tunnel_groups_create_request{TunnelGroupRequest: openapiclient.NewTunnelGroupRequest("Name_example", "Slug_example")} // VpnTunnelGroupsCreateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VpnAPI.VpnTunnelGroupsCreate(context.Background()).TunnelGroupRequest(tunnelGroupRequest).Execute()
+	resp, r, err := apiClient.VpnAPI.VpnTunnelGroupsCreate(context.Background()).VpnTunnelGroupsCreateRequest(vpnTunnelGroupsCreateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnTunnelGroupsCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5954,7 +6054,7 @@ Other parameters are passed through a pointer to a apiVpnTunnelGroupsCreateReque
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tunnelGroupRequest** | [**TunnelGroupRequest**](TunnelGroupRequest.md) |  | 
+ **vpnTunnelGroupsCreateRequest** | [**VpnTunnelGroupsCreateRequest**](VpnTunnelGroupsCreateRequest.md) |  | 
 
 ### Return type
 
@@ -6044,7 +6144,7 @@ Name | Type | Description  | Notes
 
 ## VpnTunnelGroupsList
 
-> PaginatedTunnelGroupList VpnTunnelGroupsList(ctx).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIregex(slugIregex).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SlugRegex(slugRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedTunnelGroupList VpnTunnelGroupsList(ctx).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIregex(slugIregex).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SlugRegex(slugRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -6122,6 +6222,14 @@ func main() {
 	nameRegex := []string{"Inner_example"} // []string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	owner := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerN := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerGroup := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupN := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupId := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerGroupIdN := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerId := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
+	ownerIdN := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
 	q := "q_example" // string | Search (optional)
 	slug := []string{"Inner_example"} // []string |  (optional)
 	slugEmpty := true // bool |  (optional)
@@ -6138,13 +6246,13 @@ func main() {
 	slugRegex := []string{"Inner_example"} // []string |  (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
-	tagId := []int32{int32(123)} // []int32 |  (optional)
-	tagIdN := []int32{int32(123)} // []int32 |  (optional)
+	tagId := []string{"Inner_example"} // []string |  (optional)
+	tagIdN := []string{"Inner_example"} // []string |  (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VpnAPI.VpnTunnelGroupsList(context.Background()).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIregex(slugIregex).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SlugRegex(slugRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.VpnAPI.VpnTunnelGroupsList(context.Background()).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIregex(slugIregex).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SlugRegex(slugRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnTunnelGroupsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6223,6 +6331,14 @@ Name | Type | Description  | Notes
  **nameRegex** | **[]string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
+ **owner** | **[]string** | Owner (name) | 
+ **ownerN** | **[]string** | Owner (name) | 
+ **ownerGroup** | **[]string** | Owner Group (name) | 
+ **ownerGroupN** | **[]string** | Owner Group (name) | 
+ **ownerGroupId** | **[]int32** | Owner Group (ID) | 
+ **ownerGroupIdN** | **[]int32** | Owner Group (ID) | 
+ **ownerId** | **[]int32** | Owner (ID) | 
+ **ownerIdN** | **[]int32** | Owner (ID) | 
  **q** | **string** | Search | 
  **slug** | **[]string** |  | 
  **slugEmpty** | **bool** |  | 
@@ -6239,8 +6355,8 @@ Name | Type | Description  | Notes
  **slugRegex** | **[]string** |  | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
- **tagId** | **[]int32** |  | 
- **tagIdN** | **[]int32** |  | 
+ **tagId** | **[]string** |  | 
+ **tagIdN** | **[]string** |  | 
  **updatedByRequest** | **string** |  | 
 
 ### Return type
@@ -6673,7 +6789,7 @@ Name | Type | Description  | Notes
 
 ## VpnTunnelTerminationsCreate
 
-> TunnelTermination VpnTunnelTerminationsCreate(ctx).WritableTunnelTerminationRequest(writableTunnelTerminationRequest).Execute()
+> TunnelTermination VpnTunnelTerminationsCreate(ctx).VpnTunnelTerminationsCreateRequest(vpnTunnelTerminationsCreateRequest).Execute()
 
 
 
@@ -6692,11 +6808,11 @@ import (
 )
 
 func main() {
-	writableTunnelTerminationRequest := *openapiclient.NewWritableTunnelTerminationRequest(openapiclient.PatchedWritableTunnelTerminationRequest_tunnel{BriefTunnelRequest: openapiclient.NewBriefTunnelRequest("Name_example")}, "TerminationType_example") // WritableTunnelTerminationRequest | 
+	vpnTunnelTerminationsCreateRequest := openapiclient.vpn_tunnel_terminations_create_request{WritableTunnelTerminationRequest: openapiclient.NewWritableTunnelTerminationRequest(openapiclient.PatchedWritableTunnelTerminationRequest_tunnel{BriefTunnelRequest: openapiclient.NewBriefTunnelRequest("Name_example")}, "TerminationType_example")} // VpnTunnelTerminationsCreateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VpnAPI.VpnTunnelTerminationsCreate(context.Background()).WritableTunnelTerminationRequest(writableTunnelTerminationRequest).Execute()
+	resp, r, err := apiClient.VpnAPI.VpnTunnelTerminationsCreate(context.Background()).VpnTunnelTerminationsCreateRequest(vpnTunnelTerminationsCreateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnTunnelTerminationsCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6717,7 +6833,7 @@ Other parameters are passed through a pointer to a apiVpnTunnelTerminationsCreat
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **writableTunnelTerminationRequest** | [**WritableTunnelTerminationRequest**](WritableTunnelTerminationRequest.md) |  | 
+ **vpnTunnelTerminationsCreateRequest** | [**VpnTunnelTerminationsCreateRequest**](VpnTunnelTerminationsCreateRequest.md) |  | 
 
 ### Return type
 
@@ -6875,8 +6991,8 @@ func main() {
 	roleRegex := []string{"Inner_example"} // []string |  (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
-	tagId := []int32{int32(123)} // []int32 |  (optional)
-	tagIdN := []int32{int32(123)} // []int32 |  (optional)
+	tagId := []string{"Inner_example"} // []string |  (optional)
+	tagIdN := []string{"Inner_example"} // []string |  (optional)
 	terminationId := []int32{int32(123)} // []int32 |  (optional)
 	terminationIdEmpty := true // bool |  (optional)
 	terminationIdGt := []int32{int32(123)} // []int32 |  (optional)
@@ -6967,8 +7083,8 @@ Name | Type | Description  | Notes
  **roleRegex** | **[]string** |  | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
- **tagId** | **[]int32** |  | 
- **tagIdN** | **[]int32** |  | 
+ **tagId** | **[]string** |  | 
+ **tagIdN** | **[]string** |  | 
  **terminationId** | **[]int32** |  | 
  **terminationIdEmpty** | **bool** |  | 
  **terminationIdGt** | **[]int32** |  | 
@@ -7418,7 +7534,7 @@ Name | Type | Description  | Notes
 
 ## VpnTunnelsCreate
 
-> Tunnel VpnTunnelsCreate(ctx).WritableTunnelRequest(writableTunnelRequest).Execute()
+> Tunnel VpnTunnelsCreate(ctx).VpnTunnelsCreateRequest(vpnTunnelsCreateRequest).Execute()
 
 
 
@@ -7437,11 +7553,11 @@ import (
 )
 
 func main() {
-	writableTunnelRequest := *openapiclient.NewWritableTunnelRequest("Name_example", openapiclient.PatchedWritableTunnelRequest_encapsulation("ipsec-transport")) // WritableTunnelRequest | 
+	vpnTunnelsCreateRequest := openapiclient.vpn_tunnels_create_request{WritableTunnelRequest: openapiclient.NewWritableTunnelRequest("Name_example", openapiclient.PatchedWritableTunnelRequest_encapsulation("ipsec-transport"))} // VpnTunnelsCreateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VpnAPI.VpnTunnelsCreate(context.Background()).WritableTunnelRequest(writableTunnelRequest).Execute()
+	resp, r, err := apiClient.VpnAPI.VpnTunnelsCreate(context.Background()).VpnTunnelsCreateRequest(vpnTunnelsCreateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnTunnelsCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7462,7 +7578,7 @@ Other parameters are passed through a pointer to a apiVpnTunnelsCreateRequest st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **writableTunnelRequest** | [**WritableTunnelRequest**](WritableTunnelRequest.md) |  | 
+ **vpnTunnelsCreateRequest** | [**VpnTunnelsCreateRequest**](VpnTunnelsCreateRequest.md) |  | 
 
 ### Return type
 
@@ -7552,7 +7668,7 @@ Name | Type | Description  | Notes
 
 ## VpnTunnelsList
 
-> PaginatedTunnelList VpnTunnelsList(ctx).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Encapsulation(encapsulation).EncapsulationEmpty(encapsulationEmpty).EncapsulationIc(encapsulationIc).EncapsulationIe(encapsulationIe).EncapsulationIew(encapsulationIew).EncapsulationIregex(encapsulationIregex).EncapsulationIsw(encapsulationIsw).EncapsulationN(encapsulationN).EncapsulationNic(encapsulationNic).EncapsulationNie(encapsulationNie).EncapsulationNiew(encapsulationNiew).EncapsulationNisw(encapsulationNisw).EncapsulationRegex(encapsulationRegex).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IpsecProfile(ipsecProfile).IpsecProfileN(ipsecProfileN).IpsecProfileId(ipsecProfileId).IpsecProfileIdN(ipsecProfileIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).TunnelId(tunnelId).TunnelIdEmpty(tunnelIdEmpty).TunnelIdGt(tunnelIdGt).TunnelIdGte(tunnelIdGte).TunnelIdLt(tunnelIdLt).TunnelIdLte(tunnelIdLte).TunnelIdN(tunnelIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedTunnelList VpnTunnelsList(ctx).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Encapsulation(encapsulation).EncapsulationEmpty(encapsulationEmpty).EncapsulationIc(encapsulationIc).EncapsulationIe(encapsulationIe).EncapsulationIew(encapsulationIew).EncapsulationIregex(encapsulationIregex).EncapsulationIsw(encapsulationIsw).EncapsulationN(encapsulationN).EncapsulationNic(encapsulationNic).EncapsulationNie(encapsulationNie).EncapsulationNiew(encapsulationNiew).EncapsulationNisw(encapsulationNisw).EncapsulationRegex(encapsulationRegex).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IpsecProfile(ipsecProfile).IpsecProfileN(ipsecProfileN).IpsecProfileId(ipsecProfileId).IpsecProfileIdN(ipsecProfileIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).TunnelId(tunnelId).TunnelIdEmpty(tunnelIdEmpty).TunnelIdGt(tunnelIdGt).TunnelIdGte(tunnelIdGte).TunnelIdLt(tunnelIdLt).TunnelIdLte(tunnelIdLte).TunnelIdN(tunnelIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -7651,6 +7767,14 @@ func main() {
 	nameRegex := []string{"Inner_example"} // []string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	owner := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerN := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerGroup := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupN := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupId := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerGroupIdN := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerId := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
+	ownerIdN := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
 	q := "q_example" // string | Search (optional)
 	status := []string{"Inner_example"} // []string |  (optional)
 	statusEmpty := true // bool |  (optional)
@@ -7667,8 +7791,8 @@ func main() {
 	statusRegex := []string{"Inner_example"} // []string |  (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
-	tagId := []int32{int32(123)} // []int32 |  (optional)
-	tagIdN := []int32{int32(123)} // []int32 |  (optional)
+	tagId := []string{"Inner_example"} // []string |  (optional)
+	tagIdN := []string{"Inner_example"} // []string |  (optional)
 	tenant := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantN := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantGroup := []string{"Inner_example"} // []string |  (optional)
@@ -7688,7 +7812,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VpnAPI.VpnTunnelsList(context.Background()).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Encapsulation(encapsulation).EncapsulationEmpty(encapsulationEmpty).EncapsulationIc(encapsulationIc).EncapsulationIe(encapsulationIe).EncapsulationIew(encapsulationIew).EncapsulationIregex(encapsulationIregex).EncapsulationIsw(encapsulationIsw).EncapsulationN(encapsulationN).EncapsulationNic(encapsulationNic).EncapsulationNie(encapsulationNie).EncapsulationNiew(encapsulationNiew).EncapsulationNisw(encapsulationNisw).EncapsulationRegex(encapsulationRegex).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IpsecProfile(ipsecProfile).IpsecProfileN(ipsecProfileN).IpsecProfileId(ipsecProfileId).IpsecProfileIdN(ipsecProfileIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).TunnelId(tunnelId).TunnelIdEmpty(tunnelIdEmpty).TunnelIdGt(tunnelIdGt).TunnelIdGte(tunnelIdGte).TunnelIdLt(tunnelIdLt).TunnelIdLte(tunnelIdLte).TunnelIdN(tunnelIdN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.VpnAPI.VpnTunnelsList(context.Background()).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Encapsulation(encapsulation).EncapsulationEmpty(encapsulationEmpty).EncapsulationIc(encapsulationIc).EncapsulationIe(encapsulationIe).EncapsulationIew(encapsulationIew).EncapsulationIregex(encapsulationIregex).EncapsulationIsw(encapsulationIsw).EncapsulationN(encapsulationN).EncapsulationNic(encapsulationNic).EncapsulationNie(encapsulationNie).EncapsulationNiew(encapsulationNiew).EncapsulationNisw(encapsulationNisw).EncapsulationRegex(encapsulationRegex).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IpsecProfile(ipsecProfile).IpsecProfileN(ipsecProfileN).IpsecProfileId(ipsecProfileId).IpsecProfileIdN(ipsecProfileIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).TunnelId(tunnelId).TunnelIdEmpty(tunnelIdEmpty).TunnelIdGt(tunnelIdGt).TunnelIdGte(tunnelIdGte).TunnelIdLt(tunnelIdLt).TunnelIdLte(tunnelIdLte).TunnelIdN(tunnelIdN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnTunnelsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7788,6 +7912,14 @@ Name | Type | Description  | Notes
  **nameRegex** | **[]string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
+ **owner** | **[]string** | Owner (name) | 
+ **ownerN** | **[]string** | Owner (name) | 
+ **ownerGroup** | **[]string** | Owner Group (name) | 
+ **ownerGroupN** | **[]string** | Owner Group (name) | 
+ **ownerGroupId** | **[]int32** | Owner Group (ID) | 
+ **ownerGroupIdN** | **[]int32** | Owner Group (ID) | 
+ **ownerId** | **[]int32** | Owner (ID) | 
+ **ownerIdN** | **[]int32** | Owner (ID) | 
  **q** | **string** | Search | 
  **status** | **[]string** |  | 
  **statusEmpty** | **bool** |  | 
@@ -7804,8 +7936,8 @@ Name | Type | Description  | Notes
  **statusRegex** | **[]string** |  | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
- **tagId** | **[]int32** |  | 
- **tagIdN** | **[]int32** |  | 
+ **tagId** | **[]string** |  | 
+ **tagIdN** | **[]string** |  | 
  **tenant** | **[]string** | Tenant (slug) | 
  **tenantN** | **[]string** | Tenant (slug) | 
  **tenantGroup** | **[]string** |  | 

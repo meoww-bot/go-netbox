@@ -12,6 +12,8 @@ Name | Type | Description | Notes
 **Slug** | **string** |  | 
 **Color** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
+**Owner** | Pointer to [**NullableBriefOwner**](BriefOwner.md) |  | [optional] 
+**Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
@@ -211,6 +213,66 @@ SetDescription sets Description field to given value.
 `func (o *InventoryItemRole) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetOwner
+
+`func (o *InventoryItemRole) GetOwner() BriefOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *InventoryItemRole) GetOwnerOk() (*BriefOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *InventoryItemRole) SetOwner(v BriefOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *InventoryItemRole) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *InventoryItemRole) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *InventoryItemRole) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
+### GetComments
+
+`func (o *InventoryItemRole) GetComments() string`
+
+GetComments returns the Comments field if non-nil, zero value otherwise.
+
+### GetCommentsOk
+
+`func (o *InventoryItemRole) GetCommentsOk() (*string, bool)`
+
+GetCommentsOk returns a tuple with the Comments field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComments
+
+`func (o *InventoryItemRole) SetComments(v string)`
+
+SetComments sets Comments field to given value.
+
+### HasComments
+
+`func (o *InventoryItemRole) HasComments() bool`
+
+HasComments returns a boolean if a field has been set.
 
 ### GetTags
 

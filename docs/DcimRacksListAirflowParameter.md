@@ -5,6 +5,8 @@
 
 * `FRONT_TO_REAR` (value: `"front-to-rear"`)
 
+* `NULL` (value: `"null"`)
+
 * `REAR_TO_FRONT` (value: `"rear-to-front"`)
 
 

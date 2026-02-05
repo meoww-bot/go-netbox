@@ -7,6 +7,8 @@
 
 * `LEFT_TO_RIGHT` (value: `"left-to-right"`)
 
+* `NULL` (value: `"null"`)
+
 * `PASSIVE` (value: `"passive"`)
 
 * `REAR_TO_FRONT` (value: `"rear-to-front"`)

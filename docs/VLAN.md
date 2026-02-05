@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **QinqRole** | Pointer to [**NullableVLANQinqRole**](VLANQinqRole.md) |  | [optional] 
 **QinqSvlan** | Pointer to [**NullableNestedVLAN**](NestedVLAN.md) |  | [optional] 
+**Owner** | Pointer to [**NullableBriefOwner**](BriefOwner.md) |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **L2vpnTermination** | Pointer to [**NullableBriefL2VPNTermination**](BriefL2VPNTermination.md) |  | [optional] [readonly] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
@@ -430,6 +431,41 @@ HasQinqSvlan returns a boolean if a field has been set.
 `func (o *VLAN) UnsetQinqSvlan()`
 
 UnsetQinqSvlan ensures that no value is present for QinqSvlan, not even an explicit nil
+### GetOwner
+
+`func (o *VLAN) GetOwner() BriefOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *VLAN) GetOwnerOk() (*BriefOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *VLAN) SetOwner(v BriefOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *VLAN) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *VLAN) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *VLAN) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetComments
 
 `func (o *VLAN) GetComments() string`

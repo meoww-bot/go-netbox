@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
 **Status** | Pointer to [**PatchedWritableVirtualMachineWithConfigContextRequestStatus**](PatchedWritableVirtualMachineWithConfigContextRequestStatus.md) |  | [optional] 
+**StartOnBoot** | Pointer to [**PatchedWritableVirtualMachineWithConfigContextRequestStartOnBoot**](PatchedWritableVirtualMachineWithConfigContextRequestStartOnBoot.md) |  | [optional] 
 **Site** | Pointer to [**NullablePatchedWritableVLANRequestSite**](PatchedWritableVLANRequestSite.md) |  | [optional] 
 **Cluster** | Pointer to [**NullableDeviceWithConfigContextRequestCluster**](DeviceWithConfigContextRequestCluster.md) |  | [optional] 
 **Device** | Pointer to [**NullableDeviceBayRequestInstalledDevice**](DeviceBayRequestInstalledDevice.md) |  | [optional] 
@@ -19,6 +20,7 @@ Name | Type | Description | Notes
 **Memory** | Pointer to **NullableInt32** |  | [optional] 
 **Disk** | Pointer to **NullableInt32** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
+**Owner** | Pointer to [**NullableASNRangeRequestOwner**](ASNRangeRequestOwner.md) |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **ConfigTemplate** | Pointer to [**NullableDeviceRoleRequestConfigTemplate**](DeviceRoleRequestConfigTemplate.md) |  | [optional] 
 **LocalContextData** | Pointer to **interface{}** | Local config context data takes precedence over source contexts in the final rendered config context | [optional] 
@@ -88,6 +90,31 @@ SetStatus sets Status field to given value.
 `func (o *WritableVirtualMachineWithConfigContextRequest) HasStatus() bool`
 
 HasStatus returns a boolean if a field has been set.
+
+### GetStartOnBoot
+
+`func (o *WritableVirtualMachineWithConfigContextRequest) GetStartOnBoot() PatchedWritableVirtualMachineWithConfigContextRequestStartOnBoot`
+
+GetStartOnBoot returns the StartOnBoot field if non-nil, zero value otherwise.
+
+### GetStartOnBootOk
+
+`func (o *WritableVirtualMachineWithConfigContextRequest) GetStartOnBootOk() (*PatchedWritableVirtualMachineWithConfigContextRequestStartOnBoot, bool)`
+
+GetStartOnBootOk returns a tuple with the StartOnBoot field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStartOnBoot
+
+`func (o *WritableVirtualMachineWithConfigContextRequest) SetStartOnBoot(v PatchedWritableVirtualMachineWithConfigContextRequestStartOnBoot)`
+
+SetStartOnBoot sets StartOnBoot field to given value.
+
+### HasStartOnBoot
+
+`func (o *WritableVirtualMachineWithConfigContextRequest) HasStartOnBoot() bool`
+
+HasStartOnBoot returns a boolean if a field has been set.
 
 ### GetSite
 
@@ -524,6 +551,41 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### GetOwner
+
+`func (o *WritableVirtualMachineWithConfigContextRequest) GetOwner() ASNRangeRequestOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *WritableVirtualMachineWithConfigContextRequest) GetOwnerOk() (*ASNRangeRequestOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *WritableVirtualMachineWithConfigContextRequest) SetOwner(v ASNRangeRequestOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *WritableVirtualMachineWithConfigContextRequest) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *WritableVirtualMachineWithConfigContextRequest) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *WritableVirtualMachineWithConfigContextRequest) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetComments
 
 `func (o *WritableVirtualMachineWithConfigContextRequest) GetComments() string`

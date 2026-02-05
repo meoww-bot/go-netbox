@@ -25,11 +25,13 @@ Name | Type | Description | Notes
 **MaxWeight** | Pointer to **NullableInt32** | Maximum load capacity for the rack | [optional] 
 **WeightUnit** | Pointer to [**NullableDeviceTypeWeightUnit**](DeviceTypeWeightUnit.md) |  | [optional] 
 **MountingDepth** | Pointer to **NullableInt32** | Maximum depth of a mounted device, in millimeters. For four-post racks, this is the distance between the front and rear rails. | [optional] 
+**Owner** | Pointer to [**NullableBriefOwner**](BriefOwner.md) |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
+**RackCount** | Pointer to **int32** |  | [optional] [readonly] 
 
 ## Methods
 
@@ -635,6 +637,41 @@ HasMountingDepth returns a boolean if a field has been set.
 `func (o *RackType) UnsetMountingDepth()`
 
 UnsetMountingDepth ensures that no value is present for MountingDepth, not even an explicit nil
+### GetOwner
+
+`func (o *RackType) GetOwner() BriefOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *RackType) GetOwnerOk() (*BriefOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *RackType) SetOwner(v BriefOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *RackType) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *RackType) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *RackType) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetComments
 
 `func (o *RackType) GetComments() string`
@@ -780,6 +817,31 @@ HasLastUpdated returns a boolean if a field has been set.
 `func (o *RackType) UnsetLastUpdated()`
 
 UnsetLastUpdated ensures that no value is present for LastUpdated, not even an explicit nil
+### GetRackCount
+
+`func (o *RackType) GetRackCount() int32`
+
+GetRackCount returns the RackCount field if non-nil, zero value otherwise.
+
+### GetRackCountOk
+
+`func (o *RackType) GetRackCountOk() (*int32, bool)`
+
+GetRackCountOk returns a tuple with the RackCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRackCount
+
+`func (o *RackType) SetRackCount(v int32)`
+
+SetRackCount sets RackCount field to given value.
+
+### HasRackCount
+
+`func (o *RackType) HasRackCount() bool`
+
+HasRackCount returns a boolean if a field has been set.
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

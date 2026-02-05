@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **ValidationMaximum** | Pointer to **NullableFloat64** | Maximum allowed value (for numeric fields) | [optional] 
 **ValidationRegex** | Pointer to **string** | Regular expression to enforce on text field values. Use ^ and $ to force matching of entire string. For example, &lt;code&gt;^[A-Z]{3}$&lt;/code&gt; will limit values to exactly three uppercase letters. | [optional] 
 **ChoiceSet** | Pointer to [**NullableBriefCustomFieldChoiceSet**](BriefCustomFieldChoiceSet.md) |  | [optional] 
+**Owner** | Pointer to [**NullableBriefOwner**](BriefOwner.md) |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
@@ -728,6 +729,41 @@ HasChoiceSet returns a boolean if a field has been set.
 `func (o *CustomField) UnsetChoiceSet()`
 
 UnsetChoiceSet ensures that no value is present for ChoiceSet, not even an explicit nil
+### GetOwner
+
+`func (o *CustomField) GetOwner() BriefOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *CustomField) GetOwnerOk() (*BriefOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *CustomField) SetOwner(v BriefOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *CustomField) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *CustomField) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *CustomField) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetComments
 
 `func (o *CustomField) GetComments() string`

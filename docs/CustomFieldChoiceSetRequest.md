@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **BaseChoices** | Pointer to [**CustomFieldChoiceSetBaseChoicesValue**](CustomFieldChoiceSetBaseChoicesValue.md) |  | [optional] 
 **ExtraChoices** | **[][]interface{}** |  | 
 **OrderAlphabetically** | Pointer to **bool** | Choices are automatically ordered alphabetically | [optional] 
+**Owner** | Pointer to [**NullableASNRangeRequestOwner**](ASNRangeRequestOwner.md) |  | [optional] 
 
 ## Methods
 
@@ -144,6 +145,41 @@ SetOrderAlphabetically sets OrderAlphabetically field to given value.
 
 HasOrderAlphabetically returns a boolean if a field has been set.
 
+### GetOwner
+
+`func (o *CustomFieldChoiceSetRequest) GetOwner() ASNRangeRequestOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *CustomFieldChoiceSetRequest) GetOwnerOk() (*ASNRangeRequestOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *CustomFieldChoiceSetRequest) SetOwner(v ASNRangeRequestOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *CustomFieldChoiceSetRequest) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *CustomFieldChoiceSetRequest) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *CustomFieldChoiceSetRequest) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

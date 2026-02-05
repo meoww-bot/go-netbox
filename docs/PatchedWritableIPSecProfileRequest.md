@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Mode** | Pointer to [**IPSecProfileModeValue**](IPSecProfileModeValue.md) |  | [optional] 
 **IkePolicy** | Pointer to [**IPSecProfileRequestIkePolicy**](IPSecProfileRequestIkePolicy.md) |  | [optional] 
 **IpsecPolicy** | Pointer to [**IPSecProfileRequestIpsecPolicy**](IPSecProfileRequestIpsecPolicy.md) |  | [optional] 
+**Owner** | Pointer to [**NullableASNRangeRequestOwner**](ASNRangeRequestOwner.md) |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -157,6 +158,41 @@ SetIpsecPolicy sets IpsecPolicy field to given value.
 
 HasIpsecPolicy returns a boolean if a field has been set.
 
+### GetOwner
+
+`func (o *PatchedWritableIPSecProfileRequest) GetOwner() ASNRangeRequestOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *PatchedWritableIPSecProfileRequest) GetOwnerOk() (*ASNRangeRequestOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *PatchedWritableIPSecProfileRequest) SetOwner(v ASNRangeRequestOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *PatchedWritableIPSecProfileRequest) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *PatchedWritableIPSecProfileRequest) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *PatchedWritableIPSecProfileRequest) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetComments
 
 `func (o *PatchedWritableIPSecProfileRequest) GetComments() string`

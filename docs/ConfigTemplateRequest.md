@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **FileExtension** | Pointer to **string** | Extension to append to the rendered filename | [optional] 
 **AsAttachment** | Pointer to **bool** | Download file as attachment | [optional] 
 **DataSource** | Pointer to [**ConfigContextProfileRequestDataSource**](ConfigContextProfileRequestDataSource.md) |  | [optional] 
+**AutoSyncEnabled** | Pointer to **bool** | Enable automatic synchronization of data when the data file is updated | [optional] 
+**Owner** | Pointer to [**NullableASNRangeRequestOwner**](ASNRangeRequestOwner.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 
 ## Methods
@@ -259,6 +261,66 @@ SetDataSource sets DataSource field to given value.
 
 HasDataSource returns a boolean if a field has been set.
 
+### GetAutoSyncEnabled
+
+`func (o *ConfigTemplateRequest) GetAutoSyncEnabled() bool`
+
+GetAutoSyncEnabled returns the AutoSyncEnabled field if non-nil, zero value otherwise.
+
+### GetAutoSyncEnabledOk
+
+`func (o *ConfigTemplateRequest) GetAutoSyncEnabledOk() (*bool, bool)`
+
+GetAutoSyncEnabledOk returns a tuple with the AutoSyncEnabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAutoSyncEnabled
+
+`func (o *ConfigTemplateRequest) SetAutoSyncEnabled(v bool)`
+
+SetAutoSyncEnabled sets AutoSyncEnabled field to given value.
+
+### HasAutoSyncEnabled
+
+`func (o *ConfigTemplateRequest) HasAutoSyncEnabled() bool`
+
+HasAutoSyncEnabled returns a boolean if a field has been set.
+
+### GetOwner
+
+`func (o *ConfigTemplateRequest) GetOwner() ASNRangeRequestOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *ConfigTemplateRequest) GetOwnerOk() (*ASNRangeRequestOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *ConfigTemplateRequest) SetOwner(v ASNRangeRequestOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *ConfigTemplateRequest) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *ConfigTemplateRequest) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *ConfigTemplateRequest) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetTags
 
 `func (o *ConfigTemplateRequest) GetTags() []NestedTagRequest`

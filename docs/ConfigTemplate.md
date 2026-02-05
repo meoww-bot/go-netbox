@@ -19,7 +19,9 @@ Name | Type | Description | Notes
 **DataSource** | Pointer to [**BriefDataSource**](BriefDataSource.md) |  | [optional] 
 **DataPath** | **string** | Path to remote file (relative to data source root) | [readonly] 
 **DataFile** | Pointer to [**BriefDataFile**](BriefDataFile.md) |  | [optional] 
+**AutoSyncEnabled** | Pointer to **bool** | Enable automatic synchronization of data when the data file is updated | [optional] 
 **DataSynced** | Pointer to **NullableTime** |  | [optional] [readonly] 
+**Owner** | Pointer to [**NullableBriefOwner**](BriefOwner.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
@@ -398,6 +400,31 @@ SetDataFile sets DataFile field to given value.
 
 HasDataFile returns a boolean if a field has been set.
 
+### GetAutoSyncEnabled
+
+`func (o *ConfigTemplate) GetAutoSyncEnabled() bool`
+
+GetAutoSyncEnabled returns the AutoSyncEnabled field if non-nil, zero value otherwise.
+
+### GetAutoSyncEnabledOk
+
+`func (o *ConfigTemplate) GetAutoSyncEnabledOk() (*bool, bool)`
+
+GetAutoSyncEnabledOk returns a tuple with the AutoSyncEnabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAutoSyncEnabled
+
+`func (o *ConfigTemplate) SetAutoSyncEnabled(v bool)`
+
+SetAutoSyncEnabled sets AutoSyncEnabled field to given value.
+
+### HasAutoSyncEnabled
+
+`func (o *ConfigTemplate) HasAutoSyncEnabled() bool`
+
+HasAutoSyncEnabled returns a boolean if a field has been set.
+
 ### GetDataSynced
 
 `func (o *ConfigTemplate) GetDataSynced() time.Time`
@@ -433,6 +460,41 @@ HasDataSynced returns a boolean if a field has been set.
 `func (o *ConfigTemplate) UnsetDataSynced()`
 
 UnsetDataSynced ensures that no value is present for DataSynced, not even an explicit nil
+### GetOwner
+
+`func (o *ConfigTemplate) GetOwner() BriefOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *ConfigTemplate) GetOwnerOk() (*BriefOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *ConfigTemplate) SetOwner(v BriefOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *ConfigTemplate) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *ConfigTemplate) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *ConfigTemplate) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetTags
 
 `func (o *ConfigTemplate) GetTags() []NestedTag`

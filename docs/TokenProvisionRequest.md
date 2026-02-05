@@ -4,11 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Version** | Pointer to [**PatchedTokenRequestVersion**](PatchedTokenRequestVersion.md) |  | [optional] 
 **Expires** | Pointer to **NullableTime** |  | [optional] 
-**WriteEnabled** | Pointer to **bool** | Permit create/update/delete operations using this key | [optional] 
+**Enabled** | Pointer to **bool** | Disable to temporarily revoke this token without deleting it. | [optional] 
+**WriteEnabled** | Pointer to **bool** | Permit create/update/delete operations using this token | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Username** | **string** |  | 
 **Password** | **string** |  | 
+**Token** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -28,6 +31,31 @@ will change when the set of required properties is changed
 NewTokenProvisionRequestWithDefaults instantiates a new TokenProvisionRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetVersion
+
+`func (o *TokenProvisionRequest) GetVersion() PatchedTokenRequestVersion`
+
+GetVersion returns the Version field if non-nil, zero value otherwise.
+
+### GetVersionOk
+
+`func (o *TokenProvisionRequest) GetVersionOk() (*PatchedTokenRequestVersion, bool)`
+
+GetVersionOk returns a tuple with the Version field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersion
+
+`func (o *TokenProvisionRequest) SetVersion(v PatchedTokenRequestVersion)`
+
+SetVersion sets Version field to given value.
+
+### HasVersion
+
+`func (o *TokenProvisionRequest) HasVersion() bool`
+
+HasVersion returns a boolean if a field has been set.
 
 ### GetExpires
 
@@ -64,6 +92,31 @@ HasExpires returns a boolean if a field has been set.
 `func (o *TokenProvisionRequest) UnsetExpires()`
 
 UnsetExpires ensures that no value is present for Expires, not even an explicit nil
+### GetEnabled
+
+`func (o *TokenProvisionRequest) GetEnabled() bool`
+
+GetEnabled returns the Enabled field if non-nil, zero value otherwise.
+
+### GetEnabledOk
+
+`func (o *TokenProvisionRequest) GetEnabledOk() (*bool, bool)`
+
+GetEnabledOk returns a tuple with the Enabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnabled
+
+`func (o *TokenProvisionRequest) SetEnabled(v bool)`
+
+SetEnabled sets Enabled field to given value.
+
+### HasEnabled
+
+`func (o *TokenProvisionRequest) HasEnabled() bool`
+
+HasEnabled returns a boolean if a field has been set.
+
 ### GetWriteEnabled
 
 `func (o *TokenProvisionRequest) GetWriteEnabled() bool`
@@ -153,6 +206,31 @@ and a boolean to check if the value has been set.
 
 SetPassword sets Password field to given value.
 
+
+### GetToken
+
+`func (o *TokenProvisionRequest) GetToken() string`
+
+GetToken returns the Token field if non-nil, zero value otherwise.
+
+### GetTokenOk
+
+`func (o *TokenProvisionRequest) GetTokenOk() (*string, bool)`
+
+GetTokenOk returns a tuple with the Token field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetToken
+
+`func (o *TokenProvisionRequest) SetToken(v string)`
+
+SetToken sets Token field to given value.
+
+### HasToken
+
+`func (o *TokenProvisionRequest) HasToken() bool`
+
+HasToken returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

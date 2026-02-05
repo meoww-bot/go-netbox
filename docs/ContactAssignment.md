@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Display** | **string** |  | [readonly] 
 **ObjectType** | **string** |  | 
 **ObjectId** | **int64** |  | 
-**Object** | **map[string]interface{}** |  | [readonly] 
+**Object** | Pointer to **interface{}** |  | [optional] [readonly] 
 **Contact** | [**BriefContact**](BriefContact.md) |  | 
 **Role** | Pointer to [**NullableBriefContactRole**](BriefContactRole.md) |  | [optional] 
 **Priority** | Pointer to [**BriefCircuitGroupAssignmentSerializerPriority**](BriefCircuitGroupAssignmentSerializerPriority.md) |  | [optional] 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 
 ### NewContactAssignment
 
-`func NewContactAssignment(id int32, url string, display string, objectType string, objectId int64, object map[string]interface{}, contact BriefContact, ) *ContactAssignment`
+`func NewContactAssignment(id int32, url string, display string, objectType string, objectId int64, contact BriefContact, ) *ContactAssignment`
 
 NewContactAssignment instantiates a new ContactAssignment object
 This constructor will assign default values to properties that have it defined,
@@ -139,24 +139,39 @@ SetObjectId sets ObjectId field to given value.
 
 ### GetObject
 
-`func (o *ContactAssignment) GetObject() map[string]interface{}`
+`func (o *ContactAssignment) GetObject() interface{}`
 
 GetObject returns the Object field if non-nil, zero value otherwise.
 
 ### GetObjectOk
 
-`func (o *ContactAssignment) GetObjectOk() (*map[string]interface{}, bool)`
+`func (o *ContactAssignment) GetObjectOk() (*interface{}, bool)`
 
 GetObjectOk returns a tuple with the Object field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetObject
 
-`func (o *ContactAssignment) SetObject(v map[string]interface{})`
+`func (o *ContactAssignment) SetObject(v interface{})`
 
 SetObject sets Object field to given value.
 
+### HasObject
 
+`func (o *ContactAssignment) HasObject() bool`
+
+HasObject returns a boolean if a field has been set.
+
+### SetObjectNil
+
+`func (o *ContactAssignment) SetObjectNil(b bool)`
+
+ SetObjectNil sets the value for Object to be an explicit nil
+
+### UnsetObject
+`func (o *ContactAssignment) UnsetObject()`
+
+UnsetObject ensures that no value is present for Object, not even an explicit nil
 ### GetContact
 
 `func (o *ContactAssignment) GetContact() BriefContact`

@@ -1183,7 +1183,7 @@ Name | Type | Description  | Notes
 
 ## CoreDataSourcesCreate
 
-> DataSource CoreDataSourcesCreate(ctx).WritableDataSourceRequest(writableDataSourceRequest).Execute()
+> DataSource CoreDataSourcesCreate(ctx).CoreDataSourcesCreateRequest(coreDataSourcesCreateRequest).Execute()
 
 
 
@@ -1202,11 +1202,11 @@ import (
 )
 
 func main() {
-	writableDataSourceRequest := *openapiclient.NewWritableDataSourceRequest("Name_example", "Type_example", "SourceUrl_example") // WritableDataSourceRequest | 
+	coreDataSourcesCreateRequest := openapiclient.core_data_sources_create_request{WritableDataSourceRequest: openapiclient.NewWritableDataSourceRequest("Name_example", "Type_example", "SourceUrl_example")} // CoreDataSourcesCreateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CoreAPI.CoreDataSourcesCreate(context.Background()).WritableDataSourceRequest(writableDataSourceRequest).Execute()
+	resp, r, err := apiClient.CoreAPI.CoreDataSourcesCreate(context.Background()).CoreDataSourcesCreateRequest(coreDataSourcesCreateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CoreAPI.CoreDataSourcesCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1227,7 +1227,7 @@ Other parameters are passed through a pointer to a apiCoreDataSourcesCreateReque
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **writableDataSourceRequest** | [**WritableDataSourceRequest**](WritableDataSourceRequest.md) |  | 
+ **coreDataSourcesCreateRequest** | [**CoreDataSourcesCreateRequest**](CoreDataSourcesCreateRequest.md) |  | 
 
 ### Return type
 
@@ -1317,7 +1317,7 @@ Name | Type | Description  | Notes
 
 ## CoreDataSourcesList
 
-> PaginatedDataSourceList CoreDataSourcesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Enabled(enabled).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastSynced(lastSynced).LastSyncedEmpty(lastSyncedEmpty).LastSyncedGt(lastSyncedGt).LastSyncedGte(lastSyncedGte).LastSyncedLt(lastSyncedLt).LastSyncedLte(lastSyncedLte).LastSyncedN(lastSyncedN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).SourceUrl(sourceUrl).SourceUrlEmpty(sourceUrlEmpty).SourceUrlIc(sourceUrlIc).SourceUrlIe(sourceUrlIe).SourceUrlIew(sourceUrlIew).SourceUrlIregex(sourceUrlIregex).SourceUrlIsw(sourceUrlIsw).SourceUrlN(sourceUrlN).SourceUrlNic(sourceUrlNic).SourceUrlNie(sourceUrlNie).SourceUrlNiew(sourceUrlNiew).SourceUrlNisw(sourceUrlNisw).SourceUrlRegex(sourceUrlRegex).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).SyncInterval(syncInterval).SyncIntervalIc(syncIntervalIc).SyncIntervalIe(syncIntervalIe).SyncIntervalIew(syncIntervalIew).SyncIntervalIregex(syncIntervalIregex).SyncIntervalIsw(syncIntervalIsw).SyncIntervalN(syncIntervalN).SyncIntervalNic(syncIntervalNic).SyncIntervalNie(syncIntervalNie).SyncIntervalNiew(syncIntervalNiew).SyncIntervalNisw(syncIntervalNisw).SyncIntervalRegex(syncIntervalRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Type_(type_).TypeEmpty(typeEmpty).TypeIc(typeIc).TypeIe(typeIe).TypeIew(typeIew).TypeIregex(typeIregex).TypeIsw(typeIsw).TypeN(typeN).TypeNic(typeNic).TypeNie(typeNie).TypeNiew(typeNiew).TypeNisw(typeNisw).TypeRegex(typeRegex).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedDataSourceList CoreDataSourcesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Enabled(enabled).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastSynced(lastSynced).LastSyncedEmpty(lastSyncedEmpty).LastSyncedGt(lastSyncedGt).LastSyncedGte(lastSyncedGte).LastSyncedLt(lastSyncedLt).LastSyncedLte(lastSyncedLte).LastSyncedN(lastSyncedN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).SourceUrl(sourceUrl).SourceUrlEmpty(sourceUrlEmpty).SourceUrlIc(sourceUrlIc).SourceUrlIe(sourceUrlIe).SourceUrlIew(sourceUrlIew).SourceUrlIregex(sourceUrlIregex).SourceUrlIsw(sourceUrlIsw).SourceUrlN(sourceUrlN).SourceUrlNic(sourceUrlNic).SourceUrlNie(sourceUrlNie).SourceUrlNiew(sourceUrlNiew).SourceUrlNisw(sourceUrlNisw).SourceUrlRegex(sourceUrlRegex).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).SyncInterval(syncInterval).SyncIntervalIc(syncIntervalIc).SyncIntervalIe(syncIntervalIe).SyncIntervalIew(syncIntervalIew).SyncIntervalIregex(syncIntervalIregex).SyncIntervalIsw(syncIntervalIsw).SyncIntervalN(syncIntervalN).SyncIntervalNic(syncIntervalNic).SyncIntervalNie(syncIntervalNie).SyncIntervalNiew(syncIntervalNiew).SyncIntervalNisw(syncIntervalNisw).SyncIntervalRegex(syncIntervalRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Type_(type_).TypeEmpty(typeEmpty).TypeIc(typeIc).TypeIe(typeIe).TypeIew(typeIew).TypeIregex(typeIregex).TypeIsw(typeIsw).TypeN(typeN).TypeNic(typeNic).TypeNie(typeNie).TypeNiew(typeNiew).TypeNisw(typeNisw).TypeRegex(typeRegex).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -1397,6 +1397,14 @@ func main() {
 	nameRegex := []string{"Inner_example"} // []string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	owner := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerN := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerGroup := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupN := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupId := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerGroupIdN := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerId := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
+	ownerIdN := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
 	q := "q_example" // string | Search (optional)
 	sourceUrl := []string{"Inner_example"} // []string |  (optional)
 	sourceUrlEmpty := true // bool |  (optional)
@@ -1438,8 +1446,8 @@ func main() {
 	syncIntervalRegex := []*int32{int32(123)} // []*int32 |  (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
-	tagId := []int32{int32(123)} // []int32 |  (optional)
-	tagIdN := []int32{int32(123)} // []int32 |  (optional)
+	tagId := []string{"Inner_example"} // []string |  (optional)
+	tagIdN := []string{"Inner_example"} // []string |  (optional)
 	type_ := []string{"Inner_example"} // []string |  (optional)
 	typeEmpty := true // bool |  (optional)
 	typeIc := []string{"Inner_example"} // []string |  (optional)
@@ -1457,7 +1465,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CoreAPI.CoreDataSourcesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Enabled(enabled).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastSynced(lastSynced).LastSyncedEmpty(lastSyncedEmpty).LastSyncedGt(lastSyncedGt).LastSyncedGte(lastSyncedGte).LastSyncedLt(lastSyncedLt).LastSyncedLte(lastSyncedLte).LastSyncedN(lastSyncedN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).SourceUrl(sourceUrl).SourceUrlEmpty(sourceUrlEmpty).SourceUrlIc(sourceUrlIc).SourceUrlIe(sourceUrlIe).SourceUrlIew(sourceUrlIew).SourceUrlIregex(sourceUrlIregex).SourceUrlIsw(sourceUrlIsw).SourceUrlN(sourceUrlN).SourceUrlNic(sourceUrlNic).SourceUrlNie(sourceUrlNie).SourceUrlNiew(sourceUrlNiew).SourceUrlNisw(sourceUrlNisw).SourceUrlRegex(sourceUrlRegex).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).SyncInterval(syncInterval).SyncIntervalIc(syncIntervalIc).SyncIntervalIe(syncIntervalIe).SyncIntervalIew(syncIntervalIew).SyncIntervalIregex(syncIntervalIregex).SyncIntervalIsw(syncIntervalIsw).SyncIntervalN(syncIntervalN).SyncIntervalNic(syncIntervalNic).SyncIntervalNie(syncIntervalNie).SyncIntervalNiew(syncIntervalNiew).SyncIntervalNisw(syncIntervalNisw).SyncIntervalRegex(syncIntervalRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Type_(type_).TypeEmpty(typeEmpty).TypeIc(typeIc).TypeIe(typeIe).TypeIew(typeIew).TypeIregex(typeIregex).TypeIsw(typeIsw).TypeN(typeN).TypeNic(typeNic).TypeNie(typeNie).TypeNiew(typeNiew).TypeNisw(typeNisw).TypeRegex(typeRegex).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.CoreAPI.CoreDataSourcesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Enabled(enabled).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastSynced(lastSynced).LastSyncedEmpty(lastSyncedEmpty).LastSyncedGt(lastSyncedGt).LastSyncedGte(lastSyncedGte).LastSyncedLt(lastSyncedLt).LastSyncedLte(lastSyncedLte).LastSyncedN(lastSyncedN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).SourceUrl(sourceUrl).SourceUrlEmpty(sourceUrlEmpty).SourceUrlIc(sourceUrlIc).SourceUrlIe(sourceUrlIe).SourceUrlIew(sourceUrlIew).SourceUrlIregex(sourceUrlIregex).SourceUrlIsw(sourceUrlIsw).SourceUrlN(sourceUrlN).SourceUrlNic(sourceUrlNic).SourceUrlNie(sourceUrlNie).SourceUrlNiew(sourceUrlNiew).SourceUrlNisw(sourceUrlNisw).SourceUrlRegex(sourceUrlRegex).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).SyncInterval(syncInterval).SyncIntervalIc(syncIntervalIc).SyncIntervalIe(syncIntervalIe).SyncIntervalIew(syncIntervalIew).SyncIntervalIregex(syncIntervalIregex).SyncIntervalIsw(syncIntervalIsw).SyncIntervalN(syncIntervalN).SyncIntervalNic(syncIntervalNic).SyncIntervalNie(syncIntervalNie).SyncIntervalNiew(syncIntervalNiew).SyncIntervalNisw(syncIntervalNisw).SyncIntervalRegex(syncIntervalRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Type_(type_).TypeEmpty(typeEmpty).TypeIc(typeIc).TypeIe(typeIe).TypeIew(typeIew).TypeIregex(typeIregex).TypeIsw(typeIsw).TypeN(typeN).TypeNic(typeNic).TypeNie(typeNie).TypeNiew(typeNiew).TypeNisw(typeNisw).TypeRegex(typeRegex).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CoreAPI.CoreDataSourcesList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1538,6 +1546,14 @@ Name | Type | Description  | Notes
  **nameRegex** | **[]string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
+ **owner** | **[]string** | Owner (name) | 
+ **ownerN** | **[]string** | Owner (name) | 
+ **ownerGroup** | **[]string** | Owner Group (name) | 
+ **ownerGroupN** | **[]string** | Owner Group (name) | 
+ **ownerGroupId** | **[]int32** | Owner Group (ID) | 
+ **ownerGroupIdN** | **[]int32** | Owner Group (ID) | 
+ **ownerId** | **[]int32** | Owner (ID) | 
+ **ownerIdN** | **[]int32** | Owner (ID) | 
  **q** | **string** | Search | 
  **sourceUrl** | **[]string** |  | 
  **sourceUrlEmpty** | **bool** |  | 
@@ -1579,8 +1595,8 @@ Name | Type | Description  | Notes
  **syncIntervalRegex** | **[]int32** |  | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
- **tagId** | **[]int32** |  | 
- **tagIdN** | **[]int32** |  | 
+ **tagId** | **[]string** |  | 
+ **tagIdN** | **[]string** |  | 
  **type_** | **[]string** |  | 
  **typeEmpty** | **bool** |  | 
  **typeIc** | **[]string** |  | 
@@ -1902,7 +1918,7 @@ Name | Type | Description  | Notes
 
 ## CoreJobsList
 
-> PaginatedJobList CoreJobsList(ctx).Completed(completed).CompletedAfter(completedAfter).CompletedBefore(completedBefore).Created(created).CreatedAfter(createdAfter).CreatedBefore(createdBefore).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interval(interval).IntervalEmpty(intervalEmpty).IntervalGt(intervalGt).IntervalGte(intervalGte).IntervalLt(intervalLt).IntervalLte(intervalLte).IntervalN(intervalN).JobId(jobId).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).ObjectId(objectId).ObjectIdEmpty(objectIdEmpty).ObjectIdGt(objectIdGt).ObjectIdGte(objectIdGte).ObjectIdLt(objectIdLt).ObjectIdLte(objectIdLte).ObjectIdN(objectIdN).ObjectType(objectType).ObjectTypeN(objectTypeN).Offset(offset).Ordering(ordering).Q(q).Scheduled(scheduled).ScheduledAfter(scheduledAfter).ScheduledBefore(scheduledBefore).Started(started).StartedAfter(startedAfter).StartedBefore(startedBefore).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).User(user).UserN(userN).Execute()
+> PaginatedJobList CoreJobsList(ctx).Completed(completed).CompletedAfter(completedAfter).CompletedBefore(completedBefore).Created(created).CreatedAfter(createdAfter).CreatedBefore(createdBefore).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interval(interval).IntervalEmpty(intervalEmpty).IntervalGt(intervalGt).IntervalGte(intervalGte).IntervalLt(intervalLt).IntervalLte(intervalLte).IntervalN(intervalN).JobId(jobId).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).ObjectId(objectId).ObjectIdEmpty(objectIdEmpty).ObjectIdGt(objectIdGt).ObjectIdGte(objectIdGte).ObjectIdLt(objectIdLt).ObjectIdLte(objectIdLte).ObjectIdN(objectIdN).ObjectType(objectType).ObjectTypeN(objectTypeN).ObjectTypeId(objectTypeId).ObjectTypeIdN(objectTypeIdN).Offset(offset).Ordering(ordering).Q(q).QueueName(queueName).QueueNameEmpty(queueNameEmpty).QueueNameIc(queueNameIc).QueueNameIe(queueNameIe).QueueNameIew(queueNameIew).QueueNameIregex(queueNameIregex).QueueNameIsw(queueNameIsw).QueueNameN(queueNameN).QueueNameNic(queueNameNic).QueueNameNie(queueNameNie).QueueNameNiew(queueNameNiew).QueueNameNisw(queueNameNisw).QueueNameRegex(queueNameRegex).Scheduled(scheduled).ScheduledAfter(scheduledAfter).ScheduledBefore(scheduledBefore).Started(started).StartedAfter(startedAfter).StartedBefore(startedBefore).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).User(user).UserN(userN).Execute()
 
 
 
@@ -1966,9 +1982,24 @@ func main() {
 	objectIdN := []int32{int32(123)} // []int32 |  (optional)
 	objectType := "objectType_example" // string |  (optional)
 	objectTypeN := "objectTypeN_example" // string |  (optional)
+	objectTypeId := []*int32{int32(123)} // []*int32 |  (optional)
+	objectTypeIdN := []*int32{int32(123)} // []*int32 |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
 	q := "q_example" // string | Search (optional)
+	queueName := "queueName_example" // string |  (optional)
+	queueNameEmpty := true // bool |  (optional)
+	queueNameIc := "queueNameIc_example" // string |  (optional)
+	queueNameIe := "queueNameIe_example" // string |  (optional)
+	queueNameIew := "queueNameIew_example" // string |  (optional)
+	queueNameIregex := "queueNameIregex_example" // string |  (optional)
+	queueNameIsw := "queueNameIsw_example" // string |  (optional)
+	queueNameN := "queueNameN_example" // string |  (optional)
+	queueNameNic := "queueNameNic_example" // string |  (optional)
+	queueNameNie := "queueNameNie_example" // string |  (optional)
+	queueNameNiew := "queueNameNiew_example" // string |  (optional)
+	queueNameNisw := "queueNameNisw_example" // string |  (optional)
+	queueNameRegex := "queueNameRegex_example" // string |  (optional)
 	scheduled := time.Now() // time.Time |  (optional)
 	scheduledAfter := time.Now() // time.Time |  (optional)
 	scheduledBefore := time.Now() // time.Time |  (optional)
@@ -1993,7 +2024,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CoreAPI.CoreJobsList(context.Background()).Completed(completed).CompletedAfter(completedAfter).CompletedBefore(completedBefore).Created(created).CreatedAfter(createdAfter).CreatedBefore(createdBefore).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interval(interval).IntervalEmpty(intervalEmpty).IntervalGt(intervalGt).IntervalGte(intervalGte).IntervalLt(intervalLt).IntervalLte(intervalLte).IntervalN(intervalN).JobId(jobId).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).ObjectId(objectId).ObjectIdEmpty(objectIdEmpty).ObjectIdGt(objectIdGt).ObjectIdGte(objectIdGte).ObjectIdLt(objectIdLt).ObjectIdLte(objectIdLte).ObjectIdN(objectIdN).ObjectType(objectType).ObjectTypeN(objectTypeN).Offset(offset).Ordering(ordering).Q(q).Scheduled(scheduled).ScheduledAfter(scheduledAfter).ScheduledBefore(scheduledBefore).Started(started).StartedAfter(startedAfter).StartedBefore(startedBefore).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).User(user).UserN(userN).Execute()
+	resp, r, err := apiClient.CoreAPI.CoreJobsList(context.Background()).Completed(completed).CompletedAfter(completedAfter).CompletedBefore(completedBefore).Created(created).CreatedAfter(createdAfter).CreatedBefore(createdBefore).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interval(interval).IntervalEmpty(intervalEmpty).IntervalGt(intervalGt).IntervalGte(intervalGte).IntervalLt(intervalLt).IntervalLte(intervalLte).IntervalN(intervalN).JobId(jobId).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).ObjectId(objectId).ObjectIdEmpty(objectIdEmpty).ObjectIdGt(objectIdGt).ObjectIdGte(objectIdGte).ObjectIdLt(objectIdLt).ObjectIdLte(objectIdLte).ObjectIdN(objectIdN).ObjectType(objectType).ObjectTypeN(objectTypeN).ObjectTypeId(objectTypeId).ObjectTypeIdN(objectTypeIdN).Offset(offset).Ordering(ordering).Q(q).QueueName(queueName).QueueNameEmpty(queueNameEmpty).QueueNameIc(queueNameIc).QueueNameIe(queueNameIe).QueueNameIew(queueNameIew).QueueNameIregex(queueNameIregex).QueueNameIsw(queueNameIsw).QueueNameN(queueNameN).QueueNameNic(queueNameNic).QueueNameNie(queueNameNie).QueueNameNiew(queueNameNiew).QueueNameNisw(queueNameNisw).QueueNameRegex(queueNameRegex).Scheduled(scheduled).ScheduledAfter(scheduledAfter).ScheduledBefore(scheduledBefore).Started(started).StartedAfter(startedAfter).StartedBefore(startedBefore).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).User(user).UserN(userN).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CoreAPI.CoreJobsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2058,9 +2089,24 @@ Name | Type | Description  | Notes
  **objectIdN** | **[]int32** |  | 
  **objectType** | **string** |  | 
  **objectTypeN** | **string** |  | 
+ **objectTypeId** | **[]int32** |  | 
+ **objectTypeIdN** | **[]int32** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **q** | **string** | Search | 
+ **queueName** | **string** |  | 
+ **queueNameEmpty** | **bool** |  | 
+ **queueNameIc** | **string** |  | 
+ **queueNameIe** | **string** |  | 
+ **queueNameIew** | **string** |  | 
+ **queueNameIregex** | **string** |  | 
+ **queueNameIsw** | **string** |  | 
+ **queueNameN** | **string** |  | 
+ **queueNameNic** | **string** |  | 
+ **queueNameNie** | **string** |  | 
+ **queueNameNiew** | **string** |  | 
+ **queueNameNisw** | **string** |  | 
+ **queueNameRegex** | **string** |  | 
  **scheduled** | **time.Time** |  | 
  **scheduledAfter** | **time.Time** |  | 
  **scheduledBefore** | **time.Time** |  | 
@@ -2173,7 +2219,7 @@ Name | Type | Description  | Notes
 
 ## CoreObjectChangesList
 
-> PaginatedObjectChangeList CoreObjectChangesList(ctx).Action(action).ChangedObjectId(changedObjectId).ChangedObjectIdEmpty(changedObjectIdEmpty).ChangedObjectIdGt(changedObjectIdGt).ChangedObjectIdGte(changedObjectIdGte).ChangedObjectIdLt(changedObjectIdLt).ChangedObjectIdLte(changedObjectIdLte).ChangedObjectIdN(changedObjectIdN).ChangedObjectType(changedObjectType).ChangedObjectTypeN(changedObjectTypeN).ChangedObjectTypeId(changedObjectTypeId).ChangedObjectTypeIdN(changedObjectTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).ObjectRepr(objectRepr).ObjectReprEmpty(objectReprEmpty).ObjectReprIc(objectReprIc).ObjectReprIe(objectReprIe).ObjectReprIew(objectReprIew).ObjectReprIregex(objectReprIregex).ObjectReprIsw(objectReprIsw).ObjectReprN(objectReprN).ObjectReprNic(objectReprNic).ObjectReprNie(objectReprNie).ObjectReprNiew(objectReprNiew).ObjectReprNisw(objectReprNisw).ObjectReprRegex(objectReprRegex).Offset(offset).Ordering(ordering).Q(q).RelatedObjectId(relatedObjectId).RelatedObjectIdEmpty(relatedObjectIdEmpty).RelatedObjectIdGt(relatedObjectIdGt).RelatedObjectIdGte(relatedObjectIdGte).RelatedObjectIdLt(relatedObjectIdLt).RelatedObjectIdLte(relatedObjectIdLte).RelatedObjectIdN(relatedObjectIdN).RelatedObjectType(relatedObjectType).RelatedObjectTypeN(relatedObjectTypeN).RequestId(requestId).TimeAfter(timeAfter).TimeBefore(timeBefore).User(user).UserN(userN).UserId(userId).UserIdN(userIdN).UserName(userName).UserNameEmpty(userNameEmpty).UserNameIc(userNameIc).UserNameIe(userNameIe).UserNameIew(userNameIew).UserNameIregex(userNameIregex).UserNameIsw(userNameIsw).UserNameN(userNameN).UserNameNic(userNameNic).UserNameNie(userNameNie).UserNameNiew(userNameNiew).UserNameNisw(userNameNisw).UserNameRegex(userNameRegex).Execute()
+> PaginatedObjectChangeList CoreObjectChangesList(ctx).Action(action).ActionEmpty(actionEmpty).ActionIc(actionIc).ActionIe(actionIe).ActionIew(actionIew).ActionIregex(actionIregex).ActionIsw(actionIsw).ActionN(actionN).ActionNic(actionNic).ActionNie(actionNie).ActionNiew(actionNiew).ActionNisw(actionNisw).ActionRegex(actionRegex).ChangedObjectId(changedObjectId).ChangedObjectIdEmpty(changedObjectIdEmpty).ChangedObjectIdGt(changedObjectIdGt).ChangedObjectIdGte(changedObjectIdGte).ChangedObjectIdLt(changedObjectIdLt).ChangedObjectIdLte(changedObjectIdLte).ChangedObjectIdN(changedObjectIdN).ChangedObjectType(changedObjectType).ChangedObjectTypeN(changedObjectTypeN).ChangedObjectTypeId(changedObjectTypeId).ChangedObjectTypeIdN(changedObjectTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).ObjectRepr(objectRepr).ObjectReprEmpty(objectReprEmpty).ObjectReprIc(objectReprIc).ObjectReprIe(objectReprIe).ObjectReprIew(objectReprIew).ObjectReprIregex(objectReprIregex).ObjectReprIsw(objectReprIsw).ObjectReprN(objectReprN).ObjectReprNic(objectReprNic).ObjectReprNie(objectReprNie).ObjectReprNiew(objectReprNiew).ObjectReprNisw(objectReprNisw).ObjectReprRegex(objectReprRegex).Offset(offset).Ordering(ordering).Q(q).RelatedObjectId(relatedObjectId).RelatedObjectIdEmpty(relatedObjectIdEmpty).RelatedObjectIdGt(relatedObjectIdGt).RelatedObjectIdGte(relatedObjectIdGte).RelatedObjectIdLt(relatedObjectIdLt).RelatedObjectIdLte(relatedObjectIdLte).RelatedObjectIdN(relatedObjectIdN).RelatedObjectType(relatedObjectType).RelatedObjectTypeN(relatedObjectTypeN).RequestId(requestId).TimeAfter(timeAfter).TimeBefore(timeBefore).User(user).UserN(userN).UserId(userId).UserIdN(userIdN).UserName(userName).UserNameEmpty(userNameEmpty).UserNameIc(userNameIc).UserNameIe(userNameIe).UserNameIew(userNameIew).UserNameIregex(userNameIregex).UserNameIsw(userNameIsw).UserNameN(userNameN).UserNameNic(userNameNic).UserNameNie(userNameNie).UserNameNiew(userNameNiew).UserNameNisw(userNameNisw).UserNameRegex(userNameRegex).Execute()
 
 
 
@@ -2194,6 +2240,18 @@ import (
 
 func main() {
 	action := openapiclient.core_object_changes_list_action_parameter("create") // CoreObjectChangesListActionParameter | * `create` - Created * `update` - Updated * `delete` - Deleted (optional)
+	actionEmpty := true // bool |  (optional)
+	actionIc := []string{"Inner_example"} // []string |  (optional)
+	actionIe := []string{"Inner_example"} // []string |  (optional)
+	actionIew := []string{"Inner_example"} // []string |  (optional)
+	actionIregex := []string{"Inner_example"} // []string |  (optional)
+	actionIsw := []string{"Inner_example"} // []string |  (optional)
+	actionN := openapiclient.core_object_changes_list_action_parameter("create") // CoreObjectChangesListActionParameter | * `create` - Created * `update` - Updated * `delete` - Deleted (optional)
+	actionNic := []string{"Inner_example"} // []string |  (optional)
+	actionNie := []string{"Inner_example"} // []string |  (optional)
+	actionNiew := []string{"Inner_example"} // []string |  (optional)
+	actionNisw := []string{"Inner_example"} // []string |  (optional)
+	actionRegex := []string{"Inner_example"} // []string |  (optional)
 	changedObjectId := []int32{int32(123)} // []int32 |  (optional)
 	changedObjectIdEmpty := true // bool |  (optional)
 	changedObjectIdGt := []int32{int32(123)} // []int32 |  (optional)
@@ -2261,7 +2319,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CoreAPI.CoreObjectChangesList(context.Background()).Action(action).ChangedObjectId(changedObjectId).ChangedObjectIdEmpty(changedObjectIdEmpty).ChangedObjectIdGt(changedObjectIdGt).ChangedObjectIdGte(changedObjectIdGte).ChangedObjectIdLt(changedObjectIdLt).ChangedObjectIdLte(changedObjectIdLte).ChangedObjectIdN(changedObjectIdN).ChangedObjectType(changedObjectType).ChangedObjectTypeN(changedObjectTypeN).ChangedObjectTypeId(changedObjectTypeId).ChangedObjectTypeIdN(changedObjectTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).ObjectRepr(objectRepr).ObjectReprEmpty(objectReprEmpty).ObjectReprIc(objectReprIc).ObjectReprIe(objectReprIe).ObjectReprIew(objectReprIew).ObjectReprIregex(objectReprIregex).ObjectReprIsw(objectReprIsw).ObjectReprN(objectReprN).ObjectReprNic(objectReprNic).ObjectReprNie(objectReprNie).ObjectReprNiew(objectReprNiew).ObjectReprNisw(objectReprNisw).ObjectReprRegex(objectReprRegex).Offset(offset).Ordering(ordering).Q(q).RelatedObjectId(relatedObjectId).RelatedObjectIdEmpty(relatedObjectIdEmpty).RelatedObjectIdGt(relatedObjectIdGt).RelatedObjectIdGte(relatedObjectIdGte).RelatedObjectIdLt(relatedObjectIdLt).RelatedObjectIdLte(relatedObjectIdLte).RelatedObjectIdN(relatedObjectIdN).RelatedObjectType(relatedObjectType).RelatedObjectTypeN(relatedObjectTypeN).RequestId(requestId).TimeAfter(timeAfter).TimeBefore(timeBefore).User(user).UserN(userN).UserId(userId).UserIdN(userIdN).UserName(userName).UserNameEmpty(userNameEmpty).UserNameIc(userNameIc).UserNameIe(userNameIe).UserNameIew(userNameIew).UserNameIregex(userNameIregex).UserNameIsw(userNameIsw).UserNameN(userNameN).UserNameNic(userNameNic).UserNameNie(userNameNie).UserNameNiew(userNameNiew).UserNameNisw(userNameNisw).UserNameRegex(userNameRegex).Execute()
+	resp, r, err := apiClient.CoreAPI.CoreObjectChangesList(context.Background()).Action(action).ActionEmpty(actionEmpty).ActionIc(actionIc).ActionIe(actionIe).ActionIew(actionIew).ActionIregex(actionIregex).ActionIsw(actionIsw).ActionN(actionN).ActionNic(actionNic).ActionNie(actionNie).ActionNiew(actionNiew).ActionNisw(actionNisw).ActionRegex(actionRegex).ChangedObjectId(changedObjectId).ChangedObjectIdEmpty(changedObjectIdEmpty).ChangedObjectIdGt(changedObjectIdGt).ChangedObjectIdGte(changedObjectIdGte).ChangedObjectIdLt(changedObjectIdLt).ChangedObjectIdLte(changedObjectIdLte).ChangedObjectIdN(changedObjectIdN).ChangedObjectType(changedObjectType).ChangedObjectTypeN(changedObjectTypeN).ChangedObjectTypeId(changedObjectTypeId).ChangedObjectTypeIdN(changedObjectTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).ObjectRepr(objectRepr).ObjectReprEmpty(objectReprEmpty).ObjectReprIc(objectReprIc).ObjectReprIe(objectReprIe).ObjectReprIew(objectReprIew).ObjectReprIregex(objectReprIregex).ObjectReprIsw(objectReprIsw).ObjectReprN(objectReprN).ObjectReprNic(objectReprNic).ObjectReprNie(objectReprNie).ObjectReprNiew(objectReprNiew).ObjectReprNisw(objectReprNisw).ObjectReprRegex(objectReprRegex).Offset(offset).Ordering(ordering).Q(q).RelatedObjectId(relatedObjectId).RelatedObjectIdEmpty(relatedObjectIdEmpty).RelatedObjectIdGt(relatedObjectIdGt).RelatedObjectIdGte(relatedObjectIdGte).RelatedObjectIdLt(relatedObjectIdLt).RelatedObjectIdLte(relatedObjectIdLte).RelatedObjectIdN(relatedObjectIdN).RelatedObjectType(relatedObjectType).RelatedObjectTypeN(relatedObjectTypeN).RequestId(requestId).TimeAfter(timeAfter).TimeBefore(timeBefore).User(user).UserN(userN).UserId(userId).UserIdN(userIdN).UserName(userName).UserNameEmpty(userNameEmpty).UserNameIc(userNameIc).UserNameIe(userNameIe).UserNameIew(userNameIew).UserNameIregex(userNameIregex).UserNameIsw(userNameIsw).UserNameN(userNameN).UserNameNic(userNameNic).UserNameNie(userNameNie).UserNameNiew(userNameNiew).UserNameNisw(userNameNisw).UserNameRegex(userNameRegex).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CoreAPI.CoreObjectChangesList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2283,6 +2341,18 @@ Other parameters are passed through a pointer to a apiCoreObjectChangesListReque
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **action** | [**CoreObjectChangesListActionParameter**](CoreObjectChangesListActionParameter.md) | * &#x60;create&#x60; - Created * &#x60;update&#x60; - Updated * &#x60;delete&#x60; - Deleted | 
+ **actionEmpty** | **bool** |  | 
+ **actionIc** | **[]string** |  | 
+ **actionIe** | **[]string** |  | 
+ **actionIew** | **[]string** |  | 
+ **actionIregex** | **[]string** |  | 
+ **actionIsw** | **[]string** |  | 
+ **actionN** | [**CoreObjectChangesListActionParameter**](CoreObjectChangesListActionParameter.md) | * &#x60;create&#x60; - Created * &#x60;update&#x60; - Updated * &#x60;delete&#x60; - Deleted | 
+ **actionNic** | **[]string** |  | 
+ **actionNie** | **[]string** |  | 
+ **actionNiew** | **[]string** |  | 
+ **actionNisw** | **[]string** |  | 
+ **actionRegex** | **[]string** |  | 
  **changedObjectId** | **[]int32** |  | 
  **changedObjectIdEmpty** | **bool** |  | 
  **changedObjectIdGt** | **[]int32** |  | 

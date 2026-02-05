@@ -23,12 +23,13 @@ Name | Type | Description | Notes
 **FrontImage** | Pointer to **NullableString** |  | [optional] 
 **RearImage** | Pointer to **NullableString** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
+**Owner** | Pointer to [**NullableBriefOwner**](BriefOwner.md) |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
-**DeviceCount** | Pointer to **int64** |  | [optional] [readonly] 
+**DeviceCount** | Pointer to **int32** |  | [optional] [readonly] 
 **ConsolePortTemplateCount** | **int32** |  | [readonly] 
 **ConsoleServerPortTemplateCount** | **int32** |  | [readonly] 
 **PowerPortTemplateCount** | **int32** |  | [readonly] 
@@ -574,6 +575,41 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### GetOwner
+
+`func (o *DeviceType) GetOwner() BriefOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *DeviceType) GetOwnerOk() (*BriefOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *DeviceType) SetOwner(v BriefOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *DeviceType) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *DeviceType) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *DeviceType) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetComments
 
 `func (o *DeviceType) GetComments() string`
@@ -721,20 +757,20 @@ HasLastUpdated returns a boolean if a field has been set.
 UnsetLastUpdated ensures that no value is present for LastUpdated, not even an explicit nil
 ### GetDeviceCount
 
-`func (o *DeviceType) GetDeviceCount() int64`
+`func (o *DeviceType) GetDeviceCount() int32`
 
 GetDeviceCount returns the DeviceCount field if non-nil, zero value otherwise.
 
 ### GetDeviceCountOk
 
-`func (o *DeviceType) GetDeviceCountOk() (*int64, bool)`
+`func (o *DeviceType) GetDeviceCountOk() (*int32, bool)`
 
 GetDeviceCountOk returns a tuple with the DeviceCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDeviceCount
 
-`func (o *DeviceType) SetDeviceCount(v int64)`
+`func (o *DeviceType) SetDeviceCount(v int32)`
 
 SetDeviceCount sets DeviceCount field to given value.
 

@@ -10,9 +10,11 @@ Name | Type | Description | Notes
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Type** | Pointer to [**FrontPortTypeValue**](FrontPortTypeValue.md) |  | [optional] 
 **Color** | Pointer to **string** |  | [optional] 
-**Positions** | Pointer to **int32** | Number of front ports which may be mapped | [optional] 
+**Positions** | Pointer to **int32** |  | [optional] 
+**FrontPorts** | Pointer to [**[]RearPortMappingRequest**](RearPortMappingRequest.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **MarkConnected** | Pointer to **bool** | Treat as if a cable is connected | [optional] 
+**Owner** | Pointer to [**NullableASNRangeRequestOwner**](ASNRangeRequestOwner.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 
@@ -220,6 +222,31 @@ SetPositions sets Positions field to given value.
 
 HasPositions returns a boolean if a field has been set.
 
+### GetFrontPorts
+
+`func (o *PatchedWritableRearPortRequest) GetFrontPorts() []RearPortMappingRequest`
+
+GetFrontPorts returns the FrontPorts field if non-nil, zero value otherwise.
+
+### GetFrontPortsOk
+
+`func (o *PatchedWritableRearPortRequest) GetFrontPortsOk() (*[]RearPortMappingRequest, bool)`
+
+GetFrontPortsOk returns a tuple with the FrontPorts field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFrontPorts
+
+`func (o *PatchedWritableRearPortRequest) SetFrontPorts(v []RearPortMappingRequest)`
+
+SetFrontPorts sets FrontPorts field to given value.
+
+### HasFrontPorts
+
+`func (o *PatchedWritableRearPortRequest) HasFrontPorts() bool`
+
+HasFrontPorts returns a boolean if a field has been set.
+
 ### GetDescription
 
 `func (o *PatchedWritableRearPortRequest) GetDescription() string`
@@ -270,6 +297,41 @@ SetMarkConnected sets MarkConnected field to given value.
 
 HasMarkConnected returns a boolean if a field has been set.
 
+### GetOwner
+
+`func (o *PatchedWritableRearPortRequest) GetOwner() ASNRangeRequestOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *PatchedWritableRearPortRequest) GetOwnerOk() (*ASNRangeRequestOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *PatchedWritableRearPortRequest) SetOwner(v ASNRangeRequestOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *PatchedWritableRearPortRequest) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *PatchedWritableRearPortRequest) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *PatchedWritableRearPortRequest) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetTags
 
 `func (o *PatchedWritableRearPortRequest) GetTags() []NestedTagRequest`

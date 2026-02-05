@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **DistanceUnit** | Pointer to [**NullableCircuitDistanceUnit**](CircuitDistanceUnit.md) |  | [optional] 
 **TerminationA** | Pointer to [**NullableCircuitCircuitTermination**](CircuitCircuitTermination.md) |  | [optional] [readonly] 
 **TerminationZ** | Pointer to [**NullableCircuitCircuitTermination**](CircuitCircuitTermination.md) |  | [optional] [readonly] 
+**Owner** | Pointer to [**NullableBriefOwner**](BriefOwner.md) |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -558,6 +559,41 @@ HasTerminationZ returns a boolean if a field has been set.
 `func (o *Circuit) UnsetTerminationZ()`
 
 UnsetTerminationZ ensures that no value is present for TerminationZ, not even an explicit nil
+### GetOwner
+
+`func (o *Circuit) GetOwner() BriefOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *Circuit) GetOwnerOk() (*BriefOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *Circuit) SetOwner(v BriefOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *Circuit) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *Circuit) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *Circuit) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetComments
 
 `func (o *Circuit) GetComments() string`

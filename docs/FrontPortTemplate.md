@@ -13,8 +13,8 @@ Name | Type | Description | Notes
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Type** | [**FrontPortType**](FrontPortType.md) |  | 
 **Color** | Pointer to **string** |  | [optional] 
-**RearPort** | [**BriefRearPortTemplate**](BriefRearPortTemplate.md) |  | 
-**RearPortPosition** | Pointer to **int32** |  | [optional] 
+**Positions** | Pointer to **int32** |  | [optional] 
+**RearPorts** | Pointer to [**[]FrontPortTemplateMapping**](FrontPortTemplateMapping.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 
 ### NewFrontPortTemplate
 
-`func NewFrontPortTemplate(id int32, url string, display string, name string, type_ FrontPortType, rearPort BriefRearPortTemplate, ) *FrontPortTemplate`
+`func NewFrontPortTemplate(id int32, url string, display string, name string, type_ FrontPortType, ) *FrontPortTemplate`
 
 NewFrontPortTemplate instantiates a new FrontPortTemplate object
 This constructor will assign default values to properties that have it defined,
@@ -258,50 +258,55 @@ SetColor sets Color field to given value.
 
 HasColor returns a boolean if a field has been set.
 
-### GetRearPort
+### GetPositions
 
-`func (o *FrontPortTemplate) GetRearPort() BriefRearPortTemplate`
+`func (o *FrontPortTemplate) GetPositions() int32`
 
-GetRearPort returns the RearPort field if non-nil, zero value otherwise.
+GetPositions returns the Positions field if non-nil, zero value otherwise.
 
-### GetRearPortOk
+### GetPositionsOk
 
-`func (o *FrontPortTemplate) GetRearPortOk() (*BriefRearPortTemplate, bool)`
+`func (o *FrontPortTemplate) GetPositionsOk() (*int32, bool)`
 
-GetRearPortOk returns a tuple with the RearPort field if it's non-nil, zero value otherwise
+GetPositionsOk returns a tuple with the Positions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRearPort
+### SetPositions
 
-`func (o *FrontPortTemplate) SetRearPort(v BriefRearPortTemplate)`
+`func (o *FrontPortTemplate) SetPositions(v int32)`
 
-SetRearPort sets RearPort field to given value.
+SetPositions sets Positions field to given value.
 
+### HasPositions
 
-### GetRearPortPosition
+`func (o *FrontPortTemplate) HasPositions() bool`
 
-`func (o *FrontPortTemplate) GetRearPortPosition() int32`
+HasPositions returns a boolean if a field has been set.
 
-GetRearPortPosition returns the RearPortPosition field if non-nil, zero value otherwise.
+### GetRearPorts
 
-### GetRearPortPositionOk
+`func (o *FrontPortTemplate) GetRearPorts() []FrontPortTemplateMapping`
 
-`func (o *FrontPortTemplate) GetRearPortPositionOk() (*int32, bool)`
+GetRearPorts returns the RearPorts field if non-nil, zero value otherwise.
 
-GetRearPortPositionOk returns a tuple with the RearPortPosition field if it's non-nil, zero value otherwise
+### GetRearPortsOk
+
+`func (o *FrontPortTemplate) GetRearPortsOk() (*[]FrontPortTemplateMapping, bool)`
+
+GetRearPortsOk returns a tuple with the RearPorts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRearPortPosition
+### SetRearPorts
 
-`func (o *FrontPortTemplate) SetRearPortPosition(v int32)`
+`func (o *FrontPortTemplate) SetRearPorts(v []FrontPortTemplateMapping)`
 
-SetRearPortPosition sets RearPortPosition field to given value.
+SetRearPorts sets RearPorts field to given value.
 
-### HasRearPortPosition
+### HasRearPorts
 
-`func (o *FrontPortTemplate) HasRearPortPosition() bool`
+`func (o *FrontPortTemplate) HasRearPorts() bool`
 
-HasRearPortPosition returns a boolean if a field has been set.
+HasRearPorts returns a boolean if a field has been set.
 
 ### GetDescription
 

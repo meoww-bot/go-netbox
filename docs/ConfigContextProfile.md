@@ -11,11 +11,12 @@ Name | Type | Description | Notes
 **Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
 **Schema** | Pointer to **interface{}** | A JSON schema specifying the structure of the context data for this profile | [optional] 
-**Tags** | Pointer to **[]string** |  | [optional] 
+**Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
+**Owner** | Pointer to [**NullableBriefOwner**](BriefOwner.md) |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **DataSource** | Pointer to [**BriefDataSource**](BriefDataSource.md) |  | [optional] 
 **DataPath** | **string** | Path to remote file (relative to data source root) | [readonly] 
-**DataFile** | [**BriefDataFile**](BriefDataFile.md) |  | [readonly] 
+**DataFile** | Pointer to [**BriefDataFile**](BriefDataFile.md) |  | [optional] 
 **DataSynced** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
@@ -24,7 +25,7 @@ Name | Type | Description | Notes
 
 ### NewConfigContextProfile
 
-`func NewConfigContextProfile(id int32, url string, display string, name string, dataPath string, dataFile BriefDataFile, ) *ConfigContextProfile`
+`func NewConfigContextProfile(id int32, url string, display string, name string, dataPath string, ) *ConfigContextProfile`
 
 NewConfigContextProfile instantiates a new ConfigContextProfile object
 This constructor will assign default values to properties that have it defined,
@@ -206,20 +207,20 @@ HasSchema returns a boolean if a field has been set.
 UnsetSchema ensures that no value is present for Schema, not even an explicit nil
 ### GetTags
 
-`func (o *ConfigContextProfile) GetTags() []string`
+`func (o *ConfigContextProfile) GetTags() []NestedTag`
 
 GetTags returns the Tags field if non-nil, zero value otherwise.
 
 ### GetTagsOk
 
-`func (o *ConfigContextProfile) GetTagsOk() (*[]string, bool)`
+`func (o *ConfigContextProfile) GetTagsOk() (*[]NestedTag, bool)`
 
 GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTags
 
-`func (o *ConfigContextProfile) SetTags(v []string)`
+`func (o *ConfigContextProfile) SetTags(v []NestedTag)`
 
 SetTags sets Tags field to given value.
 
@@ -229,6 +230,41 @@ SetTags sets Tags field to given value.
 
 HasTags returns a boolean if a field has been set.
 
+### GetOwner
+
+`func (o *ConfigContextProfile) GetOwner() BriefOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *ConfigContextProfile) GetOwnerOk() (*BriefOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *ConfigContextProfile) SetOwner(v BriefOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *ConfigContextProfile) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *ConfigContextProfile) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *ConfigContextProfile) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetComments
 
 `func (o *ConfigContextProfile) GetComments() string`
@@ -318,6 +354,11 @@ and a boolean to check if the value has been set.
 
 SetDataFile sets DataFile field to given value.
 
+### HasDataFile
+
+`func (o *ConfigContextProfile) HasDataFile() bool`
+
+HasDataFile returns a boolean if a field has been set.
 
 ### GetDataSynced
 

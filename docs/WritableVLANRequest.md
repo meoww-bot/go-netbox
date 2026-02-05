@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **QinqRole** | Pointer to [**NullableQInQRole**](QInQRole.md) |  | [optional] 
 **QinqSvlan** | Pointer to **NullableInt32** |  | [optional] 
+**Owner** | Pointer to [**NullableASNRangeRequestOwner**](ASNRangeRequestOwner.md) |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -337,6 +338,41 @@ HasQinqSvlan returns a boolean if a field has been set.
 `func (o *WritableVLANRequest) UnsetQinqSvlan()`
 
 UnsetQinqSvlan ensures that no value is present for QinqSvlan, not even an explicit nil
+### GetOwner
+
+`func (o *WritableVLANRequest) GetOwner() ASNRangeRequestOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *WritableVLANRequest) GetOwnerOk() (*ASNRangeRequestOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *WritableVLANRequest) SetOwner(v ASNRangeRequestOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *WritableVLANRequest) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *WritableVLANRequest) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *WritableVLANRequest) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetComments
 
 `func (o *WritableVLANRequest) GetComments() string`

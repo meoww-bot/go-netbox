@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **Type** | [**FrontPortTypeValue**](FrontPortTypeValue.md) |  | 
 **Color** | Pointer to **string** |  | [optional] 
 **Positions** | Pointer to **int32** |  | [optional] 
+**FrontPorts** | Pointer to [**[]RearPortTemplateMappingRequest**](RearPortTemplateMappingRequest.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -216,6 +217,31 @@ SetPositions sets Positions field to given value.
 `func (o *WritableRearPortTemplateRequest) HasPositions() bool`
 
 HasPositions returns a boolean if a field has been set.
+
+### GetFrontPorts
+
+`func (o *WritableRearPortTemplateRequest) GetFrontPorts() []RearPortTemplateMappingRequest`
+
+GetFrontPorts returns the FrontPorts field if non-nil, zero value otherwise.
+
+### GetFrontPortsOk
+
+`func (o *WritableRearPortTemplateRequest) GetFrontPortsOk() (*[]RearPortTemplateMappingRequest, bool)`
+
+GetFrontPortsOk returns a tuple with the FrontPorts field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFrontPorts
+
+`func (o *WritableRearPortTemplateRequest) SetFrontPorts(v []RearPortTemplateMappingRequest)`
+
+SetFrontPorts sets FrontPorts field to given value.
+
+### HasFrontPorts
+
+`func (o *WritableRearPortTemplateRequest) HasFrontPorts() bool`
+
+HasFrontPorts returns a boolean if a field has been set.
 
 ### GetDescription
 

@@ -12,6 +12,8 @@ Name | Type | Description | Notes
 **Slug** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
 **Tenant** | Pointer to [**NullableBriefTenant**](BriefTenant.md) |  | [optional] 
+**Owner** | Pointer to [**NullableBriefOwner**](BriefOwner.md) |  | [optional] 
+**Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
@@ -222,6 +224,66 @@ HasTenant returns a boolean if a field has been set.
 `func (o *CircuitGroup) UnsetTenant()`
 
 UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
+### GetOwner
+
+`func (o *CircuitGroup) GetOwner() BriefOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *CircuitGroup) GetOwnerOk() (*BriefOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *CircuitGroup) SetOwner(v BriefOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *CircuitGroup) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *CircuitGroup) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *CircuitGroup) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
+### GetComments
+
+`func (o *CircuitGroup) GetComments() string`
+
+GetComments returns the Comments field if non-nil, zero value otherwise.
+
+### GetCommentsOk
+
+`func (o *CircuitGroup) GetCommentsOk() (*string, bool)`
+
+GetCommentsOk returns a tuple with the Comments field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComments
+
+`func (o *CircuitGroup) SetComments(v string)`
+
+SetComments sets Comments field to given value.
+
+### HasComments
+
+`func (o *CircuitGroup) HasComments() bool`
+
+HasComments returns a boolean if a field has been set.
+
 ### GetTags
 
 `func (o *CircuitGroup) GetTags() []NestedTag`

@@ -14,13 +14,15 @@ Name | Type | Description | Notes
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Type** | [**FrontPortType**](FrontPortType.md) |  | 
 **Color** | Pointer to **string** |  | [optional] 
-**Positions** | Pointer to **int32** | Number of front ports which may be mapped | [optional] 
+**Positions** | Pointer to **int32** |  | [optional] 
+**FrontPorts** | Pointer to [**[]RearPortMapping**](RearPortMapping.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **MarkConnected** | Pointer to **bool** | Treat as if a cable is connected | [optional] 
 **Cable** | Pointer to [**NullableBriefCable**](BriefCable.md) |  | [optional] [readonly] 
 **CableEnd** | Pointer to **string** |  | [optional] [readonly] 
 **LinkPeers** | **[]interface{}** |  | [readonly] 
 **LinkPeersType** | Pointer to **NullableString** | Return the type of the peer link terminations, or None. | [optional] [readonly] 
+**Owner** | Pointer to [**NullableBriefOwner**](BriefOwner.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
@@ -301,6 +303,31 @@ SetPositions sets Positions field to given value.
 
 HasPositions returns a boolean if a field has been set.
 
+### GetFrontPorts
+
+`func (o *RearPort) GetFrontPorts() []RearPortMapping`
+
+GetFrontPorts returns the FrontPorts field if non-nil, zero value otherwise.
+
+### GetFrontPortsOk
+
+`func (o *RearPort) GetFrontPortsOk() (*[]RearPortMapping, bool)`
+
+GetFrontPortsOk returns a tuple with the FrontPorts field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFrontPorts
+
+`func (o *RearPort) SetFrontPorts(v []RearPortMapping)`
+
+SetFrontPorts sets FrontPorts field to given value.
+
+### HasFrontPorts
+
+`func (o *RearPort) HasFrontPorts() bool`
+
+HasFrontPorts returns a boolean if a field has been set.
+
 ### GetDescription
 
 `func (o *RearPort) GetDescription() string`
@@ -466,6 +493,41 @@ HasLinkPeersType returns a boolean if a field has been set.
 `func (o *RearPort) UnsetLinkPeersType()`
 
 UnsetLinkPeersType ensures that no value is present for LinkPeersType, not even an explicit nil
+### GetOwner
+
+`func (o *RearPort) GetOwner() BriefOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *RearPort) GetOwnerOk() (*BriefOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *RearPort) SetOwner(v BriefOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *RearPort) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *RearPort) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *RearPort) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetTags
 
 `func (o *RearPort) GetTags() []NestedTag`

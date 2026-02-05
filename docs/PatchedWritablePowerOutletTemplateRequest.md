@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** | {module} is accepted as a substitution for the module bay position when attached to a module type. | [optional] 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Type** | Pointer to [**NullablePatchedWritablePowerOutletTemplateRequestType**](PatchedWritablePowerOutletTemplateRequestType.md) |  | [optional] 
+**Color** | Pointer to **string** |  | [optional] 
 **PowerPort** | Pointer to [**NullablePatchedWritablePowerOutletTemplateRequestPowerPort**](PatchedWritablePowerOutletTemplateRequestPowerPort.md) |  | [optional] 
 **FeedLeg** | Pointer to [**NullablePatchedWritablePowerOutletRequestFeedLeg**](PatchedWritablePowerOutletRequestFeedLeg.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -187,6 +188,31 @@ HasType returns a boolean if a field has been set.
 `func (o *PatchedWritablePowerOutletTemplateRequest) UnsetType()`
 
 UnsetType ensures that no value is present for Type, not even an explicit nil
+### GetColor
+
+`func (o *PatchedWritablePowerOutletTemplateRequest) GetColor() string`
+
+GetColor returns the Color field if non-nil, zero value otherwise.
+
+### GetColorOk
+
+`func (o *PatchedWritablePowerOutletTemplateRequest) GetColorOk() (*string, bool)`
+
+GetColorOk returns a tuple with the Color field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetColor
+
+`func (o *PatchedWritablePowerOutletTemplateRequest) SetColor(v string)`
+
+SetColor sets Color field to given value.
+
+### HasColor
+
+`func (o *PatchedWritablePowerOutletTemplateRequest) HasColor() bool`
+
+HasColor returns a boolean if a field has been set.
+
 ### GetPowerPort
 
 `func (o *PatchedWritablePowerOutletTemplateRequest) GetPowerPort() PatchedWritablePowerOutletTemplateRequestPowerPort`

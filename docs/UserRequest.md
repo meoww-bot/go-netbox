@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **FirstName** | Pointer to **string** |  | [optional] 
 **LastName** | Pointer to **string** |  | [optional] 
 **Email** | Pointer to **string** |  | [optional] 
-**IsStaff** | Pointer to **bool** | Designates whether the user can log into this admin site. | [optional] 
 **IsActive** | Pointer to **bool** | Designates whether this user should be treated as active. Unselect this instead of deleting accounts. | [optional] 
 **DateJoined** | Pointer to **time.Time** |  | [optional] 
 **LastLogin** | Pointer to **NullableTime** |  | [optional] 
@@ -149,31 +148,6 @@ SetEmail sets Email field to given value.
 `func (o *UserRequest) HasEmail() bool`
 
 HasEmail returns a boolean if a field has been set.
-
-### GetIsStaff
-
-`func (o *UserRequest) GetIsStaff() bool`
-
-GetIsStaff returns the IsStaff field if non-nil, zero value otherwise.
-
-### GetIsStaffOk
-
-`func (o *UserRequest) GetIsStaffOk() (*bool, bool)`
-
-GetIsStaffOk returns a tuple with the IsStaff field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIsStaff
-
-`func (o *UserRequest) SetIsStaff(v bool)`
-
-SetIsStaff sets IsStaff field to given value.
-
-### HasIsStaff
-
-`func (o *UserRequest) HasIsStaff() bool`
-
-HasIsStaff returns a boolean if a field has been set.
 
 ### GetIsActive
 

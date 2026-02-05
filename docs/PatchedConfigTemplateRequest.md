@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **FileExtension** | Pointer to **string** | Extension to append to the rendered filename | [optional] 
 **AsAttachment** | Pointer to **bool** | Download file as attachment | [optional] 
 **DataSource** | Pointer to [**ConfigContextProfileRequestDataSource**](ConfigContextProfileRequestDataSource.md) |  | [optional] 
+**AutoSyncEnabled** | Pointer to **bool** | Enable automatic synchronization of data when the data file is updated | [optional] 
+**Owner** | Pointer to [**NullableASNRangeRequestOwner**](ASNRangeRequestOwner.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 
 ## Methods
@@ -269,6 +271,66 @@ SetDataSource sets DataSource field to given value.
 
 HasDataSource returns a boolean if a field has been set.
 
+### GetAutoSyncEnabled
+
+`func (o *PatchedConfigTemplateRequest) GetAutoSyncEnabled() bool`
+
+GetAutoSyncEnabled returns the AutoSyncEnabled field if non-nil, zero value otherwise.
+
+### GetAutoSyncEnabledOk
+
+`func (o *PatchedConfigTemplateRequest) GetAutoSyncEnabledOk() (*bool, bool)`
+
+GetAutoSyncEnabledOk returns a tuple with the AutoSyncEnabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAutoSyncEnabled
+
+`func (o *PatchedConfigTemplateRequest) SetAutoSyncEnabled(v bool)`
+
+SetAutoSyncEnabled sets AutoSyncEnabled field to given value.
+
+### HasAutoSyncEnabled
+
+`func (o *PatchedConfigTemplateRequest) HasAutoSyncEnabled() bool`
+
+HasAutoSyncEnabled returns a boolean if a field has been set.
+
+### GetOwner
+
+`func (o *PatchedConfigTemplateRequest) GetOwner() ASNRangeRequestOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *PatchedConfigTemplateRequest) GetOwnerOk() (*ASNRangeRequestOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *PatchedConfigTemplateRequest) SetOwner(v ASNRangeRequestOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *PatchedConfigTemplateRequest) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *PatchedConfigTemplateRequest) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *PatchedConfigTemplateRequest) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetTags
 
 `func (o *PatchedConfigTemplateRequest) GetTags() []NestedTagRequest`
