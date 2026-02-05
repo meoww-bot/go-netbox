@@ -1,0 +1,72 @@
+# CircuitCoordinate
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**X** | **int32** | X-coordinate of the device (horizontal) on the canvas. Smaller values correspond to a position further to the left on the monitor. | 
+**Y** | **int32** | Y-coordinate of the device (vertical) on the canvas. Smaller values correspond to a position further up on the monitor. | 
+
+## Methods
+
+### NewCircuitCoordinate
+
+`func NewCircuitCoordinate(x int32, y int32, ) *CircuitCoordinate`
+
+NewCircuitCoordinate instantiates a new CircuitCoordinate object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewCircuitCoordinateWithDefaults
+
+`func NewCircuitCoordinateWithDefaults() *CircuitCoordinate`
+
+NewCircuitCoordinateWithDefaults instantiates a new CircuitCoordinate object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetX
+
+`func (o *CircuitCoordinate) GetX() int32`
+
+GetX returns the X field if non-nil, zero value otherwise.
+
+### GetXOk
+
+`func (o *CircuitCoordinate) GetXOk() (*int32, bool)`
+
+GetXOk returns a tuple with the X field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetX
+
+`func (o *CircuitCoordinate) SetX(v int32)`
+
+SetX sets X field to given value.
+
+
+### GetY
+
+`func (o *CircuitCoordinate) GetY() int32`
+
+GetY returns the Y field if non-nil, zero value otherwise.
+
+### GetYOk
+
+`func (o *CircuitCoordinate) GetYOk() (*int32, bool)`
+
+GetYOk returns a tuple with the Y field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetY
+
+`func (o *CircuitCoordinate) SetY(v int32)`
+
+SetY sets Y field to given value.
+
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
